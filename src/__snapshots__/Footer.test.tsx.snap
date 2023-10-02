@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Renders correctly 1`] = `
+<div
+  className="ii-loader ii-theme-dark"
+  style={Object {}}
+>
+  <div
+    className="ii-loader-ring"
+  >
+    <div />
+    <div />
+    <div />
+    <div />
+  </div>
+</div>
+`;
