@@ -16,7 +16,7 @@ jobs:
             yarn test
             yarn build
             npm set //registry.npmjs.org/:_authToken $NPM_API_TOKEN
-            npm publish
+            npm publish --access=public
 
 workflows:
   export-workflow:
