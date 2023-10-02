@@ -1,0 +1,12 @@
+.eslintrc
+.gitignore
+
+# Storybook
+.storybook/
+public/
+src/
+
+# Tests
+*.test.ts
+*.test.tsx
+*.test.tsx.snap

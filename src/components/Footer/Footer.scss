@@ -1,0 +1,13 @@
+@import '../../themes.scss';
+
+.fikasio-footer {
+  background-color: #aeaeae;
+}
+
+.fikasio-footer.fikasio-theme-dark {
+  background-color: #000000;
+}
+
+.fikasio-footer.fikasio-theme-light {
+  background-color: #ffffff;
+}
