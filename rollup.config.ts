@@ -1,3 +1,4 @@
+import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import sass from 'rollup-plugin-sass';
 import { uglify } from 'rollup-plugin-uglify';
@@ -16,6 +17,7 @@ const config = {
     },
   ],
   plugins: [
+    image(),
     postcss({
       plugins: [],
     }),

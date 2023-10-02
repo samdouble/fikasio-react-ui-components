@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "author": "samdouble",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "files": [
     "dist"
   ],
@@ -53,6 +53,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@rollup/plugin-image": "^3.0.2",
     "@storybook/addon-actions": "^7.0.4",
     "@storybook/addon-essentials": "^7.0.4",
     "@storybook/addon-interactions": "^7.0.4",
