@@ -26,6 +26,7 @@ export function Footer({
       })}
       style={style}
     >
+      &copy; 2023 fikas.io
     </div>
   );
 }
