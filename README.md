@@ -20,6 +20,24 @@ import { Footer } from '@fikasio/react-ui-components';
 
 ### Components
 
+#### DatePicker
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| className               |                 |                 |                                                 |
+| defaultValue            |                 |                 |                                                 |
+| isOpen                  |                 |                 |                                                 |
+| name                    |                 |                 |                                                 |
+| onBlur                  |                 |                 |                                                 |
+| onChange                |                 |                 |                                                 |
+| shouldCloseOnSelect     |                 |                 |                                                 |
+| showTimeSelect          |                 |                 |                                                 |
+| style                   |                 |                 |                                                 |
+| timeCaption             |                 |                 |                                                 |
+| timeFormat              |                 |                 |                                                 |
+| timeIntervals           |                 |                 |                                                 |
+| value                   |                 |                 |                                                 |
+
 #### Footer
 TODO
 
