@@ -23,7 +23,7 @@ interface DatePickerProps {
   value?: Date,
 }
 
-const DatePicker = ({
+export function DatePicker({
   className,
   defaultValue,
   isOpen: pIsOpen,
@@ -32,13 +32,13 @@ const DatePicker = ({
   onChange,
   shouldCloseOnSelect,
   showTimeSelect,
-  // style,
+  style,
   timeCaption,
   timeFormat,
   timeIntervals,
   value,
-}: DatePickerProps) => {
-  let _calendar = useRef(null) as ReactDatePicker;
+}: DatePickerProps) {
+  let calendar = useRef(null) as ReactDatePicker;
   const [isOpen, setIsOpen] = useState(pIsOpen);
 
   const isControlled = typeof value !== 'undefined';
@@ -51,10 +51,10 @@ const DatePicker = ({
   const theme = useTheme();
 
   useEffect(() => {
-    if (_calendar) {
-      _calendar.setOpen(isOpen);
+    if (calendar) {
+      calendar.setOpen(isOpen);
     }
-  }, [_calendar, isOpen]);
+  }, [calendar, isOpen]);
 
   const handleChange = (newValue: Date) => {
     if (onChange) {
@@ -73,23 +73,26 @@ const DatePicker = ({
         'fikasio-theme-light': theme === 'light',
         ...convertClassNameToObj(className),
       })}
+      style={{
+        ...style,
+      }}
     >
       <ClickOutside
         onClickOutside={() => setIsOpen(false)}
-      >string
+      >
         <DP
-          customInput={
+          customInput={(
             <input
               name={name}
               type="hidden"
               value={DateTime.fromJSDate(currentValue).toISO()}
             />
-          }
+          )}
           name={name}
           onBlur={onBlur}
           onChange={handleChange}
           popperPlacement="auto"
-          ref={c => _calendar = c}
+          ref={c => { calendar = c; }}
           selected={defaultValue}
           shouldCloseOnSelect={shouldCloseOnSelect || false}
           showTimeSelect={showTimeSelect}
