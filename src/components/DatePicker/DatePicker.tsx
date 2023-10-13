@@ -92,7 +92,10 @@ export function DatePicker({
           onBlur={onBlur}
           onChange={handleChange}
           popperPlacement="auto"
-          ref={c => { calendar = c; }}
+          ref={c => {
+            calendar = c;
+            return calendar;
+          }}
           selected={defaultValue}
           shouldCloseOnSelect={shouldCloseOnSelect || false}
           showTimeSelect={showTimeSelect}
