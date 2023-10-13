@@ -103,7 +103,7 @@ export function DatePicker({
       </ClickOutside>
     </div>
   );
-};
+}
 
 DatePicker.propTypes = {
   className: PropTypes.string,
