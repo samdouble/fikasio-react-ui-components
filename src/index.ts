@@ -1,3 +1,4 @@
+export { DatePicker } from './DatePicker';
 export { Footer } from './Footer';
 export { useTheme } from './useTheme';
 
