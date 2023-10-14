@@ -13,7 +13,7 @@ interface DatePickerProps {
   isOpen?: boolean;
   name?: string;
   onBlur?: () => void;
-  onChange?: (date: Date) => void;
+  onChange?: (value: Date) => void;
   shouldCloseOnSelect?: boolean;
   showTimeSelect?: boolean;
   style?: React.CSSProperties;
@@ -52,6 +52,7 @@ export function DatePicker({
 
   useEffect(() => {
     if (calendar) {
+      console.log(calendar);
       calendar.setOpen(isOpen);
     }
   }, [calendar, isOpen]);
@@ -92,9 +93,9 @@ export function DatePicker({
           onBlur={onBlur}
           onChange={handleChange}
           popperPlacement="auto"
-          ref={c => calendar = c}
+          ref={c => { calendar = c; }}
           selected={defaultValue}
-          shouldCloseOnSelect={shouldCloseOnSelect || false}
+          shouldCloseOnSelect={shouldCloseOnSelect}
           showTimeSelect={showTimeSelect}
           timeCaption={timeCaption}
           timeFormat={timeFormat}
