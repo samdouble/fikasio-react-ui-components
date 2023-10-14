@@ -20,6 +20,17 @@ import { Footer } from '@fikasio/react-ui-components';
 
 ### Components
 
+#### Checkbox
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| className               |                 |                 |                                                 |
+| defaultIsChecked        |                 |                 |                                                 |
+| isChecked               |                 |                 |                                                 |
+| name                    |                 |                 |                                                 |
+| onClick                 |                 |                 |                                                 |
+| style                   |                 |                 |                                                 |
+
 #### DatePicker
 
 | Name                    | Type            | Required        | Description                                     |
