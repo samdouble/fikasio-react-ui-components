@@ -52,7 +52,7 @@ export function DatePicker({
 
   useEffect(() => {
     if (calendar) {
-      console.log(calendar);
+      console.info(calendar);
       calendar.setOpen(isOpen);
     }
   }, [calendar, isOpen]);
