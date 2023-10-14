@@ -50,10 +50,12 @@ export function Checkbox({
         ...convertClassNameToObj(className),
       })}
       onClick={handleClick}
+      onKeyDown={handleClick}
       role="button"
       style={{
         ...style,
       }}
+      tabIndex={0}
     >
       {
         name && (
