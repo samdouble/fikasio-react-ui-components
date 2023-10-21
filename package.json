@@ -107,7 +107,8 @@
     ],
     "coveragePathIgnorePatterns": [
       "node_modules",
-      "./src/stories/"
+      "./src/stories/",
+      "./src/setupTests.ts"
     ],
     "coverageThreshold": {
       "global": {
