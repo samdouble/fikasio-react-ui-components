@@ -1,3 +1,4 @@
+export { AutosaveTextarea } from './AutosaveTextarea';
 export { Checkbox } from './Checkbox';
 export { DatePicker } from './DatePicker';
 export { Footer } from './Footer';
