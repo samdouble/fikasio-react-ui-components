@@ -51,7 +51,7 @@ export function DatePicker({
   const theme = useTheme();
 
   useEffect(() => {
-    if (calendar) {
+    if (calendar.current) {
       console.info(calendar);
       calendar.setOpen(isOpen);
     }

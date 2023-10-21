@@ -1,0 +1,20 @@
+.fikasio-textarea {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: auto;
+  display: inline-block;
+  height: 300px;
+  min-width: auto;
+  outline: none;
+  overflow-y: scroll;
+  padding-left: 10px;
+  padding-right: 50px;
+  padding-top: 10px;
+  text-align: left;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.fikasio-textarea:hover {
+  border: 1px solid #dddddd;
+}
