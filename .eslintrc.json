@@ -62,7 +62,8 @@
         "devDependencies": [
           "**/*.test.ts",
           "**/*.test.tsx",
-          "rollup.config.ts"
+          "rollup.config.ts",
+          "./src/setupTests.ts"
         ]
       }
     ],
