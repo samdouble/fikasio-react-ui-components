@@ -51,48 +51,42 @@ function AutosaveTextarea({
     setIValue(val);
   };
 
-  return (
-    <>
-      {
-        useContentEditableDiv
-          ? (
-            <ContentEditable
-              className={classNames({
-                'fikasio-textarea': true,
-                'fikasio-theme-dark': theme === 'dark',
-                'fikasio-theme-light': theme === 'light',
-                ...convertClassNameToObj(className),
-              })}
-              html={value}
-              onBlur={e => onBlur && onBlur(e)}
-              onChange={e => setValue(e.target.value)}
-              onClick={e => e.stopPropagation()}
-              onFocus={e => onFocus && onFocus(e)}
-              onKeyDown={e => onKeyDown && onKeyDown(e)}
-              onKeyUp={e => onKeyUp && onKeyUp(e)}
-              style={{
-                whiteSpace: 'pre',
-                ...style,
-              }}
-            />
-          ) : (
-            <textarea
-              className={className}
-              defaultValue={value}
-              onBlur={e => onBlur(e)}
-              onChange={e => setValue(e.target.value)}
-              onClick={e => e.stopPropagation()}
-              onFocus={e => onFocus(e)}
-              onKeyDown={e => onKeyDown(e)}
-              onKeyUp={e => onKeyUp(e)}
-              style={{
-                ...style,
-              }}
-            />
-          )
-      }
-    </>
-  );
+  return useContentEditableDiv
+    ? (
+      <ContentEditable
+        className={classNames({
+          'fikasio-textarea': true,
+          'fikasio-theme-dark': theme === 'dark',
+          'fikasio-theme-light': theme === 'light',
+          ...convertClassNameToObj(className),
+        })}
+        html={value}
+        onBlur={e => onBlur && onBlur(e)}
+        onChange={e => setValue(e.target.value)}
+        onClick={e => e.stopPropagation()}
+        onFocus={e => onFocus && onFocus(e)}
+        onKeyDown={e => onKeyDown && onKeyDown(e)}
+        onKeyUp={e => onKeyUp && onKeyUp(e)}
+        style={{
+          whiteSpace: 'pre',
+          ...style,
+        }}
+      />
+    ) : (
+      <textarea
+        className={className}
+        defaultValue={value}
+        onBlur={e => onBlur(e)}
+        onChange={e => setValue(e.target.value)}
+        onClick={e => e.stopPropagation()}
+        onFocus={e => onFocus(e)}
+        onKeyDown={e => onKeyDown(e)}
+        onKeyUp={e => onKeyUp(e)}
+        style={{
+          ...style,
+        }}
+      />
+    );
 }
 
 AutosaveTextarea.propTypes = {
