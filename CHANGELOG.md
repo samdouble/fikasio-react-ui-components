@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.3.1
+- Added max-width: 100% on AutosaveTextarea
+
 ### 0.3.0
 - Added AutosaveTextarea
 
