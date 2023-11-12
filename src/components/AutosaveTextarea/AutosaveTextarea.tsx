@@ -15,6 +15,7 @@ interface AutosaveTextareaProps {
   onKeyDown?: any;
   onKeyUp?: any;
   onSave: (value: string) => void;
+  ref?: React.Ref<any>,
   style?: React.CSSProperties;
   useContentEditableDiv?: boolean;
 }
@@ -27,6 +28,7 @@ function AutosaveTextarea({
   onKeyDown,
   onKeyUp,
   onSave,
+  ref,
   style,
   useContentEditableDiv,
 }: AutosaveTextareaProps) {
@@ -67,6 +69,7 @@ function AutosaveTextarea({
         onFocus={e => onFocus && onFocus(e)}
         onKeyDown={e => onKeyDown && onKeyDown(e)}
         onKeyUp={e => onKeyUp && onKeyUp(e)}
+        ref={ref}
         style={{
           whiteSpace: 'pre',
           ...style,
@@ -82,6 +85,7 @@ function AutosaveTextarea({
         onFocus={e => onFocus(e)}
         onKeyDown={e => onKeyDown(e)}
         onKeyUp={e => onKeyUp(e)}
+        ref={ref}
         style={{
           ...style,
         }}
