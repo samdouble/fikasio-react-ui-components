@@ -112,6 +112,7 @@ AutosaveTextarea.defaultProps = {
   onKeyDown: () => undefined,
   onKeyUp: () => undefined,
   onSave: () => undefined,
+  ref: undefined,
   style: {},
   useContentEditableDiv: true,
 };
