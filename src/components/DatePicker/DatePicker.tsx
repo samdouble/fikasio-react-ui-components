@@ -126,6 +126,9 @@ export function DatePicker({
           }}
           onChange={handleChange}
           popperPlacement="auto"
+          popperProps={{
+            strategy: 'fixed',
+          }}
           ref={c => { _calendar = c; }}
           selected={defaultValue}
           shouldCloseOnSelect={shouldCloseOnSelect}

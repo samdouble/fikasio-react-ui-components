@@ -1,6 +1,6 @@
 # Changelog
 
-### 0.3.5
+### 0.3.6
 - Fixed bug with showing/hiding DatePicker
 
 ### 0.3.3
