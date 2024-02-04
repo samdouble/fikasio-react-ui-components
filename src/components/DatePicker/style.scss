@@ -1,5 +1,8 @@
+@import '../../themes.scss';
+
 .fikasio-datepicker {
   cursor: pointer;
+  font-family: $fontFamily;
 }
 
 .fikasio-datepicker_dueAt_remove {
@@ -10,4 +13,16 @@
 
 .fikasio-datepicker:hover > .fikasio-datepicker_dueAt_remove {
   display: inline;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+  height: 20px;
+}
+
+.react-datepicker__day--selected {
+  background-color: #7E5B9A;
+}
+
+.react-datepicker__day--selected:hover {
+  background-color: #583773;
 }
