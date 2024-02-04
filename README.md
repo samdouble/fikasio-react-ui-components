@@ -36,12 +36,17 @@ import { Footer } from '@fikasio/react-ui-components';
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
 | className               |                 |                 |                                                 |
+| dateFormat              |                 |                 |                                                 |
 | defaultValue            |                 |                 |                                                 |
+| displayFormat           |                 |                 |                                                 |
 | isOpen                  |                 |                 |                                                 |
 | name                    |                 |                 |                                                 |
-| onBlur                  |                 |                 |                                                 |
 | onChange                |                 |                 |                                                 |
+| onClose                 |                 |                 |                                                 |
+| onOpen                  |                 |                 |                                                 |
+| onRemoveValue           |                 |                 |                                                 |
 | shouldCloseOnSelect     |                 |                 |                                                 |
+| showRemoveValue         |                 |                 |                                                 |
 | showTimeSelect          |                 |                 |                                                 |
 | style                   |                 |                 |                                                 |
 | timeCaption             |                 |                 |                                                 |

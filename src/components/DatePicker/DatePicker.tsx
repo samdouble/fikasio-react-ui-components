@@ -3,13 +3,18 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import DP, { ReactDatePicker } from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import ClickOutside from 'react-click-outside';
 import { DateTime } from 'luxon';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
+import 'react-datepicker/dist/react-datepicker.css';
 import './style.scss';
 
-interface DatepickerProps {
+library.add(faCalendarAlt);
+
+export interface DatePickerProps {
   className?: string;
   dateFormat?: string,
   defaultValue?: Date;
@@ -18,6 +23,7 @@ interface DatepickerProps {
   name?: string;
   onChange?: (value: Date) => void;
   onClose?: () => void;
+  onOpen?: () => void;
   onRemoveValue?: (e: SyntheticEvent) => void;
   shouldCloseOnSelect?: boolean;
   showRemoveValue?: boolean;
@@ -38,6 +44,7 @@ export function DatePicker({
   name,
   onChange,
   onClose,
+  onOpen,
   onRemoveValue,
   shouldCloseOnSelect,
   showRemoveValue,
@@ -47,7 +54,7 @@ export function DatePicker({
   timeFormat,
   timeIntervals,
   value,
-}: DatepickerProps) {
+}: DatePickerProps) {
   let _calendar = useRef(null) as ReactDatePicker;
   const [isOpen, setIsOpen] = useState(pIsOpen);
 
@@ -67,7 +74,7 @@ export function DatePicker({
   }, [pIsOpen]);
 
   useEffect(() => {
-    if (_calendar.current) {
+    if (_calendar) {
       _calendar.setOpen(isOpen);
     }
   }, [_calendar, isOpen]);
@@ -96,7 +103,9 @@ export function DatePicker({
       <ClickOutside
         onClickOutside={() => {
           setIsOpen(false);
-          onClose && onClose();
+          if (onClose) {
+            onClose();
+          }
         }}
       >
         <DP
@@ -111,7 +120,9 @@ export function DatePicker({
           name={name}
           onBlur={() => {
             setIsOpen(false);
-            onClose && onClose();
+            if (onClose) {
+              onClose();
+            }
           }}
           onChange={handleChange}
           popperPlacement="auto"
@@ -126,6 +137,12 @@ export function DatePicker({
       </ClickOutside>
       <FontAwesomeIcon
         icon="calendar-alt"
+        onClick={() => {
+          setIsOpen(true);
+          if (onOpen) {
+            onOpen();
+          }
+        }}
         size="1x"
         style={{ marginRight: 10 }}
       />
@@ -138,7 +155,11 @@ export function DatePicker({
           <FontAwesomeIcon
             className="fikasio-datepicker_dueAt_remove"
             icon="times"
-            onClick={e => onRemoveValue && onRemoveValue(e)}
+            onClick={e => {
+              if (onRemoveValue) {
+                onRemoveValue(e);
+              }
+            }}
             size="1x"
           />
         )
@@ -156,6 +177,7 @@ DatePicker.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   onClose: PropTypes.func,
+  onOpen: PropTypes.func,
   onRemoveValue: PropTypes.func,
   shouldCloseOnSelect: PropTypes.bool,
   showRemoveValue: PropTypes.bool,
@@ -175,6 +197,7 @@ DatePicker.defaultProps = {
   name: undefined,
   onChange: () => undefined,
   onClose: () => undefined,
+  onOpen: () => undefined,
   onRemoveValue: () => undefined,
   shouldCloseOnSelect: true,
   showRemoveValue: false,
