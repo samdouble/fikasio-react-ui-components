@@ -1,0 +1,9 @@
+.fikasio-datepicker_dueAt_remove {
+  display: none;
+  margin-left: 10px;
+  color: #b2b2b2;
+}
+
+.fikasio-datepicker:hover > .fikasio-datepicker_dueAt_remove {
+  display: inline;
+}

@@ -1,20 +1,25 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { SyntheticEvent, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import DP, { ReactDatePicker } from 'react-datepicker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ClickOutside from 'react-click-outside';
 import { DateTime } from 'luxon';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
+import './style.scss';
 
-interface DatePickerProps {
+interface DatepickerProps {
   className?: string;
+  dateFormat?: string,
   defaultValue?: Date;
+  displayFormat?: string;
   isOpen?: boolean;
   name?: string;
-  onBlur?: () => void;
   onChange?: (value: Date) => void;
+  onRemoveValue?: (e: SyntheticEvent) => void;
   shouldCloseOnSelect?: boolean;
+  showRemoveValue?: boolean;
   showTimeSelect?: boolean;
   style?: React.CSSProperties;
   timeCaption?: string;
@@ -25,20 +30,23 @@ interface DatePickerProps {
 
 export function DatePicker({
   className,
+  dateFormat,
   defaultValue,
+  displayFormat,
   isOpen: pIsOpen,
   name,
-  onBlur,
   onChange,
+  onRemoveValue,
   shouldCloseOnSelect,
+  showRemoveValue,
   showTimeSelect,
   style,
   timeCaption,
   timeFormat,
   timeIntervals,
   value,
-}: DatePickerProps) {
-  let calendar = useRef(null) as ReactDatePicker;
+}: DatepickerProps) {
+  let _calendar = useRef(null) as ReactDatePicker;
   const [isOpen, setIsOpen] = useState(pIsOpen);
 
   const isControlled = typeof value !== 'undefined';
@@ -51,11 +59,16 @@ export function DatePicker({
   const theme = useTheme();
 
   useEffect(() => {
-    if (calendar.current) {
-      console.info(calendar);
-      calendar.setOpen(isOpen);
+    if (pIsOpen !== isOpen) {
+      setIsOpen(pIsOpen)
     }
-  }, [calendar, isOpen]);
+  }, [pIsOpen]);
+
+  useEffect(() => {
+    if (_calendar.current) {
+      _calendar.setOpen(isOpen);
+    }
+  }, [_calendar, isOpen]);
 
   const handleChange = (newValue: Date) => {
     if (onChange) {
@@ -82,18 +95,18 @@ export function DatePicker({
         onClickOutside={() => setIsOpen(false)}
       >
         <DP
-          customInput={(
+          customInput={
             <input
               name={name}
               type="hidden"
               value={DateTime.fromJSDate(currentValue).toISO()}
             />
-          )}
+          }
+          dateFormat={dateFormat}
           name={name}
-          onBlur={onBlur}
           onChange={handleChange}
           popperPlacement="auto"
-          ref={c => { calendar = c; }}
+          ref={c => { _calendar = c; }}
           selected={defaultValue}
           shouldCloseOnSelect={shouldCloseOnSelect}
           showTimeSelect={showTimeSelect}
@@ -102,18 +115,40 @@ export function DatePicker({
           timeIntervals={timeIntervals}
         />
       </ClickOutside>
+      <FontAwesomeIcon
+        icon="calendar-alt"
+        size="1x"
+        style={{ marginRight: 10 }}
+      />
+      {
+        currentValue
+          && DateTime.fromJSDate(currentValue).toFormat(displayFormat)
+      }
+      {
+        showRemoveValue && currentValue && (
+          <FontAwesomeIcon
+            className="fikasio-datepicker_dueAt_remove"
+            icon="times"
+            onClick={e => onRemoveValue && onRemoveValue(e)}
+            size="1x"
+          />
+        )
+      }
     </div>
   );
 }
 
 DatePicker.propTypes = {
   className: PropTypes.string,
+  dateFormat: PropTypes.string,
   defaultValue: PropTypes.instanceOf(Date),
+  displayFormat: PropTypes.string,
   isOpen: PropTypes.bool,
   name: PropTypes.string,
-  onBlur: PropTypes.func,
   onChange: PropTypes.func,
+  onRemoveValue: PropTypes.func,
   shouldCloseOnSelect: PropTypes.bool,
+  showRemoveValue: PropTypes.bool,
   showTimeSelect: PropTypes.bool,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   timeCaption: PropTypes.string,
@@ -123,12 +158,15 @@ DatePicker.propTypes = {
 };
 DatePicker.defaultProps = {
   className: '',
+  dateFormat: 'yyyy-MM-dd',
   defaultValue: undefined,
+  displayFormat: 'yyyy-MM-dd',
   isOpen: false,
   name: undefined,
-  onBlur: () => undefined,
   onChange: () => undefined,
+  onRemoveValue: () => undefined,
   shouldCloseOnSelect: true,
+  showRemoveValue: false,
   showTimeSelect: true,
   style: {},
   timeCaption: 'Hours',

@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.3.3
+- Improved DatePicker with an icon, showing the value and many options
+
 ### 0.3.2
 - Added **ref** prop to AutosaveTextarea
 - Hide scrollbar when the text is longer than the AutosaveTextarea's width
