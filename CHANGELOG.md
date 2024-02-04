@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.3.4
+- Fixed bug with showing/hiding DatePicker
+
 ### 0.3.3
 - Improved DatePicker with an icon, showing the value and many options
 
