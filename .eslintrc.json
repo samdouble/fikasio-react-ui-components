@@ -107,6 +107,7 @@
       "WithStatement"
     ],
     "no-trailing-spaces": "error",
+    "no-underscore-dangle": "off",
     "no-unused-vars": "error",
     "object-curly-newline": [
       "error",
