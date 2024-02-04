@@ -17,6 +17,7 @@ interface DatepickerProps {
   isOpen?: boolean;
   name?: string;
   onChange?: (value: Date) => void;
+  onClose?: () => void;
   onRemoveValue?: (e: SyntheticEvent) => void;
   shouldCloseOnSelect?: boolean;
   showRemoveValue?: boolean;
@@ -36,6 +37,7 @@ export function DatePicker({
   isOpen: pIsOpen,
   name,
   onChange,
+  onClose,
   onRemoveValue,
   shouldCloseOnSelect,
   showRemoveValue,
@@ -92,7 +94,10 @@ export function DatePicker({
       }}
     >
       <ClickOutside
-        onClickOutside={() => setIsOpen(false)}
+        onClickOutside={() => {
+          setIsOpen(false);
+          onClose && onClose();
+        }}
       >
         <DP
           customInput={(
@@ -104,6 +109,10 @@ export function DatePicker({
           )}
           dateFormat={dateFormat}
           name={name}
+          onBlur={() => {
+            setIsOpen(false);
+            onClose && onClose();
+          }}
           onChange={handleChange}
           popperPlacement="auto"
           ref={c => { _calendar = c; }}
