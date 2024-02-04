@@ -60,7 +60,7 @@ export function DatePicker({
 
   useEffect(() => {
     if (pIsOpen !== isOpen) {
-      setIsOpen(pIsOpen)
+      setIsOpen(pIsOpen);
     }
   }, [pIsOpen]);
 
@@ -95,13 +95,13 @@ export function DatePicker({
         onClickOutside={() => setIsOpen(false)}
       >
         <DP
-          customInput={
+          customInput={(
             <input
               name={name}
               type="hidden"
               value={DateTime.fromJSDate(currentValue).toISO()}
             />
-          }
+          )}
           dateFormat={dateFormat}
           name={name}
           onChange={handleChange}
