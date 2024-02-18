@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.4.1
+- Made the AutosaveTextarea controllable with `onChange` and `value` props
+
 ### 0.4.0
 - Added Dot
 - Added SearchBar

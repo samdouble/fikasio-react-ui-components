@@ -39,6 +39,9 @@ function Template({
 }
 
 export const AutosaveTextareaNoStyle = Template.bind({});
-AutosaveTextareaNoStyle.args = {};
+AutosaveTextareaNoStyle.args = {
+  onSave: async () => await new Promise(resolve => setTimeout(resolve, 150)),
+  useContentEditableDiv: true,
+};
 
 export default story;
