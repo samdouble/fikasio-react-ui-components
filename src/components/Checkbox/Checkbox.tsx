@@ -2,10 +2,15 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCheck, faSquare } from '@fortawesome/free-solid-svg-icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
+import './Checkbox.scss';
 
-interface CheckboxProps {
+library.add(faCheck, faSquare);
+
+export interface CheckboxProps {
   className?: string;
   defaultIsChecked?: boolean;
   isChecked?: boolean;

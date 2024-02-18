@@ -125,7 +125,7 @@ export function DatePicker({
             }
           }}
           onChange={handleChange}
-          popperPlacement="auto"
+          popperPlacement="bottom-start"
           popperProps={{
             strategy: 'fixed',
           }}

@@ -1,9 +1,9 @@
 import React from 'react';
-import Footer, { FooterProps } from '../components/Footer/Footer';
+import Dot, { DotProps } from '../components/Dot/Dot';
 
 const story = {
-  title: 'Footer',
-  component: Footer,
+  title: 'Dot',
+  component: Dot,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
@@ -12,17 +12,24 @@ const story = {
 
 function Template({
   className,
+  color,
   style,
-}: FooterProps) {
+  width,
+}: DotProps) {
   return (
-    <Footer
+    <Dot
       className={className}
+      color={color}
       style={style}
+      width={width}
     />
   );
 }
 
-export const FooterNoStyle = Template.bind({});
-FooterNoStyle.args = {};
+export const DotRedWith30 = Template.bind({});
+DotRedWith30.args = {
+  color: 'red',
+  width: 30,
+};
 
 export default story;

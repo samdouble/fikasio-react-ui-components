@@ -20,6 +20,10 @@ import { Footer } from '@fikasio/react-ui-components';
 
 ### Components
 
+#### AutosaveTextarea
+
+TODO
+
 #### Checkbox
 
 | Name                    | Type            | Required        | Description                                     |
@@ -54,15 +58,29 @@ import { Footer } from '@fikasio/react-ui-components';
 | timeIntervals           |                 |                 |                                                 |
 | value                   |                 |                 |                                                 |
 
+#### Dot
+
+TODO
+
 #### Footer
+
 TODO
 
 ##### Props
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
+| childrenCenter          |                 |                 |                                                 |
+| childrenLeft            |                 |                 |                                                 |
+| childrenRight           |                 |                 |                                                 |
+| childrenTop             |                 |                 |                                                 |
 | className               |                 |                 |                                                 |
 | style                   |                 |                 |                                                 |
+
+
+#### SearchBar
+
+TODO
 
 ### Hooks
 
