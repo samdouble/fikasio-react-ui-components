@@ -3,6 +3,7 @@
 ### 0.4.0
 - Added Dot
 - Added SearchBar
+- Added Selector
 - Added the `childrenCenter`, `childrenLeft`, `childrenRight` and `childrenTop` props to the Footer
 
 ### 0.3.6

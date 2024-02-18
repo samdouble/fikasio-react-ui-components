@@ -11,10 +11,6 @@ import './SearchBar.scss';
 library.add(faSearch);
 
 export interface SearchBarProps {
-  childrenLeft?: JSX.Element[];
-  childrenCenter?: JSX.Element[];
-  childrenRight?: JSX.Element[];
-  childrenTop?: JSX.Element[];
   className?: string;
   style?: React.CSSProperties;
 }
@@ -76,18 +72,10 @@ export function SearchBar({
 }
 
 SearchBar.propTypes = {
-  childrenLeft: PropTypes.arrayOf(PropTypes.elementType),
-  childrenCenter: PropTypes.arrayOf(PropTypes.elementType),
-  childrenRight: PropTypes.arrayOf(PropTypes.elementType),
-  childrenTop: PropTypes.arrayOf(PropTypes.elementType),
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 SearchBar.defaultProps = {
-  childrenLeft: [],
-  childrenCenter: [],
-  childrenRight: [],
-  childrenTop: [],
   className: '',
   style: {},
 };
