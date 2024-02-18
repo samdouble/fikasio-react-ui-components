@@ -39,19 +39,17 @@ export function SearchBar({
           marginLeft: 10,
         }}
       />
-      {
-        <input
-          type="text"
-          style={{
-            border: 'none',
-            marginRight: 50,
-            outline: 'none',
-            paddingLeft: 10,
-            position: 'relative',
-            top: -5,
-          }}
-        />
-      }
+      <input
+        type="text"
+        style={{
+          border: 'none',
+          marginRight: 50,
+          outline: 'none',
+          paddingLeft: 10,
+          position: 'relative',
+          top: -5,
+        }}
+      />
       {
         /*
           <Autosuggest
