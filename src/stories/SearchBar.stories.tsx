@@ -1,9 +1,9 @@
 import React from 'react';
-import Footer, { FooterProps } from '../components/Footer/Footer';
+import SearchBar, { SearchBarProps } from '../components/SearchBar/SearchBar';
 
 const story = {
-  title: 'Footer',
-  component: Footer,
+  title: 'SearchBar',
+  component: SearchBar,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
@@ -13,16 +13,16 @@ const story = {
 function Template({
   className,
   style,
-}: FooterProps) {
+}: SearchBarProps) {
   return (
-    <Footer
+    <SearchBar
       className={className}
       style={style}
     />
   );
 }
 
-export const FooterNoStyle = Template.bind({});
-FooterNoStyle.args = {};
+export const SearchBarNoStyle = Template.bind({});
+SearchBarNoStyle.args = {};
 
 export default story;

@@ -1,5 +1,10 @@
 # Changelog
 
+### 0.4.0
+- Added Dot
+- Added SearchBar
+- Added the `childrenCenter`, `childrenLeft`, `childrenRight` and `childrenTop` props to the Footer
+
 ### 0.3.6
 - Fixed bug with showing/hiding DatePicker
 
@@ -7,7 +12,7 @@
 - Improved DatePicker with an icon, showing the value and many options
 
 ### 0.3.2
-- Added **ref** prop to AutosaveTextarea
+- Added the `ref` prop to AutosaveTextarea
 - Hide scrollbar when the text is longer than the AutosaveTextarea's width
 
 ### 0.3.1

@@ -7,7 +7,7 @@ import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './style.scss';
 
-interface AutosaveTextareaProps {
+export interface AutosaveTextareaProps {
   className?: string;
   defaultValue?: string;
   onBlur?: any;

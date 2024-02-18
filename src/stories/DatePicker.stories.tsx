@@ -52,8 +52,8 @@ function Template({
   );
 }
 
-export const WithDefaultValue = Template.bind({});
-WithDefaultValue.args = {
+export const DatePickerWithDefaultValue = Template.bind({});
+DatePickerWithDefaultValue.args = {
   defaultValue: new Date(),
 };
 
