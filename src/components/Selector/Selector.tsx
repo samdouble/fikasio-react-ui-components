@@ -43,12 +43,10 @@ export function Selector({
 
 Selector.propTypes = {
   className: PropTypes.string,
-  color: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 Selector.defaultProps = {
   className: '',
-  color: '#000000',
   style: {},
 };
 
