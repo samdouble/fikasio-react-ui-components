@@ -11,6 +11,7 @@ export interface AutosaveTextareaProps {
   className?: string;
   defaultValue?: string;
   onBlur?: any;
+  onChange?: any;
   onFocus?: any;
   onKeyDown?: any;
   onKeyUp?: any;
@@ -18,12 +19,14 @@ export interface AutosaveTextareaProps {
   ref?: React.Ref<any>,
   style?: React.CSSProperties;
   useContentEditableDiv?: boolean;
+  value?: string;
 }
 
 function AutosaveTextarea({
   className,
   defaultValue,
   onBlur,
+  onChange,
   onFocus,
   onKeyDown,
   onKeyUp,
@@ -31,15 +34,32 @@ function AutosaveTextarea({
   ref,
   style,
   useContentEditableDiv,
+  value,
 }: AutosaveTextareaProps) {
-  const [value, setIValue] = useState(defaultValue ? defaultValue.toString() : '');
+  const isControlled = typeof value !== 'undefined';
+  const hasDefaultValue = typeof defaultValue !== 'undefined';
+  const [internalValue, setInternalValue] = useState<string>(
+    hasDefaultValue ? defaultValue.toString() : '',
+  );
+  const currentValue = isControlled ? value : internalValue;
+
   const [delay, setDelay] = useState<number | null>(null);
 
   const theme = useTheme();
 
+  const handleChange = newValue => {
+    setDelay(1000);
+    if (onChange) {
+      onChange(newValue);
+    }
+    if (!isControlled) {
+      setInternalValue(newValue);
+    }
+  };
+
   const saveValue = () => {
-    if (value !== '') {
-      onSave(value);
+    if (currentValue !== '') {
+      onSave(currentValue);
     }
   };
 
@@ -47,11 +67,6 @@ function AutosaveTextarea({
     saveValue();
     setDelay(null);
   }, delay);
-
-  const setValue = val => {
-    setDelay(1000);
-    setIValue(val);
-  };
 
   return useContentEditableDiv
     ? (
@@ -62,9 +77,9 @@ function AutosaveTextarea({
           'fikasio-theme-light': theme === 'light',
           ...convertClassNameToObj(className),
         })}
-        html={value}
+        html={currentValue}
         onBlur={e => onBlur && onBlur(e)}
-        onChange={e => setValue(e.target.value)}
+        onChange={e => handleChange(e.target.value)}
         onClick={e => e.stopPropagation()}
         onFocus={e => onFocus && onFocus(e)}
         onKeyDown={e => onKeyDown && onKeyDown(e)}
@@ -78,9 +93,8 @@ function AutosaveTextarea({
     ) : (
       <textarea
         className={className}
-        defaultValue={value}
         onBlur={e => onBlur(e)}
-        onChange={e => setValue(e.target.value)}
+        onChange={e => handleChange(e.target.value)}
         onClick={e => e.stopPropagation()}
         onFocus={e => onFocus(e)}
         onKeyDown={e => onKeyDown(e)}
@@ -89,6 +103,7 @@ function AutosaveTextarea({
         style={{
           ...style,
         }}
+        value={currentValue}
       />
     );
 }
