@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Selector Renders correctly 1`] = `
+<span
+  className="fikasio-selector fikasio-theme-dark"
+  style={Object {}}
+>
+  <span
+    style={
+      Object {
+        "bottom": -1,
+        "paddingLeft": 4,
+        "position": "relative",
+      }
+    }
+  >
+    +
+  </span>
+</span>
+`;

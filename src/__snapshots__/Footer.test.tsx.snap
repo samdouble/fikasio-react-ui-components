@@ -5,6 +5,57 @@ exports[`Footer Renders correctly 1`] = `
   className="fikasio-footer fikasio-theme-dark"
   style={Object {}}
 >
-  © 2023 fikas.io
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="row"
+      style={
+        Object {
+          "backgroundColor": "#2e2e2e",
+          "paddingTop": 25,
+        }
+      }
+    >
+      <div
+        className="col-md-12"
+      >
+        <div
+          className="text-center"
+        />
+      </div>
+    </div>
+    <div
+      className="row"
+      style={
+        Object {
+          "backgroundColor": "#2e2e2e",
+          "paddingBottom": 25,
+        }
+      }
+    >
+      <div
+        className="col-md-4"
+      >
+        <div
+          className="text-left"
+        />
+      </div>
+      <div
+        className="col-md-4"
+      >
+        <div
+          className="text-center"
+        />
+      </div>
+      <div
+        className="col-md-4"
+      >
+        <div
+          className="text-right"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 `;
