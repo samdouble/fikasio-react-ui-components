@@ -112,17 +112,20 @@ AutosaveTextarea.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.string,
   onBlur: PropTypes.func,
+  onChange: PropTypes.func,
   onFocus: PropTypes.func,
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func,
   onSave: PropTypes.func,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   useContentEditableDiv: PropTypes.bool,
+  value: PropTypes.string,
 };
 AutosaveTextarea.defaultProps = {
   className: '',
   defaultValue: undefined,
   onBlur: () => undefined,
+  onChange: () => undefined,
   onFocus: () => undefined,
   onKeyDown: () => undefined,
   onKeyUp: () => undefined,
@@ -130,6 +133,7 @@ AutosaveTextarea.defaultProps = {
   ref: undefined,
   style: {},
   useContentEditableDiv: true,
+  value: undefined,
 };
 
 export default AutosaveTextarea;
