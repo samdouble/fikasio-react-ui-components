@@ -44,7 +44,7 @@ Select.propTypes = {
     PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.string,
-    })
+    }),
   ),
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
