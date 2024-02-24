@@ -3,10 +3,13 @@
 ## Installation
 
 Use **npm**:
+
 ```
 npm install --save @fikasio/react-ui-components
 ```
+
 or **Yarn**:
+
 ```
 yarn add @fikasio/react-ui-components
 ```
@@ -14,6 +17,7 @@ yarn add @fikasio/react-ui-components
 ## Usage
 
 Import components from the package in your React application, for example:
+
 ```
 import { Footer } from '@fikasio/react-ui-components';
 ```
@@ -21,6 +25,10 @@ import { Footer } from '@fikasio/react-ui-components';
 ### Components
 
 #### AutosaveTextarea
+
+TODO
+
+#### Button
 
 TODO
 
@@ -81,6 +89,10 @@ TODO
 
 TODO
 
+#### DatePicker
+
+TODO
+
 #### Selector
 
 TODO
@@ -88,6 +100,7 @@ TODO
 ### Hooks
 
 #### useTheme
+
 TODO
 
 ## Development

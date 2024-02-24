@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.5.0
+- Added Button
+- Added Select
+
 ### 0.4.1
 - Made the AutosaveTextarea controllable with `onChange` and `value` props
 
