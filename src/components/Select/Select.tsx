@@ -1,25 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactSelect from 'react-select';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import './Selector.scss';
+import './Select.scss';
 
-export interface SelectorProps {
+export interface SelectProps {
   className?: string;
+  options: { label: string; value: string; }[];
   style?: React.CSSProperties;
 }
 
-export function Selector({
+export function Select({
   className,
+  options,
   style,
-}: SelectorProps) {
+}: SelectProps) {
   const theme = useTheme();
 
   return (
     <span
       className={classNames({
-        'fikasio-selector': true,
+        'fikasio-select': true,
         'fikasio-theme-dark': theme === 'dark',
         'fikasio-theme-light': theme === 'light',
         ...convertClassNameToObj(className),
@@ -28,26 +31,27 @@ export function Selector({
         ...style,
       }}
     >
-      <span
-        style={{
-          bottom: 1,
-          paddingLeft: 6,
-          position: 'relative',
-        }}
-      >
-        +
-      </span>
+      <ReactSelect
+        options={options}
+      />
     </span>
   );
 }
 
-Selector.propTypes = {
+Select.propTypes = {
   className: PropTypes.string,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+    })
+  ),
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
-Selector.defaultProps = {
+Select.defaultProps = {
   className: '',
+  options: [],
   style: {},
 };
 
-export default Selector;
+export default Select;

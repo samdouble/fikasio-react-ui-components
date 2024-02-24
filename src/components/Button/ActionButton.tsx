@@ -1,25 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BootstrapButton from 'react-bootstrap/Button';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import './Selector.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Button.scss';
 
-export interface SelectorProps {
+export interface ActionButtonProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
-export function Selector({
+export function ActionButton({
   className,
   style,
-}: SelectorProps) {
+}: ActionButtonProps) {
   const theme = useTheme();
 
   return (
-    <span
+    <BootstrapButton
       className={classNames({
-        'fikasio-selector': true,
+        'fikasio-actionbutton': true,
         'fikasio-theme-dark': theme === 'dark',
         'fikasio-theme-light': theme === 'light',
         ...convertClassNameToObj(className),
@@ -27,27 +29,20 @@ export function Selector({
       style={{
         ...style,
       }}
+      variant="primary"
     >
-      <span
-        style={{
-          bottom: 1,
-          paddingLeft: 6,
-          position: 'relative',
-        }}
-      >
-        +
-      </span>
-    </span>
+      Hello
+    </BootstrapButton>
   );
 }
 
-Selector.propTypes = {
+ActionButton.propTypes = {
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
-Selector.defaultProps = {
+ActionButton.defaultProps = {
   className: '',
   style: {},
 };
 
-export default Selector;
+export default ActionButton;
