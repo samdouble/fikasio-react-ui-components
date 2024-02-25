@@ -54,9 +54,10 @@ export function Select({
       }}
     >
       <ReactSelect
-        defaultValue={options.find(o => o.value === defaultValue)}
+        defaultValue={options.find(o => o.value === currentValue)}
         onChange={handleChange}
         options={options}
+        placeholder=""
         styles={{
           control: baseStyles => ({
             ...baseStyles,

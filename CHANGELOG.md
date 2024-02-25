@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.6.0
+- Added Warning
+
 ### 0.5.1
 - Made Select both controllable and uncontrollable
 

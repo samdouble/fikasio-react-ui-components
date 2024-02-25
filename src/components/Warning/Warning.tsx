@@ -1,62 +1,61 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BootstrapButton from 'react-bootstrap/Button';
+import BootstrapAlert from 'react-bootstrap/Alert';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Button.scss';
+import './Warning.scss';
 
-export interface ActionButtonProps {
+export interface WarningProps {
   children: JSX.Element;
   className?: string;
-  onClick?: () => void;
   style?: React.CSSProperties;
-  type?: 'submit';
 }
 
-export function ActionButton({
+export function Warning({
   children,
   className,
-  onClick,
   style,
-  type,
-}: ActionButtonProps) {
+}: WarningProps) {
   const theme = useTheme();
 
   return (
-    <BootstrapButton
+    <div
       className={classNames({
-        'fikasio-actionbutton': true,
+        'fikasio-warning': true,
         'fikasio-theme-dark': theme === 'dark',
         'fikasio-theme-light': theme === 'light',
         ...convertClassNameToObj(className),
       })}
-      onClick={onClick}
-      style={{
-        ...style,
-      }}
-      type={type}
-      variant="primary"
+      style={style}
     >
-      {children}
-    </BootstrapButton>
+      <BootstrapAlert
+        variant="warning"
+      >
+        <FontAwesomeIcon
+          icon="triangle-exclamation"
+          size="lg"
+          style={{
+            fontSize: 16,
+            marginRight: 10,
+          }}
+        />
+        {children}
+      </BootstrapAlert>
+    </div>
   );
 }
 
-ActionButton.propTypes = {
+Warning.propTypes = {
   children: PropTypes.element,
   className: PropTypes.string,
-  onClick: PropTypes.func,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  type: PropTypes.string,
 };
-ActionButton.defaultProps = {
+Warning.defaultProps = {
   children: undefined,
   className: '',
-  onClick: () => undefined,
   style: {},
-  type: undefined,
 };
 
-export default ActionButton;
+export default Warning;

@@ -30,9 +30,7 @@ export function Selector({
     >
       <span
         style={{
-          bottom: 1,
-          paddingLeft: 6,
-          position: 'relative',
+          paddingLeft: 5,
         }}
       >
         +
