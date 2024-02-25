@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.5.1
+- Made Select both controllable and uncontrollable
+
 ### 0.5.0
 - Added Button
 - Added Select
