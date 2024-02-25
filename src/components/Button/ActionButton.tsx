@@ -52,7 +52,7 @@ ActionButton.propTypes = {
   type: PropTypes.string,
 };
 ActionButton.defaultProps = {
-  children: <></>,
+  children: undefined,
   className: '',
   onClick: () => undefined,
   style: {},
