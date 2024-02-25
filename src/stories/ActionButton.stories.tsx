@@ -12,14 +12,21 @@ const story = {
 };
 
 function Template({
+  children,
   className,
+  onClick,
   style,
+  type,
 }: ActionButtonProps) {
   return (
     <Button.Action
       className={className}
+      onClick={onClick}
       style={style}
-    />
+      type={type}
+    >
+      {children}
+    </Button.Action>
   );
 }
 

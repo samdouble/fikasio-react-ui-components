@@ -12,14 +12,20 @@ const story = {
 
 function Template({
   className,
+  defaultValue,
+  onChange,
   options,
   style,
+  value,
 }: SelectProps) {
   return (
     <Select
       className={className}
+      defaultValue={defaultValue}
+      onChange={onChange}
       options={options}
       style={style}
+      value={value}
     />
   );
 }
