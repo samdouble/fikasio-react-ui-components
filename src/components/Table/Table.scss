@@ -1,0 +1,33 @@
+.fikasio-table {
+  table-layout: fixed;
+}
+
+.fikasio-table thead tr {
+  background-color: #eeeeee;
+}
+
+.fikasio-table tr td {
+  background-clip: padding-box;
+  background-color: white !important;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.fikasio-table tr th {
+  background-color: inherit;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.fikasio-table tr th.sortable-column {
+  cursor: pointer;
+}
+
+.fikasio-table tr .sortable-column-buttons {
+  margin-left: 15px;
+  visibility: hidden;
+}
+
+.fikasio-table tr .sortable-column:hover .sortable-column-buttons {
+  visibility: visible;
+}

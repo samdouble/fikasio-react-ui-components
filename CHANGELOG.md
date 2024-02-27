@@ -1,6 +1,7 @@
 # Changelog
 
 ### 0.6.0
+- Added Table
 - Added Warning
 
 ### 0.5.1

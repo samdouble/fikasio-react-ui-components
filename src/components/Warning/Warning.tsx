@@ -1,11 +1,15 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import BootstrapAlert from 'react-bootstrap/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Warning.scss';
+
+library.add(faTriangleExclamation);
 
 export interface WarningProps {
   children: JSX.Element;

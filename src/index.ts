@@ -7,6 +7,7 @@ export { Footer } from './Footer';
 export { Select } from './Select';
 export { Selector } from './Selector';
 export { SearchBar } from './SearchBar';
+export { Table } from './Table';
 export { Warning } from './Warning';
 export { useTheme } from './useTheme';
 

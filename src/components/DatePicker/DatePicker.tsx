@@ -10,7 +10,7 @@ import { DateTime } from 'luxon';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import 'react-datepicker/dist/react-datepicker.css';
-import './style.scss';
+import './DatePicker.scss';
 
 library.add(faCalendarAlt);
 
