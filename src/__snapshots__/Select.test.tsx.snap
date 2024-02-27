@@ -21,7 +21,7 @@ exports[`Select Renders correctly 1`] = `
       role="log"
     />
     <div
-      className=" css-1im77uy-control"
+      className=" css-1k6mlct-control"
       onMouseDown={[Function]}
       onTouchEnd={[Function]}
     >
@@ -31,9 +31,7 @@ exports[`Select Renders correctly 1`] = `
         <div
           className=" css-1jqq78o-placeholder"
           id="react-select-2-placeholder"
-        >
-          Select...
-        </div>
+        />
         <div
           className=" css-qbdosj-Input"
           data-value=""

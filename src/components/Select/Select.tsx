@@ -61,7 +61,11 @@ export function Select({
         styles={{
           control: baseStyles => ({
             ...baseStyles,
-            borderRadius: 0,
+            border: style?.border,
+            borderColor: style?.borderColor,
+            borderRadius: style?.borderRadius || 0,
+            borderStyle: style?.borderStyle,
+            borderWidth: style?.borderWidth,
           }),
         }}
         value={currentValue}
