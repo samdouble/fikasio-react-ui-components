@@ -177,7 +177,7 @@ export function Table({
             .map((row, index) => (
               <tr
                 className="itemRow"
-                key={index}
+                key={JSON.stringify(row)}
               >
                 {
                   columns
@@ -200,7 +200,7 @@ export function Table({
                         return (
                           <td
                             className="itemStaticColumn-left"
-                            key={JSON.stringify(row)}
+                            key={column.name}
                           >
                             <Checkbox
                               defaultIsChecked={column.isChecked(row)}
