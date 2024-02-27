@@ -131,7 +131,8 @@ export function Table({
                       </span>
                     </th>
                   );
-                } else if (column.type === 'checkbox') {
+                }
+                if (column.type === 'checkbox') {
                   return (
                     <th
                       className="itemStaticColumn-left"
@@ -142,7 +143,8 @@ export function Table({
                       }}
                     />
                   );
-                } else if (column.type === 'numbering') {
+                }
+                if (column.type === 'numbering') {
                   return (
                     <th
                       key={column.name}
@@ -151,7 +153,8 @@ export function Table({
                       }}
                     />
                   );
-                } else if (column.type === 'options') {
+                }
+                if (column.type === 'options') {
                   return (
                     <th
                       className="itemStaticColumn-right"
@@ -171,68 +174,67 @@ export function Table({
       <tbody>
         {
           orderedRows
-            .map((row, index) => {
-              return (
-                <tr
-                  className="itemRow"
-                  key={index}
-                >
-                  {
-                    columns
-                      .map(column => {
-                        if (column.type === 'cell') {
-                          return (
-                            <td
-                              className="itemRow_field"
-                              key={column.name}
-                            >
-                              {
-                                column.render
-                                  ? column.render(row)
-                                  : row[column.property]
-                              }
-                            </td>
-                          );
-                        } else if (column.type === 'checkbox') {
-                          return (
-                            <td
-                              className="itemStaticColumn-left"
-                              key={column.name}
-                            >
-                              <Checkbox
-                                defaultIsChecked={column.isChecked(row)}
-                                onClick={() => {
-                                  if (column.onClick) {
-                                    column.onClick(row);
-                                  }
-                                }}
-                              />
-                            </td>
-                          );
-                        } else if (column.type === 'numbering') {
-                          return (
-                            <td
-                              key={column.name}
-                            >
-                              {index + 1}
-                            </td>
-                          );
-                        } else if (column.type === 'options') {
-                          return (
-                            <td
-                              className="itemStaticColumn-right"
-                              key={column.name}
-                            >
-                              {options(row)}
-                            </td>
-                          );
-                        }
-                        return null;
-                      })
-                  }
-                </tr>
-              );
-            })
+            .map((row, index) => (
+              <tr
+                className="itemRow"
+                key={index}
+              >
+                {
+                  columns
+                    .map(column => {
+                      if (column.type === 'cell') {
+                        return (
+                          <td
+                            className="itemRow_field"
+                            key={column.name}
+                          >
+                            {
+                              column.render
+                                ? column.render(row)
+                                : row[column.property]
+                            }
+                          </td>
+                        );
+                      } else if (column.type === 'checkbox') {
+                        return (
+                          <td
+                            className="itemStaticColumn-left"
+                            key={column.name}
+                          >
+                            <Checkbox
+                              defaultIsChecked={column.isChecked(row)}
+                              onClick={() => {
+                                if (column.onClick) {
+                                  column.onClick(row);
+                                }
+                              }}
+                            />
+                          </td>
+                        );
+                      } else if (column.type === 'numbering') {
+                        return (
+                          <td
+                            key={column.name}
+                          >
+                            {index + 1}
+                          </td>
+                        );
+                      } else if (column.type === 'options') {
+                        return (
+                          <td
+                            className="itemStaticColumn-right"
+                            key={column.name}
+                          >
+                            {options(row)}
+                          </td>
+                        );
+                      }
+                      return null;
+                    })
+                }
+              </tr>
+            )
+          )
         }
       </tbody>
     </BootstrapTable>
@@ -250,7 +252,7 @@ Table.propTypes = {
     }),
   ),
   options: PropTypes.func,
-  rows: PropTypes.arrayOf(PropTypes.object),
+  rows: PropTypes.arrayOf(PropTypes.any),
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 Table.defaultProps = {
