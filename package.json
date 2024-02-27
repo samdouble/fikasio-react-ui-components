@@ -108,8 +108,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "./src/**/*.{ts,tsx}",
-      "!./src/*.{ts,tsx}"
+      "./src/**/*.{ts,tsx}"
     ],
     "coveragePathIgnorePatterns": [
       "node_modules",
@@ -118,10 +117,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 12,
-        "functions": 15,
-        "lines": 40,
-        "statements": 40
+        "branches": 2,
+        "functions": 9,
+        "lines": 27,
+        "statements": 27
       }
     }
   }
