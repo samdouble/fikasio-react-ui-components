@@ -75,6 +75,7 @@
         "SwitchCase": 1
       }
     ],
+    "jsx-a11y/control-has-associated-label": "off",
     "max-len": [
       "error",
       {

@@ -195,11 +195,12 @@ export function Table({
                             }
                           </td>
                         );
-                      } else if (column.type === 'checkbox') {
+                      }
+                      if (column.type === 'checkbox') {
                         return (
                           <td
                             className="itemStaticColumn-left"
-                            key={column.name}
+                            key={JSON.stringify(row)}
                           >
                             <Checkbox
                               defaultIsChecked={column.isChecked(row)}
@@ -211,7 +212,8 @@ export function Table({
                             />
                           </td>
                         );
-                      } else if (column.type === 'numbering') {
+                      }
+                      if (column.type === 'numbering') {
                         return (
                           <td
                             key={column.name}
@@ -219,7 +221,8 @@ export function Table({
                             {index + 1}
                           </td>
                         );
-                      } else if (column.type === 'options') {
+                      }
+                      if (column.type === 'options') {
                         return (
                           <td
                             className="itemStaticColumn-right"
@@ -233,8 +236,7 @@ export function Table({
                     })
                 }
               </tr>
-            )
-          )
+            ))
         }
       </tbody>
     </BootstrapTable>
@@ -252,7 +254,9 @@ Table.propTypes = {
     }),
   ),
   options: PropTypes.func,
-  rows: PropTypes.arrayOf(PropTypes.any),
+  rows: PropTypes.arrayOf(
+    PropTypes.shape({}),
+  ),
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 Table.defaultProps = {
