@@ -21,7 +21,7 @@ exports[`Select Renders correctly 1`] = `
       role="log"
     />
     <div
-      className=" css-1k6mlct-control"
+      className=" css-1ugolod-control"
       onMouseDown={[Function]}
       onTouchEnd={[Function]}
     >
