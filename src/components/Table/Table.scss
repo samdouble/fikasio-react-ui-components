@@ -31,3 +31,15 @@
 .fikasio-table tr .sortable-column:hover .sortable-column-buttons {
   visibility: visible;
 }
+
+.itemStaticColumn-left {
+  left: 0;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.itemStaticColumn-right {
+  position: -webkit-sticky;
+  position: sticky;
+  right: 0;
+}

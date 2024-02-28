@@ -44,9 +44,9 @@ type Row = any;
 
 export interface TableProps {
   className?: string;
-  columns: (CellColumn | CheckboxColumn | NumberingColumn | OptionsColumn)[],
-  options: (row: Row) => JSX.Element,
-  rows?: Row[],
+  columns: (CellColumn | CheckboxColumn | NumberingColumn | OptionsColumn)[];
+  options: (row: Row) => JSX.Element;
+  rows?: Row[];
   style?: React.CSSProperties;
 }
 

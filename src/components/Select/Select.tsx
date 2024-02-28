@@ -61,7 +61,7 @@ export function Select({
         styles={{
           control: baseStyles => ({
             ...baseStyles,
-            border: style?.border,
+            border: style?.border || '1px solid #cccccc',
             borderColor: style?.borderColor,
             borderRadius: style?.borderRadius || 0,
             borderStyle: style?.borderStyle,
