@@ -13,6 +13,9 @@ const story = {
 function Template({
   className,
   columns,
+  isRowChecked,
+  isSelectable,
+  onRowClick,
   options,
   rows,
   style,
@@ -21,6 +24,9 @@ function Template({
     <Table
       className={className}
       columns={columns}
+      isRowChecked={isRowChecked}
+      isSelectable={isSelectable}
+      onRowClick={onRowClick}
       options={options}
       rows={rows}
       style={style}
@@ -32,14 +38,14 @@ export const TableNoStyle = Template.bind({});
 TableNoStyle.args = {
   columns: [
     {
+      isSortable: true,
       name: 'Last name',
       render: r => r.lastName,
-      sortable: true,
       type: 'cell',
     }, {
+      isSortable: true,
       name: 'First name',
       render: r => r.firstName,
-      sortable: true,
       type: 'cell',
     },
   ],

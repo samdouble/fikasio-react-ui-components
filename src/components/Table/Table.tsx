@@ -17,19 +17,14 @@ interface Column {
   name?: string;
   onClick?: (row: Row) => void;
   render?: (row: Row) => JSX.Element;
-  type: 'cell' | 'checkbox' | 'numbering' | 'options';
+  type: 'cell' | 'numbering' | 'options';
 }
 
 interface CellColumn extends Column {
+  isSortable?: boolean;
   property: string;
-  sortable?: boolean;
   type: 'cell';
   value: (row: Row) => (string | number | boolean);
-}
-
-interface CheckboxColumn extends Column {
-  isChecked: (row: Row) => boolean;
-  type: 'checkbox';
 }
 
 interface NumberingColumn extends Column {
@@ -44,7 +39,10 @@ type Row = any;
 
 export interface TableProps {
   className?: string;
-  columns: (CellColumn | CheckboxColumn | NumberingColumn | OptionsColumn)[];
+  columns: (CellColumn | NumberingColumn | OptionsColumn)[];
+  isRowChecked?: (row: any) => boolean;
+  isSelectable?: boolean;
+  onRowClick?: (row: any) => void;
   options: (row: Row) => JSX.Element;
   rows?: Row[];
   style?: React.CSSProperties;
@@ -53,6 +51,9 @@ export interface TableProps {
 export function Table({
   className,
   columns,
+  isRowChecked,
+  isSelectable,
+  onRowClick,
   options,
   rows,
   style,
@@ -106,13 +107,23 @@ export function Table({
       <thead>
         <tr>
           {
+            isSelectable && (
+              <th
+                style={{
+                  textAlign: 'center',
+                  width: 35,
+                }}
+              />
+            )
+          }
+          {
             columns
               .map(column => {
                 if (column.type === 'cell') {
                   return (
                     <th
                       className={classNames({
-                        'sortable-column': column.sortable,
+                        'sortable-column': column.isSortable,
                       })}
                       key={column.name}
                       onClick={() => setOrderedBy(column)}
@@ -130,18 +141,6 @@ export function Table({
                         />
                       </span>
                     </th>
-                  );
-                }
-                if (column.type === 'checkbox') {
-                  return (
-                    <th
-                      className="itemStaticColumn-left"
-                      key={column.name}
-                      style={{
-                        textAlign: 'center',
-                        width: 35,
-                      }}
-                    />
                   );
                 }
                 if (column.type === 'numbering') {
@@ -180,6 +179,20 @@ export function Table({
                 key={JSON.stringify(row)}
               >
                 {
+                  isSelectable && (
+                    <td>
+                      <Checkbox
+                        defaultIsChecked={isRowChecked && isRowChecked(row)}
+                        onClick={() => {
+                          if (onRowClick) {
+                            onRowClick(row);
+                          }
+                        }}
+                      />
+                    </td>
+                  )
+                }
+                {
                   columns
                     .map(column => {
                       if (column.type === 'cell') {
@@ -193,23 +206,6 @@ export function Table({
                                 ? column.render(row)
                                 : row[column.property]
                             }
-                          </td>
-                        );
-                      }
-                      if (column.type === 'checkbox') {
-                        return (
-                          <td
-                            className="itemStaticColumn-left"
-                            key={column.name}
-                          >
-                            <Checkbox
-                              defaultIsChecked={column.isChecked(row)}
-                              onClick={() => {
-                                if (column.onClick) {
-                                  column.onClick(row);
-                                }
-                              }}
-                            />
                           </td>
                         );
                       }
