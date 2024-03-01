@@ -26,6 +26,13 @@ const DropdownToggle = React.forwardRef((
 ) => {
   const theme = useTheme();
 
+  const handleClick = e => {
+    e.preventDefault();
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
   return (
     <div
       className={classNames({
@@ -34,20 +41,12 @@ const DropdownToggle = React.forwardRef((
         'fikasio-theme-light': theme === 'light',
         ...convertClassNameToObj(className),
       })}
-      onClick={e => {
-        e.preventDefault();
-        if (onClick) {
-          onClick(e);
-        }
-      }}
-      onKeyDown={e => {
-        e.preventDefault();
-        if (onClick) {
-          onClick(e);
-        }
-      }}
+      onClick={handleClick}
+      onKeyDown={handleClick}
       ref={ref}
+      role="button"
       style={style}
+      tabIndex={0}
     >
       <FontAwesomeIcon
         icon="ellipsis"
