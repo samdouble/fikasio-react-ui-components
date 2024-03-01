@@ -32,7 +32,7 @@ export function Input({
 
   const theme = useTheme();
 
-  const handleChange = (newValue) => {
+  const handleChange = newValue => {
     if (onChange) {
       onChange(newValue);
     }

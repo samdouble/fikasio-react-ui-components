@@ -41,7 +41,6 @@ export function Select({
     }
   };
 
-  console.log(currentValue, options.find(o => o.value === currentValue))
   return (
     <span
       className={classNames({
