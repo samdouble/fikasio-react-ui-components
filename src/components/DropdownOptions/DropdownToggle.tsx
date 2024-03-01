@@ -41,6 +41,7 @@ const DropdownToggle = React.forwardRef((
         }
       }}
       ref={ref}
+      role="button"
       style={style}
     >
       <FontAwesomeIcon
