@@ -30,8 +30,8 @@ function Template({
   );
 }
 
-export const SelectOneOption = Template.bind({});
-SelectOneOption.args = {
+export const SelectTwoOptions = Template.bind({});
+SelectTwoOptions.args = {
   defaultValue: 'B',
   options: [
     {

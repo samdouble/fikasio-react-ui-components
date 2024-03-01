@@ -250,6 +250,9 @@ Table.propTypes = {
       type: PropTypes.string,
     }),
   ),
+  isRowChecked: PropTypes.func,
+  isSelectable: PropTypes.func,
+  onRowClick: PropTypes.func,
   options: PropTypes.func,
   rows: PropTypes.arrayOf(
     PropTypes.shape({}),
@@ -259,6 +262,9 @@ Table.propTypes = {
 Table.defaultProps = {
   className: '',
   columns: [],
+  isRowChecked: () => undefined,
+  isSelectable: () => undefined,
+  onRowClick: () => undefined,
   options: () => undefined,
   rows: [],
   style: {},
