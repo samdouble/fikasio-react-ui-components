@@ -16,7 +16,10 @@ exports[`DropdownOptions Renders correctly 1`] = `
     <div
       className="fikasio-dropdownOptions-toggle fikasio-theme-dark dropdown-toggle"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
       style={Object {}}
+      tabIndex={0}
     >
       <svg
         aria-hidden="true"

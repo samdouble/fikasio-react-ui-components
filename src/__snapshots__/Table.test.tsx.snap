@@ -9,7 +9,16 @@ exports[`Table Renders correctly 1`] = `
     style={Object {}}
   >
     <thead>
-      <tr />
+      <tr>
+        <th
+          style={
+            Object {
+              "textAlign": "center",
+              "width": 35,
+            }
+          }
+        />
+      </tr>
     </thead>
     <tbody />
   </table>
