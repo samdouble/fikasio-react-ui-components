@@ -40,8 +40,13 @@ const DropdownToggle = React.forwardRef((
           onClick(e);
         }
       }}
+      onKeyDown={e => {
+        e.preventDefault();
+        if (onClick) {
+          onClick(e);
+        }
+      }}
       ref={ref}
-      role="button"
       style={style}
     >
       <FontAwesomeIcon
