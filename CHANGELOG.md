@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.7.0
+- Added DropdownOptions
+- Added Input
+
 ### 0.6.0
 - Added Table
 - Added Warning

@@ -1,0 +1,9 @@
+@import '../../themes.scss';
+
+.fikasio-input {
+  font-family: $fontFamily;
+}
+
+.fikasio-input .form-control:focus {
+  outline: none;
+}

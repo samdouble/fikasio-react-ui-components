@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Renders correctly 1`] = `
+<div
+  className="fikasio-input fikasio-theme-dark"
+  style={
+    Object {
+      "border": "1px solid #cccccc",
+    }
+  }
+>
+  <input
+    className="form-control"
+    onChange={[Function]}
+    style={
+      Object {
+        "border": "none",
+        "borderRadius": 0,
+        "height": 30,
+        "padding": 3,
+        "paddingLeft": 10,
+        "width": "98%",
+      }
+    }
+    value=""
+  />
+</div>
+`;

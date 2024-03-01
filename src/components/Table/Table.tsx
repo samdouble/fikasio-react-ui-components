@@ -9,6 +9,7 @@ import usePrevious from 'use-previous';
 import { Checkbox } from '../Checkbox/Checkbox';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Table.scss';
 
 library.add(faCaretUp);

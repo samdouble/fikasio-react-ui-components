@@ -1,9 +1,9 @@
 import React from 'react';
-import Select, { SelectProps } from '../components/Select/Select';
+import Input, { InputProps } from '../components/Input/Input';
 
 const story = {
-  title: 'Select',
-  component: Select,
+  title: 'Input',
+  component: Input,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
@@ -13,35 +13,24 @@ const story = {
 function Template({
   className,
   defaultValue,
+  name,
   onChange,
-  options,
   style,
   value,
-}: SelectProps) {
+}: InputProps) {
   return (
-    <Select
+    <Input
       className={className}
       defaultValue={defaultValue}
+      name={name}
       onChange={onChange}
-      options={options}
       style={style}
       value={value}
     />
   );
 }
 
-export const SelectOneOption = Template.bind({});
-SelectOneOption.args = {
-  defaultValue: 'B',
-  options: [
-    {
-      label: 'A',
-      value: 'A',
-    }, {
-      label: 'B',
-      value: 'B',
-    },
-  ],
-};
+export const InputUnchecked = Template.bind({});
+InputUnchecked.args = {};
 
 export default story;

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
+import { Input } from '../Input/Input';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './SearchBar.scss';
@@ -22,32 +23,20 @@ export function SearchBar({
   const theme = useTheme();
 
   return (
-    <div
-      className={classNames({
-        'fikasio-searchbar': true,
-        'fikasio-theme-dark': theme === 'dark',
-        'fikasio-theme-light': theme === 'light',
-        ...convertClassNameToObj(className),
-      })}
-      style={style}
-    >
-      <FontAwesomeIcon
-        icon="search"
-        size="1x"
+    <>
+      <Input
+        className={classNames({
+          'fikasio-searchbar': true,
+          'fikasio-theme-dark': theme === 'dark',
+          'fikasio-theme-light': theme === 'light',
+          ...convertClassNameToObj(className),
+        })}
         style={{
-          margin: 5,
-          marginLeft: 10,
-        }}
-      />
-      <input
-        type="text"
-        style={{
-          border: 'none',
-          marginRight: 50,
           outline: 'none',
-          paddingLeft: 10,
+          paddingLeft: 22,
           position: 'relative',
           top: -5,
+          ...style,
         }}
       />
       {
@@ -65,7 +54,17 @@ export function SearchBar({
           />
         */
       }
-    </div>
+      <FontAwesomeIcon
+        icon="search"
+        size="1x"
+        style={{
+          bottom: 36,
+          margin: 5,
+          marginLeft: 10,
+          position: 'relative',
+        }}
+      />
+    </>
   );
 }
 
