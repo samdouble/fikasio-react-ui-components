@@ -8,7 +8,9 @@ exports[`Selector Renders correctly 1`] = `
   <span
     style={
       Object {
+        "bottom": 2,
         "paddingLeft": 5,
+        "position": "relative",
       }
     }
   >

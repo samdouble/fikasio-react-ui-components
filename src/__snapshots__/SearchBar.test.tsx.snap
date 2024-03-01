@@ -1,10 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchBar Renders correctly 1`] = `
-<div
-  className="fikasio-searchbar fikasio-theme-dark"
-  style={Object {}}
->
+Array [
+  <div
+    className="fikasio-input fikasio-theme-dark fikasio-searchbar"
+    style={
+      Object {
+        "border": "1px solid #cccccc",
+        "outline": "none",
+        "paddingLeft": 22,
+        "position": "relative",
+        "top": -5,
+      }
+    }
+  >
+    <input
+      className="form-control"
+      onChange={[Function]}
+      style={
+        Object {
+          "border": "none",
+          "borderRadius": 0,
+          "height": 30,
+          "padding": 3,
+          "paddingLeft": 10,
+          "width": "98%",
+        }
+      }
+      value=""
+    />
+  </div>,
   <svg
     aria-hidden="true"
     className="svg-inline--fa fa-magnifying-glass fa-1x "
@@ -14,8 +39,10 @@ exports[`SearchBar Renders correctly 1`] = `
     role="img"
     style={
       Object {
+        "bottom": 36,
         "margin": 5,
         "marginLeft": 10,
+        "position": "relative",
       }
     }
     viewBox="0 0 512 512"
@@ -26,19 +53,6 @@ exports[`SearchBar Renders correctly 1`] = `
       fill="currentColor"
       style={Object {}}
     />
-  </svg>
-  <input
-    style={
-      Object {
-        "border": "none",
-        "marginRight": 50,
-        "outline": "none",
-        "paddingLeft": 10,
-        "position": "relative",
-        "top": -5,
-      }
-    }
-    type="text"
-  />
-</div>
+  </svg>,
+]
 `;

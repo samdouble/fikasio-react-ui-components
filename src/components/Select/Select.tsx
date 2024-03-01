@@ -41,6 +41,7 @@ export function Select({
     }
   };
 
+  console.log(currentValue, options.find(o => o.value === currentValue))
   return (
     <span
       className={classNames({
@@ -49,9 +50,7 @@ export function Select({
         'fikasio-theme-light': theme === 'light',
         ...convertClassNameToObj(className),
       })}
-      style={{
-        ...style,
-      }}
+      style={style}
     >
       <ReactSelect
         defaultValue={options.find(o => o.value === currentValue)}
@@ -68,7 +67,7 @@ export function Select({
             borderWidth: style?.borderWidth,
           }),
         }}
-        value={currentValue}
+        value={options.find(o => o.value === currentValue)}
       />
     </span>
   );

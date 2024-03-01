@@ -1,0 +1,20 @@
+@import '../../themes.scss';
+
+.fikasio-dropdownOptions {
+  color: black;
+  cursor: pointer;
+  font-family: $fontFamily;
+  text-decoration: none;
+}
+
+.fikasio-dropdownOptions .dropdown-menu {
+  border-radius: 0;
+}
+
+.fikasio-dropdownOptions-toggle {
+  cursor: pointer;
+}
+
+.fikasio-dropdownOptions-toggle.dropdown-toggle::after {
+  content: none;
+}
