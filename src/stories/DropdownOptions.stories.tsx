@@ -28,7 +28,7 @@ export const DropdownOptionsUnchecked = Template.bind({});
 DropdownOptionsUnchecked.args = {
   options: [{
     label: 'Delete',
-    onClick: () => console.log('delete'),
+    onClick: () => console.info('delete'),
     type: 'delete',
   }],
 };
