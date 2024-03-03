@@ -50,7 +50,7 @@ export function Footer({
             <div className="text-center">
               {
                 childrenTop?.map(element => (
-                  <div key={JSON.stringify(element.props)}>{element}</div>
+                  <div key={element.key}>{element}</div>
                 ))
               }
             </div>
@@ -66,7 +66,7 @@ export function Footer({
             <div className="text-left">
               {
                 childrenLeft?.map(element => (
-                  <div key={JSON.stringify(element.props)}>{element}</div>
+                  <div key={element.key}>{element}</div>
                 ))
               }
             </div>
@@ -75,7 +75,7 @@ export function Footer({
             <div className="text-center">
               {
                 childrenCenter?.map(element => (
-                  <div key={JSON.stringify(element.props)}>{element}</div>
+                  <div key={element.key}>{element}</div>
                 ))
               }
             </div>
@@ -84,7 +84,7 @@ export function Footer({
             <div className="text-right">
               {
                 childrenRight?.map(element => (
-                  <div key={JSON.stringify(element.props)}>{element}</div>
+                  <div key={element.key}>{element}</div>
                 ))
               }
             </div>
