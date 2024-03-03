@@ -1,7 +1,10 @@
 # Changelog
 
+### 0.7.3
+- Added `name` prop to the Select component
+
 ### 0.7.1
-- Made small improvements to the Input
+- Made small improvements to the Input component
 
 ### 0.7.0
 - Added DropdownOptions
@@ -25,7 +28,7 @@
 - Added Dot
 - Added SearchBar
 - Added Selector
-- Added the `childrenCenter`, `childrenLeft`, `childrenRight` and `childrenTop` props to the Footer
+- Added the `childrenCenter`, `childrenLeft`, `childrenRight` and `childrenTop` props to the Footer component
 
 ### 0.3.6
 - Fixed bug with showing/hiding DatePicker
@@ -38,7 +41,7 @@
 - Hide scrollbar when the text is longer than the AutosaveTextarea's width
 
 ### 0.3.1
-- Added max-width: 100% on AutosaveTextarea
+- Added `max-width: 100%` on AutosaveTextarea
 
 ### 0.3.0
 - Added AutosaveTextarea

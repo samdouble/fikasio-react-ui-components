@@ -9,6 +9,7 @@ import './Select.scss';
 export interface SelectProps {
   className?: string;
   defaultValue?: string;
+  name: string;
   onChange?: (value: string) => void;
   options: any[];
   style?: React.CSSProperties;
@@ -18,6 +19,7 @@ export interface SelectProps {
 export function Select({
   className,
   defaultValue,
+  name,
   onChange,
   options,
   style,
@@ -51,6 +53,15 @@ export function Select({
       })}
       style={style}
     >
+      {
+        name && (
+          <input
+            name={name}
+            type="hidden"
+            value={currentValue}
+          />
+        )
+      }
       <ReactSelect
         defaultValue={options.find(o => o.value === currentValue)}
         onChange={handleChange}
@@ -75,6 +86,7 @@ export function Select({
 Select.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.string,
+  name: PropTypes.string,
   onChange: PropTypes.func,
   options: PropTypes.arrayOf(
     PropTypes.shape({
@@ -88,6 +100,7 @@ Select.propTypes = {
 Select.defaultProps = {
   className: '',
   defaultValue: undefined,
+  name: undefined,
   onChange: () => undefined,
   options: [],
   style: {},

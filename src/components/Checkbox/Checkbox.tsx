@@ -65,6 +65,7 @@ export function Checkbox({
       {
         name && (
           <input
+            name={name}
             type="hidden"
             value={currentValue.toString()}
           />
