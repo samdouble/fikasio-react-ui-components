@@ -13,6 +13,7 @@ const story = {
 function Template({
   className,
   defaultValue,
+  name,
   onChange,
   options,
   style,
@@ -22,6 +23,7 @@ function Template({
     <Select
       className={className}
       defaultValue={defaultValue}
+      name={name}
       onChange={onChange}
       options={options}
       style={style}
