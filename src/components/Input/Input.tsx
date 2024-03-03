@@ -61,8 +61,8 @@ export function Input({
         style={{
           border: 'none',
           borderRadius: 0,
-          height: 30,
-          padding: 3,
+          height: 36,
+          padding: 6,
           paddingLeft: 10,
           width: '98%',
         }}

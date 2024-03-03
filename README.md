@@ -22,17 +22,17 @@ Import components from the package in your React application, for example:
 import { Footer } from '@fikasio/react-ui-components';
 ```
 
-### Components
+## Components
 
-#### AutosaveTextarea
-
-TODO
-
-#### Button
+### AutosaveTextarea
 
 TODO
 
-#### Checkbox
+### Button
+
+TODO
+
+### Checkbox
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
@@ -43,7 +43,7 @@ TODO
 | onClick                 |                 |                 |                                                 |
 | style                   |                 |                 |                                                 |
 
-#### DatePicker
+### DatePicker
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
@@ -66,15 +66,15 @@ TODO
 | timeIntervals           |                 |                 |                                                 |
 | value                   |                 |                 |                                                 |
 
-#### Dot
+### Dot
 
 TODO
 
-#### Footer
+### Footer
 
 TODO
 
-##### Props
+#### Props
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
@@ -85,37 +85,37 @@ TODO
 | className               |                 |                 |                                                 |
 | style                   |                 |                 |                                                 |
 
-#### Input
+### Input
 
 TODO
 
-#### SearchBar
+### SearchBar
 
 TODO
 
-#### DatePicker
+### DatePicker
 
 TODO
 
-#### Select
+### Select
 
 TODO
 
-#### Selector
+### Selector
 
 TODO
 
-#### Table
+### Table
 
 TODO
 
-#### Warning
+### Warning
 
 TODO
 
-### Hooks
+## Hooks
 
-#### useTheme
+### useTheme
 
 TODO
 

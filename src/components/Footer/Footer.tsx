@@ -50,7 +50,7 @@ export function Footer({
             <div className="text-center">
               {
                 childrenTop?.map(element => (
-                  <div key={element.key}>{element}</div>
+                  <div key={JSON.stringify(element.props)}>{element}</div>
                 ))
               }
             </div>
@@ -66,7 +66,7 @@ export function Footer({
             <div className="text-left">
               {
                 childrenLeft?.map(element => (
-                  <div key={element.key}>{element}</div>
+                  <div key={JSON.stringify(element.props)}>{element}</div>
                 ))
               }
             </div>
@@ -75,7 +75,7 @@ export function Footer({
             <div className="text-center">
               {
                 childrenCenter?.map(element => (
-                  <div key={element.key}>{element}</div>
+                  <div key={JSON.stringify(element.props)}>{element}</div>
                 ))
               }
             </div>
@@ -84,7 +84,7 @@ export function Footer({
             <div className="text-right">
               {
                 childrenRight?.map(element => (
-                  <div key={element.key}>{element}</div>
+                  <div key={JSON.stringify(element.props)}>{element}</div>
                 ))
               }
             </div>
@@ -96,10 +96,10 @@ export function Footer({
 }
 
 Footer.propTypes = {
-  childrenLeft: PropTypes.arrayOf(PropTypes.elementType),
-  childrenCenter: PropTypes.arrayOf(PropTypes.elementType),
-  childrenRight: PropTypes.arrayOf(PropTypes.elementType),
-  childrenTop: PropTypes.arrayOf(PropTypes.elementType),
+  childrenLeft: PropTypes.arrayOf(PropTypes.element),
+  childrenCenter: PropTypes.arrayOf(PropTypes.element),
+  childrenRight: PropTypes.arrayOf(PropTypes.element),
+  childrenTop: PropTypes.arrayOf(PropTypes.element),
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
