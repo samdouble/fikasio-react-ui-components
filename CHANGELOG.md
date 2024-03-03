@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.7.1
+- Made small improvements to the Input
+
 ### 0.7.0
 - Added DropdownOptions
 - Added Input
