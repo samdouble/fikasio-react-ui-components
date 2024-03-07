@@ -13,6 +13,8 @@ exports[`Table Renders correctly 1`] = `
         <th
           style={
             Object {
+              "left": 0,
+              "position": "sticky",
               "textAlign": "center",
               "width": 35,
             }
