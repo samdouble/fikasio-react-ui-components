@@ -78,6 +78,7 @@ export function Select({
           }),
           menu: baseStyles => ({
             ...baseStyles,
+            position: 'absolute',
             zIndex: 9999,
           }),
         }}
