@@ -76,6 +76,10 @@ export function Select({
             borderStyle: style?.borderStyle,
             borderWidth: style?.borderWidth,
           }),
+          menu: baseStyles => ({
+            ...baseStyles,
+            zIndex: 9999,
+          }),
         }}
         value={options.find(o => o.value === currentValue)}
       />

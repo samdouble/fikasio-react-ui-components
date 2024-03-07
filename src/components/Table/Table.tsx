@@ -111,6 +111,8 @@ export function Table({
             isSelectable && (
               <th
                 style={{
+                  left: 0,
+                  position: 'sticky',
                   textAlign: 'center',
                   width: 35,
                 }}
@@ -181,7 +183,12 @@ export function Table({
               >
                 {
                   isSelectable && (
-                    <td>
+                    <td
+                      style={{
+                        left: 0,
+                        position: 'sticky',
+                      }}
+                    >
                       <Checkbox
                         defaultIsChecked={isRowChecked && isRowChecked(row)}
                         onClick={() => {
