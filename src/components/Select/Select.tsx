@@ -34,8 +34,8 @@ export function Select({
 
   const theme = useTheme();
 
-  const handleChange = (e: SyntheticEvent) => {
-    const newValue = (e.target as HTMLSelectElement).value;
+  const handleChange = option => {
+    const newValue = option.value;
     if (onChange) {
       onChange(newValue);
     }

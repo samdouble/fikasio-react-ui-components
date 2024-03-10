@@ -35,6 +35,7 @@ function Template({
 export const SelectTwoOptions = Template.bind({});
 SelectTwoOptions.args = {
   defaultValue: 'B',
+  onChange: value => { console.info(value); },
   options: [
     {
       label: 'A',
