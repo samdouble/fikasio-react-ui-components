@@ -4,6 +4,7 @@ export { Checkbox } from './Checkbox';
 export { DatePicker } from './DatePicker';
 export { Dot } from './Dot';
 export { DropdownOptions } from './DropdownOptions';
+export { Error } from './Error';
 export { Footer } from './Footer';
 export { Input } from './Input';
 export { Select } from './Select';

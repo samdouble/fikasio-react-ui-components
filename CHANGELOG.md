@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.8.0
+- Added Error
+
 ### 0.7.3
 - Added `name` prop to the Select component
 
