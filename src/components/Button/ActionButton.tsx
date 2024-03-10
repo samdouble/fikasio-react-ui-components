@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Button.scss';
 
 export interface ActionButtonProps {
-  children: JSX.Element;
+  children: string | JSX.Element;
   className?: string;
   onClick?: () => void;
   style?: React.CSSProperties;
@@ -45,7 +45,7 @@ export function ActionButton({
 }
 
 ActionButton.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   className: PropTypes.string,
   onClick: PropTypes.func,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),

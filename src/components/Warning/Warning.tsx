@@ -13,7 +13,7 @@ import './Warning.scss';
 library.add(faTriangleExclamation);
 
 export interface WarningProps {
-  children: JSX.Element;
+  children: string | JSX.Element;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -53,7 +53,7 @@ export function Warning({
 }
 
 Warning.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
