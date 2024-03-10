@@ -68,6 +68,10 @@ export function Select({
         options={options}
         placeholder=""
         styles={{
+          container: baseStyles => ({
+            ...baseStyles,
+            ...(style?.width && { width: style.width })
+          }),
           control: baseStyles => ({
             ...baseStyles,
             border: style?.border || '1px solid #cccccc',
