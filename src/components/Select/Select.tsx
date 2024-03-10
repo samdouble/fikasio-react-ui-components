@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactSelect from 'react-select';
 import classNames from 'classnames';
@@ -34,7 +34,8 @@ export function Select({
 
   const theme = useTheme();
 
-  const handleChange = (newValue: string) => {
+  const handleChange = (e: SyntheticEvent) => {
+    const newValue = (e.target as HTMLSelectElement).value;
     if (onChange) {
       onChange(newValue);
     }
