@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.9.0
+- Added Success
+
 ### 0.8.0
 - Added Error
 
