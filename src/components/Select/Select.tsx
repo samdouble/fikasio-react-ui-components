@@ -71,6 +71,7 @@ export function Select({
         styles={{
           container: baseStyles => ({
             ...baseStyles,
+            ...(style?.minWidth && { width: style.minWidth }),
             ...(style?.width && { width: style.width }),
           }),
           control: baseStyles => ({

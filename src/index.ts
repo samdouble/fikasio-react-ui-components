@@ -10,6 +10,7 @@ export { Input } from './Input';
 export { Select } from './Select';
 export { Selector } from './Selector';
 export { SearchBar } from './SearchBar';
+export { Success } from './Success';
 export { Table } from './Table';
 export { Warning } from './Warning';
 export { useTheme } from './useTheme';
