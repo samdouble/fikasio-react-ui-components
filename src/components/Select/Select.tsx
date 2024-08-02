@@ -64,8 +64,11 @@ export function Select({
         )
       }
       <ReactSelect
+        classNamePrefix="fikasio-select"
         defaultValue={options.find(o => o.value === currentValue)}
         onChange={handleChange}
+        menuPortalTarget={document.querySelector('body')}
+        menuShouldScrollIntoView={false}
         options={options}
         placeholder=""
         styles={{
@@ -84,8 +87,13 @@ export function Select({
           }),
           menu: baseStyles => ({
             ...baseStyles,
-            position: 'absolute',
-            zIndex: 9999,
+            borderRadius: style?.borderRadius || 0,
+            marginTop: 2,
+          }),
+          menuList: baseStyles => ({
+            ...baseStyles,
+            paddingTop: 0,
+            paddingBottom: 0,
           }),
         }}
         value={options.find(o => o.value === currentValue)}
