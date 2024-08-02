@@ -124,5 +124,8 @@
         "statements": 27
       }
     }
+  },
+  "resolutions": {
+    "strip-ansi": "6.0.1"
   }
 }
