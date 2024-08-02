@@ -5,6 +5,7 @@
 1. Run the following command from the root folder of the repo:
 
 ```
+yarn
 yarn storybook
 ```
 
