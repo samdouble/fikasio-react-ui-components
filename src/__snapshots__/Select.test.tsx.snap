@@ -21,19 +21,19 @@ exports[`Select Renders correctly 1`] = `
       role="log"
     />
     <div
-      className=" css-1ugolod-control"
+      className="fikasio-select__control css-1ugolod-control"
       onMouseDown={[Function]}
       onTouchEnd={[Function]}
     >
       <div
-        className=" css-1fdsijx-ValueContainer"
+        className="fikasio-select__value-container css-hlgwow"
       >
         <div
-          className=" css-1jqq78o-placeholder"
+          className="fikasio-select__placeholder css-1jqq78o-placeholder"
           id="react-select-2-placeholder"
         />
         <div
-          className=" css-qbdosj-Input"
+          className="fikasio-select__input-container css-19bb58m"
           data-value=""
         >
           <input
@@ -45,7 +45,7 @@ exports[`Select Renders correctly 1`] = `
             autoCapitalize="none"
             autoComplete="off"
             autoCorrect="off"
-            className=""
+            className="fikasio-select__input"
             disabled={false}
             id="react-select-2-input"
             onBlur={[Function]}
@@ -76,14 +76,14 @@ exports[`Select Renders correctly 1`] = `
         </div>
       </div>
       <div
-        className=" css-1hb7zxy-IndicatorsContainer"
+        className="fikasio-select__indicators css-1wy0on6"
       >
         <span
-          className=" css-1u9des2-indicatorSeparator"
+          className="fikasio-select__indicator-separator css-1u9des2-indicatorSeparator"
         />
         <div
           aria-hidden="true"
-          className=" css-1xc3v61-indicatorContainer"
+          className="fikasio-select__indicator fikasio-select__dropdown-indicator css-1xc3v61-indicatorContainer"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
