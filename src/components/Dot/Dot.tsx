@@ -7,7 +7,7 @@ import './Dot.scss';
 
 export interface DotProps {
   className?: string;
-  color: string;
+  color?: string;
   style?: React.CSSProperties;
   width: number;
 }
@@ -42,6 +42,7 @@ Dot.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  width: PropTypes.number,
 };
 
 export default Dot;
