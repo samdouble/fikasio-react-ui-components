@@ -55,7 +55,7 @@ export function Table({
   isRowChecked = () => false,
   isSelectable = true,
   onRowClick = () => undefined,
-  options = () => <></>,
+  options = () => <div />,
   rows = [],
   style = {},
 }: TableProps) {
