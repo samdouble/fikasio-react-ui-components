@@ -10,9 +10,9 @@ import './style.scss';
 export interface AutosaveTextareaProps {
   className?: string;
   defaultValue?: string;
-  onBlur?: any;
+  onBlur?: () => void;
   onChange?: any;
-  onFocus?: any;
+  onFocus?: () => void;
   onKeyDown?: any;
   onKeyUp?: any;
   onSave: (value: string) => void;

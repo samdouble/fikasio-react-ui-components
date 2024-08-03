@@ -4,11 +4,11 @@ import { Warning } from '.';
 
 describe('Warning', () => {
   it('Renders correctly', () => {
-    const componentJSON = render(
+    const { baseElement } = render(
       <Warning>
         This is a warning
-      </Warning>
+      </Warning>,
     );
-    expect(componentJSON).toMatchSnapshot();
+    expect(baseElement).toMatchSnapshot();
   });
 });
