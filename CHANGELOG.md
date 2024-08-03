@@ -1,16 +1,19 @@
 # Changelog
 
 ### 0.9.3
+- Added `menuPortalTarget` and `menuShouldScrollIntoView` props to the Select component
+
+### 0.9.3
 - Improved Select menu positioning
 
 ### 0.9.1
 - Fixed DatePicker positioning
 
 ### 0.9.0
-- Added Success
+- Added the Success component
 
 ### 0.8.0
-- Added Error
+- Added the Error component
 
 ### 0.7.3
 - Added `name` prop to the Select component

@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "author": "samdouble",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "files": [
     "dist"
   ],

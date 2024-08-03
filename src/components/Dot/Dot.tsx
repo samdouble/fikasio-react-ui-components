@@ -13,9 +13,9 @@ export interface DotProps {
 }
 
 export function Dot({
-  className,
-  color,
-  style,
+  className = '',
+  color = '#000000',
+  style = {},
   width,
 }: DotProps) {
   const theme = useTheme();
@@ -42,11 +42,6 @@ Dot.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-Dot.defaultProps = {
-  className: '',
-  color: '#000000',
-  style: {},
 };
 
 export default Dot;

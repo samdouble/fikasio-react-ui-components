@@ -18,12 +18,12 @@ export interface FooterProps {
 }
 
 export function Footer({
-  childrenLeft,
-  childrenCenter,
-  childrenRight,
-  childrenTop,
-  className,
-  style,
+  childrenLeft = [],
+  childrenCenter = [],
+  childrenRight = [],
+  childrenTop = [],
+  className = '',
+  style = {},
 }: FooterProps) {
   const theme = useTheme();
 
@@ -102,14 +102,6 @@ Footer.propTypes = {
   childrenTop: PropTypes.arrayOf(PropTypes.element),
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-Footer.defaultProps = {
-  childrenLeft: [],
-  childrenCenter: [],
-  childrenRight: [],
-  childrenTop: [],
-  className: '',
-  style: {},
 };
 
 export default Footer;

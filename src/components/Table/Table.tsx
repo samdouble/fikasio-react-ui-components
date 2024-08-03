@@ -50,14 +50,14 @@ export interface TableProps {
 }
 
 export function Table({
-  className,
-  columns,
-  isRowChecked,
-  isSelectable,
-  onRowClick,
-  options,
-  rows,
-  style,
+  className = '',
+  columns = [],
+  isRowChecked = () => false,
+  isSelectable = true,
+  onRowClick = () => undefined,
+  options = () => <></>,
+  rows = [],
+  style = {},
 }: TableProps) {
   const [orderedBy, setOrderedBy] = useState<CellColumn | null>(null);
   const [orderDirection, setOrderDirection] = useState<string>('ASC');
@@ -265,16 +265,6 @@ Table.propTypes = {
     PropTypes.shape({}),
   ),
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-Table.defaultProps = {
-  className: '',
-  columns: [],
-  isRowChecked: () => undefined,
-  isSelectable: () => undefined,
-  onRowClick: () => undefined,
-  options: () => undefined,
-  rows: [],
-  style: {},
 };
 
 export default Table;

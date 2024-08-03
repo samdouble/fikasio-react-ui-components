@@ -17,8 +17,8 @@ export interface SearchBarProps {
 }
 
 export function SearchBar({
-  className,
-  style,
+  className = '',
+  style = {},
 }: SearchBarProps) {
   const theme = useTheme();
 
@@ -71,10 +71,6 @@ export function SearchBar({
 SearchBar.propTypes = {
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-SearchBar.defaultProps = {
-  className: '',
-  style: {},
 };
 
 export default SearchBar;

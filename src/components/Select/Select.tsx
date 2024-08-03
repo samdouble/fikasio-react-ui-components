@@ -9,7 +9,9 @@ import './Select.scss';
 export interface SelectProps {
   className?: string;
   defaultValue?: string;
-  name: string;
+  menuPortalTarget?: HTMLElement | null;
+  menuShouldScrollIntoView?: boolean;
+  name?: string;
   onChange?: (value: string) => void;
   options: any[];
   style?: React.CSSProperties;
@@ -17,13 +19,15 @@ export interface SelectProps {
 }
 
 export function Select({
-  className,
-  defaultValue,
-  name,
-  onChange,
-  options,
-  style,
-  value,
+  className = '',
+  defaultValue = undefined,
+  menuPortalTarget = document.querySelector('body'),
+  menuShouldScrollIntoView = false,
+  name = undefined,
+  onChange = () => undefined,
+  options = [],
+  style = {},
+  value = undefined,
 }: SelectProps) {
   const isControlled = typeof value !== 'undefined';
   const hasDefaultValue = typeof defaultValue !== 'undefined';
@@ -67,8 +71,8 @@ export function Select({
         classNamePrefix="fikasio-select"
         defaultValue={options.find(o => o.value === currentValue)}
         onChange={handleChange}
-        menuPortalTarget={document.querySelector('body')}
-        menuShouldScrollIntoView={false}
+        menuPortalTarget={menuPortalTarget || undefined}
+        menuShouldScrollIntoView={menuShouldScrollIntoView}
         options={options}
         placeholder=""
         styles={{
@@ -105,6 +109,8 @@ export function Select({
 Select.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.string,
+  menuPortalTarget: PropTypes.element,
+  menuShouldScrollIntoView: PropTypes.bool,
   name: PropTypes.string,
   onChange: PropTypes.func,
   options: PropTypes.arrayOf(
@@ -115,15 +121,6 @@ Select.propTypes = {
   ),
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   value: PropTypes.string,
-};
-Select.defaultProps = {
-  className: '',
-  defaultValue: undefined,
-  name: undefined,
-  onChange: () => undefined,
-  options: [],
-  style: {},
-  value: undefined,
 };
 
 export default Select;
