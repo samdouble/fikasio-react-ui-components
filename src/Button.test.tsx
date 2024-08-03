@@ -4,7 +4,11 @@ import { Button } from '.';
 
 describe('Button', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<Button.Action />).toJSON();
+    const componentJSON = renderer.create(
+      <Button.Action>
+        Click me
+      </Button.Action>
+    ).toJSON();
     expect(componentJSON).toMatchSnapshot();
   });
 });
