@@ -1,14 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Error } from '.';
 
 describe('Error', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(
+    const { baseElement } = render(
       <Error>
         This is an error
-      </Error>
-    ).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+      </Error>,
+    );
+    expect(baseElement).toMatchSnapshot();
   });
 });

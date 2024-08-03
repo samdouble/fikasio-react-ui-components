@@ -1,36 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox Renders correctly 1`] = `
-<div
-  className="fikasio-checkbox fikasio-theme-dark"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  role="button"
-  style={Object {}}
-  tabIndex={0}
->
-  <svg
-    aria-hidden="true"
-    className="svg-inline--fa fa-square fa-lg "
-    data-icon="square"
-    data-prefix="fas"
-    focusable="false"
-    role="img"
-    style={
-      Object {
-        "border": "1px solid #7E5B9A",
-        "color": "#ffffff",
-        "width": 20,
-      }
-    }
-    viewBox="0 0 448 512"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"
-      fill="currentColor"
-      style={Object {}}
-    />
-  </svg>
-</div>
+<body>
+  <div>
+    <div
+      class="fikasio-checkbox fikasio-theme-dark"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-square fa-lg "
+        data-icon="square"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        style="border: 1px solid #7e5b9a; color: rgb(255, 255, 255); width: 20px;"
+        viewBox="0 0 448 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+  </div>
+</body>
 `;

@@ -1,14 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Warning } from '.';
 
 describe('Warning', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(
+    const { baseElement } = render(
       <Warning>
         This is a warning
-      </Warning>
-    ).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+      </Warning>,
+    );
+    expect(baseElement).toMatchSnapshot();
   });
 });

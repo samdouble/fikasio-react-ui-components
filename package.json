@@ -50,6 +50,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@rollup/plugin-image": "^3.0.2",
     "@storybook/addon-actions": "^7.6.16",
     "@storybook/addon-essentials": "^7.6.16",
@@ -68,7 +69,6 @@
     "@types/node": "^20.3.1",
     "@types/react": "^18.0.25",
     "@types/react-fontawesome": "^1.6.6",
-    "@types/react-test-renderer": "^18.0.0",
     "@types/uuid": "^9.0.2",
     "@typescript-eslint/parser": "^5.42.1",
     "babel-plugin-named-exports-order": "^0.0.2",
@@ -81,7 +81,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "react-test-renderer": "^18.2.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-sass": "^1.12.17",
     "rollup-plugin-typescript2": "^0.34.1",

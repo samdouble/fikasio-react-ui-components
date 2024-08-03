@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Footer } from '.';
 
 describe('Footer', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<Footer />).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    const { baseElement } = render(<Footer />);
+    expect(baseElement).toMatchSnapshot();
   });
 });

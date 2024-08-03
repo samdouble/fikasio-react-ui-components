@@ -40,11 +40,11 @@ type Row = any;
 
 export interface TableProps {
   className?: string;
-  columns: (CellColumn | NumberingColumn | OptionsColumn)[];
+  columns?: (CellColumn | NumberingColumn | OptionsColumn)[];
   isRowChecked?: (row: any) => boolean;
   isSelectable?: boolean;
   onRowClick?: (row: any) => void;
-  options: (row: Row) => JSX.Element;
+  options?: (row: Row) => JSX.Element;
   rows?: Row[];
   style?: React.CSSProperties;
 }
@@ -55,7 +55,7 @@ export function Table({
   isRowChecked = () => false,
   isSelectable = true,
   onRowClick = () => undefined,
-  options = () => <></>,
+  options = () => <div />,
   rows = [],
   style = {},
 }: TableProps) {

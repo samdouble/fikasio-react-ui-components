@@ -1,14 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Success } from '.';
 
 describe('Success', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(
+    const { baseElement } = render(
       <Success>
         It worked
-      </Success>
-    ).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+      </Success>,
+    );
+    expect(baseElement).toMatchSnapshot();
   });
 });
