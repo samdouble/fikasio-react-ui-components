@@ -4,7 +4,11 @@ import { Success } from '.';
 
 describe('Success', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<Success />).toJSON();
+    const componentJSON = renderer.create(
+      <Success>
+        It worked
+      </Success>
+    ).toJSON();
     expect(componentJSON).toMatchSnapshot();
   });
 });
