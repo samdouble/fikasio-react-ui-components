@@ -7,7 +7,7 @@ describe('Error', () => {
     const { baseElement } = render(
       <Error>
         This is an error
-      </Error>
+      </Error>,
     );
     expect(baseElement).toMatchSnapshot();
   });

@@ -7,7 +7,7 @@ describe('Success', () => {
     const { baseElement } = render(
       <Success>
         It worked
-      </Success>
+      </Success>,
     );
     expect(baseElement).toMatchSnapshot();
   });

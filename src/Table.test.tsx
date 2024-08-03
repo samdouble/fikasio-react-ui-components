@@ -5,7 +5,7 @@ import { Table } from '.';
 describe('Table', () => {
   it('Renders correctly', () => {
     const { baseElement } = render(
-      <Table />
+      <Table />,
     );
     expect(baseElement).toMatchSnapshot();
   });

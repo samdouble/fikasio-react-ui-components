@@ -7,7 +7,7 @@ describe('Button', () => {
     const { baseElement } = render(
       <Button.Action>
         Click me
-      </Button.Action>
+      </Button.Action>,
     );
     expect(baseElement).toMatchSnapshot();
   });
