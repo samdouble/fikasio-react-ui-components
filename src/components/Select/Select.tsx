@@ -13,7 +13,7 @@ export interface SelectProps {
   menuShouldScrollIntoView?: boolean;
   name?: string;
   onChange?: (value: string) => void;
-  options: any[];
+  options?: any[];
   style?: React.CSSProperties;
   value?: string;
 }
