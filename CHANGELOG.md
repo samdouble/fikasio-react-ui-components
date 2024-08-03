@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.9.5
+- Fixed Select menu positioning inside dynamic container
+
 ### 0.9.3
 - Added `menuPortalTarget` and `menuShouldScrollIntoView` props to the Select component
 

@@ -72,6 +72,7 @@ export function Select({
         defaultValue={options.find(o => o.value === currentValue)}
         onChange={handleChange}
         menuPortalTarget={menuPortalTarget || undefined}
+        menuPosition='fixed'
         menuShouldScrollIntoView={menuShouldScrollIntoView}
         options={options}
         placeholder=""
@@ -98,6 +99,9 @@ export function Select({
             ...baseStyles,
             paddingTop: 0,
             paddingBottom: 0,
+          }),
+          menuPortal: ({ left, top, ...provided }) => ({
+            ...provided,
           }),
         }}
         value={options.find(o => o.value === currentValue)}
