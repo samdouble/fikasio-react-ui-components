@@ -1,44 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropdownOptions Renders correctly 1`] = `
-<div
-  className="fikasio-dropdownOptions fikasio-theme-dark"
-  style={Object {}}
->
-  <div
-    className="dropdown"
-    style={
-      Object {
-        "position": "static",
-      }
-    }
-  >
+<body>
+  <div>
     <div
-      className="fikasio-dropdownOptions-toggle fikasio-theme-dark dropdown-toggle"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="button"
-      style={Object {}}
-      tabIndex={0}
+      class="fikasio-dropdownOptions fikasio-theme-dark"
     >
-      <svg
-        aria-hidden="true"
-        className="svg-inline--fa fa-ellipsis fa-1x "
-        data-icon="ellipsis"
-        data-prefix="fas"
-        focusable="false"
-        role="img"
-        style={Object {}}
-        viewBox="0 0 448 512"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="dropdown"
+        style="position: static;"
       >
-        <path
-          d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"
-          fill="currentColor"
-          style={Object {}}
-        />
-      </svg>
+        <div
+          class="fikasio-dropdownOptions-toggle fikasio-theme-dark dropdown-toggle"
+          role="button"
+          tabindex="0"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-ellipsis fa-1x "
+            data-icon="ellipsis"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;

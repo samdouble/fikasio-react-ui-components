@@ -1,20 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Selector Renders correctly 1`] = `
-<span
-  className="fikasio-selector fikasio-theme-dark"
-  style={Object {}}
->
-  <span
-    style={
-      Object {
-        "bottom": 2,
-        "paddingLeft": 5,
-        "position": "relative",
-      }
-    }
-  >
-    +
-  </span>
-</span>
+<body>
+  <div>
+    <span
+      class="fikasio-selector fikasio-theme-dark"
+    >
+      <span
+        style="bottom: 2px; padding-left: 5px; position: relative;"
+      >
+        +
+      </span>
+    </span>
+  </div>
+</body>
 `;

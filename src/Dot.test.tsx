@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Dot } from '.';
 
 describe('Dot', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<Dot width={30} />).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    const { baseElement } = render(<Dot width={30} />);
+    expect(baseElement).toMatchSnapshot();
   });
 });

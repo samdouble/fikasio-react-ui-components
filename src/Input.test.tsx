@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Input } from '.';
 
 describe('Input', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<Input />).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    const { baseElement } = render(<Input />);
+    expect(baseElement).toMatchSnapshot();
   });
 });

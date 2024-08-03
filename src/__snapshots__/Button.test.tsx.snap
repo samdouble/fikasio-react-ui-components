@@ -1,12 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button Renders correctly 1`] = `
-<button
-  className="fikasio-actionbutton fikasio-theme-dark btn btn-primary"
-  disabled={false}
-  onClick={[Function]}
-  style={Object {}}
->
-  Click me
-</button>
+<body>
+  <div>
+    <button
+      class="fikasio-actionbutton fikasio-theme-dark btn btn-primary"
+    >
+      Click me
+    </button>
+  </div>
+</body>
 `;

@@ -1,10 +1,12 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Table } from '.';
 
 describe('Table', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<Table />).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    const { baseElement } = render(
+      <Table />
+    );
+    expect(baseElement).toMatchSnapshot();
   });
 });

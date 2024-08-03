@@ -1,37 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Success Renders correctly 1`] = `
-<div
-  className="fikasio-success fikasio-theme-dark"
-  style={Object {}}
->
-  <div
-    className="fade alert alert-success show"
-    role="alert"
-  >
-    <svg
-      aria-hidden="true"
-      className="svg-inline--fa fa-check fa-lg "
-      data-icon="check"
-      data-prefix="fas"
-      focusable="false"
-      role="img"
-      style={
-        Object {
-          "fontSize": 16,
-          "marginRight": 10,
-        }
-      }
-      viewBox="0 0 448 512"
-      xmlns="http://www.w3.org/2000/svg"
+<body>
+  <div>
+    <div
+      class="fikasio-success fikasio-theme-dark"
     >
-      <path
-        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-        fill="currentColor"
-        style={Object {}}
-      />
-    </svg>
-    It worked
+      <div
+        class="fade alert alert-success show"
+        role="alert"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-check fa-lg "
+          data-icon="check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style="font-size: 16px; margin-right: 10px;"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+            fill="currentColor"
+          />
+        </svg>
+        It worked
+      </div>
+    </div>
   </div>
-</div>
+</body>
 `;

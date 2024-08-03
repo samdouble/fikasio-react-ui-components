@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { SearchBar } from '.';
 
 describe('SearchBar', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<SearchBar />).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    const { baseElement } = render(<SearchBar />);
+    expect(baseElement).toMatchSnapshot();
   });
 });
