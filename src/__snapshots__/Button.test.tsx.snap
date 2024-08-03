@@ -6,5 +6,7 @@ exports[`Button Renders correctly 1`] = `
   disabled={false}
   onClick={[Function]}
   style={Object {}}
-/>
+>
+  Click me
+</button>
 `;
