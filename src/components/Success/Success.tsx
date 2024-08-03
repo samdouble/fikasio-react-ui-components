@@ -20,8 +20,8 @@ export interface SuccessProps {
 
 export function Success({
   children,
-  className,
-  style,
+  className = '',
+  style = {},
 }: SuccessProps) {
   const theme = useTheme();
 
@@ -56,11 +56,6 @@ Success.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-Success.defaultProps = {
-  children: undefined,
-  className: '',
-  style: {},
 };
 
 export default Success;

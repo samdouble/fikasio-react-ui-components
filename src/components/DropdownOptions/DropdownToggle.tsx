@@ -18,9 +18,9 @@ export interface DropdownToggleProps {
 
 const DropdownToggle = React.forwardRef((
   {
-    className,
-    onClick,
-    style,
+    className = '',
+    onClick = () => undefined,
+    style = {},
   }: DropdownToggleProps,
   ref: any,
 ) => {
@@ -60,11 +60,6 @@ DropdownToggle.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-DropdownToggle.defaultProps = {
-  className: '',
-  onClick: () => undefined,
-  style: {},
 };
 
 export default DropdownToggle;
