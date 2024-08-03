@@ -20,8 +20,8 @@ export interface ErrorProps {
 
 export function Error({
   children,
-  className,
-  style,
+  className = '',
+  style = {},
 }: ErrorProps) {
   const theme = useTheme();
 
@@ -56,11 +56,6 @@ Error.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-Error.defaultProps = {
-  children: undefined,
-  className: '',
-  style: {},
 };
 
 export default Error;
