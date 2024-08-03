@@ -4,7 +4,11 @@ import { Warning } from '.';
 
 describe('Warning', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<Warning />).toJSON();
+    const componentJSON = renderer.create(
+      <Warning>
+        This is a warning
+      </Warning>
+    ).toJSON();
     expect(componentJSON).toMatchSnapshot();
   });
 });

@@ -31,6 +31,7 @@ exports[`Success Renders correctly 1`] = `
         style={Object {}}
       />
     </svg>
+    It worked
   </div>
 </div>
 `;
