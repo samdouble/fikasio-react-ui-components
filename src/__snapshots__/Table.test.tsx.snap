@@ -1,28 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table Renders correctly 1`] = `
-<div
-  className="table-responsive"
->
-  <table
-    className="fikasio-table fikasio-theme-dark table table-bordered table-hover"
-    style={Object {}}
-  >
-    <thead>
-      <tr>
-        <th
-          style={
-            Object {
-              "left": 0,
-              "position": "sticky",
-              "textAlign": "center",
-              "width": 35,
-            }
-          }
-        />
-      </tr>
-    </thead>
-    <tbody />
-  </table>
-</div>
+<body>
+  <div>
+    <div
+      class="table-responsive"
+    >
+      <table
+        class="fikasio-table fikasio-theme-dark table table-bordered table-hover"
+      >
+        <thead>
+          <tr>
+            <th
+              style="left: 0px; position: sticky; text-align: center; width: 35px;"
+            />
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+  </div>
+</body>
 `;
