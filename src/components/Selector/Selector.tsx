@@ -11,8 +11,8 @@ export interface SelectorProps {
 }
 
 export function Selector({
-  className,
-  style,
+  className = '',
+  style = {},
 }: SelectorProps) {
   const theme = useTheme();
 
@@ -44,10 +44,6 @@ export function Selector({
 Selector.propTypes = {
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-Selector.defaultProps = {
-  className: '',
-  style: {},
 };
 
 export default Selector;

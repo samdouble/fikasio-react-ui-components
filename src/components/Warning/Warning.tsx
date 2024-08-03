@@ -20,8 +20,8 @@ export interface WarningProps {
 
 export function Warning({
   children,
-  className,
-  style,
+  className = '',
+  style = {},
 }: WarningProps) {
   const theme = useTheme();
 
@@ -56,11 +56,6 @@ Warning.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-Warning.defaultProps = {
-  children: undefined,
-  className: '',
-  style: {},
 };
 
 export default Warning;
