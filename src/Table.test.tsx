@@ -7,6 +7,7 @@ describe('Table', () => {
     const { baseElement } = render(
       <Table />,
     );
+    console.log(baseElement);
     expect(baseElement).toMatchSnapshot();
   });
 });
