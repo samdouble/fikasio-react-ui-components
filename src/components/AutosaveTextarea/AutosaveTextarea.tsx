@@ -23,18 +23,18 @@ export interface AutosaveTextareaProps {
 }
 
 function AutosaveTextarea({
-  className,
-  defaultValue,
-  onBlur,
-  onChange,
-  onFocus,
-  onKeyDown,
-  onKeyUp,
-  onSave,
-  ref,
-  style,
-  useContentEditableDiv,
-  value,
+  className = '',
+  defaultValue = undefined,
+  onBlur = () => undefined,
+  onChange = () => undefined,
+  onFocus = () => undefined,
+  onKeyDown = () => undefined,
+  onKeyUp = () => undefined,
+  onSave = () => undefined,
+  ref = undefined,
+  style = {},
+  useContentEditableDiv = true,
+  value = undefined,
 }: AutosaveTextareaProps) {
   const isControlled = typeof value !== 'undefined';
   const hasDefaultValue = typeof defaultValue !== 'undefined';
@@ -120,20 +120,6 @@ AutosaveTextarea.propTypes = {
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   useContentEditableDiv: PropTypes.bool,
   value: PropTypes.string,
-};
-AutosaveTextarea.defaultProps = {
-  className: '',
-  defaultValue: undefined,
-  onBlur: () => undefined,
-  onChange: () => undefined,
-  onFocus: () => undefined,
-  onKeyDown: () => undefined,
-  onKeyUp: () => undefined,
-  onSave: () => undefined,
-  ref: undefined,
-  style: {},
-  useContentEditableDiv: true,
-  value: undefined,
 };
 
 export default AutosaveTextarea;

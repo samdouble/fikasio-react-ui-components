@@ -24,9 +24,9 @@ export interface DropdownOptionsProps {
 }
 
 export function DropdownOptions({
-  className,
-  options,
-  style,
+  className = '',
+  options = [],
+  style = {},
 }: DropdownOptionsProps) {
   const theme = useTheme();
 
@@ -82,11 +82,6 @@ DropdownOptions.propTypes = {
     }),
   ),
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-DropdownOptions.defaultProps = {
-  className: '',
-  options: [],
-  style: {},
 };
 
 export default DropdownOptions;

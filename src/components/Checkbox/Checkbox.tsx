@@ -20,12 +20,12 @@ export interface CheckboxProps {
 }
 
 export function Checkbox({
-  className,
-  defaultIsChecked,
-  isChecked,
-  name,
-  onClick,
-  style,
+  className = '',
+  defaultIsChecked = undefined,
+  isChecked = undefined,
+  name = undefined,
+  onClick = () => undefined,
+  style = {},
 }: CheckboxProps) {
   const isControlled = typeof isChecked !== 'undefined';
   const hasDefaultValue = typeof defaultIsChecked !== 'undefined';
@@ -105,14 +105,6 @@ Checkbox.propTypes = {
   name: PropTypes.string,
   onClick: PropTypes.func,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-Checkbox.defaultProps = {
-  className: '',
-  defaultIsChecked: undefined,
-  isChecked: undefined,
-  name: undefined,
-  onClick: () => undefined,
-  style: {},
 };
 
 export default Checkbox;

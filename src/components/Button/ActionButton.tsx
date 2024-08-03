@@ -17,10 +17,10 @@ export interface ActionButtonProps {
 
 export function ActionButton({
   children,
-  className,
-  onClick,
-  style,
-  type,
+  className = '',
+  onClick = () => undefined,
+  style = {},
+  type = undefined,
 }: ActionButtonProps) {
   const theme = useTheme();
 
@@ -50,13 +50,6 @@ ActionButton.propTypes = {
   onClick: PropTypes.func,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   type: PropTypes.string,
-};
-ActionButton.defaultProps = {
-  children: undefined,
-  className: '',
-  onClick: () => undefined,
-  style: {},
-  type: undefined,
 };
 
 export default ActionButton;

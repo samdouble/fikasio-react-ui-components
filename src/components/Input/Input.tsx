@@ -16,12 +16,12 @@ export interface InputProps {
 }
 
 export function Input({
-  className,
-  defaultValue,
-  name,
-  onChange,
-  style,
-  value,
+  className = '',
+  defaultValue = undefined,
+  name = undefined,
+  onChange = () => undefined,
+  style = {},
+  value = undefined,
 }: InputProps) {
   const isControlled = typeof value !== 'undefined';
   const hasDefaultValue = typeof defaultValue !== 'undefined';
@@ -79,14 +79,6 @@ Input.propTypes = {
   onChange: PropTypes.func,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   value: PropTypes.bool,
-};
-Input.defaultProps = {
-  className: '',
-  defaultValue: undefined,
-  name: undefined,
-  onChange: () => undefined,
-  style: {},
-  value: undefined,
 };
 
 export default Input;
