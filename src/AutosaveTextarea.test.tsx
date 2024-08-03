@@ -1,14 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { AutosaveTextarea } from '.';
 
 describe('AutosaveTextarea', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(
+    const { baseElement } = render(
       <AutosaveTextarea
         onSave={() => undefined}
       />,
-    ).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    );
+    expect(baseElement).toMatchSnapshot();
   });
 });

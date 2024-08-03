@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { DatePicker } from '.';
 
 describe('DatePicker', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<DatePicker />).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    const { baseElement } = render(<DatePicker />);
+    expect(baseElement).toMatchSnapshot();
   });
 });

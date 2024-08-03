@@ -1,14 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Button } from '.';
 
 describe('Button', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(
+    const { baseElement } = render(
       <Button.Action>
         Click me
       </Button.Action>
-    ).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    );
+    expect(baseElement).toMatchSnapshot();
   });
 });

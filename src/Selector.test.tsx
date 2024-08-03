@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Selector } from '.';
 
 describe('Selector', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<Selector />).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    const { baseElement } = render(<Selector />);
+    expect(baseElement).toMatchSnapshot();
   });
 });

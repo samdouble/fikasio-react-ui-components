@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Checkbox } from '.';
 
 describe('Checkbox', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<Checkbox />).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    const { baseElement } = render(<Checkbox />);
+    expect(baseElement).toMatchSnapshot();
   });
 });

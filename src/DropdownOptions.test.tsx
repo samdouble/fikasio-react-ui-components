@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { DropdownOptions } from '.';
 
 describe('DropdownOptions', () => {
   it('Renders correctly', () => {
-    const componentJSON = renderer.create(<DropdownOptions />).toJSON();
-    expect(componentJSON).toMatchSnapshot();
+    const { baseElement } = render(<DropdownOptions />);
+    expect(baseElement).toMatchSnapshot();
   });
 });
