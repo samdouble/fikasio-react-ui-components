@@ -1,25 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AutosaveTextarea Renders correctly 1`] = `
-<div
-  className="fikasio-textarea fikasio-theme-dark"
-  contentEditable={true}
-  dangerouslySetInnerHTML={
-    Object {
-      "__html": "",
-    }
-  }
-  onBlur={[Function]}
-  onChange={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onInput={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
-  style={
-    Object {
-      "whiteSpace": "pre",
-    }
-  }
-/>
+<body>
+  <div>
+    <div
+      class="fikasio-textarea fikasio-theme-dark"
+      contenteditable="true"
+      style="white-space: pre;"
+    />
+  </div>
+</body>
 `;

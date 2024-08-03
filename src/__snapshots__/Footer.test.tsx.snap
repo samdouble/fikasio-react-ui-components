@@ -1,61 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer Renders correctly 1`] = `
-<div
-  className="fikasio-footer fikasio-theme-dark"
-  style={Object {}}
->
-  <div
-    className="container-fluid"
-  >
+<body>
+  <div>
     <div
-      className="row"
-      style={
-        Object {
-          "backgroundColor": "#2e2e2e",
-          "paddingTop": 25,
-        }
-      }
+      class="fikasio-footer fikasio-theme-dark"
     >
       <div
-        className="col-md-12"
+        class="container-fluid"
       >
         <div
-          className="text-center"
-        />
-      </div>
-    </div>
-    <div
-      className="row"
-      style={
-        Object {
-          "backgroundColor": "#2e2e2e",
-          "paddingBottom": 25,
-        }
-      }
-    >
-      <div
-        className="col-md-4"
-      >
+          class="row"
+          style="background-color: rgb(46, 46, 46); padding-top: 25px;"
+        >
+          <div
+            class="col-md-12"
+          >
+            <div
+              class="text-center"
+            />
+          </div>
+        </div>
         <div
-          className="text-left"
-        />
-      </div>
-      <div
-        className="col-md-4"
-      >
-        <div
-          className="text-center"
-        />
-      </div>
-      <div
-        className="col-md-4"
-      >
-        <div
-          className="text-right"
-        />
+          class="row"
+          style="background-color: rgb(46, 46, 46); padding-bottom: 25px;"
+        >
+          <div
+            class="col-md-4"
+          >
+            <div
+              class="text-left"
+            />
+          </div>
+          <div
+            class="col-md-4"
+          >
+            <div
+              class="text-center"
+            />
+          </div>
+          <div
+            class="col-md-4"
+          >
+            <div
+              class="text-right"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>
 `;

@@ -5,6 +5,7 @@ import BootstrapTable from 'react-bootstrap/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
+import isEqual from 'lodash.isequal';
 import usePrevious from 'use-previous';
 import { Checkbox } from '../Checkbox/Checkbox';
 import useTheme from '../../hooks/useTheme';
@@ -40,11 +41,11 @@ type Row = any;
 
 export interface TableProps {
   className?: string;
-  columns: (CellColumn | NumberingColumn | OptionsColumn)[];
+  columns?: (CellColumn | NumberingColumn | OptionsColumn)[];
   isRowChecked?: (row: any) => boolean;
   isSelectable?: boolean;
   onRowClick?: (row: any) => void;
-  options: (row: Row) => JSX.Element;
+  options?: (row: Row) => JSX.Element;
   rows?: Row[];
   style?: React.CSSProperties;
 }
@@ -55,19 +56,22 @@ export function Table({
   isRowChecked = () => false,
   isSelectable = true,
   onRowClick = () => undefined,
-  options = () => <></>,
+  options = () => <div />,
   rows = [],
   style = {},
 }: TableProps) {
   const [orderedBy, setOrderedBy] = useState<CellColumn | null>(null);
   const [orderDirection, setOrderDirection] = useState<string>('ASC');
+  const prevRows = usePrevious(rows);
   const [orderedRows, setOrderedRows] = useState(rows ? [...rows] : []);
   const prevOrderedBy = usePrevious(orderedBy);
 
   const theme = useTheme();
 
   useEffect(() => {
-    setOrderedRows([...(rows || [])]);
+    if (!isEqual(rows, prevRows)) {
+      setOrderedRows([...(rows || [])]);
+    }
   }, [rows]);
 
   useEffect(() => {
