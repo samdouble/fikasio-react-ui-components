@@ -10,7 +10,6 @@ export interface SelectProps {
   className?: string;
   defaultValue?: string;
   menuPortalTarget?: HTMLElement | null;
-  menuShouldScrollIntoView?: boolean;
   name?: string;
   onChange?: (value: string) => void;
   options?: any[];
@@ -22,7 +21,6 @@ export function Select({
   className = '',
   defaultValue = undefined,
   menuPortalTarget = document.querySelector('body'),
-  menuShouldScrollIntoView = false,
   name = undefined,
   onChange = () => undefined,
   options = [],
@@ -72,8 +70,6 @@ export function Select({
         defaultValue={options.find(o => o.value === currentValue)}
         onChange={handleChange}
         menuPortalTarget={menuPortalTarget || undefined}
-        menuPosition="fixed"
-        menuShouldScrollIntoView={menuShouldScrollIntoView}
         options={options}
         placeholder=""
         styles={{
@@ -114,7 +110,6 @@ Select.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.string,
   menuPortalTarget: PropTypes.element,
-  menuShouldScrollIntoView: PropTypes.bool,
   name: PropTypes.string,
   onChange: PropTypes.func,
   options: PropTypes.arrayOf(
