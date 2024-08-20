@@ -1,12 +1,12 @@
-import React from 'react';
-import Input, { InputProps } from '../components/Input/Input';
+import React from "react";
+import Input, { InputProps } from "../components/Input/Input";
 
 const story = {
-  title: 'Input',
+  title: "Input",
   component: Input,
   argTypes: {
-    className: { control: 'text' },
-    style: { control: 'object' },
+    className: { control: "text" },
+    style: { control: "object" },
   },
 };
 
