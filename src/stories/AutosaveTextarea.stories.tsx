@@ -1,12 +1,14 @@
-import React from 'react';
-import AutosaveTextarea, { AutosaveTextareaProps } from '../components/AutosaveTextarea/AutosaveTextarea';
+import React from "react";
+import AutosaveTextarea, {
+  AutosaveTextareaProps,
+} from "../components/AutosaveTextarea/AutosaveTextarea";
 
 const story = {
-  title: 'AutosaveTextarea',
+  title: "AutosaveTextarea",
   component: AutosaveTextarea,
   argTypes: {
-    className: { control: 'text' },
-    style: { control: 'object' },
+    className: { control: "text" },
+    style: { control: "object" },
   },
 };
 
@@ -40,7 +42,10 @@ function Template({
 
 export const AutosaveTextareaNoStyle = Template.bind({});
 AutosaveTextareaNoStyle.args = {
-  onSave: async () => new Promise(resolve => { setTimeout(resolve, 150); }),
+  onSave: async () =>
+    new Promise((resolve) => {
+      setTimeout(resolve, 150);
+    }),
 };
 
 export default story;

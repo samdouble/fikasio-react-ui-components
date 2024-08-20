@@ -1,25 +1,17 @@
-import React from 'react';
-import Selector, { SelectorProps } from '../components/Selector/Selector';
+import React from "react";
+import Selector, { SelectorProps } from "../components/Selector/Selector";
 
 const story = {
-  title: 'Selector',
+  title: "Selector",
   component: Selector,
   argTypes: {
-    className: { control: 'text' },
-    style: { control: 'object' },
+    className: { control: "text" },
+    style: { control: "object" },
   },
 };
 
-function Template({
-  className,
-  style,
-}: SelectorProps) {
-  return (
-    <Selector
-      className={className}
-      style={style}
-    />
-  );
+function Template({ className, style }: SelectorProps) {
+  return <Selector className={className} style={style} />;
 }
 
 export const SelectorNoStyle = Template.bind({});
