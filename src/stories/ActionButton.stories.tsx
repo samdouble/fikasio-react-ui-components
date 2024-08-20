@@ -1,13 +1,13 @@
-import React from 'react';
-import Button from '../components/Button/Button';
-import { ActionButtonProps } from '../components/Button/ActionButton';
+import React from "react";
+import Button from "../components/Button/Button";
+import { ActionButtonProps } from "../components/Button/ActionButton";
 
 const story = {
-  title: 'ActionButton',
+  title: "ActionButton",
   component: Button.Action,
   argTypes: {
-    className: { control: 'text' },
-    style: { control: 'object' },
+    className: { control: "text" },
+    style: { control: "object" },
   },
 };
 
@@ -31,6 +31,8 @@ function Template({
 }
 
 export const ActionButtonNoStyle = Template.bind({});
-ActionButtonNoStyle.args = {};
+ActionButtonNoStyle.args = {
+  children: 'Click me',
+};
 
 export default story;

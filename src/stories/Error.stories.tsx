@@ -1,25 +1,18 @@
-import React from 'react';
-import Error, { ErrorProps } from '../components/Error/Error';
+import React from "react";
+import Error, { ErrorProps } from "../components/Error/Error";
 
 const story = {
-  title: 'Error',
+  title: "Error",
   component: Error,
   argTypes: {
-    className: { control: 'text' },
-    style: { control: 'object' },
+    className: { control: "text" },
+    style: { control: "object" },
   },
 };
 
-function Template({
-  children,
-  className,
-  style,
-}: ErrorProps) {
+function Template({ children, className, style }: ErrorProps) {
   return (
-    <Error
-      className={className}
-      style={style}
-    >
+    <Error className={className} style={style}>
       {children}
     </Error>
   );
