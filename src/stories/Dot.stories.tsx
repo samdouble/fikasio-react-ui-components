@@ -1,12 +1,12 @@
-import React from "react";
-import Dot, { DotProps } from "../components/Dot/Dot";
+import React from 'react';
+import Dot, { DotProps } from '../components/Dot/Dot';
 
 const story = {
-  title: "Dot",
+  title: 'Dot',
   component: Dot,
   argTypes: {
-    className: { control: "text" },
-    style: { control: "object" },
+    className: { control: 'text' },
+    style: { control: 'object' },
   },
 };
 
@@ -18,7 +18,7 @@ function Template({ className, color, style, width }: DotProps) {
 
 export const DotRedWith30 = Template.bind({});
 DotRedWith30.args = {
-  color: "red",
+  color: 'red',
   width: 30,
 };
 
