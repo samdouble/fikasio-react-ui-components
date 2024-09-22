@@ -1,12 +1,12 @@
-import React from "react";
-import Select, { SelectProps } from "../components/Select/Select";
+import React from 'react';
+import Select, { SelectProps } from '../components/Select/Select';
 
 const story = {
-  title: "Select",
+  title: 'Select',
   component: Select,
   argTypes: {
-    className: { control: "text" },
-    style: { control: "object" },
+    className: { control: 'text' },
+    style: { control: 'object' },
   },
 };
 
@@ -34,19 +34,19 @@ function Template({
 
 export const SelectTwoOptions = Template.bind({});
 SelectTwoOptions.args = {
-  defaultValue: "B",
+  defaultValue: 'B',
   menuPortalTarget: null,
-  onChange: (value) => {
+  onChange: value => {
     console.info(value);
   },
   options: [
     {
-      label: "A",
-      value: "A",
+      label: 'A',
+      value: 'A',
     },
     {
-      label: "B",
-      value: "B",
+      label: 'B',
+      value: 'B',
     },
   ],
 };

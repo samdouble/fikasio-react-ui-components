@@ -1,12 +1,12 @@
-import React from "react";
-import Warning, { WarningProps } from "../components/Warning/Warning";
+import React from 'react';
+import Warning, { WarningProps } from '../components/Warning/Warning';
 
 const story = {
-  title: "Warning",
+  title: 'Warning',
   component: Warning,
   argTypes: {
-    className: { control: "text" },
-    style: { control: "object" },
+    className: { control: 'text' },
+    style: { control: 'object' },
   },
 };
 

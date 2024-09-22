@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import DatePicker, {
   DatePickerProps,
-} from "../components/DatePicker/DatePicker";
+} from '../components/DatePicker/DatePicker';
 
 const story = {
-  title: "DatePicker",
+  title: 'DatePicker',
   component: DatePicker,
   argTypes: {
-    className: { control: "text" },
-    style: { control: "object" },
+    className: { control: 'text' },
+    style: { control: 'object' },
   },
 };
 
