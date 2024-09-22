@@ -1,12 +1,12 @@
-import React from "react";
-import Error, { ErrorProps } from "../components/Error/Error";
+import React from 'react';
+import Error, { ErrorProps } from '../components/Error/Error';
 
 const story = {
-  title: "Error",
+  title: 'Error',
   component: Error,
   argTypes: {
-    className: { control: "text" },
-    style: { control: "object" },
+    className: { control: 'text' },
+    style: { control: 'object' },
   },
 };
 

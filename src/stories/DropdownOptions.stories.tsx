@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import DropdownOptions, {
   DropdownOptionsProps,
-} from "../components/DropdownOptions/DropdownOptions";
+} from '../components/DropdownOptions/DropdownOptions';
 
 const story = {
-  title: "DropdownOptions",
+  title: 'DropdownOptions',
   component: DropdownOptions,
   argTypes: {
-    className: { control: "text" },
-    style: { control: "object" },
+    className: { control: 'text' },
+    style: { control: 'object' },
   },
 };
 
@@ -22,9 +22,9 @@ export const DropdownOptionsUnchecked = Template.bind({});
 DropdownOptionsUnchecked.args = {
   options: [
     {
-      label: "Delete",
-      onClick: () => console.info("delete"),
-      type: "delete",
+      label: 'Delete',
+      onClick: () => console.info('delete'),
+      type: 'delete',
     },
   ],
 };
