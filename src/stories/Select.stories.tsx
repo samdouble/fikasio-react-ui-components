@@ -36,7 +36,7 @@ export const SelectTwoOptions = Template.bind({});
 SelectTwoOptions.args = {
   defaultValue: 'B',
   menuPortalTarget: null,
-  onChange: (value) => {
+  onChange: value => {
     console.info(value);
   },
   options: [

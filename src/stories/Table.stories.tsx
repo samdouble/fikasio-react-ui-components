@@ -40,13 +40,13 @@ TableNoStyle.args = {
     {
       isSortable: true,
       name: 'Last name',
-      render: (r) => r.lastName,
+      render: r => r.lastName,
       type: 'cell',
     },
     {
       isSortable: true,
       name: 'First name',
-      render: (r) => r.firstName,
+      render: r => r.firstName,
       type: 'cell',
     },
   ],
