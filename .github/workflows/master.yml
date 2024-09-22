@@ -30,6 +30,8 @@ jobs:
         run: |
           yarn build
       - name: Publish
+        env:
+          NPM_API_TOKEN: ${{ secrets.NPM_API_TOKEN }}
         run: |
           npm set //registry.npmjs.org/:_authToken $NPM_API_TOKEN
           npm publish --access=public
