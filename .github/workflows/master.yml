@@ -1,0 +1,35 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.3.1'
+      - name: Install
+        run: |
+          yarn
+      - name: Lint
+        run: |
+          yarn lint
+      - name: Test
+        run: |
+          yarn test
+      - name: Build
+        run: |
+          yarn build
+      - name: Publish
+        run: |
+          npm set //registry.npmjs.org/:_authToken $NPM_API_TOKEN
+          npm publish --access=public
