@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import AutosaveTextarea, {
   AutosaveTextareaProps,
-} from "../components/AutosaveTextarea/AutosaveTextarea";
+} from '../components/AutosaveTextarea/AutosaveTextarea';
 
 const story = {
-  title: "AutosaveTextarea",
+  title: 'AutosaveTextarea',
   component: AutosaveTextarea,
   argTypes: {
-    className: { control: "text" },
-    style: { control: "object" },
+    className: { control: 'text' },
+    style: { control: 'object' },
   },
 };
 

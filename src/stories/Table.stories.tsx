@@ -1,12 +1,12 @@
-import React from "react";
-import Table, { TableProps } from "../components/Table/Table";
+import React from 'react';
+import Table, { TableProps } from '../components/Table/Table';
 
 const story = {
-  title: "Table",
+  title: 'Table',
   component: Table,
   argTypes: {
-    className: { control: "text" },
-    style: { control: "object" },
+    className: { control: 'text' },
+    style: { control: 'object' },
   },
 };
 
@@ -39,21 +39,21 @@ TableNoStyle.args = {
   columns: [
     {
       isSortable: true,
-      name: "Last name",
+      name: 'Last name',
       render: (r) => r.lastName,
-      type: "cell",
+      type: 'cell',
     },
     {
       isSortable: true,
-      name: "First name",
+      name: 'First name',
       render: (r) => r.firstName,
-      type: "cell",
+      type: 'cell',
     },
   ],
   rows: [
     {
-      lastName: "Whittom",
-      firstName: "Samuel",
+      lastName: 'Whittom',
+      firstName: 'Samuel',
     },
   ],
 };

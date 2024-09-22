@@ -1,12 +1,12 @@
-import React from "react";
-import SearchBar, { SearchBarProps } from "../components/SearchBar/SearchBar";
+import React from 'react';
+import SearchBar, { SearchBarProps } from '../components/SearchBar/SearchBar';
 
 const story = {
-  title: "SearchBar",
+  title: 'SearchBar',
   component: SearchBar,
   argTypes: {
-    className: { control: "text" },
-    style: { control: "object" },
+    className: { control: 'text' },
+    style: { control: 'object' },
   },
 };
 
