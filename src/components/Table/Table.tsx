@@ -132,7 +132,7 @@ export function Table({
                       className={classNames({
                         'sortable-column': column.isSortable,
                       })}
-                      key={column.name}
+                      key={`header-${column.name}`}
                       onClick={() => setOrderedBy(column)}
                       style={{
                         whiteSpace: 'nowrap',
@@ -153,7 +153,7 @@ export function Table({
                 if (column.type === 'numbering') {
                   return (
                     <th
-                      key={column.name}
+                      key={`header-${column.name}`}
                       style={{
                         width: 30,
                       }}
@@ -164,7 +164,7 @@ export function Table({
                   return (
                     <th
                       className="itemStaticColumn-right"
-                      key={column.name}
+                      key={`header-${column.name}`}
                       style={{
                         textAlign: 'center',
                         width: 35,
@@ -211,7 +211,7 @@ export function Table({
                         return (
                           <td
                             className="itemRow_field"
-                            key={column.name}
+                            key={`cell-${column.name}-row-${JSON.stringify(row)}`}
                           >
                             {
                               column.render
@@ -224,7 +224,7 @@ export function Table({
                       if (column.type === 'numbering') {
                         return (
                           <td
-                            key={column.name}
+                            key={`cell-${column.name}-row-${JSON.stringify(row)}`}
                           >
                             {index + 1}
                           </td>
@@ -234,7 +234,7 @@ export function Table({
                         return (
                           <td
                             className="itemStaticColumn-right"
-                            key={column.name}
+                            key={`cell-${column.name}-row-${JSON.stringify(row)}`}
                           >
                             {options(row)}
                           </td>
