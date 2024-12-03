@@ -42,7 +42,7 @@ function Template({
 
 export const AutosaveTextareaNoStyle = Template.bind({});
 AutosaveTextareaNoStyle.args = {
-  onSave: async () => new Promise(resolve => {
+  onSave: async (_value: string) => new Promise(resolve => {
     setTimeout(resolve, 150);
   }),
 };
