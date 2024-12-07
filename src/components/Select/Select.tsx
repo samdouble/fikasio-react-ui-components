@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import ReactSelect from 'react-select';
 import classNames from 'classnames';
+import { styled } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import MUISelect, { SelectChangeEvent } from '@mui/material/Select';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Select.scss';
 
+
 export interface SelectProps {
   className?: string;
   defaultValue?: string;
-  menuPortalTarget?: HTMLElement | null;
   name?: string;
   onChange?: (value: string) => void;
   options?: any[];
@@ -20,7 +24,6 @@ export interface SelectProps {
 export function Select({
   className = '',
   defaultValue = undefined,
-  menuPortalTarget = document.querySelector('body'),
   name = undefined,
   onChange = () => undefined,
   options = [],
@@ -36,8 +39,8 @@ export function Select({
 
   const theme = useTheme();
 
-  const handleChange = option => {
-    const newValue = option.value;
+  const handleChange = (e: SelectChangeEvent) => {
+    const newValue = e.target.value;
     if (onChange) {
       onChange(newValue);
     }
@@ -45,6 +48,37 @@ export function Select({
       setInternalValue(newValue);
     }
   };
+
+  const BootstrapInput = styled(InputBase)(({ theme }) => ({
+    'label + &': {
+      marginTop: theme.spacing(3),
+    },
+    '& .MuiInputBase-input': {
+      backgroundColor: theme.palette.background.paper,
+      border: style?.border || '1px solid #cccccc',
+      borderColor: style?.borderColor,
+      borderRadius: style?.borderRadius || 0,
+      borderStyle: style?.borderStyle,
+      borderWidth: style?.borderWidth,
+      padding: '10px 26px 10px 12px',
+      position: 'relative',
+      width: style?.minWidth,
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+      '&:focus': {
+      },
+    },
+  }));
 
   return (
     <span
@@ -65,43 +99,21 @@ export function Select({
           />
         )
       }
-      <ReactSelect
-        classNamePrefix="fikasio-select"
-        defaultValue={options.find(o => o.value === currentValue)}
-        onChange={handleChange}
-        menuPortalTarget={menuPortalTarget || undefined}
-        options={options}
-        placeholder=""
-        styles={{
-          container: baseStyles => ({
-            ...baseStyles,
-            ...(style?.minWidth && { width: style.minWidth }),
-            ...(style?.width && { width: style.width }),
-          }),
-          control: baseStyles => ({
-            ...baseStyles,
-            border: style?.border || '1px solid #cccccc',
-            borderColor: style?.borderColor,
-            borderRadius: style?.borderRadius || 0,
-            borderStyle: style?.borderStyle,
-            borderWidth: style?.borderWidth,
-          }),
-          menu: baseStyles => ({
-            ...baseStyles,
-            borderRadius: style?.borderRadius || 0,
-            marginTop: 2,
-          }),
-          menuList: baseStyles => ({
-            ...baseStyles,
-            paddingTop: 0,
-            paddingBottom: 0,
-          }),
-          menuPortal: ({ left, top, ...provided }) => ({
-            ...provided,
-          }),
-        }}
-        value={options.find(o => o.value === currentValue)}
-      />
+      <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+        <MUISelect
+          className="fikasio-select"
+          id="demo-select-small"
+          input={<BootstrapInput />}
+          onChange={handleChange}
+          value={currentValue}
+        >
+          {
+            options.map(option => (
+              <MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>
+            ))
+          }
+        </MUISelect>
+      </FormControl>
     </span>
   );
 }
@@ -109,7 +121,6 @@ export function Select({
 Select.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.string,
-  menuPortalTarget: PropTypes.element,
   name: PropTypes.string,
   onChange: PropTypes.func,
   options: PropTypes.arrayOf(
