@@ -10,13 +10,12 @@ import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Select.scss';
 
-
 export interface SelectProps {
   className?: string;
   defaultValue?: string;
   name?: string;
   onChange?: (value: string) => void;
-  options?: any[];
+  options?: { label: string; value: string }[];
   style?: React.CSSProperties;
   value?: string;
 }
@@ -49,12 +48,12 @@ export function Select({
     }
   };
 
-  const BootstrapInput = styled(InputBase)(({ theme }) => ({
+  const BootstrapInput = styled(InputBase)(({ theme: inputTheme }) => ({
     'label + &': {
-      marginTop: theme.spacing(3),
+      marginTop: inputTheme.spacing(3),
     },
     '& .MuiInputBase-input': {
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: inputTheme.palette.background.paper,
       border: style?.border || '1px solid #cccccc',
       borderColor: style?.borderColor,
       borderRadius: style?.borderRadius || 0,
