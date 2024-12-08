@@ -1,5 +1,5 @@
-@import '../../themes.scss';
+@use '../../themes.scss';
 
 .fikasio-error {
-  font-family: $fontFamily;
+  font-family: themes.$fontFamily;
 }
