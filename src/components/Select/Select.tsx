@@ -49,9 +49,6 @@ export function Select({
   };
 
   const BootstrapInput = styled(InputBase)(({ theme: inputTheme }) => ({
-    'label + &': {
-      marginTop: inputTheme.spacing(3),
-    },
     '& .MuiInputBase-input': {
       backgroundColor: inputTheme.palette.background.paper,
       border: style?.border || '1px solid #cccccc',
@@ -59,7 +56,7 @@ export function Select({
       borderRadius: style?.borderRadius || 0,
       borderStyle: style?.borderStyle,
       borderWidth: style?.borderWidth,
-      padding: '10px 26px 10px 12px',
+      padding: '6px 26px 6px 10px',
       position: 'relative',
       width: style?.minWidth,
       fontFamily: [
