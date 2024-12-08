@@ -1,5 +1,9 @@
-@import '../../themes.scss';
+@use '../../themes.scss';
 
 .fikasio-select {
-  font-family: $fontFamily;
+  font-family: themes.$fontFamily;
+
+  & .MuiFormControl-root {
+    margin: 0;
+  }
 }

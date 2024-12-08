@@ -97,8 +97,6 @@ export function Select({
       }
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
         <MUISelect
-          className="fikasio-select"
-          id="demo-select-small"
           input={<BootstrapInput />}
           onChange={handleChange}
           value={currentValue}
