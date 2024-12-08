@@ -10,6 +10,7 @@ import './Button.scss';
 export interface ActionButtonProps {
   children: string | JSX.Element;
   className?: string;
+  disabled?: boolean;
   onClick?: () => void;
   style?: React.CSSProperties;
   type?: 'submit';
@@ -18,6 +19,7 @@ export interface ActionButtonProps {
 export function ActionButton({
   children,
   className = '',
+  disabled = false,
   onClick = () => undefined,
   style = {},
   type = undefined,
@@ -32,6 +34,7 @@ export function ActionButton({
         'fikasio-theme-light': theme === 'light',
         ...convertClassNameToObj(className),
       })}
+      disabled={disabled}
       onClick={onClick}
       style={{
         ...style,
@@ -47,6 +50,7 @@ export function ActionButton({
 ActionButton.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   type: PropTypes.string,
