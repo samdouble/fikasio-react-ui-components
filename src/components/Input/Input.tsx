@@ -9,8 +9,10 @@ import './Input.scss';
 export interface InputProps {
   className?: string;
   defaultValue?: string;
+  disabled?: boolean;
   name?: string;
   onChange?: (value: string) => void;
+  placeholder?: string;
   style?: React.CSSProperties;
   value?: string;
 }
@@ -18,8 +20,10 @@ export interface InputProps {
 export function Input({
   className = '',
   defaultValue = undefined,
+  disabled = false,
   name = undefined,
   onChange = () => undefined,
+  placeholder = undefined,
   style = {},
   value = undefined,
 }: InputProps) {
@@ -56,8 +60,10 @@ export function Input({
     >
       <input
         className="form-control"
+        disabled={disabled}
         name={name}
         onChange={e => handleChange(e.target.value)}
+        placeholder={placeholder}
         style={{
           border: 'none',
           borderRadius: 0,
@@ -74,11 +80,13 @@ export function Input({
 
 Input.propTypes = {
   className: PropTypes.string,
-  defaultValue: PropTypes.bool,
+  defaultValue: PropTypes.string,
+  disabled: PropTypes.bool,
   name: PropTypes.string,
   onChange: PropTypes.func,
+  placeholder: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  value: PropTypes.bool,
+  value: PropTypes.string,
 };
 
 export default Input;

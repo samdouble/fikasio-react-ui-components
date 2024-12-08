@@ -13,6 +13,7 @@ import './Select.scss';
 export interface SelectProps {
   className?: string;
   defaultValue?: string;
+  disabled?: boolean;
   name?: string;
   onChange?: (value: string) => void;
   options?: { label: string; value: string }[];
@@ -23,6 +24,7 @@ export interface SelectProps {
 export function Select({
   className = '',
   defaultValue = undefined,
+  disabled = false,
   name = undefined,
   onChange = () => undefined,
   options = [],
@@ -97,6 +99,7 @@ export function Select({
       }
       <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
         <MUISelect
+          disabled={disabled}
           input={<BootstrapInput />}
           onChange={handleChange}
           value={currentValue}
@@ -115,6 +118,7 @@ export function Select({
 Select.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.string,
+  disabled: PropTypes.bool,
   name: PropTypes.string,
   onChange: PropTypes.func,
   options: PropTypes.arrayOf(
