@@ -10,15 +10,13 @@ exports[`Select Renders correctly 1`] = `
         class="MuiFormControl-root css-hs8t5g-MuiFormControl-root"
       >
         <div
-          class="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall fikasio-select css-ofckld-MuiInputBase-root"
+          class="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-ofckld-MuiInputBase-root"
         >
           <div
             aria-controls=":r0:"
             aria-expanded="false"
             aria-haspopup="listbox"
-            aria-labelledby="demo-select-small"
             class="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiInputBase-inputSizeSmall css-id4s6h-MuiSelect-select-MuiInputBase-input"
-            id="demo-select-small"
             role="combobox"
             tabindex="0"
           >

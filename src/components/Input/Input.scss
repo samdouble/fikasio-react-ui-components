@@ -1,7 +1,7 @@
-@import '../../themes.scss';
+@use '../../themes.scss';
 
 .fikasio-input {
-  font-family: $fontFamily;
+  font-family: themes.$fontFamily;
 }
 
 .fikasio-input .form-control:focus {

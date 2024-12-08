@@ -1,9 +1,9 @@
-@import '../../themes.scss';
+@use '../../themes.scss';
 
 .fikasio-dropdownOptions {
   color: black;
   cursor: pointer;
-  font-family: $fontFamily;
+  font-family: themes.$fontFamily;
   text-decoration: none;
 }
 
