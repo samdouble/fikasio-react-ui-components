@@ -4,7 +4,7 @@ import { Dot } from '.';
 
 describe('Dot', () => {
   it('Renders correctly', () => {
-    const { baseElement } = render(<Dot width={30} />);
+    const { baseElement } = render(<Dot size={30} />);
     expect(baseElement).toMatchSnapshot();
   });
 });

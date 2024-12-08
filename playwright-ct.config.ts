@@ -55,6 +55,7 @@ export default defineConfig({
         ...devices['Desktop Firefox'],
       },
     },
+    // TODO: Enable this once we have a way to run tests on Safari and Mobile Safari
     // {
     //   name: 'webkit',
     //   use: {

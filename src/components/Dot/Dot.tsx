@@ -8,15 +8,15 @@ import './Dot.scss';
 export interface DotProps {
   className?: string;
   color?: string;
+  size: number;
   style?: React.CSSProperties;
-  width: number;
 }
 
 export function Dot({
   className = '',
   color = '#000000',
+  size,
   style = {},
-  width,
 }: DotProps) {
   const theme = useTheme();
 
@@ -30,8 +30,8 @@ export function Dot({
       })}
       style={{
         backgroundColor: color,
-        height: width,
-        width,
+        height: size,
+        width: size,
         ...style,
       }}
     />
@@ -41,8 +41,8 @@ export function Dot({
 Dot.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
+  size: PropTypes.number,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  width: PropTypes.number,
 };
 
 export default Dot;
