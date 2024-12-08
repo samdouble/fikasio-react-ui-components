@@ -1,7 +1,7 @@
-@import '../../themes.scss';
+@use '../../themes.scss';
 
 .fikasio-table {
-  font-family: $fontFamily;
+  font-family: themes.$fontFamily;
   table-layout: fixed;
 }
 
