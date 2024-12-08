@@ -3,6 +3,10 @@
 exports[`AutosaveTextarea Renders correctly 1`] = `
 <body>
   <div>
+    <input
+      type="hidden"
+      value=""
+    />
     <div
       class="fikasio-textarea fikasio-theme-dark"
       contenteditable="true"

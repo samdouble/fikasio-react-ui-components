@@ -10,6 +10,7 @@ import './style.scss';
 export interface AutosaveTextareaProps {
   className?: string;
   defaultValue?: string;
+  name?: string;
   onBlur?: any;
   onChange?: any;
   onFocus?: any;
@@ -25,6 +26,7 @@ export interface AutosaveTextareaProps {
 function AutosaveTextarea({
   className = '',
   defaultValue = undefined,
+  name = undefined,
   onBlur = () => undefined,
   onChange = () => undefined,
   onFocus = () => undefined,
@@ -70,29 +72,37 @@ function AutosaveTextarea({
 
   return useContentEditableDiv
     ? (
-      <ContentEditable
-        className={classNames({
-          'fikasio-textarea': true,
-          'fikasio-theme-dark': theme === 'dark',
-          'fikasio-theme-light': theme === 'light',
-          ...convertClassNameToObj(className),
-        })}
-        html={currentValue}
-        onBlur={e => onBlur && onBlur(e)}
-        onChange={e => handleChange(e.target.value)}
-        onClick={e => e.stopPropagation()}
-        onFocus={e => onFocus && onFocus(e)}
-        onKeyDown={e => onKeyDown && onKeyDown(e)}
-        onKeyUp={e => onKeyUp && onKeyUp(e)}
-        ref={ref}
-        style={{
-          whiteSpace: 'pre',
-          ...style,
-        }}
-      />
+      <>
+        <input
+          name={name}
+          type="hidden"
+          value={currentValue}
+        />
+        <ContentEditable
+          className={classNames({
+            'fikasio-textarea': true,
+            'fikasio-theme-dark': theme === 'dark',
+            'fikasio-theme-light': theme === 'light',
+            ...convertClassNameToObj(className),
+          })}
+          html={currentValue}
+          onBlur={e => onBlur && onBlur(e)}
+          onChange={e => handleChange(e.target.value)}
+          onClick={e => e.stopPropagation()}
+          onFocus={e => onFocus && onFocus(e)}
+          onKeyDown={e => onKeyDown && onKeyDown(e)}
+          onKeyUp={e => onKeyUp && onKeyUp(e)}
+          ref={ref}
+          style={{
+            whiteSpace: 'pre',
+            ...style,
+          }}
+        />
+      </>
     ) : (
       <textarea
         className={className}
+        name={name}
         onBlur={e => onBlur(e)}
         onChange={e => handleChange(e.target.value)}
         onClick={e => e.stopPropagation()}
@@ -111,6 +121,7 @@ function AutosaveTextarea({
 AutosaveTextarea.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.string,
+  name: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
