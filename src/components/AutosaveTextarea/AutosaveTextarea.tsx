@@ -16,7 +16,7 @@ export interface AutosaveTextareaProps {
   onFocus?: any;
   onKeyDown?: any;
   onKeyUp?: any;
-  onSave: (value: string) => void;
+  onSave?: (value: string) => void;
   ref?: React.Ref<any>,
   style?: React.CSSProperties;
   useContentEditableDiv?: boolean;
