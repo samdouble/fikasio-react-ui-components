@@ -4,14 +4,46 @@ exports[`SearchBar Renders correctly 1`] = `
 <body>
   <div>
     <div
-      class="fikasio-input fikasio-theme-dark fikasio-searchbar"
-      style="border: 1px solid #cccccc; outline: none; padding-left: 22px; position: relative; top: -5px;"
+      class="MuiAutocomplete-root fikasio-searchbar fikasio-theme-dark css-1tlcqt-MuiAutocomplete-root"
+      style="outline: none; padding-left: 22px; position: relative; top: -5px;"
     >
-      <input
-        class="form-control"
-        style="border-radius: 0; height: 36px; padding: 6px 6px 6px 10px; width: 98%;"
-        value=""
-      />
+      <div
+        class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-cmpglg-MuiFormControl-root-MuiTextField-root"
+      >
+        <div
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiAutocomplete-inputRoot css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-expanded="false"
+            aria-invalid="false"
+            autocapitalize="none"
+            autocomplete="off"
+            class="MuiInputBase-input MuiOutlinedInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input"
+            id=":r0:"
+            placeholder=""
+            role="combobox"
+            spellcheck="false"
+            type="text"
+            value=""
+          />
+          <fieldset
+            aria-hidden="true"
+            class="MuiOutlinedInput-notchedOutline css-1ll44ll-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="css-w4cd9x"
+            >
+              <span
+                aria-hidden="true"
+                class="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
     </div>
     <svg
       aria-hidden="true"
