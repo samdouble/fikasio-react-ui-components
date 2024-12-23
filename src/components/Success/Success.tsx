@@ -13,7 +13,7 @@ import './Success.scss';
 library.add(faCheck);
 
 export interface SuccessProps {
-  children: string | JSX.Element;
+  children: string | React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
 }
