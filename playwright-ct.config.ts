@@ -1,24 +1,24 @@
 import { defineConfig, devices } from '@playwright/experimental-ct-react'
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
 export default defineConfig({
   expect: {
     timeout: 5000,
+    toMatchSnapshot: {
+      maxDiffPixelRatio: 0.05,
+    }, 
     toHaveScreenshot: {
       maxDiffPixelRatio: 0.05,
     },
   },
   forbidOnly: !!process.env.CI,
   fullyParallel: true,
+  reporter: 'html',
   retries: process.env.CI ? 2 : 0,
   testDir: './tests',
-  testMatch: '**/*.visual.test.tsx',
   testIgnore: 'ui/**',
+  testMatch: '**/*.visual.test.tsx',
   timeout: 10 * 1000,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
   use: {
     baseURL: 'http://localhost:3100',
     ctPort: 3100,
@@ -39,7 +39,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     viewport: {
       width: 1280,
-      height: 720
+      height: 720,
     },
   },
   projects: [

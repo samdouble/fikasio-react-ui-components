@@ -18,7 +18,7 @@ library.add(faCaretUp);
 interface Column {
   name?: string;
   onClick?: (row: Row) => void;
-  render?: (row: Row) => JSX.Element;
+  render?: (row: Row) => React.ReactNode;
   type: 'cell' | 'numbering' | 'options';
 }
 
@@ -45,7 +45,7 @@ export interface TableProps {
   isRowChecked?: (row: any) => boolean;
   isSelectable?: boolean;
   onRowClick?: (row: any) => void;
-  options?: (row: Row) => JSX.Element;
+  options?: (row: Row) => React.ReactNode;
   rows?: Row[];
   style?: React.CSSProperties;
 }
