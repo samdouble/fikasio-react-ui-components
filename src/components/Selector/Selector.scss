@@ -1,19 +1,8 @@
 @use '../../themes.scss';
 
 .fikasio-selector {
-  border: 1px solid #cccccc;
-  border-radius: 50%;
-  box-sizing: inherit;
-  color: gray;
   cursor: pointer;
   display: inline-block;
-  height: 22px;
-  line-height: inherit;
-  margin-left: 3px;
-  width: 22px;
-}
-
-.fikasio-selector:hover {
-  border: 1px solid #aeaeae;
-  background-color: #eeeeee;
+  font-family: themes.$fontFamily;
+  width: fit-content;
 }

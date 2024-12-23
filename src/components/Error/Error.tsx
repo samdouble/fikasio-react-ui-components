@@ -13,7 +13,7 @@ import './Error.scss';
 library.add(faTriangleExclamation);
 
 export interface ErrorProps {
-  children: string | JSX.Element;
+  children: string | React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
 }

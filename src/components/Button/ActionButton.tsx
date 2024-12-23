@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import PropTypes from 'prop-types';
 import BootstrapButton from 'react-bootstrap/Button';
 import classNames from 'classnames';
@@ -8,10 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Button.scss';
 
 export interface ActionButtonProps {
-  children: string | JSX.Element;
+  children: string | React.ReactNode;
   className?: string;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e: SyntheticEvent) => void;
   style?: React.CSSProperties;
   type?: 'submit';
 }
