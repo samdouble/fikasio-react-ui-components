@@ -6,8 +6,9 @@ test.describe('Warning', () => {
   test('Renders normally', async ({ mount }, testInfo) => {
     testInfo.snapshotSuffix = '';
     const component = await mount(
-      <div style={{ 
+      <div style={{
         padding: '2rem',
+        position: 'absolute',
         width: '400px',
       }}>
         <Warning>

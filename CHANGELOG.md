@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.10.0
+- Improved SearchBar component
+- Improved Selector component
+
 ### 0.9.5
 - Fixed Select menu positioning inside dynamic container
 

@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "author": "samdouble",
-  "version": "0.9.9",
+  "version": "0.10.0",
   "files": [
     "dist"
   ],
@@ -56,7 +56,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@chromatic-com/storybook": "^3.2.2",
-    "@playwright/experimental-ct-react": "^1.49.0",
+    "@playwright/experimental-ct-react": "^1.49.1",
     "@playwright/test": "^1.49.0",
     "@rollup/plugin-image": "^3.0.2",
     "@storybook/addon-actions": "^8.4.7",
@@ -74,7 +74,7 @@
     "@testing-library/user-event": "^14.5.1",
     "@types/jest-image-snapshot": "^6.2.1",
     "@types/node": "^20.3.1",
-    "@types/react": "^18.0.25",
+    "@types/react": "^19.0.2",
     "@types/react-fontawesome": "^1.6.6",
     "@types/uuid": "^9.0.2",
     "@typescript-eslint/parser": "^5.42.1",
