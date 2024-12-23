@@ -29,7 +29,7 @@ export function Select({
   onChange = () => undefined,
   options = [],
   style = {},
-  value = undefined,
+  value = options[0]?.value,
 }: SelectProps) {
   const isControlled = typeof value !== 'undefined';
   const hasDefaultValue = typeof defaultValue !== 'undefined';
@@ -58,9 +58,10 @@ export function Select({
       borderRadius: style?.borderRadius || 0,
       borderStyle: style?.borderStyle,
       borderWidth: style?.borderWidth,
+      minWidth: style?.minWidth,
       padding: '6px 26px 6px 10px',
       position: 'relative',
-      width: style?.minWidth,
+      width: style?.width,
       fontFamily: [
         '-apple-system',
         'BlinkMacSystemFont',
