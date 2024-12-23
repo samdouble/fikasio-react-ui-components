@@ -50,9 +50,8 @@ export function Select({
     }
   };
 
-  const BootstrapInput = styled(InputBase)(({ theme: inputTheme }) => ({
+  const BootstrapInput = styled(InputBase)(() => ({
     '& .MuiInputBase-input': {
-      backgroundColor: inputTheme.palette.background.paper,
       border: style?.border || '1px solid #cccccc',
       borderColor: style?.borderColor,
       borderRadius: style?.borderRadius || 0,
@@ -62,20 +61,6 @@ export function Select({
       padding: '6px 26px 6px 10px',
       position: 'relative',
       width: style?.width,
-      fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(','),
-      '&:focus': {
-      },
     },
   }));
 

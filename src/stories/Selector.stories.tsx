@@ -6,15 +6,25 @@ const story = {
   component: Selector,
   argTypes: {
     className: { control: 'text' },
+    options: { control: 'array' },
     style: { control: 'object' },
   },
 };
 
-function Template({ className, style }: SelectorProps) {
-  return <Selector className={className} style={style} />;
+function Template({ className, Component, options, style }: SelectorProps) {
+  return (
+    <Selector
+      className={className}
+      Component={Component}
+      options={options}
+      style={style}
+    />
+  );
 }
 
 export const SelectorNoStyle = Template.bind({});
-SelectorNoStyle.args = {};
+SelectorNoStyle.args = {
+  options: ['Option 1', 'Option 2', 'Option 3'],
+};
 
 export default story;

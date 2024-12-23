@@ -38,7 +38,7 @@ export function SearchBar({
         })}
         freeSolo
         options={options}
-        renderInput={(params) => (
+        renderInput={params => (
           <TextField
             {...params}
             placeholder={placeholder}

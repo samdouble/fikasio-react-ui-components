@@ -6,8 +6,9 @@ test.describe('Select', () => {
   test('Renders with two options', async ({ mount }, testInfo) => {
     testInfo.snapshotSuffix = '';
     const component = await mount(
-      <div style={{ 
+      <div style={{
         padding: '2rem',
+        position: 'absolute',
         width: '400px',
       }}>
         <Select
@@ -26,8 +27,9 @@ test.describe('Select', () => {
   test('Renders with a default value', async ({ mount }, testInfo) => {
     testInfo.snapshotSuffix = '';
     const component = await mount(
-      <div style={{ 
+      <div style={{
         padding: '2rem',
+        position: 'absolute',
         width: '400px',
       }}>
         <Select
