@@ -10,11 +10,21 @@ const story = {
   },
 };
 
-function Template({ className, style }: SearchBarProps) {
-  return <SearchBar className={className} style={style} />;
+function Template({ className, options, placeholder, style }: SearchBarProps) {
+  return (
+    <SearchBar
+      className={className}
+      options={options}
+      placeholder={placeholder}
+      style={style}
+    />
+  );
 }
 
 export const SearchBarNoStyle = Template.bind({});
-SearchBarNoStyle.args = {};
+SearchBarNoStyle.args = {
+  options: ['Option 1', 'Option 2', 'Option 3'],
+  placeholder: 'Search',
+};
 
 export default story;

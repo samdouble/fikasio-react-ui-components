@@ -146,6 +146,8 @@ The Footer component provides a flexible layout with multiple sections for conte
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
 | className               | string          | No              | Additional CSS class name for the SearchBar     |
+| options                 | strings         | No              | Suggestion options that will appear below       |
+| placeholder             | string          | No              | Placeholder text when textarea is empty         |
 | style                   | CSSProperties   | No              | Additional CSS styles for the SearchBar         |
 
 ### Select
@@ -170,6 +172,7 @@ The Footer component provides a flexible layout with multiple sections for conte
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
 | className               | string          | No              | Additional CSS class name for the Selector      |
+| options                 | array           | Yes             | Array of options to display in the select       |
 | style                   | CSSProperties   | No              | Additional CSS styles for the Selector          |
 
 ### Success
