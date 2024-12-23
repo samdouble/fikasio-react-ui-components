@@ -30,13 +30,13 @@ import { Footer } from '@fikasio/react-ui-components';
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
-| className               | string          | No             | Additional CSS class name for the textarea      |
-| defaultValue            | string          | No             | Initial text content of the textarea           |
-| name                    | string          | No             | Name attribute for the textarea input          |
-| onSave                  | function        | Yes            | Handler called when content should be saved     |
-| placeholder            | string          | No             | Placeholder text when textarea is empty        |
-| style                  | CSSProperties   | No             | Additional CSS styles for the textarea         |
-| value                  | string          | No             | Controlled text content value                  |
+| className               | string          | No              | Additional CSS class name for the textarea      |
+| defaultValue            | string          | No              | Initial text content of the textarea            |
+| name                    | string          | No              | Name attribute for the textarea input           |
+| onSave                  | function        | No              | Handler called when content should be saved     |
+| placeholder             | string          | No              | Placeholder text when textarea is empty         |
+| style                   | CSSProperties   | No              | Additional CSS styles for the textarea          |
+| value                   | string          | No              | Controlled text content value                   |
 
 ### Button
 
@@ -44,11 +44,11 @@ import { Footer } from '@fikasio/react-ui-components';
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
-| className               | string          | No             | Additional CSS class name for the button        |
-| disabled                | boolean         | No             | Whether the button is disabled                  |
-| onClick                 | function        | No             | Handler called when button is clicked           |
-| style                   | CSSProperties   | No             | Additional CSS styles for the button            |
-| type                    | string          | No             | Button type ('button', 'submit', 'reset')       |
+| className               | string          | No             | Additional CSS class name for the button         |
+| disabled                | boolean         | No             | Whether the button is disabled                   |
+| onClick                 | function        | No             | Handler called when button is clicked            |
+| style                   | CSSProperties   | No             | Additional CSS styles for the button             |
+| type                    | string          | No             | Button type ('button', 'submit', 'reset')        |
 
 ### Checkbox
 
