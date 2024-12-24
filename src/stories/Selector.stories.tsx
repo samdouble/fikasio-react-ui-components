@@ -24,6 +24,7 @@ function Template({ className, Component, options, style }: SelectorProps) {
 
 export const SelectorNoStyle = Template.bind({});
 SelectorNoStyle.args = {
+  Component: <div>Hello</div>,
   options: ['Option 1', 'Option 2', 'Option 3'],
 };
 
