@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.10.2
+- Fixed issue with SearchBar icon position
+
 ### 0.10.1
 - Added `onChange` and `onSelect` props to the SearchBar
 
