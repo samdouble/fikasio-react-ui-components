@@ -5,7 +5,7 @@ exports[`SearchBar Renders correctly 1`] = `
   <div>
     <div
       class="MuiAutocomplete-root fikasio-searchbar fikasio-theme-dark css-1tlcqt-MuiAutocomplete-root"
-      style="outline: none; padding-left: 22px; position: relative; top: -5px;"
+      style="min-width: 200px; padding-left: 22px;"
     >
       <div
         class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-cmpglg-MuiFormControl-root-MuiTextField-root"
@@ -52,7 +52,7 @@ exports[`SearchBar Renders correctly 1`] = `
       data-prefix="fas"
       focusable="false"
       role="img"
-      style="bottom: 36px; margin: 5px 5px 5px 10px; position: relative;"
+      style="bottom: 32px; margin: 5px 5px 5px 10px; position: relative;"
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >

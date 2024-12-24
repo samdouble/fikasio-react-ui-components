@@ -10,13 +10,26 @@ const story = {
   },
 };
 
-function Template({ className, options, placeholder, style }: SearchBarProps) {
+function Template({
+  className,
+  defaultValue,
+  onChange,
+  onSelect,
+  options,
+  placeholder,
+  style,
+  value,
+}: SearchBarProps) {
   return (
     <SearchBar
       className={className}
+      defaultValue={defaultValue}
+      onChange={onChange}
+      onSelect={onSelect}
       options={options}
       placeholder={placeholder}
       style={style}
+      value={value}
     />
   );
 }

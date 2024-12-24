@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.10.1
+- Added `onChange` and `onSelect` props to the SearchBar
+
 ### 0.10.0
 - Improved SearchBar component
 - Improved Selector component
