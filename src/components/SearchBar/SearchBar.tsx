@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -14,18 +14,42 @@ library.add(faSearch);
 
 export interface SearchBarProps {
   className?: string;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
+  onSelect?: (value: string) => void;
   options?: string[];
   placeholder?: string;
   style?: React.CSSProperties;
+  value?: string;
 }
 
 export function SearchBar({
   className = '',
+  defaultValue = undefined,
+  onChange = () => undefined,
+  onSelect = () => undefined,
   options = [],
   placeholder = '',
   style = {},
+  value = undefined,
 }: SearchBarProps) {
+  const isControlled = typeof value !== 'undefined';
+  const hasDefaultValue = typeof defaultValue !== 'undefined';
+  const [internalValue, setInternalValue] = useState<string | undefined>(
+    hasDefaultValue ? defaultValue : undefined,
+  );
+  const currentValue = isControlled ? value : internalValue;
+
   const theme = useTheme();
+  const [internalOptions, setInternalOptions] = useState(options);
+
+  const handleChange = (newValue: string) => {
+    onChange(newValue);
+    if (!isControlled) {
+      setInternalValue(newValue);
+    }
+    setInternalOptions(options.filter(option => option.toLowerCase().includes(newValue.toLowerCase())));
+  };
 
   return (
     <>
@@ -37,26 +61,27 @@ export function SearchBar({
           ...convertClassNameToObj(className),
         })}
         freeSolo
-        options={options}
+        onChange={(_e, newValue) => onSelect(newValue ?? '')}
+        onInputChange={(_e, newValue) => handleChange(newValue ?? '')}
+        options={internalOptions}
         renderInput={params => (
           <TextField
             {...params}
             placeholder={placeholder}
+            value={currentValue}
           />
         )}
         style={{
-          outline: 'none',
+          minWidth: 200,
           paddingLeft: 22,
-          position: 'relative',
-          top: -5,
           ...style,
         }}
       />
       <FontAwesomeIcon
-        icon="search"
+        icon="magnifying-glass"
         size="1x"
         style={{
-          bottom: 36,
+          bottom: 32,
           margin: 5,
           marginLeft: 10,
           position: 'relative',
@@ -68,9 +93,13 @@ export function SearchBar({
 
 SearchBar.propTypes = {
   className: PropTypes.string,
+  defaultValue: PropTypes.string,
+  onChange: PropTypes.func,
+  onSelect: PropTypes.func,
   options: PropTypes.arrayOf(PropTypes.string),
   placeholder: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  value: PropTypes.string,
 };
 
 export default SearchBar;
