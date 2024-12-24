@@ -52,14 +52,15 @@ export function SearchBar({
   };
 
   return (
-    <>
+    <div
+      className={classNames({
+        'fikasio-searchbar': true,
+        'fikasio-theme-dark': theme === 'dark',
+        'fikasio-theme-light': theme === 'light',
+        ...convertClassNameToObj(className),
+      })}
+    >
       <Autocomplete
-        className={classNames({
-          'fikasio-searchbar': true,
-          'fikasio-theme-dark': theme === 'dark',
-          'fikasio-theme-light': theme === 'light',
-          ...convertClassNameToObj(className),
-        })}
         freeSolo
         onChange={(_e, newValue) => onSelect(newValue ?? '')}
         onInputChange={(_e, newValue) => handleChange(newValue ?? '')}
@@ -87,7 +88,7 @@ export function SearchBar({
           position: 'relative',
         }}
       />
-    </>
+    </div>
   );
 }
 
