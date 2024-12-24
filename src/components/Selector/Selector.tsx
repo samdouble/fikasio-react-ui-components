@@ -10,7 +10,7 @@ import './Selector.scss';
 
 export interface SelectorProps {
   className?: string;
-  Component?: React.ComponentType;
+  Component?: React.ReactElement;
   defaultValue?: string;
   onChange?: (value: string) => void;
   options?: string[];
@@ -37,9 +37,7 @@ export function Selector({
   const theme = useTheme();
 
   const handleChange = (newValue: string) => {
-    if (onChange) {
-      onChange(newValue);
-    }
+    onChange(newValue);
     if (!isControlled) {
       setInternalValue(newValue);
     }
@@ -73,7 +71,7 @@ export function Selector({
             onClick={handleClick}
             role="presentation"
           >
-            <Component />
+            {Component}
           </div>
         ) : (
           <ActionButton
@@ -84,27 +82,28 @@ export function Selector({
         )
       }
       {
-        options.length > 0 && (
-          <Menu
-            anchorEl={anchorEl}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
-            }}
-            open={open}
-            onClose={handleClose}
-          >
-            {
-              options.map(option => (
-                <MenuItem
-                  key={option}
-                  onClick={_e => handleChange(option)}
-                >
-                  {option}
-                </MenuItem>
-              ))
-            }
-          </Menu>
-        )
+        options.length > 0
+          ? (
+            <Menu
+              anchorEl={anchorEl}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              {
+                options.map(option => (
+                  <MenuItem
+                    key={option}
+                    onClick={_e => handleChange(option)}
+                  >
+                    {option}
+                  </MenuItem>
+                ))
+              }
+            </Menu>
+          ) : null
       }
     </span>
   );
