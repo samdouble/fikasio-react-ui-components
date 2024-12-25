@@ -2,6 +2,7 @@
 
 ### 0.10.3
 - Added `displayFunction` prop to the DatePicker component
+- Fixed issue with SearchBar styles
 
 ### 0.10.2
 - Fixed issue with SearchBar icon position

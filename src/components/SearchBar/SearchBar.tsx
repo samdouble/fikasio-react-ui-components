@@ -59,6 +59,10 @@ export function SearchBar({
         'fikasio-theme-light': theme === 'light',
         ...convertClassNameToObj(className),
       })}
+      style={{
+        minWidth: 200,
+        ...style,
+      }}
     >
       <Autocomplete
         freeSolo
@@ -73,9 +77,7 @@ export function SearchBar({
           />
         )}
         style={{
-          minWidth: 200,
           paddingLeft: 22,
-          ...style,
         }}
       />
       <FontAwesomeIcon
