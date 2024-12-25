@@ -73,6 +73,7 @@ import { Footer } from '@fikasio/react-ui-components';
 | dateFormat              | string          | No              | Format for date value (e.g. 'yyyy-MM-dd')       |
 | defaultValue            | Date            | No              | Initial date value                              |
 | displayFormat           | string          | No              | Format for displaying the date                  |
+| displayFunction         | function        | No              | Function for displaying the date                |
 | isOpen                  | boolean         | No              | Controls whether the picker is open             |
 | name                    | string          | No              | Name attribute for the input                    |
 | onChange                | function        | No              | Handler called when date selection changes      |
