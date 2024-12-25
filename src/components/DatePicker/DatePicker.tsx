@@ -19,6 +19,7 @@ export interface DatePickerProps {
   dateFormat?: string,
   defaultValue?: Date;
   displayFormat?: string;
+  displayFunction?: (value: Date) => string;
   isOpen?: boolean;
   name?: string;
   onChange?: (value: Date) => void;
@@ -39,7 +40,8 @@ export function DatePicker({
   className = '',
   dateFormat = 'yyyy-MM-dd',
   defaultValue = undefined,
-  displayFormat = 'yyyy-MM-dd',
+  displayFormat = undefined,
+  displayFunction = undefined,
   isOpen: pIsOpen = false,
   name = undefined,
   onChange = () => undefined,
@@ -87,6 +89,15 @@ export function DatePicker({
       setInternalValue(newValue);
     }
   };
+
+  let displayedDate: string | null = null;
+  if (currentValue) {
+    if (displayFunction) {
+      displayedDate = displayFunction(currentValue);
+    } else {
+      displayedDate = DateTime.fromJSDate(currentValue).toFormat(displayFormat || 'yyyy-MM-dd');
+    }
+  }
 
   return (
     <div
@@ -149,10 +160,7 @@ export function DatePicker({
         size="1x"
         style={{ marginRight: 10 }}
       />
-      {
-        currentValue
-          && DateTime.fromJSDate(currentValue).toFormat(displayFormat)
-      }
+      {displayedDate}
       {
         showRemoveValue && currentValue && (
           <FontAwesomeIcon
@@ -176,6 +184,7 @@ DatePicker.propTypes = {
   dateFormat: PropTypes.string,
   defaultValue: PropTypes.instanceOf(Date),
   displayFormat: PropTypes.string,
+  displayFunction: PropTypes.func,
   isOpen: PropTypes.bool,
   name: PropTypes.string,
   onChange: PropTypes.func,
