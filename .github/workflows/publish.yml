@@ -2,8 +2,9 @@ name: Publish
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
+
 jobs:
   release-please:
     runs-on: ubuntu-latest
@@ -13,17 +14,13 @@ jobs:
         with:
           release-type: node
       - uses: actions/checkout@v4
-        if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v4
-        if: ${{ steps.release.outputs.release_created }}
         with:
           node-version: 22.12.0
           registry-url: 'https://registry.npmjs.org'
       - name: Install
-        if: ${{ steps.release.outputs.release_created }}
         run: npm install
       - name: Publish
-        if: ${{ steps.release.outputs.release_created }}
         env:
           NPM_API_TOKEN: ${{ secrets.NPM_API_TOKEN }}
         run: |
