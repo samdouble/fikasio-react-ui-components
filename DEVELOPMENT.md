@@ -57,3 +57,5 @@ rm package-lock.json
 - TypeScript
 - React
 - Storybook (development)
+- npm
+- Release-Please
