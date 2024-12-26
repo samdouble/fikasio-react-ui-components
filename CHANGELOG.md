@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v0.11.0...v0.11.1) (2024-12-26)
+
+
+### Bug Fixes
+
+* publish on npm on Release Please PR merge ([40fb561](https://github.com/samdouble/fikasio-react-ui-components/commit/40fb561a81886699105c511e59136e24281e0e97))
+
 ## [0.11.0](https://github.com/samdouble/fikasio-react-ui-components/compare/0.10.2...v0.11.0) (2024-12-26)
 
 
