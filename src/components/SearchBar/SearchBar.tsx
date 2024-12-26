@@ -17,6 +17,7 @@ export interface SearchBarProps {
   defaultValue?: string;
   onChange?: (value: string) => void;
   onSelect?: (value: string) => void;
+  onSubmit?: () => void;
   options?: string[];
   placeholder?: string;
   style?: React.CSSProperties;
@@ -28,6 +29,7 @@ export function SearchBar({
   defaultValue = undefined,
   onChange = () => undefined,
   onSelect = () => undefined,
+  onSubmit = () => undefined,
   options = [],
   placeholder = '',
   style = {},
@@ -67,6 +69,11 @@ export function SearchBar({
       <Autocomplete
         freeSolo
         onChange={(_e, newValue) => onSelect(newValue ?? '')}
+        onKeyUp={(e) => {
+          if (e.key === 'Enter') {
+            onSubmit();
+          }
+        }}
         onInputChange={(_e, newValue) => handleChange(newValue ?? '')}
         options={internalOptions}
         renderInput={params => (
@@ -99,6 +106,7 @@ SearchBar.propTypes = {
   defaultValue: PropTypes.string,
   onChange: PropTypes.func,
   onSelect: PropTypes.func,
+  onSubmit: PropTypes.func,
   options: PropTypes.arrayOf(PropTypes.string),
   placeholder: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),

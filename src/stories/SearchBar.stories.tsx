@@ -15,6 +15,7 @@ function Template({
   defaultValue,
   onChange,
   onSelect,
+  onSubmit,
   options,
   placeholder,
   style,
@@ -26,6 +27,7 @@ function Template({
       defaultValue={defaultValue}
       onChange={onChange}
       onSelect={onSelect}
+      onSubmit={onSubmit}
       options={options}
       placeholder={placeholder}
       style={style}
