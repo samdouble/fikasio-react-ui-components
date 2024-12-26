@@ -2,6 +2,7 @@
 
 ### 0.10.3
 - Added `displayFunction` prop to the DatePicker component
+- Added `onSubmit` prop to the SearchBar
 - Fixed issue with SearchBar styles
 
 ### 0.10.2
