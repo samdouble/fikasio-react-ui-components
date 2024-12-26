@@ -5,10 +5,11 @@ exports[`SearchBar Renders correctly 1`] = `
   <div>
     <div
       class="fikasio-searchbar fikasio-theme-dark"
+      style="min-width: 200px;"
     >
       <div
         class="MuiAutocomplete-root css-1tlcqt-MuiAutocomplete-root"
-        style="min-width: 200px; padding-left: 22px;"
+        style="padding-left: 22px;"
       >
         <div
           class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-cmpglg-MuiFormControl-root-MuiTextField-root"
