@@ -51,6 +51,7 @@ rm package-lock.json
 2. Update **CHANGELOG.md** to describe your changes
 3. Push your code
 4. Merge in `master` (production) branch
+5. Merge the Release Please branch
 
 ## Main languages, technologies and frameworks
 
