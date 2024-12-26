@@ -150,6 +150,7 @@ The Footer component provides a flexible layout with multiple sections for conte
 | defaultValue            | string          | No              | Initial value for uncontrolled input            |
 | onChange                | function        | No              | Handler called when input value changes         |
 | onSelect                | function        | No              | Handler called when an option is selected from the menu |
+| onSubmit                | function        | No              | Handler called when the Enter key is pressed    |
 | options                 | array           | No              | Suggestion options that will appear below       |
 | placeholder             | string          | No              | Placeholder text when textarea is empty         |
 | style                   | CSSProperties   | No              | Additional CSS styles for the SearchBar         |
