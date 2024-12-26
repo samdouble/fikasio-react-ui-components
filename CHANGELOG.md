@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.11.0](https://github.com/samdouble/fikasio-react-ui-components/compare/0.10.2...v0.11.0) (2024-12-26)
+
+
+### Features
+
+* added displayFunction prop to DatePicker ([89aeb8e](https://github.com/samdouble/fikasio-react-ui-components/commit/89aeb8ebcfad72f643e9a7433e77dbe665a81554))
+* added onSubmit prop to the SearchBar ([962f435](https://github.com/samdouble/fikasio-react-ui-components/commit/962f435e09654524bb1f0822f49cb997e1f0d9e1))
+
+
+### Bug Fixes
+
+* fixed issue with SearchBar styles ([ca18b84](https://github.com/samdouble/fikasio-react-ui-components/commit/ca18b84aad8183fe1c26eab1e6ff105253e71838))
+* fixed styling issue with SearchBar ([19c3543](https://github.com/samdouble/fikasio-react-ui-components/commit/19c3543261a677bd46f8b468fb8939c52ffb6a2a))
+
 ### 0.10.3
 - Added `displayFunction` prop to the DatePicker component
 - Added `onSubmit` prop to the SearchBar
