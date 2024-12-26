@@ -2,6 +2,7 @@
 
 .fikasio-searchbar {
   border: 1px solid themes.$lightGray;
+  box-sizing: content-box;
   height: 35px;
 
   .MuiOutlinedInput-root {

@@ -69,7 +69,7 @@ export function SearchBar({
       <Autocomplete
         freeSolo
         onChange={(_e, newValue) => onSelect(newValue ?? '')}
-        onKeyUp={(e) => {
+        onKeyUp={e => {
           if (e.key === 'Enter') {
             onSubmit();
           }
