@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.4](https://github.com/samdouble/fikasio-react-ui-components/compare/v0.11.3...v0.11.4) (2024-12-27)
+
+
+### Bug Fixes
+
+* use npm set command to setup registry ([f14406d](https://github.com/samdouble/fikasio-react-ui-components/commit/f14406d33470cb7ba89f7d2dd32a3ffb3b84a4e7))
+
 ## [0.11.3](https://github.com/samdouble/fikasio-react-ui-components/compare/v0.11.2...v0.11.3) (2024-12-27)
 
 
