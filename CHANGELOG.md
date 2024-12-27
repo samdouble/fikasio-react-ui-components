@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.3](https://github.com/samdouble/fikasio-react-ui-components/compare/v0.11.2...v0.11.3) (2024-12-27)
+
+
+### Bug Fixes
+
+* use yarn to install dependencies in publish workflow ([1050993](https://github.com/samdouble/fikasio-react-ui-components/commit/1050993b3aa448726e254f827928718a34d9e068))
+
 ## [0.11.2](https://github.com/samdouble/fikasio-react-ui-components/compare/v0.11.1...v0.11.2) (2024-12-27)
 
 
