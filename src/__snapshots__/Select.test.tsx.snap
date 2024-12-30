@@ -7,40 +7,41 @@ exports[`Select Renders correctly 1`] = `
       class="fikasio-select fikasio-theme-dark"
     >
       <div
-        class="MuiFormControl-root css-hs8t5g-MuiFormControl-root"
+        class="MuiInputBase-root MuiInputBase-colorPrimary css-1swlhp1-MuiInputBase-root"
       >
         <div
-          class="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-1swlhp1-MuiInputBase-root"
+          aria-controls=":r0:"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          class="MuiSelect-select MuiSelect-outlined MuiInputBase-input css-1c7z5q1-MuiSelect-select-MuiInputBase-input"
+          role="combobox"
+          tabindex="0"
         >
-          <div
-            aria-controls=":r0:"
-            aria-expanded="false"
-            aria-haspopup="listbox"
-            class="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiInputBase-inputSizeSmall css-id4s6h-MuiSelect-select-MuiInputBase-input"
-            role="combobox"
-            tabindex="0"
-          >
-            Option 1
-          </div>
-          <input
+          <span
             aria-hidden="true"
-            aria-invalid="false"
-            class="MuiSelect-nativeInput css-j0riat-MuiSelect-nativeInput"
-            tabindex="-1"
-            value="1"
-          />
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-lohd6h-MuiSvgIcon-root-MuiSelect-icon"
-            data-testid="ArrowDropDownIcon"
-            focusable="false"
-            viewBox="0 0 24 24"
+            class="notranslate"
           >
-            <path
-              d="M7 10l5 5 5-5z"
-            />
-          </svg>
+            ​
+          </span>
         </div>
+        <input
+          aria-hidden="true"
+          aria-invalid="false"
+          class="MuiSelect-nativeInput css-j0riat-MuiSelect-nativeInput"
+          tabindex="-1"
+          value=""
+        />
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-lohd6h-MuiSvgIcon-root-MuiSelect-icon"
+          data-testid="ArrowDropDownIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
       </div>
     </span>
   </div>
