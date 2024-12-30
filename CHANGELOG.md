@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.5](https://github.com/samdouble/fikasio-react-ui-components/compare/v0.11.4...v0.11.5) (2024-12-30)
+
+
+### Bug Fixes
+
+* **select:** fixed bug where the value would not change ([4c1c0ff](https://github.com/samdouble/fikasio-react-ui-components/commit/4c1c0ff4cde7690a75bcbb8f606c5de30d8b30c4))
+
 ## [0.11.4](https://github.com/samdouble/fikasio-react-ui-components/compare/v0.11.3...v0.11.4) (2024-12-27)
 
 
