@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { styled } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import MUISelect, { SelectChangeEvent } from '@mui/material/Select';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -29,7 +28,7 @@ export function Select({
   onChange = () => undefined,
   options = [],
   style = {},
-  value = options[0]?.value,
+  value = undefined,
 }: SelectProps) {
   const isControlled = typeof value !== 'undefined';
   const hasDefaultValue = typeof defaultValue !== 'undefined';
@@ -83,20 +82,23 @@ export function Select({
           />
         )
       }
-      <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <MUISelect
-          disabled={disabled}
-          input={<BootstrapInput />}
-          onChange={handleChange}
-          value={currentValue}
-        >
-          {
-            options.map(option => (
-              <MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>
-            ))
-          }
-        </MUISelect>
-      </FormControl>
+      <MUISelect
+        disabled={disabled}
+        input={<BootstrapInput />}
+        onChange={handleChange}
+        value={currentValue}
+      >
+        {
+          options.map(option => (
+            <MenuItem
+              key={option.value}
+              value={option.value}
+            >
+              {option.label}
+            </MenuItem>
+          ))
+        }
+      </MUISelect>
     </span>
   );
 }
