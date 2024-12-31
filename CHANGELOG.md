@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.6](https://github.com/samdouble/fikasio-react-ui-components/compare/v0.11.5...v0.11.6) (2024-12-31)
+
+
+### Bug Fixes
+
+* **Select:** make sure Select has a minimum width ([12caf23](https://github.com/samdouble/fikasio-react-ui-components/commit/12caf237b31936348d1077d09f8b077d820f29f6))
+
 ## [0.11.5](https://github.com/samdouble/fikasio-react-ui-components/compare/v0.11.4...v0.11.5) (2024-12-30)
 
 
