@@ -139,7 +139,7 @@ export function DatePicker({
         }}
         onChange={handleChange}
         popperClassName="fikasio-datepicker_popper"
-        popperPlacement="top-end"
+        popperPlacement="bottom-end"
         ref={c => { _calendar = c as unknown as ReactDatePicker; }}
         selected={defaultValue}
         shouldCloseOnSelect={shouldCloseOnSelect}
