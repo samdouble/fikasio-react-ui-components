@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import ContentEditable from 'react-contenteditable';
+import ContentEditable, { ContentEditableEvent } from 'react-contenteditable';
 import useTimeout from 'use-timeout';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -48,7 +48,7 @@ function AutosaveTextarea({
 
   const theme = useTheme();
 
-  const handleChange = newValue => {
+  const handleChange = (newValue: string) => {
     setDelay(1000);
     if (onChange) {
       onChange(newValue);
@@ -85,12 +85,12 @@ function AutosaveTextarea({
             ...convertClassNameToObj(className),
           })}
           html={currentValue}
-          onBlur={e => onBlur && onBlur(e)}
-          onChange={e => handleChange(e.target.value)}
-          onClick={e => e.stopPropagation()}
-          onFocus={e => onFocus && onFocus(e)}
-          onKeyDown={e => onKeyDown && onKeyDown(e)}
-          onKeyUp={e => onKeyUp && onKeyUp(e)}
+          onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => onBlur && onBlur(e)}
+          onChange={(e: ContentEditableEvent) => handleChange(e.target.value)}
+          onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
+          onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => onFocus && onFocus(e)}
+          onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyDown && onKeyDown(e)}
+          onKeyUp={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyUp && onKeyUp(e)}
           ref={ref}
           style={{
             whiteSpace: 'pre',

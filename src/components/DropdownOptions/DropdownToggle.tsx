@@ -21,11 +21,11 @@ const DropdownToggle = React.forwardRef((
     onClick = () => undefined,
     style = {},
   }: DropdownToggleProps,
-  ref: any,
+  ref: React.Ref<HTMLDivElement>,
 ) => {
   const theme = useTheme();
 
-  const handleClick = e => {
+  const handleClick = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>) => {
     e.preventDefault();
     if (onClick) {
       onClick(e);

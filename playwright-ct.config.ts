@@ -1,11 +1,11 @@
-import { defineConfig, devices } from '@playwright/experimental-ct-react'
+import { defineConfig, devices } from '@playwright/experimental-ct-react';
 
 export default defineConfig({
   expect: {
     timeout: 5000,
     toMatchSnapshot: {
       maxDiffPixelRatio: 0.05,
-    }, 
+    },
     toHaveScreenshot: {
       maxDiffPixelRatio: 0.05,
     },
