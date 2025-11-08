@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import DP, { ReactDatePicker } from 'react-datepicker';
+import DP, { DatePicker as ReactDatePicker } from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
@@ -57,7 +57,7 @@ export function DatePicker({
   timeIntervals = 15,
   value = undefined,
 }: DatePickerProps) {
-  let _calendar = useRef(null) as ReactDatePicker;
+  let _calendar = useRef(null) as unknown as ReactDatePicker;
   const [isOpen, setIsOpen] = useState(pIsOpen);
 
   const isControlled = typeof value !== 'undefined';
@@ -73,7 +73,7 @@ export function DatePicker({
     if (pIsOpen !== isOpen) {
       setIsOpen(pIsOpen);
     }
-  }, [pIsOpen]);
+  }, [pIsOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (_calendar) {
@@ -136,13 +136,12 @@ export function DatePicker({
             }
           }}
           onChange={handleChange}
-          popperPlacement="auto"
-          popperProps={{
-            positionFixed: true,
-          }}
-          ref={c => { _calendar = c; }}
+          popperClassName="fikasio-datepicker_popper"
+          popperPlacement="top-end"
+          ref={c => { _calendar = c as unknown as ReactDatePicker; }}
           selected={defaultValue}
           shouldCloseOnSelect={shouldCloseOnSelect}
+          showPopperArrow={false}
           showTimeSelect={showTimeSelect}
           timeCaption={timeCaption}
           timeFormat={timeFormat}
