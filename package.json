@@ -42,7 +42,6 @@
     "font-awesome": "^4.7.0",
     "lodash.isequal": "^4.5.0",
     "luxon": "^3.4.3",
-    "prop-types": "^15.8.1",
     "react-autocomplete-input": "^1.0.20",
     "react-bootstrap": "^2.10.1",
     "react-click-outside": "tj/react-click-outside",

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheck, faSquare } from '@fortawesome/free-solid-svg-icons';
@@ -97,14 +96,5 @@ export function Checkbox({
     </div>
   );
 }
-
-Checkbox.propTypes = {
-  className: PropTypes.string,
-  defaultIsChecked: PropTypes.bool,
-  isChecked: PropTypes.bool,
-  name: PropTypes.string,
-  onClick: PropTypes.func,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
 
 export default Checkbox;

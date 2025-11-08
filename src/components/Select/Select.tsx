@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { styled } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
@@ -102,21 +101,5 @@ export function Select({
     </span>
   );
 }
-
-Select.propTypes = {
-  className: PropTypes.string,
-  defaultValue: PropTypes.string,
-  disabled: PropTypes.bool,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
-    }),
-  ),
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  value: PropTypes.string,
-};
 
 export default Select;

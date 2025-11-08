@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import BootstrapTable from 'react-bootstrap/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -42,9 +41,9 @@ type Row = any;
 export interface TableProps {
   className?: string;
   columns?: (CellColumn | NumberingColumn | OptionsColumn)[];
-  isRowChecked?: (row: any) => boolean;
+  isRowChecked?: (row: Row) => boolean;
   isSelectable?: boolean;
-  onRowClick?: (row: any) => void;
+  onRowClick?: (row: Row) => void;
   options?: (row: Row) => React.ReactNode;
   rows?: Row[];
   style?: React.CSSProperties;
@@ -250,25 +249,5 @@ export function Table({
     </BootstrapTable>
   );
 }
-
-Table.propTypes = {
-  className: PropTypes.string,
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      onClick: PropTypes.func,
-      render: PropTypes.func,
-      type: PropTypes.string,
-    }),
-  ),
-  isRowChecked: PropTypes.func,
-  isSelectable: PropTypes.func,
-  onRowClick: PropTypes.func,
-  options: PropTypes.func,
-  rows: PropTypes.arrayOf(
-    PropTypes.shape({}),
-  ),
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
 
 export default Table;

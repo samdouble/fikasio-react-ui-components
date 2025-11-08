@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import BootstrapAlert from 'react-bootstrap/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -51,11 +50,5 @@ export function Error({
     </div>
   );
 }
-
-Error.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  className: PropTypes.string,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
 
 export default Error;

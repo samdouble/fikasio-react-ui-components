@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -77,16 +76,5 @@ export function Input({
     </div>
   );
 }
-
-Input.propTypes = {
-  className: PropTypes.string,
-  defaultValue: PropTypes.string,
-  disabled: PropTypes.bool,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  placeholder: PropTypes.string,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  value: PropTypes.string,
-};
 
 export default Input;

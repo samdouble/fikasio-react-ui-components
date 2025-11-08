@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -108,12 +107,5 @@ export function Selector({
     </span>
   );
 }
-
-Selector.propTypes = {
-  className: PropTypes.string,
-  Component: PropTypes.element,
-  options: PropTypes.arrayOf(PropTypes.string),
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
 
 export default Selector;
