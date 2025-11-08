@@ -2,7 +2,6 @@ import React, { JSX } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -94,14 +93,5 @@ export function Footer({
     </div>
   );
 }
-
-Footer.propTypes = {
-  childrenLeft: PropTypes.arrayOf(PropTypes.element),
-  childrenCenter: PropTypes.arrayOf(PropTypes.element),
-  childrenRight: PropTypes.arrayOf(PropTypes.element),
-  childrenTop: PropTypes.arrayOf(PropTypes.element),
-  className: PropTypes.string,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
 
 export default Footer;

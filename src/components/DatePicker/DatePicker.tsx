@@ -1,6 +1,5 @@
 import React, { SyntheticEvent, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import DP, { DatePicker as ReactDatePicker } from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -177,27 +176,5 @@ export function DatePicker({
     </div>
   );
 }
-
-DatePicker.propTypes = {
-  className: PropTypes.string,
-  dateFormat: PropTypes.string,
-  defaultValue: PropTypes.instanceOf(Date),
-  displayFormat: PropTypes.string,
-  displayFunction: PropTypes.func,
-  isOpen: PropTypes.bool,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  onClose: PropTypes.func,
-  onOpen: PropTypes.func,
-  onRemoveValue: PropTypes.func,
-  shouldCloseOnSelect: PropTypes.bool,
-  showRemoveValue: PropTypes.bool,
-  showTimeSelect: PropTypes.bool,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  timeCaption: PropTypes.string,
-  timeFormat: PropTypes.string,
-  timeIntervals: PropTypes.number,
-  value: PropTypes.instanceOf(Date),
-};
 
 export default DatePicker;

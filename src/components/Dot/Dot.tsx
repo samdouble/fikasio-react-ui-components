@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -37,12 +36,5 @@ export function Dot({
     />
   );
 }
-
-Dot.propTypes = {
-  className: PropTypes.string,
-  color: PropTypes.string,
-  size: PropTypes.number,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
 
 export default Dot;

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -100,17 +99,5 @@ export function SearchBar({
     </div>
   );
 }
-
-SearchBar.propTypes = {
-  className: PropTypes.string,
-  defaultValue: PropTypes.string,
-  onChange: PropTypes.func,
-  onSelect: PropTypes.func,
-  onSubmit: PropTypes.func,
-  options: PropTypes.arrayOf(PropTypes.string),
-  placeholder: PropTypes.string,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  value: PropTypes.string,
-};
 
 export default SearchBar;
