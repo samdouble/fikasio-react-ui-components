@@ -4,8 +4,8 @@ import DP, { DatePicker as ReactDatePicker } from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import ClickOutside from 'react-click-outside';
 import { DateTime } from 'luxon';
+import { useClickOutside } from 'react-click-outside-hook';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -66,6 +66,7 @@ export function DatePicker({
   );
   const currentValue = isControlled ? value : internalValue;
 
+  const [ref, hasClickedOutside] = useClickOutside();
   const theme = useTheme();
 
   useEffect(() => {
@@ -80,6 +81,15 @@ export function DatePicker({
     }
   }, [_calendar, isOpen]);
 
+  useEffect(() => {
+    if (hasClickedOutside) {
+      setIsOpen(false);
+      if (onClose) {
+        onClose();
+      }
+    }
+  }, [hasClickedOutside]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const handleChange = (newValue: Date) => {
     if (onChange) {
       onChange(newValue);
@@ -91,11 +101,9 @@ export function DatePicker({
 
   let displayedDate: string | null = null;
   if (currentValue) {
-    if (displayFunction) {
-      displayedDate = displayFunction(currentValue);
-    } else {
-      displayedDate = DateTime.fromJSDate(currentValue).toFormat(displayFormat || 'yyyy-MM-dd');
-    }
+    displayedDate = displayFunction
+      ? displayFunction(currentValue)
+      : DateTime.fromJSDate(currentValue).toFormat(displayFormat ?? 'yyyy-MM-dd');
   }
 
   return (
@@ -106,47 +114,41 @@ export function DatePicker({
         'fikasio-theme-light': theme === 'light',
         ...convertClassNameToObj(className),
       })}
+      ref={ref}
       style={{
         ...style,
       }}
     >
-      <ClickOutside
-        onClickOutside={() => {
+      <DP
+        customInput={(
+          <input
+            name={name}
+            type="hidden"
+            value={
+              currentValue ? (DateTime.fromJSDate(currentValue).toISO() ?? undefined) : undefined
+            }
+          />
+        )}
+        dateFormat={dateFormat}
+        name={name}
+        onBlur={() => {
           setIsOpen(false);
           if (onClose) {
             onClose();
           }
         }}
-      >
-        <DP
-          customInput={(
-            <input
-              name={name}
-              type="hidden"
-              value={DateTime.fromJSDate(currentValue).toISO()}
-            />
-          )}
-          dateFormat={dateFormat}
-          name={name}
-          onBlur={() => {
-            setIsOpen(false);
-            if (onClose) {
-              onClose();
-            }
-          }}
-          onChange={handleChange}
-          popperClassName="fikasio-datepicker_popper"
-          popperPlacement="top-end"
-          ref={c => { _calendar = c as unknown as ReactDatePicker; }}
-          selected={defaultValue}
-          shouldCloseOnSelect={shouldCloseOnSelect}
-          showPopperArrow={false}
-          showTimeSelect={showTimeSelect}
-          timeCaption={timeCaption}
-          timeFormat={timeFormat}
-          timeIntervals={timeIntervals}
-        />
-      </ClickOutside>
+        onChange={handleChange}
+        popperClassName="fikasio-datepicker_popper"
+        popperPlacement="top-end"
+        ref={c => { _calendar = c as unknown as ReactDatePicker; }}
+        selected={defaultValue}
+        shouldCloseOnSelect={shouldCloseOnSelect}
+        showPopperArrow={false}
+        showTimeSelect={showTimeSelect}
+        timeCaption={timeCaption}
+        timeFormat={timeFormat}
+        timeIntervals={timeIntervals}
+      />
       <FontAwesomeIcon
         icon="calendar-alt"
         onClick={() => {

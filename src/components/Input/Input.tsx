@@ -35,7 +35,7 @@ export function Input({
 
   const theme = useTheme();
 
-  const handleChange = newValue => {
+  const handleChange = (newValue: string) => {
     if (onChange) {
       onChange(newValue);
     }
