@@ -128,7 +128,6 @@
       }
     ],
     "react/jsx-props-no-spreading": "off",
-    "react/prop-types": "error",
     "react/require-default-props": "off",
     "semi": [
       "error",

@@ -1,5 +1,4 @@
 import React, { SyntheticEvent } from 'react';
-import PropTypes from 'prop-types';
 import BootstrapButton from 'react-bootstrap/Button';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
@@ -46,14 +45,5 @@ export function ActionButton({
     </BootstrapButton>
   );
 }
-
-ActionButton.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  type: PropTypes.string,
-};
 
 export default ActionButton;

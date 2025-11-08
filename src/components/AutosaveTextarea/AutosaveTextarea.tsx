@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import ContentEditable from 'react-contenteditable';
 import useTimeout from 'use-timeout';
 import useTheme from '../../hooks/useTheme';
@@ -11,11 +10,11 @@ export interface AutosaveTextareaProps {
   className?: string;
   defaultValue?: string;
   name?: string;
-  onBlur?: any;
-  onChange?: any;
-  onFocus?: any;
-  onKeyDown?: any;
-  onKeyUp?: any;
+  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onChange?: (value: string) => void;
+  onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
+  onKeyUp?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
   onSave?: (value: string) => void;
   ref?: React.Ref<any>,
   style?: React.CSSProperties;
@@ -117,20 +116,5 @@ function AutosaveTextarea({
       />
     );
 }
-
-AutosaveTextarea.propTypes = {
-  className: PropTypes.string,
-  defaultValue: PropTypes.string,
-  name: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  onKeyUp: PropTypes.func,
-  onSave: PropTypes.func,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  useContentEditableDiv: PropTypes.bool,
-  value: PropTypes.string,
-};
 
 export default AutosaveTextarea;

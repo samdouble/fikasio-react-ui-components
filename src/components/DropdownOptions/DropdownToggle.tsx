@@ -1,6 +1,5 @@
 import React, { SyntheticEvent } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
@@ -55,11 +54,5 @@ const DropdownToggle = React.forwardRef((
     </div>
   );
 });
-
-DropdownToggle.propTypes = {
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
 
 export default DropdownToggle;

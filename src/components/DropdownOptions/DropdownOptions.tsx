@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -71,17 +70,5 @@ export function DropdownOptions({
     </div>
   );
 }
-
-DropdownOptions.propTypes = {
-  className: PropTypes.string,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      onClick: PropTypes.func,
-      type: PropTypes.string,
-    }),
-  ),
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
 
 export default DropdownOptions;
