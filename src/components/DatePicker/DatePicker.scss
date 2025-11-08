@@ -15,6 +15,10 @@
   display: inline;
 }
 
+.fikasio-datepicker_popper {
+  position: fixed;
+}
+
 .react-datepicker__day--selected {
   background-color: #7E5B9A;
 }
