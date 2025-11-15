@@ -1,5 +1,4 @@
 import React, { SyntheticEvent } from 'react';
-import BootstrapButton from 'react-bootstrap/Button';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -12,7 +11,6 @@ export interface ActionButtonProps {
   disabled?: boolean;
   onClick?: (e: SyntheticEvent) => void;
   style?: React.CSSProperties;
-  type?: 'submit';
 }
 
 export function ActionButton({
@@ -21,12 +19,11 @@ export function ActionButton({
   disabled = false,
   onClick = () => undefined,
   style = {},
-  type = undefined,
 }: ActionButtonProps) {
   const theme = useTheme();
 
   return (
-    <BootstrapButton
+    <button
       className={classNames({
         'fikasio-actionbutton': true,
         'fikasio-theme-dark': theme === 'dark',
@@ -38,11 +35,10 @@ export function ActionButton({
       style={{
         ...style,
       }}
-      type={type}
-      variant="primary"
+      type="submit"
     >
       {children}
-    </BootstrapButton>
+    </button>
   );
 }
 

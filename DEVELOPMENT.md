@@ -33,18 +33,6 @@ yarn test-ct
 yarn add <dependency>
 ```
 
-## Fixing vulnerabilities
-
-1. Run the following commands from the root folder of the repo:
-
-```
-npm i --package-lock-only
-npm audit fix
-rm yarn.lock
-yarn import
-rm package-lock.json
-```
-
 ## Creating a new version
 
 1. Change version number in **package.json**
