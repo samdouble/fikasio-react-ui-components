@@ -1,10 +1,5 @@
 import { fixupConfigRules } from "@eslint/compat";
 import _import from "eslint-plugin-import";
-import jsxA11Y from "eslint-plugin-jsx-a11y";
-import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import storybook from "eslint-plugin-storybook";
 import globals from "globals";
 import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
@@ -25,10 +20,8 @@ export default [
     ignores: ["**/node_modules/", "**/dist/"],
   },
   js.configs.recommended,
-  // Compat configs for legacy extends
   ...fixupConfigRules(
     compat.extends(
-      "airbnb",
       "plugin:@typescript-eslint/recommended",
       "react-app",
       "plugin:storybook/recommended",

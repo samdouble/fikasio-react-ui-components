@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import BootstrapAlert from 'react-bootstrap/Alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
@@ -34,19 +33,15 @@ export function Error({
       })}
       style={style}
     >
-      <BootstrapAlert
-        variant="danger"
-      >
-        <FontAwesomeIcon
-          icon="triangle-exclamation"
-          size="lg"
-          style={{
-            fontSize: 16,
-            marginRight: 10,
-          }}
-        />
-        {children}
-      </BootstrapAlert>
+      <FontAwesomeIcon
+        icon="triangle-exclamation"
+        size="lg"
+        style={{
+          fontSize: 16,
+          marginRight: 10,
+        }}
+      />
+      {children}
     </div>
   );
 }

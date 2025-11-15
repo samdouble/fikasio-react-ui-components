@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Select Renders correctly 1`] = `
 <body>
@@ -17,19 +17,14 @@ exports[`Select Renders correctly 1`] = `
           role="combobox"
           tabindex="0"
         >
-          <span
-            aria-hidden="true"
-            class="notranslate"
-          >
-            ​
-          </span>
+          Option 1
         </div>
         <input
           aria-hidden="true"
           aria-invalid="false"
           class="MuiSelect-nativeInput css-j0riat-MuiSelect-nativeInput"
           tabindex="-1"
-          value=""
+          value="1"
         />
         <svg
           aria-hidden="true"

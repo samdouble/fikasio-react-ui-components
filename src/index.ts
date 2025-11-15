@@ -15,6 +15,4 @@ export { Table } from './Table';
 export { Warning } from './Warning';
 export { useTheme } from './useTheme';
 
-const exports = {};
-
-export default exports;
+export default {};

@@ -31,8 +31,8 @@ export function Select({
 }: SelectProps) {
   const isControlled = typeof value !== 'undefined';
   const hasDefaultValue = typeof defaultValue !== 'undefined';
-  const [internalValue, setInternalValue] = useState<string | undefined>(
-    hasDefaultValue ? defaultValue : undefined,
+  const [internalValue, setInternalValue] = useState<string>(
+    hasDefaultValue ? defaultValue : options[0]?.value,
   );
   const currentValue = isControlled ? value : internalValue;
 
