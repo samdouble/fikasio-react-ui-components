@@ -14,5 +14,3 @@ export { Success } from './Success';
 export { Table } from './Table';
 export { Warning } from './Warning';
 export { useTheme } from './useTheme';
-
-export default {};
