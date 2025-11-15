@@ -48,7 +48,6 @@ import { Footer } from '@fikasio/react-ui-components';
 | disabled                | boolean         | No             | Whether the button is disabled                   |
 | onClick                 | function        | No             | Handler called when button is clicked            |
 | style                   | CSSProperties   | No             | Additional CSS styles for the button             |
-| type                    | string          | No             | Button type ('button', 'submit', 'reset')        |
 
 ### Checkbox
 
