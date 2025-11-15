@@ -16,7 +16,7 @@ export interface AutosaveTextareaProps {
   onKeyDown?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
   onKeyUp?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
   onSave?: (value: string) => void;
-  ref?: React.Ref<any>,
+  ref?: React.Ref<unknown>,
   style?: React.CSSProperties;
   useContentEditableDiv?: boolean;
   value?: string;
@@ -91,7 +91,7 @@ function AutosaveTextarea({
           onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => onFocus && onFocus(e)}
           onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyDown && onKeyDown(e)}
           onKeyUp={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyUp && onKeyUp(e)}
-          ref={ref}
+          ref={ref as React.Ref<ContentEditable>}
           style={{
             whiteSpace: 'pre',
             ...style,
@@ -108,7 +108,7 @@ function AutosaveTextarea({
         onFocus={e => onFocus(e)}
         onKeyDown={e => onKeyDown(e)}
         onKeyUp={e => onKeyUp(e)}
-        ref={ref}
+        ref={ref as React.Ref<HTMLTextAreaElement>}
         style={{
           ...style,
         }}

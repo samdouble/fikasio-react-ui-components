@@ -36,7 +36,7 @@ interface OptionsColumn extends Column {
   type: 'options';
 }
 
-type Row = any;
+type Row = Record<string, unknown>;
 
 export interface TableProps {
   className?: string;
@@ -215,7 +215,7 @@ export function Table({
                             {
                               column.render
                                 ? column.render(row)
-                                : row[column.property]
+                                : row[column.property] as React.ReactNode
                             }
                           </td>
                         );
