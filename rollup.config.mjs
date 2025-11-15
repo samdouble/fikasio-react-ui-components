@@ -17,6 +17,13 @@ const config = {
       sourcemap: true,
       strict: false,
     },
+    {
+      exports: 'named',
+      file: pkg.module.replace('.js', '.mjs'),
+      format: 'es',
+      sourcemap: true,
+      strict: false,
+    },
   ],
   plugins: [
     image(),
@@ -30,7 +37,7 @@ const config = {
     typescript(),
     uglify(),
   ],
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'react/jsx-runtime'],
 };
 
 export default config;

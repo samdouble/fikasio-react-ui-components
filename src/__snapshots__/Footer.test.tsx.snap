@@ -52,3 +52,80 @@ exports[`Footer Renders correctly 1`] = `
   </div>
 </body>
 `;
+
+exports[`Footer Renders correctly with children 1`] = `
+<body>
+  <div>
+    <div
+      class="fikasio-footer fikasio-theme-light"
+    >
+      <div
+        class="container-fluid"
+      >
+        <div
+          class="row"
+          style="background-color: rgb(46, 46, 46); padding-top: 25px;"
+        >
+          <div
+            class="col-md-12"
+          >
+            <div
+              class="text-center"
+            >
+              <div>
+                <div>
+                  Child 4
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row"
+          style="background-color: rgb(46, 46, 46); padding-bottom: 25px;"
+        >
+          <div
+            class="col-md-4"
+          >
+            <div
+              class="text-left"
+            >
+              <div>
+                <div>
+                  Child 1
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4"
+          >
+            <div
+              class="text-center"
+            >
+              <div>
+                <div>
+                  Child 2
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4"
+          >
+            <div
+              class="text-right"
+            >
+              <div>
+                <div>
+                  Child 3
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
