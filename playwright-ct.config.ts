@@ -20,7 +20,7 @@ export default defineConfig({
   timeout: 10 * 1000,
   workers: process.env.CI ? 1 : undefined,
   use: {
-    baseURL: 'http://localhost:3100',
+    baseURL: 'http://localhost:3100/',
     ctPort: 3100,
     ctViteConfig: {
       build: {
