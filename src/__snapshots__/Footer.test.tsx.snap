@@ -4,7 +4,7 @@ exports[`Footer Renders correctly 1`] = `
 <body>
   <div>
     <div
-      class="fikasio-footer fikasio-theme-dark"
+      class="fikasio-footer fikasio-theme-light"
     >
       <div
         class="container-fluid"

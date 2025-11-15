@@ -8,7 +8,7 @@ exports[`AutosaveTextarea Renders correctly 1`] = `
       value=""
     />
     <div
-      class="fikasio-textarea fikasio-theme-dark"
+      class="fikasio-textarea fikasio-theme-light"
       contenteditable="true"
       style="white-space: pre;"
     />

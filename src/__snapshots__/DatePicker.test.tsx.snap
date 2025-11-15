@@ -4,7 +4,7 @@ exports[`DatePicker Renders correctly 1`] = `
 <body>
   <div>
     <div
-      class="fikasio-datepicker fikasio-theme-dark"
+      class="fikasio-datepicker fikasio-theme-light"
     >
       <div
         class="react-datepicker-wrapper"

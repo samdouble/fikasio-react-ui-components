@@ -4,7 +4,7 @@ exports[`Input Renders correctly 1`] = `
 <body>
   <div>
     <div
-      class="fikasio-input fikasio-theme-dark"
+      class="fikasio-input fikasio-theme-light"
       style="border: 1px solid rgb(204, 204, 204);"
     >
       <input

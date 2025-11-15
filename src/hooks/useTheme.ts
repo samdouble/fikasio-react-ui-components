@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const allowedThemes = ['light', 'dark'];
-const defaultTheme = 'dark';
+const defaultTheme = 'light';
 let theme = defaultTheme;
 
 export function useTheme(newTheme?: string) {

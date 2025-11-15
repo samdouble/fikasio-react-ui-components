@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -42,18 +40,129 @@ export function SearchBar({
   const currentValue = isControlled ? value : internalValue;
 
   const theme = useTheme();
-  const [internalOptions, setInternalOptions] = useState(options);
+  const [isOpen, setIsOpen] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState<number | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const filteredOptions = useMemo(() => {
+    if (currentValue === undefined || currentValue === '') {
+      return options;
+    }
+    return options.filter(option =>
+      option.toLowerCase().includes(currentValue.toLowerCase()),
+    );
+  }, [currentValue, options]);
+
+  // Reset highlighted index when filtered options change
+  useEffect(() => {
+    setHighlightedIndex(null);
+  }, [filteredOptions]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+        setHighlightedIndex(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleChange = (newValue: string) => {
     onChange(newValue);
     if (!isControlled) {
       setInternalValue(newValue);
     }
-    setInternalOptions(options.filter(option => option.toLowerCase().includes(newValue.toLowerCase())));
+    setIsOpen(true);
+  };
+
+  const handleSelect = (selectedValue: string) => {
+    onSelect(selectedValue);
+    if (!isControlled) {
+      setInternalValue(selectedValue);
+    }
+    setIsOpen(false);
+    setHighlightedIndex(null);
+    inputRef.current?.focus();
+  };
+
+  useEffect(() => {
+    if (highlightedIndex !== null && dropdownRef.current) {
+      const optionElement = dropdownRef.current.children[
+        highlightedIndex
+      ] as HTMLElement;
+      if (optionElement && typeof optionElement.scrollIntoView === 'function') {
+        try {
+          optionElement.scrollIntoView({
+            block: 'nearest',
+            behavior: 'smooth',
+          });
+        } catch {
+          // Ignore errors in test environments
+        }
+      }
+    }
+  }, [highlightedIndex]);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!isOpen && filteredOptions.length > 0) {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        setIsOpen(true);
+        return;
+      }
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setHighlightedIndex(prev => {
+        if (prev === null) {
+          return 0;
+        }
+        return prev < filteredOptions.length - 1 ? prev + 1 : prev;
+      });
+      setIsOpen(true);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setHighlightedIndex(prev => {
+        if (prev === null) {
+          return 0;
+        }
+        return prev > 0 ? prev - 1 : prev;
+      });
+      setIsOpen(true);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (highlightedIndex !== null && highlightedIndex < filteredOptions.length) {
+        handleSelect(filteredOptions[highlightedIndex]);
+      } else {
+        onSubmit();
+      }
+    } else if (e.key === 'Escape') {
+      setIsOpen(false);
+      setHighlightedIndex(null);
+      inputRef.current?.blur();
+    }
+  };
+
+  const handleInputFocus = () => {
+    if (filteredOptions.length > 0) {
+      setIsOpen(true);
+    }
   };
 
   return (
     <div
+      ref={containerRef}
       className={classNames({
         'fikasio-searchbar': true,
         'fikasio-theme-dark': theme === 'dark',
@@ -62,40 +171,43 @@ export function SearchBar({
       })}
       style={{
         minWidth: 200,
+        position: 'relative',
         ...style,
       }}
     >
-      <Autocomplete
-        freeSolo
-        onChange={(_e, newValue) => onSelect(newValue ?? '')}
-        onKeyUp={e => {
-          if (e.key === 'Enter') {
-            onSubmit();
-          }
-        }}
-        onInputChange={(_e, newValue) => handleChange(newValue ?? '')}
-        options={internalOptions}
-        renderInput={params => (
-          <TextField
-            {...params}
-            placeholder={placeholder}
-            value={currentValue}
-          />
-        )}
-        style={{
-          paddingLeft: 22,
-        }}
-      />
-      <FontAwesomeIcon
-        icon="magnifying-glass"
-        size="1x"
-        style={{
-          bottom: 32,
-          margin: 5,
-          marginLeft: 10,
-          position: 'relative',
-        }}
-      />
+      <div className="fikasio-searchbar-input-wrapper">
+        <input
+          ref={inputRef}
+          type="text"
+          className="fikasio-searchbar-input"
+          placeholder={placeholder}
+          value={currentValue ?? ''}
+          onChange={e => handleChange(e.target.value)}
+          onKeyDown={handleKeyDown}
+          onFocus={handleInputFocus}
+        />
+        <FontAwesomeIcon
+          icon="magnifying-glass"
+          size="1x"
+          className="fikasio-searchbar-icon"
+        />
+      </div>
+      {isOpen && filteredOptions.length > 0 && (
+        <div ref={dropdownRef} className="fikasio-searchbar-dropdown">
+          {filteredOptions.map((option, index) => (
+            <div
+              key={option}
+              className={classNames('fikasio-searchbar-option', {
+                'fikasio-searchbar-option-highlighted': index === highlightedIndex,
+              })}
+              onClick={() => handleSelect(option)}
+              onMouseEnter={() => setHighlightedIndex(index)}
+            >
+              {option}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

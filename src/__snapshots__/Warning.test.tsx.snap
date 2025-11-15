@@ -4,7 +4,7 @@ exports[`Warning Renders correctly 1`] = `
 <body>
   <div>
     <div
-      class="fikasio-warning fikasio-theme-dark"
+      class="fikasio-warning fikasio-theme-light"
     >
       <svg
         aria-hidden="true"
