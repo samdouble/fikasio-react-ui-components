@@ -7,7 +7,8 @@ exports[`Selector Renders correctly 1`] = `
       class="fikasio-selector fikasio-theme-dark"
     >
       <button
-        class="fikasio-actionbutton fikasio-theme-dark btn btn-primary"
+        class="fikasio-actionbutton fikasio-theme-dark"
+        type="submit"
       >
         Option 1
       </button>

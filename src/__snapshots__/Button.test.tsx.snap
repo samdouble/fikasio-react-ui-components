@@ -4,7 +4,8 @@ exports[`Button Renders correctly 1`] = `
 <body>
   <div>
     <button
-      class="fikasio-actionbutton fikasio-theme-dark btn btn-primary"
+      class="fikasio-actionbutton fikasio-theme-dark"
+      type="submit"
     >
       Click me
     </button>

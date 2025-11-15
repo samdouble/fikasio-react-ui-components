@@ -6,19 +6,17 @@ exports[`DatePicker Renders correctly 1`] = `
     <div
       class="fikasio-datepicker fikasio-theme-dark"
     >
-      <div>
+      <div
+        class="react-datepicker-wrapper"
+      >
         <div
-          class="react-datepicker-wrapper"
+          class="react-datepicker__input-container"
         >
-          <div
-            class="react-datepicker__input-container"
-          >
-            <input
-              class=""
-              type="hidden"
-              value=""
-            />
-          </div>
+          <input
+            class=""
+            type="hidden"
+            value=""
+          />
         </div>
       </div>
       <svg

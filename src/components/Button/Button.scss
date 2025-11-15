@@ -1,6 +1,14 @@
 @use '../../themes.scss';
 
-.fikasio-button {
+.fikasio-actionbutton {
+  background-color: themes.$blue;
+  border: 1px solid themes.$blue;
   border-radius: 0;
+  color: themes.$white;
   font-family: themes.$fontFamily;
+  padding: 0.3rem 0.7rem;
+
+  &:hover {
+    background-color: themes.$blueDarker;
+  }
 }

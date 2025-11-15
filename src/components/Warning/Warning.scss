@@ -1,5 +1,9 @@
 @use '../../themes.scss';
 
 .fikasio-warning {
+  background-color: rgb(235, 217, 155);
+  border: 1px solid rgb(223, 207, 148);
+  color: rgb(122, 83, 22);
   font-family: themes.$fontFamily;
+  padding: 1rem 1.5rem;
 }
