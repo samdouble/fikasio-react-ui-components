@@ -3,7 +3,9 @@ import postcss from 'rollup-plugin-postcss';
 import sass from 'rollup-plugin-sass';
 import { uglify } from 'rollup-plugin-uglify';
 import typescript from 'rollup-plugin-typescript2';
-import pkg from './package.json';
+import { readFileSync } from 'fs';
+
+const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'));
 
 const config = {
   input: 'src/index.ts',
