@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v1.0.0...v1.1.0) (2025-11-15)
+
+
+### Features
+
+* **DatePicker:** show DatePicker popper at the bottom ([1531f97](https://github.com/samdouble/fikasio-react-ui-components/commit/1531f97d8e92414281e2ae2026a44ad4e53153b7))
+* **SearchBar:** improve look by removing padding on options ([99f1277](https://github.com/samdouble/fikasio-react-ui-components/commit/99f1277fa577ccaf98791ebdc08ecef2ec8ca9f3))
+* **Success,Error,Warning:** improve look by removing radiuses ([a93a1fb](https://github.com/samdouble/fikasio-react-ui-components/commit/a93a1fb9330be3d161aee61a604441ba49d10462))
+
+
+### Bug Fixes
+
+* **SearchBar:** correctly vertically align magnifying glass icon ([a955099](https://github.com/samdouble/fikasio-react-ui-components/commit/a955099ffe6e17914534ca99d4b1eeede60f46b6))
+
 ## 1.0.0 (2025-11-08)
 
 ## [0.11.5](https://github.com/samdouble/fikasio-react-ui-components/compare/v0.11.4...v0.11.5) (2024-12-30)
