@@ -4,7 +4,7 @@ exports[`Success Renders correctly 1`] = `
 <body>
   <div>
     <div
-      class="fikasio-success fikasio-theme-dark"
+      class="fikasio-success fikasio-theme-light"
     >
       <svg
         aria-hidden="true"

@@ -4,7 +4,7 @@ exports[`Select Renders correctly 1`] = `
 <body>
   <div>
     <span
-      class="fikasio-select fikasio-theme-dark"
+      class="fikasio-select fikasio-theme-light"
     >
       <div
         class="MuiInputBase-root MuiInputBase-colorPrimary css-1swlhp1-MuiInputBase-root"

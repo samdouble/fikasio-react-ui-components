@@ -4,17 +4,127 @@
   border: 1px solid themes.$lightGray;
   box-sizing: border-box;
   height: 35px;
+  font-family: themes.$fontFamily;
+  position: relative;
 
-  .MuiOutlinedInput-root {
-    outline: none !important;
-    padding: 0 0 0 8px !important;
+  .fikasio-searchbar-input-wrapper {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+    width: 100%;
   }
 
-  .MuiOutlinedInput-root .MuiAutocomplete-input {
-    padding: 6.5px 4px !important;
+  .fikasio-searchbar-input {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    font-family: themes.$fontFamily;
+    height: 100%;
+    outline: none;
+    padding: 6.5px 4px;
+    padding-left: 30px;
+    width: 100%;
+
+    &::placeholder {
+      color: themes.$gray;
+    }
   }
 
-  .MuiOutlinedInput-notchedOutline {
-    border: none !important;
+  .fikasio-searchbar-icon {
+    position: absolute;
+    left: 10px;
+    color: themes.$gray;
+    pointer-events: none;
+  }
+
+  .fikasio-searchbar-dropdown {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+    background-color: themes.$white;
+    border: 1px solid themes.$lightGray;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .fikasio-searchbar-option {
+    color: themes.$darkGray;
+    cursor: pointer;
+    font-family: themes.$fontFamily;
+    padding: 5px 12px;
+
+    &:hover,
+    &.fikasio-searchbar-option-highlighted {
+      background-color: themes.$lightGray;
+    }
+  }
+
+  &.fikasio-theme-dark {
+    border-color: themes.$darkGrayLighter;
+    background-color: themes.$blackLighter;
+
+    .fikasio-searchbar-input {
+      color: themes.$white;
+      background-color: transparent;
+
+      &::placeholder {
+        color: themes.$gray;
+      }
+    }
+
+    .fikasio-searchbar-icon {
+      color: themes.$gray;
+    }
+
+    .fikasio-searchbar-dropdown {
+      background-color: themes.$blackLighter;
+      border-color: themes.$darkGrayLighter;
+    }
+
+    .fikasio-searchbar-option {
+      color: themes.$white;
+
+      &:hover,
+      &.fikasio-searchbar-option-highlighted {
+        background-color: themes.$darkGray;
+      }
+    }
+  }
+
+  &.fikasio-theme-light {
+    border-color: themes.$lightGray;
+    background-color: themes.$white;
+
+    .fikasio-searchbar-input {
+      color: themes.$darkGray;
+      background-color: transparent;
+
+      &::placeholder {
+        color: themes.$gray;
+      }
+    }
+
+    .fikasio-searchbar-icon {
+      color: themes.$gray;
+    }
+
+    .fikasio-searchbar-dropdown {
+      background-color: themes.$white;
+      border-color: themes.$lightGray;
+    }
+
+    .fikasio-searchbar-option {
+      color: themes.$darkGray;
+
+      &:hover,
+      &.fikasio-searchbar-option-highlighted {
+        background-color: themes.$lightGray;
+      }
+    }
   }
 }

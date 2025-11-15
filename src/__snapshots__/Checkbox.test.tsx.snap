@@ -4,7 +4,7 @@ exports[`Checkbox Renders correctly 1`] = `
 <body>
   <div>
     <div
-      class="fikasio-checkbox fikasio-theme-dark"
+      class="fikasio-checkbox fikasio-theme-light"
       role="button"
       tabindex="0"
     >

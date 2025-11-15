@@ -4,14 +4,14 @@ exports[`DropdownOptions Renders correctly 1`] = `
 <body>
   <div>
     <div
-      class="fikasio-dropdownOptions fikasio-theme-dark"
+      class="fikasio-dropdownOptions fikasio-theme-light"
     >
       <div
         class="dropdown"
         style="position: static;"
       >
         <div
-          class="fikasio-dropdownOptions-toggle fikasio-theme-dark dropdown-toggle"
+          class="fikasio-dropdownOptions-toggle fikasio-theme-light dropdown-toggle"
           role="button"
           tabindex="0"
         >

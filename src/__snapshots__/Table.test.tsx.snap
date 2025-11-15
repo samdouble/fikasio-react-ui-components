@@ -7,7 +7,7 @@ exports[`Table Renders correctly 1`] = `
       class="table-responsive"
     >
       <table
-        class="fikasio-table fikasio-theme-dark table table-bordered table-hover"
+        class="fikasio-table fikasio-theme-light table table-bordered table-hover"
       >
         <thead>
           <tr>
