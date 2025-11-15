@@ -2,12 +2,12 @@
 
 .fikasio-searchbar {
   border: 1px solid themes.$lightGray;
-  box-sizing: content-box;
+  box-sizing: border-box;
   height: 35px;
 
   .MuiOutlinedInput-root {
     outline: none !important;
-    padding: 0 0 0 5px !important;
+    padding: 0 0 0 8px !important;
   }
 
   .MuiOutlinedInput-root .MuiAutocomplete-input {
