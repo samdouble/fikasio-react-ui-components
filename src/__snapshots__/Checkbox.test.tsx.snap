@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Checkbox Renders correctly 1`] = `
 <body>
@@ -15,7 +15,7 @@ exports[`Checkbox Renders correctly 1`] = `
         data-prefix="fas"
         focusable="false"
         role="img"
-        style="border: 1px solid #7e5b9a; color: rgb(255, 255, 255); width: 20px;"
+        style="border: 1px solid rgb(126, 91, 154); color: rgb(255, 255, 255); width: 20px;"
         viewBox="0 0 448 512"
         xmlns="http://www.w3.org/2000/svg"
       >
