@@ -4,5 +4,65 @@
   cursor: pointer;
   display: inline-block;
   font-family: themes.$fontFamily;
+  position: relative;
   width: fit-content;
+
+  .fikasio-selector-menu {
+    background-color: themes.$white;
+    border: 1px solid themes.$lightGray;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    min-width: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    margin-top: 4px;
+  }
+
+  .fikasio-selector-option {
+    color: themes.$darkGray;
+    cursor: pointer;
+    font-family: themes.$fontFamily;
+    font-size: 14px;
+    padding: 8px 12px;
+
+    &:hover,
+    &.fikasio-selector-option-highlighted {
+      background-color: themes.$lightGray;
+    }
+  }
+
+  &.fikasio-theme-dark {
+    .fikasio-selector-menu {
+      background-color: themes.$blackLighter;
+      border-color: themes.$darkGrayLighter;
+    }
+
+    .fikasio-selector-option {
+      color: themes.$white;
+
+      &:hover,
+      &.fikasio-selector-option-highlighted {
+        background-color: themes.$darkGray;
+      }
+    }
+  }
+
+  &.fikasio-theme-light {
+    .fikasio-selector-menu {
+      background-color: themes.$white;
+      border-color: themes.$lightGray;
+    }
+
+    .fikasio-selector-option {
+      color: themes.$darkGray;
+
+      &:hover,
+      &.fikasio-selector-option-highlighted {
+        background-color: themes.$lightGray;
+      }
+    }
+  }
 }
