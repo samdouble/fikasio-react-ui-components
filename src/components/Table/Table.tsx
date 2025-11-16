@@ -104,148 +104,148 @@ export function Table({
           ...style,
         }}
       >
-      <thead>
-        <tr>
-          {
-            isSelectable && (
-              <th
-                style={{
-                  left: 0,
-                  position: 'sticky',
-                  textAlign: 'center',
-                  width: 35,
-                }}
-              />
-            )
-          }
-          {
-            columns
-              .map(column => {
-                if (column.type === 'cell') {
-                  return (
-                    <th
-                      className={classNames({
-                        'sortable-column': column.isSortable,
-                      })}
-                      key={`header-${column.name}`}
-                      onClick={() => setOrderedBy(column)}
-                      style={{
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      {column.name}
-                      <span
-                        className="sortable-column-buttons"
-                      >
-                        <FontAwesomeIcon
-                          icon="caret-up"
-                          size="1x"
-                        />
-                      </span>
-                    </th>
-                  );
-                }
-                if (column.type === 'numbering') {
-                  return (
-                    <th
-                      key={`header-${column.name}`}
-                      style={{
-                        width: 30,
-                      }}
-                    />
-                  );
-                }
-                if (column.type === 'options') {
-                  return (
-                    <th
-                      className="itemStaticColumn-right"
-                      key={`header-${column.name}`}
-                      style={{
-                        textAlign: 'center',
-                        width: 35,
-                      }}
-                    />
-                  );
-                }
-                return null;
-              })
-          }
-        </tr>
-      </thead>
-      <tbody>
-        {
-          orderedRows
-            .map((row, index) => (
-              <tr
-                className="itemRow"
-                key={JSON.stringify(row)}
-              >
-                {
-                  isSelectable && (
-                    <td
-                      style={{
-                        left: 0,
-                        position: 'sticky',
-                      }}
-                    >
-                      <Checkbox
-                        defaultIsChecked={isRowChecked && isRowChecked(row)}
-                        onClick={() => {
-                          if (onRowClick) {
-                            onRowClick(row);
-                          }
-                        }}
+        <thead>
+          <tr>
+            {
+              isSelectable && (
+                <th
+                  style={{
+                    left: 0,
+                    position: 'sticky',
+                    textAlign: 'center',
+                    width: 35,
+                  }}
+                />
+              )
+            }
+            {
+              columns
+                .map(column => {
+                  if (column.type === 'cell') {
+                    return (
+                      <th
+                        className={classNames({
+                          'sortable-column': column.isSortable,
+                        })}
+                        key={`header-${column.name}`}
+                        onClick={() => setOrderedBy(column)}
                         style={{
-                          margin: '0 -2px',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        {column.name}
+                        <span
+                          className="sortable-column-buttons"
+                        >
+                          <FontAwesomeIcon
+                            icon="caret-up"
+                            size="1x"
+                          />
+                        </span>
+                      </th>
+                    );
+                  }
+                  if (column.type === 'numbering') {
+                    return (
+                      <th
+                        key={`header-${column.name}`}
+                        style={{
+                          width: 30,
                         }}
                       />
-                    </td>
-                  )
-                }
-                {
-                  columns
-                    .map(column => {
-                      if (column.type === 'cell') {
-                        return (
-                          <td
-                            className="itemRow_field"
-                            key={`cell-${column.name}-row-${JSON.stringify(row)}`}
-                          >
-                            {
-                              column.render
-                                ? column.render(row)
-                                : row[column.property] as React.ReactNode
+                    );
+                  }
+                  if (column.type === 'options') {
+                    return (
+                      <th
+                        className="itemStaticColumn-right"
+                        key={`header-${column.name}`}
+                        style={{
+                          textAlign: 'center',
+                          width: 35,
+                        }}
+                      />
+                    );
+                  }
+                  return null;
+                })
+            }
+          </tr>
+        </thead>
+        <tbody>
+          {
+            orderedRows
+              .map((row, index) => (
+                <tr
+                  className="itemRow"
+                  key={JSON.stringify(row)}
+                >
+                  {
+                    isSelectable && (
+                      <td
+                        style={{
+                          left: 0,
+                          position: 'sticky',
+                        }}
+                      >
+                        <Checkbox
+                          defaultIsChecked={isRowChecked && isRowChecked(row)}
+                          onClick={() => {
+                            if (onRowClick) {
+                              onRowClick(row);
                             }
-                          </td>
-                        );
-                      }
-                      if (column.type === 'numbering') {
-                        return (
-                          <td
-                            key={`cell-${column.name}-row-${JSON.stringify(row)}`}
-                          >
-                            {index + 1}
-                          </td>
-                        );
-                      }
-                      if (column.type === 'options') {
-                        return (
-                          <td
-                            className="itemStaticColumn-right"
-                            key={`cell-${column.name}-row-${JSON.stringify(row)}`}
-                          >
-                            {options(row)}
-                          </td>
-                        );
-                      }
-                      return null;
-                    })
-                }
-              </tr>
-            ))
-        }
-      </tbody>
-    </table>
+                          }}
+                          style={{
+                            margin: '0 -2px',
+                          }}
+                        />
+                      </td>
+                    )
+                  }
+                  {
+                    columns
+                      .map(column => {
+                        if (column.type === 'cell') {
+                          return (
+                            <td
+                              className="itemRow_field"
+                              key={`cell-${column.name}-row-${JSON.stringify(row)}`}
+                            >
+                              {
+                                column.render
+                                  ? column.render(row)
+                                  : row[column.property] as React.ReactNode
+                              }
+                            </td>
+                          );
+                        }
+                        if (column.type === 'numbering') {
+                          return (
+                            <td
+                              key={`cell-${column.name}-row-${JSON.stringify(row)}`}
+                            >
+                              {index + 1}
+                            </td>
+                          );
+                        }
+                        if (column.type === 'options') {
+                          return (
+                            <td
+                              className="itemStaticColumn-right"
+                              key={`cell-${column.name}-row-${JSON.stringify(row)}`}
+                            >
+                              {options(row)}
+                            </td>
+                          );
+                        }
+                        return null;
+                      })
+                  }
+                </tr>
+              ))
+          }
+        </tbody>
+      </table>
     </div>
   );
 }
