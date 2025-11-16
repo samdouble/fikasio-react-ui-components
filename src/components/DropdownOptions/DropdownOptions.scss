@@ -1,20 +1,97 @@
 @use '../../themes.scss';
 
 .fikasio-dropdownOptions {
-  color: black;
-  cursor: pointer;
   font-family: themes.$fontFamily;
-  text-decoration: none;
-}
+  position: relative;
 
-.fikasio-dropdownOptions .dropdown-menu {
-  border-radius: 0;
-}
+  .fikasio-dropdownOptions-toggle {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 35px;
+    justify-content: center;
+    width: 35px;
+    color: themes.$gray;
 
-.fikasio-dropdownOptions-toggle {
-  cursor: pointer;
-}
+    &:hover {
+      color: themes.$darkGray;
+    }
+  }
 
-.fikasio-dropdownOptions-toggle.dropdown-toggle::after {
-  content: none;
+  .fikasio-dropdownOptions-menu {
+    position: absolute;
+    top: 100%;
+    background-color: themes.$white;
+    border: 1px solid themes.$lightGray;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+  }
+
+  .fikasio-dropdownOptions-item {
+    color: themes.$darkGray;
+    cursor: pointer;
+    font-family: themes.$fontFamily;
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: themes.$lightGray;
+    }
+  }
+
+  .fikasio-dropdownOptions-icon {
+    color: red;
+    margin-right: 5px;
+    width: 25px;
+  }
+
+  &.fikasio-theme-dark {
+    .fikasio-dropdownOptions-toggle {
+      color: themes.$gray;
+
+      &:hover {
+        color: themes.$white;
+      }
+    }
+
+    .fikasio-dropdownOptions-menu {
+      background-color: themes.$blackLighter;
+      border-color: themes.$darkGrayLighter;
+    }
+
+    .fikasio-dropdownOptions-item {
+      color: themes.$white;
+
+      &:hover {
+        background-color: themes.$darkGray;
+      }
+    }
+  }
+
+  &.fikasio-theme-light {
+    .fikasio-dropdownOptions-toggle {
+      color: themes.$gray;
+
+      &:hover {
+        color: themes.$darkGray;
+      }
+    }
+
+    .fikasio-dropdownOptions-menu {
+      background-color: themes.$white;
+      border-color: themes.$lightGray;
+    }
+
+    .fikasio-dropdownOptions-item {
+      color: themes.$darkGray;
+
+      &:hover {
+        background-color: themes.$lightGray;
+      }
+    }
+  }
 }
