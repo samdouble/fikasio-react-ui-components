@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './Input.scss';
 
 export interface InputProps {
@@ -67,7 +66,6 @@ export function Input({
           border: 'none',
           borderRadius: 0,
           height: 36,
-          padding: 6,
           paddingLeft: 10,
           width: '98%',
         }}

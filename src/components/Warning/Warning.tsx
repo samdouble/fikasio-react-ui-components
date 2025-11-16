@@ -5,7 +5,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './Warning.scss';
 
 library.add(faTriangleExclamation);

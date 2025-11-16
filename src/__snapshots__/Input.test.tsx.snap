@@ -9,7 +9,7 @@ exports[`Input Renders correctly 1`] = `
     >
       <input
         class="form-control"
-        style="border-radius: 0; height: 36px; padding: 6px 6px 6px 10px; width: 98%;"
+        style="border-radius: 0; height: 36px; padding-left: 10px; width: 98%;"
         value=""
       />
     </div>
