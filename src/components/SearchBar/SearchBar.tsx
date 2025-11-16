@@ -55,7 +55,6 @@ export function SearchBar({
     );
   }, [currentValue, options]);
 
-  // Reset highlighted index when filtered options change
   useEffect(() => {
     setHighlightedIndex(null);
   }, [filteredOptions]);
@@ -101,14 +100,10 @@ export function SearchBar({
         highlightedIndex
       ] as HTMLElement;
       if (optionElement && typeof optionElement.scrollIntoView === 'function') {
-        try {
-          optionElement.scrollIntoView({
-            block: 'nearest',
-            behavior: 'smooth',
-          });
-        } catch {
-          // Ignore errors in test environments
-        }
+        optionElement.scrollIntoView({
+          block: 'nearest',
+          behavior: 'smooth',
+        });
       }
     }
   }, [highlightedIndex]);

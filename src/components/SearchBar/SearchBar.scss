@@ -39,23 +39,24 @@
   }
 
   .fikasio-searchbar-dropdown {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: themes.$white;
+    border: 1px solid themes.$lightGray;
+    border-top: none;
     position: absolute;
     top: 100%;
     left: -1px;
     right: -1px;
-    background-color: themes.$white;
-    border: 1px solid themes.$lightGray;
-    border-top: none;
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .fikasio-searchbar-option {
     color: themes.$darkGray;
     cursor: pointer;
     font-family: themes.$fontFamily;
+    font-size: 14px;
     padding: 5px 12px;
 
     &:hover,
