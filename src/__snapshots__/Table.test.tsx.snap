@@ -4,10 +4,10 @@ exports[`Table Renders correctly 1`] = `
 <body>
   <div>
     <div
-      class="table-responsive"
+      class="fikasio-table-wrapper"
     >
       <table
-        class="fikasio-table fikasio-theme-light table table-bordered table-hover"
+        class="fikasio-table fikasio-theme-light"
       >
         <thead>
           <tr>

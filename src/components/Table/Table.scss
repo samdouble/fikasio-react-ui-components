@@ -1,42 +1,141 @@
 @use '../../themes.scss';
 
+.fikasio-table-wrapper {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
 .fikasio-table {
+  border: 1px solid themes.$lightGray;
+  border-collapse: collapse;
   font-family: themes.$fontFamily;
   table-layout: fixed;
-}
+  width: 100%;
 
-.fikasio-table thead tr {
-  background-color: #eeeeee;
-}
+  thead {
+    tr {
+      background-color: #eeeeee;
+    }
+  }
 
-.fikasio-table tr td {
-  background-clip: padding-box;
-  background-color: white !important;
-  text-align: left;
-  vertical-align: middle;
-}
+  tbody {
+    tr {
+      border-bottom: 1px solid themes.$lightGray;
+      transition: background-color 0.15s ease-in-out;
 
-.fikasio-table tr th {
-  background-color: inherit;
-  padding: 0.5rem;
-  text-align: left;
-}
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.075);
+      }
 
-.fikasio-table tr th.sortable-column {
-  cursor: pointer;
-}
+      td {
+        background-clip: padding-box;
+        background-color: themes.$white !important;
+        border: 1px solid themes.$lightGray;
+        padding: 0.5rem;
+        text-align: left;
+        vertical-align: middle;
+      }
+    }
+  }
 
-.fikasio-table tr .sortable-column-buttons {
-  margin-left: 15px;
-  visibility: hidden;
-}
+  thead tr,
+  tbody tr {
+    th {
+      background-color: inherit;
+      border: 1px solid themes.$lightGray;
+      padding: 0.5rem;
+      text-align: left;
 
-.fikasio-table tr .sortable-column:hover .sortable-column-buttons {
-  visibility: visible;
-}
+      &.sortable-column {
+        cursor: pointer;
+      }
+    }
+  }
 
-.itemStaticColumn-right {
-  position: -webkit-sticky;
-  position: sticky;
-  right: 0;
+  .sortable-column-buttons {
+    margin-left: 15px;
+    visibility: hidden;
+  }
+
+  .sortable-column:hover .sortable-column-buttons {
+    visibility: visible;
+  }
+
+  .itemStaticColumn-right {
+    position: -webkit-sticky;
+    position: sticky;
+    right: 0;
+  }
+
+  &.fikasio-theme-dark {
+    border-color: themes.$darkGrayLighter;
+    background-color: themes.$blackLighter;
+
+    thead {
+      tr {
+        background-color: themes.$darkGray;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom-color: themes.$darkGrayLighter;
+
+        &:hover {
+          background-color: themes.$darkGray;
+        }
+
+        td {
+          background-color: themes.$blackLighter !important;
+          border-color: themes.$darkGrayLighter;
+          color: themes.$white;
+        }
+      }
+    }
+
+    thead tr,
+    tbody tr {
+      th {
+        border-color: themes.$darkGrayLighter;
+        color: themes.$white;
+      }
+    }
+  }
+
+  &.fikasio-theme-light {
+    border-color: themes.$lightGray;
+    background-color: themes.$white;
+
+    thead {
+      tr {
+        background-color: #eeeeee;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom-color: themes.$lightGray;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.075);
+        }
+
+        td {
+          background-color: themes.$white !important;
+          border-color: themes.$lightGray;
+          color: themes.$darkGray;
+        }
+      }
+    }
+
+    thead tr,
+    tbody tr {
+      th {
+        border-color: themes.$lightGray;
+        color: themes.$darkGray;
+      }
+    }
+  }
 }
