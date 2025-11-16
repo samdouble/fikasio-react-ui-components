@@ -2,12 +2,168 @@
 
 .fikasio-select {
   font-family: themes.$fontFamily;
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
 
-  & .MuiFormControl-root {
-    margin: 0;
+  .fikasio-select-input-wrapper {
+    align-items: center;
+    background-color: themes.$white;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    font-family: themes.$fontFamily;
+    height: 35px;
+    min-width: 200px;
+    padding: 0;
+    position: relative;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
   }
 
-  & .MuiInputBase-root {
+  .fikasio-select-input {
+    border: none;
+    box-sizing: border-box;
+    flex: 1;
+    font-family: themes.$fontFamily;
+    height: 100%;
+    outline: none;
+    padding: 6px 26px 6px 10px;
+    pointer-events: none;
     width: 100%;
+  }
+
+  .fikasio-select-icon {
+    color: themes.$gray;
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .fikasio-select-menu {
+    background-color: themes.$white;
+    border: 1px solid #cccccc;
+    border-top: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .fikasio-select-option {
+    color: themes.$darkGray;
+    cursor: pointer;
+    font-family: themes.$fontFamily;
+    padding: 8px 10px;
+
+    &:hover {
+      background-color: themes.$lightGray;
+    }
+
+    &.fikasio-select-option-selected {
+      background-color: rgba(0, 0, 0, 0.075);
+    }
+  }
+
+  &.fikasio-select-disabled {
+    .fikasio-select-input-wrapper {
+      background-color: #f5f5f5;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .fikasio-select-input {
+      cursor: not-allowed;
+    }
+  }
+
+  &.fikasio-theme-dark {
+    .fikasio-select-input-wrapper {
+      background-color: themes.$blackLighter;
+      border-color: themes.$darkGrayLighter;
+    }
+
+    .fikasio-select-input {
+      color: themes.$white;
+    }
+
+    .fikasio-select-icon {
+      color: themes.$gray;
+    }
+
+    .fikasio-select-menu {
+      background-color: themes.$blackLighter;
+      border-color: themes.$darkGrayLighter;
+    }
+
+    .fikasio-select-option {
+      color: themes.$white;
+
+      &:hover {
+        background-color: themes.$darkGray;
+      }
+
+      &.fikasio-select-option-selected {
+        background-color: themes.$darkGray;
+      }
+    }
+
+    &.fikasio-select-disabled {
+      .fikasio-select-input-wrapper {
+        background-color: themes.$darkGray;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &.fikasio-theme-light {
+    .fikasio-select-input-wrapper {
+      background-color: themes.$white;
+      border-color: #cccccc;
+    }
+
+    .fikasio-select-input {
+      color: themes.$darkGray;
+    }
+
+    .fikasio-select-icon {
+      color: themes.$gray;
+    }
+
+    .fikasio-select-menu {
+      background-color: themes.$white;
+      border-color: #cccccc;
+    }
+
+    .fikasio-select-option {
+      color: themes.$darkGray;
+
+      &:hover {
+        background-color: themes.$lightGray;
+      }
+
+      &.fikasio-select-option-selected {
+        background-color: rgba(0, 0, 0, 0.075);
+      }
+    }
+
+    &.fikasio-select-disabled {
+      .fikasio-select-input-wrapper {
+        background-color: #f5f5f5;
+        opacity: 0.6;
+      }
+    }
   }
 }

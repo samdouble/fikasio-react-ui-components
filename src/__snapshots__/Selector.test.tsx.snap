@@ -6,12 +6,17 @@ exports[`Selector Renders correctly 1`] = `
     <span
       class="fikasio-selector fikasio-theme-light"
     >
-      <button
-        class="fikasio-actionbutton fikasio-theme-light"
-        type="submit"
+      <div
+        role="button"
+        tabindex="0"
       >
-        Option 1
-      </button>
+        <button
+          class="fikasio-actionbutton fikasio-theme-light"
+          type="submit"
+        >
+          Option 1
+        </button>
+      </div>
     </span>
   </div>
 </body>
