@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { ActionButton } from '../Button/ActionButton';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -32,28 +30,115 @@ export function Selector({
     hasDefaultValue ? defaultValue : undefined,
   );
   const currentValue = isControlled ? value : internalValue;
+  const [isOpen, setIsOpen] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLSpanElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
 
   const theme = useTheme();
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+        setHighlightedIndex(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    setHighlightedIndex(null);
+  }, [options]);
+
+  useEffect(() => {
+    if (highlightedIndex !== null && dropdownRef.current) {
+      const optionElement = dropdownRef.current.children[
+        highlightedIndex
+      ] as HTMLElement;
+      if (optionElement && typeof optionElement.scrollIntoView === 'function') {
+        optionElement.scrollIntoView({
+          block: 'nearest',
+          behavior: 'smooth',
+        });
+      }
+    }
+  }, [highlightedIndex]);
 
   const handleChange = (newValue: string) => {
     onChange(newValue);
     if (!isControlled) {
       setInternalValue(newValue);
     }
-    handleClose();
+    setIsOpen(false);
+    setHighlightedIndex(null);
   };
 
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    setAnchorEl(event.currentTarget);
+    event.stopPropagation();
+    setIsOpen(!isOpen);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!isOpen && options.length > 0) {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        setIsOpen(true);
+        return;
+      }
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setHighlightedIndex(prev => {
+        if (prev === null) {
+          return 0;
+        }
+        return prev < options.length - 1 ? prev + 1 : prev;
+      });
+      setIsOpen(true);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setHighlightedIndex(prev => {
+        if (prev === null) {
+          return 0;
+        }
+        return prev > 0 ? prev - 1 : prev;
+      });
+      setIsOpen(true);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (highlightedIndex !== null && highlightedIndex < options.length) {
+        handleChange(options[highlightedIndex]);
+      } else if (isOpen) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true);
+      }
+    } else if (e.key === ' ') {
+      e.preventDefault();
+      if (isOpen && highlightedIndex !== null && highlightedIndex < options.length) {
+        handleChange(options[highlightedIndex]);
+      } else {
+        setIsOpen(!isOpen);
+      }
+    } else if (e.key === 'Escape') {
+      setIsOpen(false);
+      setHighlightedIndex(null);
+    }
   };
 
   return (
     <span
+      ref={containerRef}
       className={classNames({
         'fikasio-selector': true,
         'fikasio-theme-dark': theme === 'dark',
@@ -67,43 +152,44 @@ export function Selector({
       {
         Component ? (
           <div
+            ref={triggerRef}
             onClick={handleClick}
-            role="presentation"
+            onKeyDown={handleKeyDown}
+            role="button"
+            tabIndex={0}
           >
             {Component}
           </div>
         ) : (
-          <ActionButton
+          <div
+            ref={triggerRef}
             onClick={handleClick}
+            onKeyDown={handleKeyDown}
+            role="button"
+            tabIndex={0}
           >
-            {currentValue}
-          </ActionButton>
+            <ActionButton>
+              {currentValue}
+            </ActionButton>
+          </div>
         )
       }
-      {
-        options.length > 0
-          ? (
-            <Menu
-              anchorEl={anchorEl}
-              MenuListProps={{
-                'aria-labelledby': 'basic-button',
-              }}
-              open={open}
-              onClose={handleClose}
+      {isOpen && options.length > 0 && (
+        <div ref={dropdownRef} className="fikasio-selector-menu">
+          {options.map((option, index) => (
+            <div
+              key={option}
+              className={classNames('fikasio-selector-option', {
+                'fikasio-selector-option-highlighted': index === highlightedIndex,
+              })}
+              onClick={() => handleChange(option)}
+              onMouseEnter={() => setHighlightedIndex(index)}
             >
-              {
-                options.map(option => (
-                  <MenuItem
-                    key={option}
-                    onClick={_e => handleChange(option)}
-                  >
-                    {option}
-                  </MenuItem>
-                ))
-              }
-            </Menu>
-          ) : null
-      }
+              {option}
+            </div>
+          ))}
+        </div>
+      )}
     </span>
   );
 }
