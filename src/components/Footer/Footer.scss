@@ -2,18 +2,75 @@
 
 .fikasio-footer {
   background-color: #420076;
-  color: #ffffff;
-  width: 100%;
-  height: 128px;
-  position: absolute;
   bottom: 0;
-  z-index: 100;
-}
-
-.fikasio-footer a {
   color: #ffffff;
-}
+  font-family: themes.$fontFamily;
+  height: 128px;
+  margin: 0 -15px;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
 
-.fikasio-footer a:hover {
-  color: #dddddd;
+  a {
+    color: #ffffff;
+
+    &:hover {
+      color: #dddddd;
+    }
+  }
+
+  .fikasio-footer-container {
+    box-sizing: border-box;
+    margin: 30px auto 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .fikasio-footer-row {
+    background-color: #2e2e2e;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    width: 100%;
+
+    &.fikasio-footer-row-top {
+      padding-top: 25px;
+    }
+
+    &.fikasio-footer-row-bottom {
+      padding-bottom: 25px;
+    }
+  }
+
+  .fikasio-footer-col {
+    box-sizing: border-box;
+    padding: 0 15px;
+
+    &.fikasio-footer-col-full {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    &.fikasio-footer-col-third {
+      flex: 0 0 100%;
+      max-width: 100%;
+
+      @media (min-width: 768px) {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+      }
+    }
+  }
+
+  .fikasio-footer-content-left {
+    text-align: left;
+  }
+
+  .fikasio-footer-content-center {
+    text-align: center;
+  }
+
+  .fikasio-footer-content-right {
+    text-align: right;
+  }
 }

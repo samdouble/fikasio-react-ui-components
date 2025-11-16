@@ -7,43 +7,41 @@ exports[`Footer Renders correctly 1`] = `
       class="fikasio-footer fikasio-theme-light"
     >
       <div
-        class="container-fluid"
+        class="fikasio-footer-container"
       >
         <div
-          class="row"
-          style="background-color: rgb(46, 46, 46); padding-top: 25px;"
+          class="fikasio-footer-row fikasio-footer-row-top"
         >
           <div
-            class="col-md-12"
+            class="fikasio-footer-col fikasio-footer-col-full"
           >
             <div
-              class="text-center"
+              class="fikasio-footer-content-center"
             />
           </div>
         </div>
         <div
-          class="row"
-          style="background-color: rgb(46, 46, 46); padding-bottom: 25px;"
+          class="fikasio-footer-row fikasio-footer-row-bottom"
         >
           <div
-            class="col-md-4"
+            class="fikasio-footer-col fikasio-footer-col-third"
           >
             <div
-              class="text-left"
+              class="fikasio-footer-content-left"
             />
           </div>
           <div
-            class="col-md-4"
+            class="fikasio-footer-col fikasio-footer-col-third"
           >
             <div
-              class="text-center"
+              class="fikasio-footer-content-center"
             />
           </div>
           <div
-            class="col-md-4"
+            class="fikasio-footer-col fikasio-footer-col-third"
           >
             <div
-              class="text-right"
+              class="fikasio-footer-content-right"
             />
           </div>
         </div>
@@ -60,17 +58,16 @@ exports[`Footer Renders correctly with children 1`] = `
       class="fikasio-footer fikasio-theme-light"
     >
       <div
-        class="container-fluid"
+        class="fikasio-footer-container"
       >
         <div
-          class="row"
-          style="background-color: rgb(46, 46, 46); padding-top: 25px;"
+          class="fikasio-footer-row fikasio-footer-row-top"
         >
           <div
-            class="col-md-12"
+            class="fikasio-footer-col fikasio-footer-col-full"
           >
             <div
-              class="text-center"
+              class="fikasio-footer-content-center"
             >
               <div>
                 <div>
@@ -81,14 +78,13 @@ exports[`Footer Renders correctly with children 1`] = `
           </div>
         </div>
         <div
-          class="row"
-          style="background-color: rgb(46, 46, 46); padding-bottom: 25px;"
+          class="fikasio-footer-row fikasio-footer-row-bottom"
         >
           <div
-            class="col-md-4"
+            class="fikasio-footer-col fikasio-footer-col-third"
           >
             <div
-              class="text-left"
+              class="fikasio-footer-content-left"
             >
               <div>
                 <div>
@@ -98,10 +94,10 @@ exports[`Footer Renders correctly with children 1`] = `
             </div>
           </div>
           <div
-            class="col-md-4"
+            class="fikasio-footer-col fikasio-footer-col-third"
           >
             <div
-              class="text-center"
+              class="fikasio-footer-content-center"
             >
               <div>
                 <div>
@@ -111,10 +107,10 @@ exports[`Footer Renders correctly with children 1`] = `
             </div>
           </div>
           <div
-            class="col-md-4"
+            class="fikasio-footer-col fikasio-footer-col-third"
           >
             <div
-              class="text-right"
+              class="fikasio-footer-content-right"
             >
               <div>
                 <div>
