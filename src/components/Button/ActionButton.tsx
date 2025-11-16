@@ -2,7 +2,6 @@ import React, { SyntheticEvent } from 'react';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './Button.scss';
 
 export interface ActionButtonProps {

@@ -3,20 +3,6 @@
 ## [1.1.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v1.1.0...v1.1.1) (2025-11-15)
 
 
-### Bug Fixes
-
-* fix errors when importing components from the library ([ff89f7a](https://github.com/samdouble/fikasio-react-ui-components/commit/ff89f7ad24e472830cd6fa77559c5df3eda8515d))
-
-## [1.1.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v1.1.0...v1.1.1) (2025-11-15)
-
-
-### Bug Fixes
-
-* fix errors when importing components from the library ([6b4cbd3](https://github.com/samdouble/fikasio-react-ui-components/commit/6b4cbd3cc9dd12b5c36ca56805aeca5199d89028))
-
-## [1.1.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v1.0.0...v1.1.0) (2025-11-15)
-
-
 ### Features
 
 * **DatePicker:** show DatePicker popper at the bottom ([1531f97](https://github.com/samdouble/fikasio-react-ui-components/commit/1531f97d8e92414281e2ae2026a44ad4e53153b7))

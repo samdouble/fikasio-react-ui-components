@@ -5,7 +5,9 @@
   border: 1px solid themes.$blue;
   border-radius: 0;
   color: themes.$white;
+  cursor: pointer;
   font-family: themes.$fontFamily;
+  font-size: 14px;
   padding: 0.3rem 0.7rem;
 
   &:hover {
