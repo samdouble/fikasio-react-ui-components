@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import BootstrapTable from 'react-bootstrap/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +8,6 @@ import usePrevious from 'use-previous';
 import { Checkbox } from '../Checkbox/Checkbox';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './Table.scss';
 
 library.add(faCaretUp);
@@ -94,20 +92,18 @@ export function Table({
   }, [orderDirection, orderedBy, rows]);
 
   return (
-    <BootstrapTable
-      className={classNames({
-        'fikasio-table': true,
-        'fikasio-theme-dark': theme === 'dark',
-        'fikasio-theme-light': theme === 'light',
-        ...convertClassNameToObj(className),
-      })}
-      bordered
-      hover
-      responsive
-      style={{
-        ...style,
-      }}
-    >
+    <div className="fikasio-table-wrapper">
+      <table
+        className={classNames({
+          'fikasio-table': true,
+          'fikasio-theme-dark': theme === 'dark',
+          'fikasio-theme-light': theme === 'light',
+          ...convertClassNameToObj(className),
+        })}
+        style={{
+          ...style,
+        }}
+      >
       <thead>
         <tr>
           {
@@ -199,6 +195,9 @@ export function Table({
                             onRowClick(row);
                           }
                         }}
+                        style={{
+                          margin: '0 -2px',
+                        }}
                       />
                     </td>
                   )
@@ -246,7 +245,8 @@ export function Table({
             ))
         }
       </tbody>
-    </BootstrapTable>
+    </table>
+    </div>
   );
 }
 
