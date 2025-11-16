@@ -1,7 +1,4 @@
 import React, { JSX } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -36,60 +33,48 @@ export function Footer({
       })}
       style={style}
     >
-      <Container
-        fluid
-      >
-        <Row
-          style={{
-            backgroundColor: '#2e2e2e',
-            paddingTop: 25,
-          }}
-        >
-          <Col md={12}>
-            <div className="text-center">
+      <div className="fikasio-footer-container">
+        <div className="fikasio-footer-row fikasio-footer-row-top">
+          <div className="fikasio-footer-col fikasio-footer-col-full">
+            <div className="fikasio-footer-content-center">
               {
                 childrenTop?.map(element => (
                   <div key={element.key}>{element}</div>
                 ))
               }
             </div>
-          </Col>
-        </Row>
-        <Row
-          style={{
-            backgroundColor: '#2e2e2e',
-            paddingBottom: 25,
-          }}
-        >
-          <Col md={4}>
-            <div className="text-left">
+          </div>
+        </div>
+        <div className="fikasio-footer-row fikasio-footer-row-bottom">
+          <div className="fikasio-footer-col fikasio-footer-col-third">
+            <div className="fikasio-footer-content-left">
               {
                 childrenLeft?.map(element => (
                   <div key={element.key}>{element}</div>
                 ))
               }
             </div>
-          </Col>
-          <Col md={4}>
-            <div className="text-center">
+          </div>
+          <div className="fikasio-footer-col fikasio-footer-col-third">
+            <div className="fikasio-footer-content-center">
               {
                 childrenCenter?.map(element => (
                   <div key={element.key}>{element}</div>
                 ))
               }
             </div>
-          </Col>
-          <Col md={4}>
-            <div className="text-right">
+          </div>
+          <div className="fikasio-footer-col fikasio-footer-col-third">
+            <div className="fikasio-footer-content-right">
               {
                 childrenRight?.map(element => (
                   <div key={element.key}>{element}</div>
                 ))
               }
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
