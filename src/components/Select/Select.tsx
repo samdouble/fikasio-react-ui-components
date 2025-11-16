@@ -162,7 +162,7 @@ export function Select({
             }),
           }}
         >
-          {options.map((option) => (
+          {options.map(option => (
             <div
               key={option.value}
               className={classNames('fikasio-select-option', {

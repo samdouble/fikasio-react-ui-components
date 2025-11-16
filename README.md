@@ -177,11 +177,11 @@ The Footer component provides a flexible layout with multiple sections for conte
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
 | className               | string          | No              | Additional CSS class name for the Selector      |
-| Component               | Component       | No              | Component that triggers the opening of the menu |
 | defaultValue            | string          | No              | Initial value for uncontrolled select           |
 | name                    | string          | No              | Name attribute for the select                   |
 | onChange                | function        | No              | Handler called when select value changes        |
 | options                 | array           | No              | Array of options to display in the select       |
+| render                  | function        | No              | Describes how to render the main button         |
 | style                   | CSSProperties   | No              | Additional CSS styles for the Selector          |
 | value                   | string          | No              | Controlled select value                         |
 

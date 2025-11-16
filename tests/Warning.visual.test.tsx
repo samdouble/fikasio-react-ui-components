@@ -7,9 +7,10 @@ test.describe('Warning', () => {
     testInfo.snapshotSuffix = '';
     const component = await mount(
       <div style={{
+        height: 115,
         padding: '2rem',
         position: 'absolute',
-        width: '400px',
+        width: 400,
       }}>
         <Warning>
           This is a warning!

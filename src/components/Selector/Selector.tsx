@@ -7,19 +7,19 @@ import './Selector.scss';
 
 export interface SelectorProps {
   className?: string;
-  Component?: React.ReactElement;
   defaultValue?: string;
   onChange?: (value: string) => void;
   options?: string[];
+  render?: (value?: string) => React.ReactNode;
   style?: React.CSSProperties;
   value?: string;
 }
 
 export function Selector({
   className = '',
-  Component = undefined,
   onChange = () => undefined,
   options = [],
+  render = undefined,
   style = {},
   defaultValue = options[0],
   value = undefined,
@@ -150,7 +150,7 @@ export function Selector({
       }}
     >
       {
-        Component ? (
+        render ? (
           <div
             ref={triggerRef}
             onClick={handleClick}
@@ -158,7 +158,7 @@ export function Selector({
             role="button"
             tabIndex={0}
           >
-            {Component}
+            {render(currentValue)}
           </div>
         ) : (
           <div

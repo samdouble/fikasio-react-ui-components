@@ -73,7 +73,7 @@ export function DropdownOptions({
       <div
         className="fikasio-dropdownOptions-toggle"
         onClick={handleToggle}
-        onKeyDown={(e) => {
+        onKeyDown={e => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             handleToggle();

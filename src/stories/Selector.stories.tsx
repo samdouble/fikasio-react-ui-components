@@ -11,12 +11,12 @@ const story = {
   },
 };
 
-function Template({ className, Component, options, style }: SelectorProps) {
+function Template({ className, options, render, style }: SelectorProps) {
   return (
     <Selector
       className={className}
-      Component={Component}
       options={options}
+      render={render}
       style={style}
     />
   );
@@ -24,8 +24,8 @@ function Template({ className, Component, options, style }: SelectorProps) {
 
 export const SelectorNoStyle = Template.bind({});
 SelectorNoStyle.args = {
-  Component: <div>Hello</div>,
   options: ['Option 1', 'Option 2', 'Option 3'],
+  render: (value: string) => <div>Hello {value}</div>,
 };
 
 export default story;
