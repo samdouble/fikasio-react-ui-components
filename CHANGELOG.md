@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.0...v2.0.1) (2025-11-17)
+
+
+### Bug Fixes
+
+* **AutosaveTextarea:** use custom-made use-timeout hook ([2aa1dd9](https://github.com/samdouble/fikasio-react-ui-components/commit/2aa1dd9bbae792a324a806f6533045fed3fbf8b0))
+
 ## [2.0.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v1.1.1...v2.0.0) (2025-11-16)
 
 
