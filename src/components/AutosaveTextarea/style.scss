@@ -1,8 +1,11 @@
+@use '../../themes.scss';
+
 .fikasio-textarea {
   border: 1px solid transparent;
   border-radius: 3px;
   cursor: auto;
   display: inline-block;
+  font-family: themes.$fontFamily;
   height: 300px;
   min-width: auto;
   max-width: 100%;
