@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import ContentEditable, { ContentEditableEvent } from 'react-contenteditable';
-import useTimeout from 'use-timeout';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
+import useTimeout from '../../utils/useTimeout';
 import './style.scss';
 
 export interface AutosaveTextareaProps {
