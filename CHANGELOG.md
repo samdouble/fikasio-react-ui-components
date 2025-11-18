@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.0...v2.0.1) (2025-11-18)
+
+
+### Bug Fixes
+
+* **AutosaveTextarea:** fix imports ([3438aad](https://github.com/samdouble/fikasio-react-ui-components/commit/3438aad9266b7ca7f91842d8885f7ad1611d7d72))
+
 ## [2.0.4](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.3...v2.0.4) (2025-11-18)
 
 
