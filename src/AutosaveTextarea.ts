@@ -1,2 +1,1 @@
-import AutosaveTextarea from './components/AutosaveTextarea/AutosaveTextarea';
-export { AutosaveTextarea };
+export { AutosaveTextarea } from './components/AutosaveTextarea/AutosaveTextarea';
