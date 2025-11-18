@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import ContentEditable, { ContentEditableEvent } from 'react-contenteditable';
+import ContentEditable, { ContentEditableEvent } from './ContentEditable';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import useTimeout from '../../utils/useTimeout';
@@ -91,7 +91,7 @@ export function AutosaveTextarea({
           onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => onFocus && onFocus(e)}
           onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyDown && onKeyDown(e)}
           onKeyUp={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyUp && onKeyUp(e)}
-          ref={ref as React.Ref<ContentEditable>}
+          ref={ref as React.Ref<HTMLElement>}
           style={{
             whiteSpace: 'pre',
             ...style,
@@ -100,14 +100,19 @@ export function AutosaveTextarea({
       </>
     ) : (
       <textarea
-        className={className}
+        className={classNames({
+          'fikasio-textarea': true,
+          'fikasio-theme-dark': theme === 'dark',
+          'fikasio-theme-light': theme === 'light',
+          ...convertClassNameToObj(className),
+        })}
         name={name}
-        onBlur={e => onBlur(e)}
-        onChange={e => handleChange(e.target.value)}
-        onClick={e => e.stopPropagation()}
-        onFocus={e => onFocus(e)}
-        onKeyDown={e => onKeyDown(e)}
-        onKeyUp={e => onKeyUp(e)}
+        onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => onBlur && onBlur(e)}
+        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleChange(e.target.value)}
+        onClick={(e: React.MouseEvent<HTMLTextAreaElement>) => e.stopPropagation()}
+        onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => onFocus && onFocus(e)}
+        onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyDown && onKeyDown(e)}
+        onKeyUp={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyUp && onKeyUp(e)}
         ref={ref as React.Ref<HTMLTextAreaElement>}
         style={{
           ...style,

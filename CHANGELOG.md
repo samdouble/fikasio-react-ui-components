@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.0.4](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.3...v2.0.4) (2025-11-18)
+
+
+### Bug Fixes
+
+* imports ([0acbe79](https://github.com/samdouble/fikasio-react-ui-components/commit/0acbe795ff9cd653ea55f783a2bb0f4b5ef798f9))
+
+## [2.0.3](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.2...v2.0.3) (2025-11-18)
+
+
+### Bug Fixes
+
+* imports ([7fcdcb7](https://github.com/samdouble/fikasio-react-ui-components/commit/7fcdcb745cbf4d6b06ffac119abc1c118d2f73c0))
+
+## [2.0.2](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.1...v2.0.2) (2025-11-18)
+
+
+### Bug Fixes
+
+* set the version number to 2.0.2 ([edfa8c5](https://github.com/samdouble/fikasio-react-ui-components/commit/edfa8c5c69ecbee051e42c2390ab39631b9e7921))
+
+## [2.0.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.0...v2.0.1) (2025-11-18)
+
+
+### Bug Fixes
+
+* set the version number to 2.0.1 ([f9a0470](https://github.com/samdouble/fikasio-react-ui-components/commit/f9a0470aeff42cac8321ccbd69db838927fe4cf8))
+
 ## [2.0.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v1.1.1...v2.0.0) (2025-11-17)
 
 
@@ -19,28 +47,6 @@
 ### Bug Fixes
 
 * **AutosaveTextarea:** make sure to export AutosaveTextarea ([8a49ba3](https://github.com/samdouble/fikasio-react-ui-components/commit/8a49ba31f1fb2b6878c898a3dafa196688dafdeb))
-
-## [2.0.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.0...v2.0.1) (2025-11-17)
-
-
-### Bug Fixes
-
-* **AutosaveTextarea:** use custom-made use-timeout hook ([2aa1dd9](https://github.com/samdouble/fikasio-react-ui-components/commit/2aa1dd9bbae792a324a806f6533045fed3fbf8b0))
-
-## [2.0.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v1.1.1...v2.0.0) (2025-11-16)
-
-
-### ⚠ BREAKING CHANGES
-
-* **Selector:** use render function prop instead of Component
-
-### Features
-
-* **DropDown:** improve visual by removing extra padding ([8e808ec](https://github.com/samdouble/fikasio-react-ui-components/commit/8e808ec1c6dd8c7a923853c493304a619a8767b4))
-* **SearchBar:** improve visual by removing extra padding ([b3a3e6d](https://github.com/samdouble/fikasio-react-ui-components/commit/b3a3e6dd7d36f92f0f6d2e03bbae8f1d64c73e7c))
-* **Select:** improve visual by removing extra padding ([7fa9d0f](https://github.com/samdouble/fikasio-react-ui-components/commit/7fa9d0f49c418a9a8f7762aaa0a8db17cc3b6b8f))
-* **Selector:** improve visual by removing extra padding ([de1e11b](https://github.com/samdouble/fikasio-react-ui-components/commit/de1e11bc6fed56086616ebc386b3bedcfc49dec4))
-* **Selector:** use render function prop instead of Component ([17d3e26](https://github.com/samdouble/fikasio-react-ui-components/commit/17d3e2664470dd77b0d70648fbf32dae00304ef4))
 
 ## [1.1.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v1.1.0...v1.1.1) (2025-11-15)
 
