@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.0...v2.0.1) (2025-11-18)
+
+
+### Bug Fixes
+
+* set the version number to 2.0.1 ([f9a0470](https://github.com/samdouble/fikasio-react-ui-components/commit/f9a0470aeff42cac8321ccbd69db838927fe4cf8))
+
 ## [2.0.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v1.1.1...v2.0.0) (2025-11-17)
 
 
