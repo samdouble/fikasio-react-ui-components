@@ -5,8 +5,8 @@
 1. Run the following command from the root folder of the repo:
 
 ```
-yarn
-yarn storybook
+npm install
+npm run storybook
 ```
 
 2. The Storybook should be available on a web browser at **localhost:6006**.
@@ -16,13 +16,13 @@ yarn storybook
 1. Run the following command from the root folder of the repo:
 
 ```
-yarn test
+npm test
 ```
 
 2. For visual regression tests:
 
 ```
-yarn test-ct
+npm run test-ct
 ```
 
 ## Installing new dependencies
@@ -30,7 +30,7 @@ yarn test-ct
 1. Run the following commands from the root folder of the repo:
 
 ```
-yarn add <dependency>
+npm install <dependency>
 ```
 
 ## Creating a new version
