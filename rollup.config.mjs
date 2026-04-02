@@ -1,7 +1,7 @@
 import image from '@rollup/plugin-image';
+import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import sass from 'rollup-plugin-sass';
-import { uglify } from 'rollup-plugin-uglify';
 import typescript from 'rollup-plugin-typescript2';
 import { readFileSync } from 'fs';
 
@@ -29,13 +29,23 @@ const config = {
     image(),
     postcss({
       plugins: [],
+      exclude: '**/*.{sass,scss}',
     }),
     sass({
+      api: 'modern',
       insert: true,
       output: 'dist/styles.css',
     }),
-    typescript(),
-    uglify(),
+    typescript({
+      include: ['**/*.{ts,tsx}'],
+      exclude: ['**/*.d.ts'],
+      tsconfigOverride: {
+        compilerOptions: {
+          module: "ES2020",
+        },
+      },
+    }),
+    terser(),
   ],
   external: ['react', 'react-dom', 'react/jsx-runtime'],
 };

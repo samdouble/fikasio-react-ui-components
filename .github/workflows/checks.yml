@@ -14,23 +14,19 @@ jobs:
       matrix:
         node-version: ['22.13.0', '24.11.0']
     steps:
-      - name: Commitlint
-        uses: wagoid/commitlint-github-action@v6
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: npm
       - name: Install
-        run: |
-          yarn
+        run: npm ci
       - name: Lint
-        run: |
-          yarn lint
+        run: npm run lint
       - name: Tests
-        run: |
-          yarn test
+        run: npm test
       - name: Visual Regression Tests
         run: |
           sudo apt-get update
@@ -40,7 +36,7 @@ jobs:
             libgstreamer-plugins-good1.0-0 libenchant-2-2 libsecret-1-0 \
             libhyphen0 libmanette-0.2-0
           npx playwright install
-          yarn test-ct
+          npm run test-ct
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
         if: failure()
@@ -49,4 +45,4 @@ jobs:
           path: test-results
       - name: Build
         run: |
-          yarn build
+          npm run build

@@ -1,3 +1,16 @@
+[![CI](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml/badge.svg)](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml)
+[![Coverage Status](https://coveralls.io/repos/samdouble/fikasio-react-ui-components/badge.svg?branch=master&service=github)](https://coveralls.io/github/samdouble/fikasio-react-ui-components?branch=master)
+
+[![Node.js](https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB)](https://react.dev/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff)](https://getbootstrap.com/)
+[![Sass](https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff)](https://sass-lang.com/)
+[![Jest](https://img.shields.io/badge/Jest-C21325?logo=jest&logoColor=fff)](https://jestjs.io/)
+[![Playwright](https://custom-icon-badges.demolab.com/badge/Playwright-2EAD33?logo=playwright&logoColor=fff)](https://playwright.dev/)
+[![Storybook](https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=fff)](https://storybook.js.org/)
+[![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff)](https://www.npmjs.com/)
+
 # @fikasio/react-ui-components
 
 ## Installation
