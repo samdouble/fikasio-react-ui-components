@@ -73,7 +73,7 @@ export function DatePicker({
     if (pIsOpen !== isOpen) {
       setIsOpen(pIsOpen);
     }
-  }, [pIsOpen]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [pIsOpen]); // oxlint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (_calendar) {
@@ -88,7 +88,7 @@ export function DatePicker({
         onClose();
       }
     }
-  }, [hasClickedOutside]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [hasClickedOutside]); // oxlint-disable-line react-hooks/exhaustive-deps
 
   const handleChange = (newValue: Date) => {
     if (onChange) {
