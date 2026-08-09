@@ -1,25 +1,21 @@
-import React from 'react';
-import Dot, { DotProps } from '../components/Dot/Dot';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import Dot from '../components/Dot/Dot';
 
-const story = {
+const meta = {
   title: 'Dot',
   component: Dot,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
   },
+} satisfies Meta<typeof Dot>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const DotRedWith30: Story = {
+  args: {
+    color: 'red',
+    size: 30,
+  },
 };
-
-function Template({ className, color, size, style }: DotProps) {
-  return (
-    <Dot className={className} color={color} size={size} style={style} />
-  );
-}
-
-export const DotRedWith30 = Template.bind({});
-DotRedWith30.args = {
-  color: 'red',
-  size: 30,
-};
-
-export default story;

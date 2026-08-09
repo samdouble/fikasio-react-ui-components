@@ -1,24 +1,20 @@
-import React from 'react';
-import Success, { SuccessProps } from '../components/Success/Success';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import Success from '../components/Success/Success';
 
-const story = {
+const meta = {
   title: 'Success',
   component: Success,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
   },
+} satisfies Meta<typeof Success>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const SuccessNoStyle: Story = {
+  args: {
+    children: 'Success',
+  },
 };
-
-function Template({ children, className, style }: SuccessProps) {
-  return (
-    <Success className={className} style={style}>
-      {children}
-    </Success>
-  );
-}
-
-export const SuccessNoStyle = Template.bind({});
-SuccessNoStyle.args = {};
-
-export default story;

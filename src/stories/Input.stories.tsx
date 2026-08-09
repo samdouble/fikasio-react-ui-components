@@ -1,36 +1,18 @@
-import React from 'react';
-import Input, { InputProps } from '../components/Input/Input';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import Input from '../components/Input/Input';
 
-const story = {
+const meta = {
   title: 'Input',
   component: Input,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
   },
+} satisfies Meta<typeof Input>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const InputUnchecked: Story = {
+  args: {},
 };
-
-function Template({
-  className,
-  defaultValue,
-  name,
-  onChange,
-  style,
-  value,
-}: InputProps) {
-  return (
-    <Input
-      className={className}
-      defaultValue={defaultValue}
-      name={name}
-      onChange={onChange}
-      style={style}
-      value={value}
-    />
-  );
-}
-
-export const InputUnchecked = Template.bind({});
-InputUnchecked.args = {};
-
-export default story;
