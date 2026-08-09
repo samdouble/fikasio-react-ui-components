@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import DP, { DatePicker as ReactDatePicker } from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { DateTime } from 'luxon';
 import { useClickOutside } from 'react-click-outside-hook';
 import useTheme from '../../hooks/useTheme';
@@ -11,7 +11,7 @@ import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import 'react-datepicker/dist/react-datepicker.css';
 import './DatePicker.css';
 
-library.add(faCalendarAlt);
+library.add(faCalendarAlt, faTimes);
 
 export interface DatePickerProps {
   className?: string;
