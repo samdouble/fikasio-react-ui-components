@@ -1,10 +1,8 @@
-@use '../../themes.scss';
-
 .fikasio-footer {
   background-color: #420076;
   bottom: 0;
   color: #ffffff;
-  font-family: themes.$fontFamily;
+  font-family: var(--fikasio-font-family);
   height: 128px;
   position: absolute;
   width: 100%;

@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import './SearchBar.scss';
+import './SearchBar.css';
 
 library.add(faSearch);
 

@@ -1,7 +1,5 @@
-@use '../../themes.scss';
-
 .fikasio-dropdownOptions {
-  font-family: themes.$fontFamily;
+  font-family: var(--fikasio-font-family);
   position: relative;
 
   .fikasio-dropdownOptions-toggle {
@@ -11,18 +9,18 @@
     height: 35px;
     justify-content: center;
     width: 35px;
-    color: themes.$gray;
+    color: var(--fikasio-gray);
 
     &:hover {
-      color: themes.$darkGray;
+      color: var(--fikasio-dark-gray);
     }
   }
 
   .fikasio-dropdownOptions-menu {
     position: absolute;
     top: 100%;
-    background-color: themes.$white;
-    border: 1px solid themes.$lightGray;
+    background-color: var(--fikasio-white);
+    border: 1px solid var(--fikasio-light-gray);
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
@@ -31,15 +29,15 @@
   }
 
   .fikasio-dropdownOptions-item {
-    color: themes.$darkGray;
+    color: var(--fikasio-dark-gray);
     cursor: pointer;
-    font-family: themes.$fontFamily;
+    font-family: var(--fikasio-font-family);
     padding: 5px 5px;
     display: flex;
     align-items: center;
 
     &:hover {
-      background-color: themes.$lightGray;
+      background-color: var(--fikasio-light-gray);
     }
   }
 
@@ -51,46 +49,46 @@
 
   &.fikasio-theme-dark {
     .fikasio-dropdownOptions-toggle {
-      color: themes.$gray;
+      color: var(--fikasio-gray);
 
       &:hover {
-        color: themes.$white;
+        color: var(--fikasio-white);
       }
     }
 
     .fikasio-dropdownOptions-menu {
-      background-color: themes.$blackLighter;
-      border-color: themes.$darkGrayLighter;
+      background-color: var(--fikasio-black-lighter);
+      border-color: var(--fikasio-dark-gray-lighter);
     }
 
     .fikasio-dropdownOptions-item {
-      color: themes.$white;
+      color: var(--fikasio-white);
 
       &:hover {
-        background-color: themes.$darkGray;
+        background-color: var(--fikasio-dark-gray);
       }
     }
   }
 
   &.fikasio-theme-light {
     .fikasio-dropdownOptions-toggle {
-      color: themes.$gray;
+      color: var(--fikasio-gray);
 
       &:hover {
-        color: themes.$darkGray;
+        color: var(--fikasio-dark-gray);
       }
     }
 
     .fikasio-dropdownOptions-menu {
-      background-color: themes.$white;
-      border-color: themes.$lightGray;
+      background-color: var(--fikasio-white);
+      border-color: var(--fikasio-light-gray);
     }
 
     .fikasio-dropdownOptions-item {
-      color: themes.$darkGray;
+      color: var(--fikasio-dark-gray);
 
       &:hover {
-        background-color: themes.$lightGray;
+        background-color: var(--fikasio-light-gray);
       }
     }
   }

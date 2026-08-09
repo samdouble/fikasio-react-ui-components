@@ -1,5 +1,3 @@
-@use '../../themes.scss';
-
 .fikasio-table-wrapper {
   display: block;
   overflow-x: auto;
@@ -8,9 +6,9 @@
 }
 
 .fikasio-table {
-  border: 1px solid themes.$lightGray;
+  border: 1px solid var(--fikasio-light-gray);
   border-collapse: collapse;
-  font-family: themes.$fontFamily;
+  font-family: var(--fikasio-font-family);
   table-layout: fixed;
   width: 100%;
 
@@ -22,7 +20,7 @@
 
   tbody {
     tr {
-      border-bottom: 1px solid themes.$lightGray;
+      border-bottom: 1px solid var(--fikasio-light-gray);
       transition: background-color 0.15s ease-in-out;
 
       &:hover {
@@ -31,8 +29,8 @@
 
       td {
         background-clip: padding-box;
-        background-color: themes.$white !important;
-        border: 1px solid themes.$lightGray;
+        background-color: var(--fikasio-white) !important;
+        border: 1px solid var(--fikasio-light-gray);
         padding: 0.5rem;
         text-align: left;
         vertical-align: middle;
@@ -44,7 +42,7 @@
   tbody tr {
     th {
       background-color: inherit;
-      border: 1px solid themes.$lightGray;
+      border: 1px solid var(--fikasio-light-gray);
       padding: 0.5rem;
       text-align: left;
 
@@ -70,27 +68,27 @@
   }
 
   &.fikasio-theme-dark {
-    border-color: themes.$darkGrayLighter;
-    background-color: themes.$blackLighter;
+    border-color: var(--fikasio-dark-gray-lighter);
+    background-color: var(--fikasio-black-lighter);
 
     thead {
       tr {
-        background-color: themes.$darkGray;
+        background-color: var(--fikasio-dark-gray);
       }
     }
 
     tbody {
       tr {
-        border-bottom-color: themes.$darkGrayLighter;
+        border-bottom-color: var(--fikasio-dark-gray-lighter);
 
         &:hover {
-          background-color: themes.$darkGray;
+          background-color: var(--fikasio-dark-gray);
         }
 
         td {
-          background-color: themes.$blackLighter !important;
-          border-color: themes.$darkGrayLighter;
-          color: themes.$white;
+          background-color: var(--fikasio-black-lighter) !important;
+          border-color: var(--fikasio-dark-gray-lighter);
+          color: var(--fikasio-white);
         }
       }
     }
@@ -98,15 +96,15 @@
     thead tr,
     tbody tr {
       th {
-        border-color: themes.$darkGrayLighter;
-        color: themes.$white;
+        border-color: var(--fikasio-dark-gray-lighter);
+        color: var(--fikasio-white);
       }
     }
   }
 
   &.fikasio-theme-light {
-    border-color: themes.$lightGray;
-    background-color: themes.$white;
+    border-color: var(--fikasio-light-gray);
+    background-color: var(--fikasio-white);
 
     thead {
       tr {
@@ -116,16 +114,16 @@
 
     tbody {
       tr {
-        border-bottom-color: themes.$lightGray;
+        border-bottom-color: var(--fikasio-light-gray);
 
         &:hover {
           background-color: rgba(0, 0, 0, 0.075);
         }
 
         td {
-          background-color: themes.$white !important;
-          border-color: themes.$lightGray;
-          color: themes.$darkGray;
+          background-color: var(--fikasio-white) !important;
+          border-color: var(--fikasio-light-gray);
+          color: var(--fikasio-dark-gray);
         }
       }
     }
@@ -133,8 +131,8 @@
     thead tr,
     tbody tr {
       th {
-        border-color: themes.$lightGray;
-        color: themes.$darkGray;
+        border-color: var(--fikasio-light-gray);
+        color: var(--fikasio-dark-gray);
       }
     }
   }

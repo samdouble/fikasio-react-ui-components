@@ -1,11 +1,9 @@
-@use '../../themes.scss';
-
 .fikasio-textarea {
   border: 1px solid transparent;
   border-radius: 3px;
   cursor: auto;
   display: inline-block;
-  font-family: themes.$fontFamily;
+  font-family: var(--fikasio-font-family);
   height: 300px;
   min-width: auto;
   max-width: 100%;
@@ -17,7 +15,7 @@
   text-align: left;
   vertical-align: middle;
   width: 100%;
-  // Hide scrollbar
+  /* Hide scrollbar */
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

@@ -1,10 +1,8 @@
-@use '../../themes.scss';
-
 .fikasio-searchbar {
-  border: 1px solid themes.$lightGray;
+  border: 1px solid var(--fikasio-light-gray);
   box-sizing: border-box;
   height: 35px;
-  font-family: themes.$fontFamily;
+  font-family: var(--fikasio-font-family);
   position: relative;
 
   .fikasio-searchbar-input-wrapper {
@@ -19,7 +17,7 @@
     background-color: transparent;
     border: none;
     box-sizing: border-box;
-    font-family: themes.$fontFamily;
+    font-family: var(--fikasio-font-family);
     height: 100%;
     outline: none;
     padding: 6.5px 4px;
@@ -27,21 +25,21 @@
     width: 100%;
 
     &::placeholder {
-      color: themes.$gray;
+      color: var(--fikasio-gray);
     }
   }
 
   .fikasio-searchbar-icon {
     position: absolute;
     left: 10px;
-    color: themes.$gray;
+    color: var(--fikasio-gray);
     pointer-events: none;
   }
 
   .fikasio-searchbar-dropdown {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: themes.$white;
-    border: 1px solid themes.$lightGray;
+    background-color: var(--fikasio-white);
+    border: 1px solid var(--fikasio-light-gray);
     border-top: none;
     position: absolute;
     top: 100%;
@@ -53,78 +51,78 @@
   }
 
   .fikasio-searchbar-option {
-    color: themes.$darkGray;
+    color: var(--fikasio-dark-gray);
     cursor: pointer;
-    font-family: themes.$fontFamily;
+    font-family: var(--fikasio-font-family);
     font-size: 14px;
     padding: 5px 12px;
 
     &:hover,
     &.fikasio-searchbar-option-highlighted {
-      background-color: themes.$lightGray;
+      background-color: var(--fikasio-light-gray);
     }
   }
 
   &.fikasio-theme-dark {
-    border-color: themes.$darkGrayLighter;
-    background-color: themes.$blackLighter;
+    border-color: var(--fikasio-dark-gray-lighter);
+    background-color: var(--fikasio-black-lighter);
 
     .fikasio-searchbar-input {
-      color: themes.$white;
+      color: var(--fikasio-white);
       background-color: transparent;
 
       &::placeholder {
-        color: themes.$gray;
+        color: var(--fikasio-gray);
       }
     }
 
     .fikasio-searchbar-icon {
-      color: themes.$gray;
+      color: var(--fikasio-gray);
     }
 
     .fikasio-searchbar-dropdown {
-      background-color: themes.$blackLighter;
-      border-color: themes.$darkGrayLighter;
+      background-color: var(--fikasio-black-lighter);
+      border-color: var(--fikasio-dark-gray-lighter);
     }
 
     .fikasio-searchbar-option {
-      color: themes.$white;
+      color: var(--fikasio-white);
 
       &:hover,
       &.fikasio-searchbar-option-highlighted {
-        background-color: themes.$darkGray;
+        background-color: var(--fikasio-dark-gray);
       }
     }
   }
 
   &.fikasio-theme-light {
-    border-color: themes.$lightGray;
-    background-color: themes.$white;
+    border-color: var(--fikasio-light-gray);
+    background-color: var(--fikasio-white);
 
     .fikasio-searchbar-input {
-      color: themes.$darkGray;
+      color: var(--fikasio-dark-gray);
       background-color: transparent;
 
       &::placeholder {
-        color: themes.$gray;
+        color: var(--fikasio-gray);
       }
     }
 
     .fikasio-searchbar-icon {
-      color: themes.$gray;
+      color: var(--fikasio-gray);
     }
 
     .fikasio-searchbar-dropdown {
-      background-color: themes.$white;
-      border-color: themes.$lightGray;
+      background-color: var(--fikasio-white);
+      border-color: var(--fikasio-light-gray);
     }
 
     .fikasio-searchbar-option {
-      color: themes.$darkGray;
+      color: var(--fikasio-dark-gray);
 
       &:hover,
       &.fikasio-searchbar-option-highlighted {
-        background-color: themes.$lightGray;
+        background-color: var(--fikasio-light-gray);
       }
     }
   }

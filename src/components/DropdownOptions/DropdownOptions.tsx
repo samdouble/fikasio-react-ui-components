@@ -5,7 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import './DropdownOptions.scss';
+import './DropdownOptions.css';
 
 library.add(faTimes, faEllipsis);
 

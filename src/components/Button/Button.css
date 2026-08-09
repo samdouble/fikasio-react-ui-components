@@ -1,0 +1,14 @@
+.fikasio-actionbutton {
+  background-color: var(--fikasio-blue);
+  border: 1px solid var(--fikasio-blue);
+  border-radius: 0;
+  color: var(--fikasio-white);
+  cursor: pointer;
+  font-family: var(--fikasio-font-family);
+  font-size: 14px;
+  padding: 0.3rem 0.7rem;
+
+  &:hover {
+    background-color: var(--fikasio-blue-darker);
+  }
+}

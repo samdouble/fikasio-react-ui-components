@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { ActionButton } from '../Button/ActionButton';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import './Selector.scss';
+import './Selector.css';
 
 export interface SelectorProps {
   className?: string;

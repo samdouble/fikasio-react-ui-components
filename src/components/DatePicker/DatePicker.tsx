@@ -9,7 +9,7 @@ import { useClickOutside } from 'react-click-outside-hook';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import 'react-datepicker/dist/react-datepicker.css';
-import './DatePicker.scss';
+import './DatePicker.css';
 
 library.add(faCalendarAlt);
 
