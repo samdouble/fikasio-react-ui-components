@@ -85,12 +85,12 @@ export function AutosaveTextarea({
             ...convertClassNameToObj(className),
           })}
           html={currentValue}
-          onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => onBlur && onBlur(e)}
+          onBlur={e => onBlur?.(e as React.FocusEvent<HTMLTextAreaElement>)}
           onChange={(e: ContentEditableEvent) => handleChange(e.target.value)}
-          onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
-          onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => onFocus && onFocus(e)}
-          onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyDown && onKeyDown(e)}
-          onKeyUp={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyUp && onKeyUp(e)}
+          onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
+          onFocus={e => onFocus?.(e as React.FocusEvent<HTMLTextAreaElement>)}
+          onKeyDown={e => onKeyDown?.(e as React.KeyboardEvent<HTMLTextAreaElement>)}
+          onKeyUp={e => onKeyUp?.(e as React.KeyboardEvent<HTMLTextAreaElement>)}
           ref={ref as React.Ref<HTMLElement>}
           style={{
             whiteSpace: 'pre',

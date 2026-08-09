@@ -90,12 +90,12 @@ export function DatePicker({
     }
   }, [hasClickedOutside]); // oxlint-disable-line react-hooks/exhaustive-deps
 
-  const handleChange = (newValue: Date) => {
-    if (onChange) {
+  const handleChange = (newValue: Date | null) => {
+    if (newValue && onChange) {
       onChange(newValue);
     }
     if (!isControlled) {
-      setInternalValue(newValue);
+      setInternalValue(newValue ?? undefined);
     }
   };
 
