@@ -1,0 +1,21 @@
+:root {
+  /* Fonts */
+  --fikasio-font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+  /* Colors */
+  --fikasio-black: #000000;
+  --fikasio-black-lighter: #2a2a2a;
+  --fikasio-blue: #0078FF;
+  --fikasio-blue-darker: #0067D9;
+  --fikasio-dark-gray: #333333;
+  --fikasio-dark-gray-lighter: #444444;
+  --fikasio-gray: #777777;
+  --fikasio-light-gray: #CCCCCC;
+  --fikasio-light-gray-darker: #BBBBBB;
+  --fikasio-green: #1E871E;
+  --fikasio-mauve: #7f1f82;
+  --fikasio-orange: #C63D0F;
+  --fikasio-red: #BF3838;
+  --fikasio-purple: #4B0082;
+  --fikasio-white: #FFFFFF;
+}

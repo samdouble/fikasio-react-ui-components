@@ -8,7 +8,7 @@ import usePrevious from 'use-previous';
 import { Checkbox } from '../Checkbox/Checkbox';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import './Table.scss';
+import './Table.css';
 
 library.add(faCaretUp);
 

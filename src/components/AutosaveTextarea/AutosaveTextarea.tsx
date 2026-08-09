@@ -4,7 +4,7 @@ import ContentEditable, { ContentEditableEvent } from './ContentEditable';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import useTimeout from '../../utils/useTimeout';
-import './style.scss';
+import './style.css';
 
 export interface AutosaveTextareaProps {
   className?: string;

@@ -1,3 +1,5 @@
+import '../src/themes.css';
+
 export const parameters = {
   controls: {
     matchers: {

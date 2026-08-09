@@ -2,7 +2,7 @@ import React, { SyntheticEvent } from 'react';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import './Button.scss';
+import './Button.css';
 
 export interface ActionButtonProps {
   children: string | React.ReactNode;

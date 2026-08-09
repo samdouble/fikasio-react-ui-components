@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
-import './Dot.scss';
+import './Dot.css';
 
 export interface DotProps {
   className?: string;

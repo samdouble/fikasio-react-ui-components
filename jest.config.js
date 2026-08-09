@@ -20,7 +20,7 @@ module.exports = {
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   moduleNameMapper: {
-    "\\.(css|scss|sass)$": "<rootDir>/tests/__mocks__/styleMock.js",
+    "\\.(css)$": "<rootDir>/tests/__mocks__/styleMock.js",
   },
   preset: "ts-jest",
   setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
