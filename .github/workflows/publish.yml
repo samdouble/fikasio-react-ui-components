@@ -11,7 +11,7 @@ jobs:
     timeout-minutes: 5
     strategy:
       matrix:
-        node-version: ['24.11.0']
+        node-version: ['24.18.0']
     steps:
       - uses: googleapis/release-please-action@v5
         with:

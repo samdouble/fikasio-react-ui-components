@@ -1,50 +1,22 @@
-import React from 'react';
-import AutosaveTextarea, {
-  AutosaveTextareaProps,
-} from '../components/AutosaveTextarea/AutosaveTextarea';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import AutosaveTextarea from '../components/AutosaveTextarea/AutosaveTextarea';
 
-const story = {
+const meta = {
   title: 'AutosaveTextarea',
   component: AutosaveTextarea,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
   },
+} satisfies Meta<typeof AutosaveTextarea>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const AutosaveTextareaNoStyle: Story = {
+  args: {
+    onSave: async (_value: string) => new Promise(resolve => {
+      setTimeout(resolve, 150);
+    }),
+  },
 };
-
-function Template({
-  className,
-  defaultValue,
-  onBlur,
-  onFocus,
-  onKeyDown,
-  onKeyUp,
-  onSave,
-  ref,
-  style,
-  useContentEditableDiv,
-}: AutosaveTextareaProps) {
-  return (
-    <AutosaveTextarea
-      className={className}
-      defaultValue={defaultValue}
-      onBlur={onBlur}
-      onFocus={onFocus}
-      onKeyDown={onKeyDown}
-      onKeyUp={onKeyUp}
-      onSave={onSave}
-      ref={ref}
-      style={style}
-      useContentEditableDiv={useContentEditableDiv}
-    />
-  );
-}
-
-export const AutosaveTextareaNoStyle = Template.bind({});
-AutosaveTextareaNoStyle.args = {
-  onSave: async (_value: string) => new Promise(resolve => {
-    setTimeout(resolve, 150);
-  }),
-};
-
-export default story;

@@ -1,38 +1,20 @@
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Button from '../components/Button/Button';
-import { ActionButtonProps } from '../components/Button/ActionButton';
 
-const story = {
+const meta = {
   title: 'ActionButton',
   component: Button.Action,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
   },
+} satisfies Meta<typeof Button.Action>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const ActionButtonNoStyle: Story = {
+  args: {
+    children: 'Click me',
+  },
 };
-
-function Template({
-  children,
-  className,
-  onClick,
-  style,
-  type,
-}: ActionButtonProps) {
-  return (
-    <Button.Action
-      className={className}
-      onClick={onClick}
-      style={style}
-      type={type}
-    >
-      {children}
-    </Button.Action>
-  );
-}
-
-export const ActionButtonNoStyle = Template.bind({});
-ActionButtonNoStyle.args = {
-  children: 'Click me',
-};
-
-export default story;

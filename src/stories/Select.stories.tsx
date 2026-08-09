@@ -1,53 +1,33 @@
-import React from 'react';
-import Select, { SelectProps } from '../components/Select/Select';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import Select from '../components/Select/Select';
 
-const story = {
+const meta = {
   title: 'Select',
   component: Select,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
   },
-};
+} satisfies Meta<typeof Select>;
 
-function Template({
-  className,
-  defaultValue,
-  name,
-  onChange,
-  options,
-  style,
-  value,
-}: SelectProps) {
-  return (
-    <Select
-      className={className}
-      defaultValue={defaultValue}
-      name={name}
-      onChange={onChange}
-      options={options}
-      style={style}
-      value={value}
-    />
-  );
-}
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const SelectTwoOptions = Template.bind({});
-SelectTwoOptions.args = {
-  defaultValue: 'B',
-  onChange: value => {
-    console.info(value);
+export const SelectTwoOptions: Story = {
+  args: {
+    defaultValue: 'B',
+    onChange: value => {
+      console.info(value);
+    },
+    options: [
+      {
+        label: 'A',
+        value: 'A',
+      },
+      {
+        label: 'B',
+        value: 'B',
+      },
+    ],
   },
-  options: [
-    {
-      label: 'A',
-      value: 'A',
-    },
-    {
-      label: 'B',
-      value: 'B',
-    },
-  ],
 };
-
-export default story;

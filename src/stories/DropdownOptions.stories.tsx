@@ -1,32 +1,26 @@
-import React from 'react';
-import DropdownOptions, {
-  DropdownOptionsProps,
-} from '../components/DropdownOptions/DropdownOptions';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import DropdownOptions from '../components/DropdownOptions/DropdownOptions';
 
-const story = {
+const meta = {
   title: 'DropdownOptions',
   component: DropdownOptions,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
   },
+} satisfies Meta<typeof DropdownOptions>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const DropdownOptionsUnchecked: Story = {
+  args: {
+    options: [
+      {
+        label: 'Delete',
+        onClick: () => console.info('delete'),
+        type: 'delete',
+      },
+    ],
+  },
 };
-
-function Template({ className, options, style }: DropdownOptionsProps) {
-  return (
-    <DropdownOptions className={className} options={options} style={style} />
-  );
-}
-
-export const DropdownOptionsUnchecked = Template.bind({});
-DropdownOptionsUnchecked.args = {
-  options: [
-    {
-      label: 'Delete',
-      onClick: () => console.info('delete'),
-      type: 'delete',
-    },
-  ],
-};
-
-export default story;

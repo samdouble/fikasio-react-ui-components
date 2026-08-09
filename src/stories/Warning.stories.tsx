@@ -1,24 +1,20 @@
-import React from 'react';
-import Warning, { WarningProps } from '../components/Warning/Warning';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import Warning from '../components/Warning/Warning';
 
-const story = {
+const meta = {
   title: 'Warning',
   component: Warning,
   argTypes: {
     className: { control: 'text' },
     style: { control: 'object' },
   },
+} satisfies Meta<typeof Warning>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const WarningNoStyle: Story = {
+  args: {
+    children: 'Warning',
+  },
 };
-
-function Template({ children, className, style }: WarningProps) {
-  return (
-    <Warning className={className} style={style}>
-      {children}
-    </Warning>
-  );
-}
-
-export const WarningNoStyle = Template.bind({});
-WarningNoStyle.args = {};
-
-export default story;
