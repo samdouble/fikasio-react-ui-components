@@ -1,13 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { CaretDownIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Select.css';
-
-library.add(faCaretDown);
 
 export interface SelectProps {
   className?: string;
@@ -145,8 +141,7 @@ export function Select({
         <div className="fikasio-select-input">
           {selectedOption?.label || ''}
         </div>
-        <FontAwesomeIcon
-          icon="caret-down"
+        <CaretDownIcon
           className="fikasio-select-icon"
         />
       </div>

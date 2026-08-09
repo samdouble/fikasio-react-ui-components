@@ -40,20 +40,20 @@ TableNoStyle.args = {
     {
       isSortable: true,
       name: 'Last name',
-      render: r => r.lastName,
+      render: (r: { lastName: string }) => r.lastName,
       type: 'cell',
     },
     {
       isSortable: true,
       name: 'First name',
-      render: r => r.firstName,
+      render: (r: { firstName: string }) => r.firstName,
       type: 'cell',
     },
   ],
   rows: [
     {
-      lastName: 'Whittom',
-      firstName: 'Samuel',
+      lastName: 'Smith',
+      firstName: 'Bob',
     },
   ],
 };

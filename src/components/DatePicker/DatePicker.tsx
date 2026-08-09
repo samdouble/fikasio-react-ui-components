@@ -1,17 +1,13 @@
 import React, { SyntheticEvent, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import DP, { DatePicker as ReactDatePicker } from 'react-datepicker';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCalendarAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { DateTime } from 'luxon';
 import { useClickOutside } from 'react-click-outside-hook';
+import { CalendarDaysIcon, XmarkIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import 'react-datepicker/dist/react-datepicker.css';
 import './DatePicker.css';
-
-library.add(faCalendarAlt, faTimes);
 
 export interface DatePickerProps {
   className?: string;
@@ -149,8 +145,7 @@ export function DatePicker({
         timeFormat={timeFormat}
         timeIntervals={timeIntervals}
       />
-      <FontAwesomeIcon
-        icon="calendar-alt"
+      <CalendarDaysIcon
         onClick={() => {
           setIsOpen(true);
           if (onOpen) {
@@ -163,9 +158,8 @@ export function DatePicker({
       {displayedDate}
       {
         showRemoveValue && currentValue && (
-          <FontAwesomeIcon
+          <XmarkIcon
             className="fikasio-datepicker_dueAt_remove"
-            icon="times"
             onClick={e => {
               if (onRemoveValue) {
                 onRemoveValue(e);

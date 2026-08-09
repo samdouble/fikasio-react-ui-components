@@ -1,13 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { CheckIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Success.css';
-
-library.add(faCheck);
 
 export interface SuccessProps {
   children: string | React.ReactNode;
@@ -32,8 +28,7 @@ export function Success({
       })}
       style={style}
     >
-      <FontAwesomeIcon
-        icon="check"
+      <CheckIcon
         size="lg"
         style={{
           fontSize: 16,

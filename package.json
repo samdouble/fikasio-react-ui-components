@@ -1,6 +1,6 @@
 {
   "name": "@fikasio/react-ui-components",
-  "description": "UI components for fikas products",
+  "description": "UI components for fikas.io",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "author": "samdouble",
@@ -27,9 +27,6 @@
     "test-ct:update": "playwright test -c playwright-ct.config.ts --update-snapshots"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^7.3.1",
-    "@fortawesome/free-solid-svg-icons": "^7.3.1",
-    "@fortawesome/react-fontawesome": "^3.5.0",
     "classnames": "^2.3.2",
     "fast-deep-equal": "^3.1.3",
     "lodash.isequal": "^4.5.0",
