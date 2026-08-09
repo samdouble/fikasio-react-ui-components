@@ -7,4 +7,3 @@ export default defineConfig({
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
 });
-

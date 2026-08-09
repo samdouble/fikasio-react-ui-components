@@ -1,4 +1,4 @@
-[![CI](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml/badge.svg)](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml)
+[![CI](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml/badge.svg?branch=master)](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml)
 [![Coverage Status](https://coveralls.io/repos/samdouble/fikasio-react-ui-components/badge.svg?branch=master&service=github)](https://coveralls.io/github/samdouble/fikasio-react-ui-components?branch=master)
 
 [![Node.js](https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white)](https://nodejs.org/)
