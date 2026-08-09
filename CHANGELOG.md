@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.5...v2.1.0) (2026-08-09)
+
+
+### Features
+
+* use custom-made icons ([ec6891c](https://github.com/samdouble/fikasio-react-ui-components/commit/ec6891c79cf7d1fa4cd2224c3c3b5f360fd99546))
+
 ## [2.0.5](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.1...v2.0.5) (2025-11-18)
 
 
