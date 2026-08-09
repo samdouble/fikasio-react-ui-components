@@ -59,7 +59,7 @@
     "@types/jest-image-snapshot": "^6.2.1",
     "@types/lodash.isequal": "^4.5.8",
     "@types/luxon": "^3.7.1",
-    "@types/node": "22",
+    "@types/node": "^24.13.3",
     "@types/react": "^19.0.2",
     "@types/react-click-outside-hook": "^1.0.3",
     "@types/react-fontawesome": "^1.6.6",
@@ -82,6 +82,9 @@
   "peerDependencies": {
     "react": ">=16.8.0 || ^17",
     "react-dom": ">=16.8.0 || ^17"
+  },
+  "engines": {
+    "node": ">=24"
   },
   "browserslist": {
     "production": [
