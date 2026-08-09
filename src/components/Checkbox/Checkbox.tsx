@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheck, faSquare } from '@fortawesome/free-solid-svg-icons';
+import { CheckIcon, SquareIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Checkbox.css';
-
-library.add(faCheck, faSquare);
 
 export interface CheckboxProps {
   className?: string;
@@ -72,8 +68,7 @@ export function Checkbox({
       }
       {
         currentValue ? (
-          <FontAwesomeIcon
-            icon="check"
+          <CheckIcon
             size="lg"
             style={{
               border: '1px solid #7E5B9A',
@@ -82,8 +77,7 @@ export function Checkbox({
             }}
           />
         ) : (
-          <FontAwesomeIcon
-            icon="square"
+          <SquareIcon
             size="lg"
             style={{
               border: '1px solid #7E5B9A',

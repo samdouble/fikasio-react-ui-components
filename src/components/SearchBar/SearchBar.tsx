@@ -1,13 +1,9 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
+import { MagnifyingGlassIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './SearchBar.css';
-
-library.add(faSearch);
 
 export interface SearchBarProps {
   className?: string;
@@ -181,8 +177,7 @@ export function SearchBar({
           onKeyDown={handleKeyDown}
           onFocus={handleInputFocus}
         />
-        <FontAwesomeIcon
-          icon="magnifying-glass"
+        <MagnifyingGlassIcon
           size="1x"
           className="fikasio-searchbar-icon"
         />

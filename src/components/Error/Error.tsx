@@ -1,13 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { TriangleExclamationIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Error.css';
-
-library.add(faTriangleExclamation);
 
 export interface ErrorProps {
   children: string | React.ReactNode;
@@ -32,8 +28,7 @@ export function Error({
       })}
       style={style}
     >
-      <FontAwesomeIcon
-        icon="triangle-exclamation"
+      <TriangleExclamationIcon
         size="lg"
         style={{
           fontSize: 16,

@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import isEqual from 'lodash.isequal';
 import usePrevious from 'use-previous';
+import { CaretUpIcon } from '../../icons';
 import { Checkbox } from '../Checkbox/Checkbox';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Table.css';
-
-library.add(faCaretUp);
 
 interface Column {
   name?: string;
@@ -137,8 +133,7 @@ export function Table({
                         <span
                           className="sortable-column-buttons"
                         >
-                          <FontAwesomeIcon
-                            icon="caret-up"
+                          <CaretUpIcon
                             size="1x"
                           />
                         </span>

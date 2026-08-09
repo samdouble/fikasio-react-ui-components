@@ -1,13 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTimes, faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { EllipsisIcon, XmarkIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './DropdownOptions.css';
-
-library.add(faTimes, faEllipsis);
 
 export interface DropdownOptionsProps {
   className?: string;
@@ -82,8 +78,7 @@ export function DropdownOptions({
         role="button"
         tabIndex={0}
       >
-        <FontAwesomeIcon
-          icon="ellipsis"
+        <EllipsisIcon
           size="1x"
         />
       </div>
@@ -95,8 +90,7 @@ export function DropdownOptions({
               className="fikasio-dropdownOptions-item"
               onClick={() => handleOptionClick(option.onClick)}
             >
-              <FontAwesomeIcon
-                icon="times"
+              <XmarkIcon
                 className="fikasio-dropdownOptions-icon"
               />
               {option.label}
