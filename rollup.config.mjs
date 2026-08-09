@@ -35,7 +35,8 @@ const config = {
       exclude: ['**/*.d.ts'],
       tsconfigOverride: {
         compilerOptions: {
-          module: "ES2020",
+          module: 'ESNext',
+          moduleResolution: 'bundler',
         },
       },
     }),
