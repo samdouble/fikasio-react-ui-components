@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.1.0...v2.2.0) (2026-08-31)
+
+
+### Features
+
+* add multiple icons ([ee0b5b5](https://github.com/samdouble/fikasio-react-ui-components/commit/ee0b5b5a656cdfb4b305b0e4fab9470a5fee4ecb))
+* added more icons ([8f0430c](https://github.com/samdouble/fikasio-react-ui-components/commit/8f0430cfd5bd3551f5aaa91553638477a495e07f))
+
+
+### Bug Fixes
+
+* fix issue where the DatePicker could not be reopened once closed ([0c011f7](https://github.com/samdouble/fikasio-react-ui-components/commit/0c011f70a0826a65bf9b1d837f3b9226c82d56f8))
+
 ## [2.1.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.0.5...v2.1.0) (2026-08-09)
 
 
