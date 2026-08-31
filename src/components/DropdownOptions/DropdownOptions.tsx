@@ -83,12 +83,20 @@ export function DropdownOptions({
         />
       </div>
       {isOpen && options.length > 0 && (
-        <div ref={dropdownRef} className="fikasio-dropdownOptions-menu">
+        <div ref={dropdownRef} className="fikasio-dropdownOptions-menu" role="menu">
           {options.map((option, index) => (
             <div
               key={`${option.type}-${index}`}
               className="fikasio-dropdownOptions-item"
               onClick={() => handleOptionClick(option.onClick)}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleOptionClick(option.onClick);
+                }
+              }}
+              role="menuitem"
+              tabIndex={0}
             >
               <XmarkIcon
                 className="fikasio-dropdownOptions-icon"

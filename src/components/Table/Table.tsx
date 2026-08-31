@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import isEqual from 'lodash.isequal';
-import usePrevious from 'use-previous';
 import { CaretUpIcon } from '../../icons';
 import { Checkbox } from '../Checkbox/Checkbox';
 import useTheme from '../../hooks/useTheme';
@@ -55,23 +54,26 @@ export function Table({
 }: TableProps) {
   const [orderedBy, setOrderedBy] = useState<CellColumn | null>(null);
   const [orderDirection, setOrderDirection] = useState<string>('ASC');
-  const prevRows = usePrevious(rows);
   const [orderedRows, setOrderedRows] = useState(rows ? [...rows] : []);
-  const prevOrderedBy = usePrevious(orderedBy);
+  const prevRowsRef = useRef(rows);
+  const prevOrderedByRef = useRef<CellColumn | null>(null);
 
   const theme = useTheme();
 
   useEffect(() => {
-    if (!isEqual(rows, prevRows)) {
+    if (!isEqual(rows, prevRowsRef.current)) {
       setOrderedRows([...(rows || [])]);
     }
+    prevRowsRef.current = rows;
   }, [rows]);
 
   useEffect(() => {
+    const prevOrderedBy = prevOrderedByRef.current;
     const newOrderDirection = (prevOrderedBy && orderedBy && prevOrderedBy.name === orderedBy.name)
       ? 'DESC'
       : 'ASC';
     setOrderDirection(newOrderDirection);
+    prevOrderedByRef.current = orderedBy;
   }, [orderedBy, rows]);
 
   useEffect(() => {
