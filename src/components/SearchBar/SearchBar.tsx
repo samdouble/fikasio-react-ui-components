@@ -5,6 +5,8 @@ import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './SearchBar.css';
 
+const EMPTY_OPTIONS: string[] = [];
+
 export interface SearchBarProps {
   className?: string;
   defaultValue?: string;
@@ -23,7 +25,7 @@ export function SearchBar({
   onChange = () => undefined,
   onSelect = () => undefined,
   onSubmit = () => undefined,
-  options = [],
+  options = EMPTY_OPTIONS,
   placeholder = '',
   style = {},
   value = undefined,
@@ -51,9 +53,7 @@ export function SearchBar({
     );
   }, [currentValue, options]);
 
-  useEffect(() => {
-    setHighlightedIndex(null);
-  }, [filteredOptions]);
+  const [prevFilteredOptions, setPrevFilteredOptions] = useState(filteredOptions);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -103,6 +103,11 @@ export function SearchBar({
       }
     }
   }, [highlightedIndex]);
+
+  if (filteredOptions !== prevFilteredOptions) {
+    setPrevFilteredOptions(filteredOptions);
+    setHighlightedIndex(null);
+  }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (!isOpen && filteredOptions.length > 0) {

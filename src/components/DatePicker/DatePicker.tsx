@@ -1,8 +1,7 @@
-import React, { SyntheticEvent, useEffect, useRef, useState } from 'react';
+import React, { SyntheticEvent, useRef, useState } from 'react';
 import classNames from 'classnames';
-import DP, { DatePicker as ReactDatePicker } from 'react-datepicker';
+import DP from 'react-datepicker';
 import { DateTime } from 'luxon';
-import { useClickOutside } from 'react-click-outside-hook';
 import { CalendarDaysIcon, XmarkIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -52,9 +51,10 @@ export function DatePicker({
   timeIntervals = 15,
   value = undefined,
 }: DatePickerProps) {
-  let _calendar = useRef(null) as unknown as ReactDatePicker;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isOpenRef = useRef(pIsOpen);
   const [isOpen, setIsOpen] = useState(pIsOpen);
-
+  const [prevPIsOpen, setPrevPIsOpen] = useState(pIsOpen);
   const isControlled = typeof value !== 'undefined';
   const hasDefaultValue = typeof defaultValue !== 'undefined';
   const [internalValue, setInternalValue] = useState<Date | undefined>(
@@ -62,29 +62,42 @@ export function DatePicker({
   );
   const currentValue = isControlled ? value : internalValue;
 
-  const [ref, hasClickedOutside] = useClickOutside();
   const theme = useTheme();
 
-  useEffect(() => {
-    if (pIsOpen !== isOpen) {
-      setIsOpen(pIsOpen);
-    }
-  }, [pIsOpen]); // oxlint-disable-line react-hooks/exhaustive-deps
+  if (pIsOpen !== prevPIsOpen) {
+    setPrevPIsOpen(pIsOpen);
+    setIsOpen(pIsOpen);
+    isOpenRef.current = pIsOpen;
+  }
 
-  useEffect(() => {
-    if (_calendar) {
-      _calendar.setOpen(isOpen);
+  const handleOpen = () => {
+    if (isOpenRef.current) {
+      return;
     }
-  }, [_calendar, isOpen]);
+    isOpenRef.current = true;
+    setIsOpen(true);
+    onOpen();
+  };
 
-  useEffect(() => {
-    if (hasClickedOutside) {
-      setIsOpen(false);
-      if (onClose) {
-        onClose();
-      }
+  const handleClose = () => {
+    if (!isOpenRef.current) {
+      return;
     }
-  }, [hasClickedOutside]); // oxlint-disable-line react-hooks/exhaustive-deps
+    isOpenRef.current = false;
+    setIsOpen(false);
+    onClose();
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = (
+      event.composedPath?.().find(eventTarget => eventTarget instanceof Node) ?? event.target
+    ) as Node | null;
+    if (target && containerRef.current?.contains(target)) {
+      event.preventDefault();
+      return;
+    }
+    handleClose();
+  };
 
   const handleChange = (newValue: Date | null) => {
     if (newValue && onChange) {
@@ -92,6 +105,9 @@ export function DatePicker({
     }
     if (!isControlled) {
       setInternalValue(newValue ?? undefined);
+    }
+    if (shouldCloseOnSelect) {
+      handleClose();
     }
   };
 
@@ -110,7 +126,7 @@ export function DatePicker({
         'fikasio-theme-light': theme === 'light',
         ...convertClassNameToObj(className),
       })}
-      ref={ref}
+      ref={containerRef}
       style={{
         ...style,
       }}
@@ -127,16 +143,13 @@ export function DatePicker({
         )}
         dateFormat={dateFormat}
         name={name}
-        onBlur={() => {
-          setIsOpen(false);
-          if (onClose) {
-            onClose();
-          }
-        }}
+        onCalendarClose={handleClose}
         onChange={handleChange}
+        onClickOutside={handleClickOutside}
+        open={isOpen}
         popperClassName="fikasio-datepicker_popper"
         popperPlacement="bottom-end"
-        ref={c => { _calendar = c as unknown as ReactDatePicker; }}
+        preventOpenOnFocus
         selected={defaultValue}
         shouldCloseOnSelect={shouldCloseOnSelect}
         showPopperArrow={false}
@@ -147,9 +160,10 @@ export function DatePicker({
       />
       <CalendarDaysIcon
         onClick={() => {
-          setIsOpen(true);
-          if (onOpen) {
-            onOpen();
+          if (isOpenRef.current) {
+            handleClose();
+          } else {
+            handleOpen();
           }
         }}
         size="1x"
