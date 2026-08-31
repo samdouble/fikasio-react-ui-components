@@ -9,7 +9,7 @@ export { DropdownOptions } from './DropdownOptions';
 export { Error } from './Error';
 export { Footer } from './Footer';
 export { Icon } from './Icon';
-export { BookIcon, CaretLeftIcon, CaretRightIcon, CalendarAltIcon, CogIcon, DownloadIcon, ListIcon, PowerOffIcon, SitemapIcon, ThIcon, TimesIcon, UserIcon } from './icons';
+export { ArchiveIcon, BookIcon, CaretLeftIcon, CaretRightIcon, CalendarAltIcon, CogIcon, CopyIcon, DownloadIcon, ListIcon, PlusIcon, PowerOffIcon, SitemapIcon, StopwatchIcon, ThIcon, TimesIcon, UserIcon } from './icons';
 export { Input } from './Input';
 export { Select } from './Select';
 export { Selector } from './Selector';

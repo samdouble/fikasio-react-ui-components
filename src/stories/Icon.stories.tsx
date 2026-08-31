@@ -8,7 +8,24 @@ const meta = {
     className: { control: 'text' },
     name: {
       control: 'select',
-      options: ['book', 'calendar-alt', 'caret-left', 'caret-right', 'cog', 'download', 'list', 'power-off', 'sitemap', 'th', 'times', 'user'],
+      options: [
+        'archive',
+        'book',
+        'calendar-alt',
+        'caret-left',
+        'caret-right',
+        'cog',
+        'copy',
+        'download',
+        'list',
+        'plus',
+        'power-off',
+        'sitemap',
+        'stopwatch',
+        'th',
+        'times',
+        'user',
+      ],
     },
     size: {
       control: 'select',
@@ -90,5 +107,29 @@ export const Sitemap: Story = {
 export const PowerOff: Story = {
   args: {
     name: 'power-off',
+  },
+};
+
+export const Copy: Story = {
+  args: {
+    name: 'copy',
+  },
+};
+
+export const Plus: Story = {
+  args: {
+    name: 'plus',
+  },
+};
+
+export const Archive: Story = {
+  args: {
+    name: 'archive',
+  },
+};
+
+export const Stopwatch: Story = {
+  args: {
+    name: 'stopwatch',
   },
 };

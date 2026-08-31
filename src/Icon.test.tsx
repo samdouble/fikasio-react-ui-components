@@ -62,4 +62,24 @@ describe('Icon', () => {
     const { baseElement } = render(<Icon name="power-off" />);
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('Renders copy correctly', () => {
+    const { baseElement } = render(<Icon name="copy" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders plus correctly', () => {
+    const { baseElement } = render(<Icon name="plus" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders archive correctly', () => {
+    const { baseElement } = render(<Icon name="archive" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders stopwatch correctly', () => {
+    const { baseElement } = render(<Icon name="stopwatch" />);
+    expect(baseElement).toMatchSnapshot();
+  });
 });
