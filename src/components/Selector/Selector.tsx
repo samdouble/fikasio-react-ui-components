@@ -5,6 +5,8 @@ import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Selector.css';
 
+const EMPTY_OPTIONS: string[] = [];
+
 export interface SelectorProps {
   className?: string;
   defaultValue?: string;
@@ -18,7 +20,7 @@ export interface SelectorProps {
 export function Selector({
   className = '',
   onChange = () => undefined,
-  options = [],
+  options = EMPTY_OPTIONS,
   render = undefined,
   style = {},
   defaultValue = options[0],
@@ -32,6 +34,7 @@ export function Selector({
   const currentValue = isControlled ? value : internalValue;
   const [isOpen, setIsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState<number | null>(null);
+  const [prevOptions, setPrevOptions] = useState(options);
   const containerRef = useRef<HTMLSpanElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
@@ -56,10 +59,6 @@ export function Selector({
   }, []);
 
   useEffect(() => {
-    setHighlightedIndex(null);
-  }, [options]);
-
-  useEffect(() => {
     if (highlightedIndex !== null && dropdownRef.current) {
       const optionElement = dropdownRef.current.children[
         highlightedIndex
@@ -72,6 +71,11 @@ export function Selector({
       }
     }
   }, [highlightedIndex]);
+
+  if (options !== prevOptions) {
+    setPrevOptions(options);
+    setHighlightedIndex(null);
+  }
 
   const handleChange = (newValue: string) => {
     onChange(newValue);

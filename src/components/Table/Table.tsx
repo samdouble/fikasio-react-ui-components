@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import classNames from 'classnames';
-import isEqual from 'lodash.isequal';
 import { CaretUpIcon } from '../../icons';
 import { Checkbox } from '../Checkbox/Checkbox';
 import useTheme from '../../hooks/useTheme';
@@ -54,40 +53,32 @@ export function Table({
 }: TableProps) {
   const [orderedBy, setOrderedBy] = useState<CellColumn | null>(null);
   const [orderDirection, setOrderDirection] = useState<string>('ASC');
-  const [orderedRows, setOrderedRows] = useState(rows ? [...rows] : []);
-  const prevRowsRef = useRef(rows);
-  const prevOrderedByRef = useRef<CellColumn | null>(null);
 
   const theme = useTheme();
 
-  useEffect(() => {
-    if (!isEqual(rows, prevRowsRef.current)) {
-      setOrderedRows([...(rows || [])]);
+  const orderedRows = useMemo(() => {
+    if (!rows) {
+      return [];
     }
-    prevRowsRef.current = rows;
-  }, [rows]);
-
-  useEffect(() => {
-    const prevOrderedBy = prevOrderedByRef.current;
-    const newOrderDirection = (prevOrderedBy && orderedBy && prevOrderedBy.name === orderedBy.name)
-      ? 'DESC'
-      : 'ASC';
-    setOrderDirection(newOrderDirection);
-    prevOrderedByRef.current = orderedBy;
-  }, [orderedBy, rows]);
-
-  useEffect(() => {
-    if (rows && orderedBy) {
-      const newOrderedRows = [...rows]
-        .sort((rowA, rowB) => {
-          if (orderDirection === 'ASC') {
-            return orderedBy.value(rowA) < orderedBy.value(rowB) ? -1 : 1;
-          }
-          return orderedBy.value(rowA) > orderedBy.value(rowB) ? -1 : 1;
-        });
-      setOrderedRows(newOrderedRows);
+    if (!orderedBy) {
+      return [...rows];
     }
-  }, [orderDirection, orderedBy, rows]);
+    return [...rows].sort((rowA, rowB) => {
+      if (orderDirection === 'ASC') {
+        return orderedBy.value(rowA) < orderedBy.value(rowB) ? -1 : 1;
+      }
+      return orderedBy.value(rowA) > orderedBy.value(rowB) ? -1 : 1;
+    });
+  }, [rows, orderedBy, orderDirection]);
+
+  const handleSort = (column: CellColumn) => {
+    if (orderedBy && orderedBy.name === column.name) {
+      setOrderDirection('DESC');
+    } else {
+      setOrderedBy(column);
+      setOrderDirection('ASC');
+    }
+  };
 
   return (
     <div className="fikasio-table-wrapper">
@@ -126,7 +117,7 @@ export function Table({
                           'sortable-column': column.isSortable,
                         })}
                         key={`header-${column.name}`}
-                        onClick={() => setOrderedBy(column)}
+                        onClick={() => handleSort(column)}
                         style={{
                           whiteSpace: 'nowrap',
                         }}
