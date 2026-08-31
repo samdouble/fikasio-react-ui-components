@@ -1,14 +1,18 @@
 import React from 'react';
 import {
+  ArchiveIcon,
   BookIcon,
   CalendarAltIcon,
   CaretLeftIcon,
   CaretRightIcon,
   CogIcon,
+  CopyIcon,
   DownloadIcon,
   ListIcon,
+  PlusIcon,
   PowerOffIcon,
   SitemapIcon,
+  StopwatchIcon,
   ThIcon,
   TimesIcon,
   UserIcon,
@@ -16,15 +20,19 @@ import {
 import type { IconProps as SvgIconProps } from '../../icons';
 
 const ICONS = {
+  archive: ArchiveIcon,
   book: BookIcon,
   'calendar-alt': CalendarAltIcon,
   'caret-left': CaretLeftIcon,
   'caret-right': CaretRightIcon,
   cog: CogIcon,
+  copy: CopyIcon,
   download: DownloadIcon,
   list: ListIcon,
+  plus: PlusIcon,
   'power-off': PowerOffIcon,
   sitemap: SitemapIcon,
+  stopwatch: StopwatchIcon,
   th: ThIcon,
   times: TimesIcon,
   user: UserIcon,

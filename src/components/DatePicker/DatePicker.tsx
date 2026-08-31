@@ -52,7 +52,6 @@ export function DatePicker({
   value = undefined,
 }: DatePickerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isOpenRef = useRef(pIsOpen);
   const [isOpen, setIsOpen] = useState(pIsOpen);
   const [prevPIsOpen, setPrevPIsOpen] = useState(pIsOpen);
   const isControlled = typeof value !== 'undefined';
@@ -67,23 +66,14 @@ export function DatePicker({
   if (pIsOpen !== prevPIsOpen) {
     setPrevPIsOpen(pIsOpen);
     setIsOpen(pIsOpen);
-    isOpenRef.current = pIsOpen;
   }
 
   const handleOpen = () => {
-    if (isOpenRef.current) {
-      return;
-    }
-    isOpenRef.current = true;
     setIsOpen(true);
     onOpen();
   };
 
   const handleClose = () => {
-    if (!isOpenRef.current) {
-      return;
-    }
-    isOpenRef.current = false;
     setIsOpen(false);
     onClose();
   };
@@ -160,7 +150,7 @@ export function DatePicker({
       />
       <CalendarDaysIcon
         onClick={() => {
-          if (isOpenRef.current) {
+          if (isOpen) {
             handleClose();
           } else {
             handleOpen();
