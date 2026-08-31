@@ -34,6 +34,7 @@ module.exports = {
           jsx: "react-jsx",
           module: "commonjs",
           esModuleInterop: true,
+          types: ["jest", "node"],
         },
       },
     ],
