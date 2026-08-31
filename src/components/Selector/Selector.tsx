@@ -175,7 +175,7 @@ export function Selector({
         )
       }
       {isOpen && options.length > 0 && (
-        <div ref={dropdownRef} className="fikasio-selector-menu">
+        <div ref={dropdownRef} className="fikasio-selector-menu" role="listbox">
           {options.map((option, index) => (
             <div
               key={option}
@@ -183,7 +183,16 @@ export function Selector({
                 'fikasio-selector-option-highlighted': index === highlightedIndex,
               })}
               onClick={() => handleChange(option)}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleChange(option);
+                }
+              }}
               onMouseEnter={() => setHighlightedIndex(index)}
+              role="option"
+              aria-selected={index === highlightedIndex}
+              tabIndex={-1}
             >
               {option}
             </div>

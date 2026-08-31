@@ -183,7 +183,7 @@ export function SearchBar({
         />
       </div>
       {isOpen && filteredOptions.length > 0 && (
-        <div ref={dropdownRef} className="fikasio-searchbar-dropdown">
+        <div ref={dropdownRef} className="fikasio-searchbar-dropdown" role="listbox">
           {filteredOptions.map((option, index) => (
             <div
               key={option}
@@ -191,7 +191,16 @@ export function SearchBar({
                 'fikasio-searchbar-option-highlighted': index === highlightedIndex,
               })}
               onClick={() => handleSelect(option)}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleSelect(option);
+                }
+              }}
               onMouseEnter={() => setHighlightedIndex(index)}
+              role="option"
+              aria-selected={index === highlightedIndex}
+              tabIndex={-1}
             >
               {option}
             </div>

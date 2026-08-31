@@ -77,7 +77,7 @@ function ContentEditableComponent(props: Props) {
       });
       onChange(evt);
     }
-    lastHtmlRef.current = html;
+    lastHtmlRef.current = currentHtml;
   }, [onChange, getEl]);
 
   const handleRef = useCallback((current: HTMLElement | null) => {
@@ -111,20 +111,24 @@ function ContentEditableComponent(props: Props) {
     ? handleRef
     : innerRef || fallbackRef;
 
-  return React.createElement(
-    tagName || 'div',
-    {
-      ...restProps,
-      ref: refToUse,
-      onInput: emitChange,
-      onBlur: onBlur || emitChange,
-      onKeyUp: onKeyUp || emitChange,
-      onKeyDown: onKeyDown || emitChange,
-      contentEditable: !disabled,
-      dangerouslySetInnerHTML: { __html: html },
-    },
-    children,
-  );
+  const elementProps = {
+    ...restProps,
+    ref: refToUse,
+    onInput: emitChange,
+    onBlur: onBlur || emitChange,
+    onKeyUp: onKeyUp || emitChange,
+    onKeyDown: onKeyDown || emitChange,
+    contentEditable: !disabled,
+  };
+
+  if (children) {
+    return React.createElement(tagName || 'div', elementProps, children);
+  }
+
+  return React.createElement(tagName || 'div', {
+    ...elementProps,
+    dangerouslySetInnerHTML: { __html: html },
+  });
 }
 
 const areEqual = (prevProps: Props, nextProps: Props): boolean => {

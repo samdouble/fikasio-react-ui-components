@@ -149,6 +149,7 @@ export function Select({
         <div
           ref={dropdownRef}
           className="fikasio-select-menu"
+          role="listbox"
           style={{
             ...(style?.borderColor && { borderColor: style.borderColor }),
             ...(style?.borderRadius !== undefined && {
@@ -164,6 +165,15 @@ export function Select({
                 'fikasio-select-option-selected': option.value === currentValue,
               })}
               onClick={() => handleSelect(option.value)}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleSelect(option.value);
+                }
+              }}
+              role="option"
+              aria-selected={option.value === currentValue}
+              tabIndex={0}
             >
               {option.label}
             </div>
