@@ -8,6 +8,8 @@ export { Dot } from './Dot';
 export { DropdownOptions } from './DropdownOptions';
 export { Error } from './Error';
 export { Footer } from './Footer';
+export { Icon } from './Icon';
+export { BookIcon, CaretLeftIcon, CaretRightIcon, CalendarAltIcon, CogIcon, DownloadIcon, ListIcon, PowerOffIcon, SitemapIcon, ThIcon, TimesIcon, UserIcon } from './icons';
 export { Input } from './Input';
 export { Select } from './Select';
 export { Selector } from './Selector';

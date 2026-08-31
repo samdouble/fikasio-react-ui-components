@@ -136,6 +136,21 @@ The Footer component provides a flexible layout with multiple sections for conte
 | className               | string          | No              | Additional CSS class name for the Footer        |
 | style                   | CSSProperties   | No              | Additional CSS styles for the Footer            |
 
+### Icon
+
+SVG icons rendered with `currentColor` so they inherit the surrounding text color. Use `<Icon name="cog" />`, or import named icons such as `CogIcon` and `UserIcon` directly.
+
+Available names: `book`, `calendar-alt`, `caret-left`, `caret-right`, `cog`, `download`, `list`, `power-off`, `sitemap`, `th`, `times`, `user`.
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| name                    | string          | Yes             | Icon to render                                  |
+| className               | string          | No              | Additional CSS class name for the icon          |
+| size                    | `'1x'` \| `'lg'` | No            | Icon size. Defaults to `'1x'`                   |
+| style                   | CSSProperties   | No              | Additional CSS styles for the icon              |
+
 ### Input
 
 #### Props
