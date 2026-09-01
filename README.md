@@ -140,7 +140,7 @@ The Footer component provides a flexible layout with multiple sections for conte
 
 SVG icons rendered with `currentColor` so they inherit the surrounding text color. Use `<Icon name="cog" />`, or import named icons such as `CogIcon` and `UserIcon` directly.
 
-Available names: `archive`, `book`, `calendar-alt`, `caret-left`, `caret-right`, `cog`, `copy`, `download`, `list`, `plus`, `power-off`, `sitemap`, `stopwatch`, `th`, `times`, `user`.
+Available names: `archive`, `book`, `calendar-alt`, `caret-left`, `caret-right`, `check`, `cog`, `copy`, `download`, `edit`, `list`, `message`, `plus`, `power-off`, `sitemap`, `stopwatch`, `th`, `times`, `user`.
 
 #### Props
 

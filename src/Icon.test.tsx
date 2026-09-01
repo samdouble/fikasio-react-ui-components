@@ -82,4 +82,19 @@ describe('Icon', () => {
     const { baseElement } = render(<Icon name="stopwatch" />);
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('Renders message correctly', () => {
+    const { baseElement } = render(<Icon name="message" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders edit correctly', () => {
+    const { baseElement } = render(<Icon name="edit" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders check correctly', () => {
+    const { baseElement } = render(<Icon name="check" />);
+    expect(baseElement).toMatchSnapshot();
+  });
 });

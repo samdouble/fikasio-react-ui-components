@@ -105,6 +105,27 @@ exports[`Icon Renders caret-right correctly 1`] = `
 </body>
 `;
 
+exports[`Icon Renders check correctly 1`] = `
+<body>
+  <div>
+    <svg
+      aria-hidden="true"
+      fill="currentColor"
+      focusable="false"
+      height="1em"
+      style="display: inline-block; overflow: visible; vertical-align: -0.125em;"
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"
+      />
+    </svg>
+  </div>
+</body>
+`;
+
 exports[`Icon Renders cog correctly 1`] = `
 <body>
   <div>
@@ -169,6 +190,27 @@ exports[`Icon Renders download correctly 1`] = `
 </body>
 `;
 
+exports[`Icon Renders edit correctly 1`] = `
+<body>
+  <div>
+    <svg
+      aria-hidden="true"
+      fill="currentColor"
+      focusable="false"
+      height="1em"
+      style="display: inline-block; overflow: visible; vertical-align: -0.125em;"
+      viewBox="0 0 512 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L368 46.1 465.9 144 490.3 119.6c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L432 177.9 334.1 80 172.4 241.7zM96 64C43 64 0 107 0 160L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-96c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7-14.3 32-32 32L96 448c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 64z"
+      />
+    </svg>
+  </div>
+</body>
+`;
+
 exports[`Icon Renders list correctly 1`] = `
 <body>
   <div>
@@ -184,6 +226,27 @@ exports[`Icon Renders list correctly 1`] = `
     >
       <path
         d="M96 128a32 32 0 1 1-64 0 32 32 0 1 1 64 0zM160 112h288c8.8 0 16 7.2 16 16s-7.2 16-16 16H160c-8.8 0-16-7.2-16-16s7.2-16 16-16zM96 256a32 32 0 1 1-64 0 32 32 0 1 1 64 0zM160 240h288c8.8 0 16 7.2 16 16s-7.2 16-16 16H160c-8.8 0-16-7.2-16-16s7.2-16 16-16zM96 384a32 32 0 1 1-64 0 32 32 0 1 1 64 0zM160 368h288c8.8 0 16 7.2 16 16s-7.2 16-16 16H160c-8.8 0-16-7.2-16-16s7.2-16 16-16z"
+      />
+    </svg>
+  </div>
+</body>
+`;
+
+exports[`Icon Renders message correctly 1`] = `
+<body>
+  <div>
+    <svg
+      aria-hidden="true"
+      fill="currentColor"
+      focusable="false"
+      height="1em"
+      style="display: inline-block; overflow: visible; vertical-align: -0.125em;"
+      viewBox="0 0 512 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 352L0 128C0 75 43 32 96 32l320 0c53 0 96 43 96 96l0 224c0 53-43 96-96 96l-120 0c-5.2 0-10.2 1.7-14.4 4.8L166.4 539.2c-4.2 3.1-9.2 4.8-14.4 4.8-13.3 0-24-10.7-24-24l0-72-32 0c-53 0-96-43-96-96z"
       />
     </svg>
   </div>

@@ -14,10 +14,13 @@ const meta = {
         'calendar-alt',
         'caret-left',
         'caret-right',
+        'check',
         'cog',
         'copy',
         'download',
+        'edit',
         'list',
+        'message',
         'plus',
         'power-off',
         'sitemap',
@@ -131,5 +134,23 @@ export const Archive: Story = {
 export const Stopwatch: Story = {
   args: {
     name: 'stopwatch',
+  },
+};
+
+export const Message: Story = {
+  args: {
+    name: 'message',
+  },
+};
+
+export const Edit: Story = {
+  args: {
+    name: 'edit',
+  },
+};
+
+export const Check: Story = {
+  args: {
+    name: 'check',
   },
 };
