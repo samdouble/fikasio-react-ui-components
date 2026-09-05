@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useRef, useState } from 'react';
 import classNames from 'classnames';
 import DP from 'react-datepicker';
-import { DateTime } from 'luxon';
+import { format, formatISO } from 'date-fns';
 import { CalendarDaysIcon, XmarkIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -105,7 +105,7 @@ export function DatePicker({
   if (currentValue) {
     displayedDate = displayFunction
       ? displayFunction(currentValue)
-      : DateTime.fromJSDate(currentValue).toFormat(displayFormat ?? 'yyyy-MM-dd');
+      : format(currentValue, displayFormat ?? 'yyyy-MM-dd');
   }
 
   return (
@@ -127,7 +127,7 @@ export function DatePicker({
             name={name}
             type="hidden"
             value={
-              currentValue ? (DateTime.fromJSDate(currentValue).toISO() ?? undefined) : undefined
+              currentValue ? formatISO(currentValue) : undefined
             }
           />
         )}

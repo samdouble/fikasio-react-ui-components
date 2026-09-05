@@ -10,20 +10,30 @@ const meta = {
       control: 'select',
       options: [
         'archive',
+        'bars',
+        'bell',
         'book',
+        'bullseye',
         'calendar-alt',
         'caret-left',
         'caret-right',
         'check',
+        'check-square',
+        'clock',
         'cog',
         'copy',
         'download',
         'edit',
+        'ellipsis',
         'list',
+        'magnifying-glass',
         'message',
         'plus',
         'power-off',
+        'project-diagram',
+        'shapes',
         'sitemap',
+        'sliders',
         'stopwatch',
         'th',
         'times',
@@ -41,6 +51,42 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const Archive: Story = {
+  args: {
+    name: 'archive',
+  },
+};
+
+export const Bars: Story = {
+  args: {
+    name: 'bars',
+  },
+};
+
+export const Bell: Story = {
+  args: {
+    name: 'bell',
+  },
+};
+
+export const Book: Story = {
+  args: {
+    name: 'book',
+  },
+};
+
+export const Bullseye: Story = {
+  args: {
+    name: 'bullseye',
+  },
+};
+
+export const CalendarAlt: Story = {
+  args: {
+    name: 'calendar-alt',
+  },
+};
+
 export const CaretLeft: Story = {
   args: {
     name: 'caret-left',
@@ -53,33 +99,21 @@ export const CaretRight: Story = {
   },
 };
 
-export const Download: Story = {
+export const Check: Story = {
   args: {
-    name: 'download',
+    name: 'check',
   },
 };
 
-export const List: Story = {
+export const CheckSquare: Story = {
   args: {
-    name: 'list',
+    name: 'check-square',
   },
 };
 
-export const Th: Story = {
+export const Clock: Story = {
   args: {
-    name: 'th',
-  },
-};
-
-export const CalendarAlt: Story = {
-  args: {
-    name: 'calendar-alt',
-  },
-};
-
-export const Times: Story = {
-  args: {
-    name: 'times',
+    name: 'clock',
   },
 };
 
@@ -89,57 +123,15 @@ export const Cog: Story = {
   },
 };
 
-export const User: Story = {
-  args: {
-    name: 'user',
-  },
-};
-
-export const Book: Story = {
-  args: {
-    name: 'book',
-  },
-};
-
-export const Sitemap: Story = {
-  args: {
-    name: 'sitemap',
-  },
-};
-
-export const PowerOff: Story = {
-  args: {
-    name: 'power-off',
-  },
-};
-
 export const Copy: Story = {
   args: {
     name: 'copy',
   },
 };
 
-export const Plus: Story = {
+export const Download: Story = {
   args: {
-    name: 'plus',
-  },
-};
-
-export const Archive: Story = {
-  args: {
-    name: 'archive',
-  },
-};
-
-export const Stopwatch: Story = {
-  args: {
-    name: 'stopwatch',
-  },
-};
-
-export const Message: Story = {
-  args: {
-    name: 'message',
+    name: 'download',
   },
 };
 
@@ -149,8 +141,86 @@ export const Edit: Story = {
   },
 };
 
-export const Check: Story = {
+export const Ellipsis: Story = {
   args: {
-    name: 'check',
+    name: 'ellipsis',
+  },
+};
+
+export const List: Story = {
+  args: {
+    name: 'list',
+  },
+};
+
+export const MagnifyingGlass: Story = {
+  args: {
+    name: 'magnifying-glass',
+  },
+};
+
+export const Message: Story = {
+  args: {
+    name: 'message',
+  },
+};
+
+export const Plus: Story = {
+  args: {
+    name: 'plus',
+  },
+};
+
+export const PowerOff: Story = {
+  args: {
+    name: 'power-off',
+  },
+};
+
+export const ProjectDiagram: Story = {
+  args: {
+    name: 'project-diagram',
+  },
+};
+
+export const Shapes: Story = {
+  args: {
+    name: 'shapes',
+  },
+};
+
+export const Sitemap: Story = {
+  args: {
+    name: 'sitemap',
+  },
+};
+
+export const Sliders: Story = {
+  args: {
+    name: 'sliders',
+  },
+};
+
+export const Stopwatch: Story = {
+  args: {
+    name: 'stopwatch',
+  },
+};
+
+export const Th: Story = {
+  args: {
+    name: 'th',
+  },
+};
+
+export const Times: Story = {
+  args: {
+    name: 'times',
+  },
+};
+
+export const User: Story = {
+  args: {
+    name: 'user',
   },
 };

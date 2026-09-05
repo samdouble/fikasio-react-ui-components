@@ -97,4 +97,44 @@ describe('Icon', () => {
     const { baseElement } = render(<Icon name="check" />);
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('Renders bars correctly', () => {
+    const { baseElement } = render(<Icon name="bars" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders project-diagram correctly', () => {
+    const { baseElement } = render(<Icon name="project-diagram" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders sliders correctly', () => {
+    const { baseElement } = render(<Icon name="sliders" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders shapes correctly', () => {
+    const { baseElement } = render(<Icon name="shapes" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders clock correctly', () => {
+    const { baseElement } = render(<Icon name="clock" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders check-square correctly', () => {
+    const { baseElement } = render(<Icon name="check-square" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders bullseye correctly', () => {
+    const { baseElement } = render(<Icon name="bullseye" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('Renders bell correctly', () => {
+    const { baseElement } = render(<Icon name="bell" />);
+    expect(baseElement).toMatchSnapshot();
+  });
 });
