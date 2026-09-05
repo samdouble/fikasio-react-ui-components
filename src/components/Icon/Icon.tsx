@@ -6,8 +6,10 @@ import {
   BookIcon,
   BullseyeIcon,
   CalendarAltIcon,
+  CaretDownIcon,
   CaretLeftIcon,
   CaretRightIcon,
+  CaretUpIcon,
   CheckIcon,
   CheckSquareIcon,
   ClockIcon,
@@ -25,10 +27,13 @@ import {
   ShapesIcon,
   SitemapIcon,
   SlidersIcon,
+  SquareIcon,
   StopwatchIcon,
   ThIcon,
   TimesIcon,
+  TriangleExclamationIcon,
   UserIcon,
+  XmarkIcon,
 } from '../../icons';
 import type { IconProps as SvgIconProps } from '../../icons';
 
@@ -39,8 +44,10 @@ const ICONS = {
   book: BookIcon,
   bullseye: BullseyeIcon,
   'calendar-alt': CalendarAltIcon,
+  'caret-down': CaretDownIcon,
   'caret-left': CaretLeftIcon,
   'caret-right': CaretRightIcon,
+  'caret-up': CaretUpIcon,
   check: CheckIcon,
   'check-square': CheckSquareIcon,
   clock: ClockIcon,
@@ -58,10 +65,13 @@ const ICONS = {
   shapes: ShapesIcon,
   sitemap: SitemapIcon,
   sliders: SlidersIcon,
+  square: SquareIcon,
   stopwatch: StopwatchIcon,
   th: ThIcon,
   times: TimesIcon,
+  'triangle-exclamation': TriangleExclamationIcon,
   user: UserIcon,
+  xmark: XmarkIcon,
 } as const;
 
 export type IconName = keyof typeof ICONS;

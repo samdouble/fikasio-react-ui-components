@@ -48,5 +48,20 @@ jobs:
           name: playwright-snapshots
           path: test-results
       - name: Build
+        run: npm run build
+      - name: Verify tarball includes dist
         run: |
-          npm run build
+          npm pack --dry-run --json | node --input-type=module -e '
+            const chunks = [];
+            for await (const chunk of process.stdin) chunks.push(chunk);
+            const pack = JSON.parse(Buffer.concat(chunks).toString());
+            const files = (Array.isArray(pack) ? pack[0] : pack).files.map((f) => f.path);
+            const required = ["dist/index.js", "dist/index.mjs"];
+            const missing = required.filter((f) => !files.includes(f));
+            if (missing.length) {
+              console.error("Package tarball is missing:", missing.join(", "));
+              console.error("Packed files:\n" + files.map((f) => `  ${f}`).join("\n"));
+              process.exit(1);
+            }
+            console.log("Tarball includes required dist files.");
+          '
