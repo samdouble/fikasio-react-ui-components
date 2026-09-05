@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.2.0...v2.3.0) (2026-09-05)
+
+
+### Features
+
+* add multiple icons such as bell, sliders, bars and bullseye ([632114a](https://github.com/samdouble/fikasio-react-ui-components/commit/632114ae1d9ff7797f8bac1981052bd45812f2aa))
+* added message and edit icons ([90edca5](https://github.com/samdouble/fikasio-react-ui-components/commit/90edca5066d6ba8af856e6c3cb578730653e923a))
+
+
+### Bug Fixes
+
+* fix cog icon visual ([705d615](https://github.com/samdouble/fikasio-react-ui-components/commit/705d615f1213ccc9791b15f2c5120a06bca1af08))
+
 ## [2.2.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.1.0...v2.2.0) (2026-08-31)
 
 
