@@ -26,7 +26,11 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Tests
-        run: npm test
+        run: npm run test
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          file: coverage/lcov.info
       - name: Visual Regression Tests
         run: |
           sudo apt-get update

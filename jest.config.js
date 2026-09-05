@@ -10,6 +10,10 @@ module.exports = {
     "./src/setupTests.ts",
     "./tests/*.visual.test.tsx",
   ],
+  coverageReporters: [
+    "text",
+    "lcov",
+  ],
   coverageThreshold: {
     global: {
       branches: 2,

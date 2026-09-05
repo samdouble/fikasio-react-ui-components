@@ -21,7 +21,7 @@
     "build-storybook": "storybook build",
     "lint": "oxlint ./src",
     "storybook": "storybook dev -p 6006",
-    "test": "jest",
+    "test": "jest --coverage",
     "test-ct": "playwright test -c playwright-ct.config.ts",
     "test-ct:update": "playwright test -c playwright-ct.config.ts --update-snapshots"
   },
