@@ -1,5 +1,6 @@
 [![CI](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml/badge.svg?branch=master)](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml)
 [![Coverage Status](https://coveralls.io/repos/samdouble/fikasio-react-ui-components/badge.svg?branch=master&service=github)](https://coveralls.io/github/samdouble/fikasio-react-ui-components?branch=master)
+[![Socket Badge](https://badge.socket.dev/npm/package/@fikasio/react-ui-components/latest)](https://badge.socket.dev/npm/package/@fikasio/react-ui-components/latest)
 
 [![Node.js](https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](https://www.typescriptlang.org/)
@@ -140,7 +141,37 @@ The Footer component provides a flexible layout with multiple sections for conte
 
 SVG icons rendered with `currentColor` so they inherit the surrounding text color. Use `<Icon name="cog" />`, or import named icons such as `CogIcon` and `UserIcon` directly.
 
-Available names: `archive`, `book`, `calendar-alt`, `caret-left`, `caret-right`, `check`, `cog`, `copy`, `download`, `edit`, `list`, `message`, `plus`, `power-off`, `sitemap`, `stopwatch`, `th`, `times`, `user`.
+Available names:
+
+- `archive`
+- `bars`
+- `bell`
+- `book`
+- `bullseye`
+- `calendar-alt`
+- `caret-left`
+- `caret-right`
+- `check`
+- `check-square`
+- `clock`
+- `cog`
+- `copy`
+- `download`
+- `edit`
+- `ellipsis`
+- `list`
+- `magnifying-glass`
+- `message`
+- `plus`
+- `power-off`
+- `project-diagram`
+- `shapes`
+- `sitemap`
+- `sliders`
+- `stopwatch`
+- `th`
+- `times`
+- `user`
 
 #### Props
 
