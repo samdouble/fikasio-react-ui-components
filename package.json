@@ -20,6 +20,7 @@
     "build": "rollup -c",
     "build-storybook": "storybook build",
     "lint": "oxlint ./src",
+    "prepublishOnly": "rm -rf ./dist && npm run build",
     "storybook": "storybook dev -p 6006",
     "test": "jest --coverage",
     "test-ct": "playwright test -c playwright-ct.config.ts",
