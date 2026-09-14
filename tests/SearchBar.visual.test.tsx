@@ -1,6 +1,5 @@
 import React from 'react';
-import { test } from '@playwright/experimental-ct-react';
-import { expect } from '@playwright/test';
+import { test, expect } from '@playwright/experimental-ct-react';
 import { SearchBar } from '../src';
 
 test.describe('Search Bar', () => {
