@@ -1,4 +1,4 @@
-[![CI](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml/badge.svg?branch=master)](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml?branch=master)
+[![CI](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml/badge.svg)](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml?branch=master)
 [![Coverage Status](https://coveralls.io/repos/samdouble/fikasio-react-ui-components/badge.svg?branch=master&service=github)](https://coveralls.io/github/samdouble/fikasio-react-ui-components?branch=master)
 [![Socket Badge](https://badge.socket.dev/npm/package/@fikasio/react-ui-components/latest)](https://badge.socket.dev/npm/package/@fikasio/react-ui-components/latest)
 
@@ -250,6 +250,19 @@ Available names:
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
 | className               | string          | No              | Additional CSS class name for the Success       |
 | style                   | CSSProperties   | No              | Additional CSS styles for the Success           |
+
+### Tabs
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| className               | string          | No              | Additional CSS class name for the Tabs          |
+| defaultValue            | string          | No              | Initial value for uncontrolled tabs             |
+| onChange                | function        | No              | Handler called when the selected tab changes    |
+| options                 | array           | No              | Tabs to display (`label`, `value`, optional `content` and `disabled`) |
+| style                   | CSSProperties   | No              | Additional CSS styles for the Tabs              |
+| value                   | string          | No              | Controlled selected tab value                   |
 
 ### Warning
 

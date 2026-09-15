@@ -1,13 +1,6 @@
 # Changelog
 
-## [2.3.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.3.0...v2.3.1) (2026-09-05)
-
-
-### Bug Fixes
-
-* fix package published without dist folder ([865a922](https://github.com/samdouble/fikasio-react-ui-components/commit/865a922d7495157563cd0254e6652993b90448c4))
-
-## [2.3.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.2.0...v2.3.0) (2026-09-05)
+## [2.3.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.2.0...v2.3.1) (2026-09-05)
 
 
 ### Features
@@ -19,6 +12,7 @@
 ### Bug Fixes
 
 * fix cog icon visual ([705d615](https://github.com/samdouble/fikasio-react-ui-components/commit/705d615f1213ccc9791b15f2c5120a06bca1af08))
+* fix package published without dist folder ([865a922](https://github.com/samdouble/fikasio-react-ui-components/commit/865a922d7495157563cd0254e6652993b90448c4))
 
 ## [2.2.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.1.0...v2.2.0) (2026-08-31)
 

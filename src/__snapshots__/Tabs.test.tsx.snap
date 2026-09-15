@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Tabs Renders correctly 1`] = `
+<body>
+  <div>
+    <div
+      class="fikasio-tabs fikasio-theme-light"
+    >
+      <div
+        class="fikasio-tabs-list"
+        role="tablist"
+      >
+        <button
+          aria-controls="_r_0_-panel-overview"
+          aria-selected="true"
+          class="fikasio-tabs-tab fikasio-tabs-tab-selected"
+          id="_r_0_-tab-overview"
+          role="tab"
+          tabindex="0"
+          type="button"
+        >
+          Overview
+        </button>
+        <button
+          aria-controls="_r_0_-panel-details"
+          aria-selected="false"
+          class="fikasio-tabs-tab"
+          id="_r_0_-tab-details"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          Details
+        </button>
+        <button
+          aria-controls="_r_0_-panel-settings"
+          aria-disabled="true"
+          aria-selected="false"
+          class="fikasio-tabs-tab fikasio-tabs-tab-disabled"
+          disabled=""
+          id="_r_0_-tab-settings"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          Settings
+        </button>
+      </div>
+      <div
+        aria-labelledby="_r_0_-tab-overview"
+        class="fikasio-tabs-panel"
+        id="_r_0_-panel-overview"
+        role="tabpanel"
+      >
+        Overview content
+      </div>
+    </div>
+  </div>
+</body>
+`;

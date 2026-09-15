@@ -16,5 +16,6 @@ export { Selector } from './Selector';
 export { SearchBar } from './SearchBar';
 export { Success } from './Success';
 export { Table } from './Table';
+export { Tabs } from './Tabs';
 export { Warning } from './Warning';
 export { useTheme } from './useTheme';
