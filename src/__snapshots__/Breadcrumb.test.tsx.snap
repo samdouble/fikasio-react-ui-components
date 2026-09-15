@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Breadcrumb Renders correctly 1`] = `
+<body>
+  <div>
+    <nav
+      aria-label="Breadcrumb"
+      class="fikasio-breadcrumb fikasio-theme-light"
+    >
+      <ol
+        class="fikasio-breadcrumb-list"
+      >
+        <li
+          class="fikasio-breadcrumb-item"
+        >
+          <a
+            class="fikasio-breadcrumb-link"
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li
+          class="fikasio-breadcrumb-item"
+        >
+          <span
+            aria-hidden="true"
+            class="fikasio-breadcrumb-separator"
+          >
+            /
+          </span>
+          <a
+            class="fikasio-breadcrumb-link"
+            href="/projects"
+          >
+            Projects
+          </a>
+        </li>
+        <li
+          class="fikasio-breadcrumb-item"
+        >
+          <span
+            aria-hidden="true"
+            class="fikasio-breadcrumb-separator"
+          >
+            /
+          </span>
+          <span
+            aria-current="page"
+            class="fikasio-breadcrumb-current"
+          >
+            Project A
+          </span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</body>
+`;

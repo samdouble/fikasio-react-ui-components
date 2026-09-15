@@ -50,6 +50,17 @@ import { Footer } from '@fikasio/react-ui-components';
 | style                   | CSSProperties   | No              | Additional CSS styles for the textarea          |
 | value                   | string          | No              | Controlled text content value                   |
 
+### Breadcrumb
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| className               | string          | No              | Additional CSS class name for the Breadcrumb    |
+| items                   | array           | No              | Trail items (`label`, optional `href` and `onClick`). The last item is the current page |
+| separator               | ReactNode       | No              | Separator rendered between items. Defaults to `/` |
+| style                   | CSSProperties   | No              | Additional CSS styles for the Breadcrumb        |
+
 ### Button
 
 #### Props

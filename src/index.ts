@@ -1,6 +1,7 @@
 import './themes.css';
 
 export { AutosaveTextarea } from './AutosaveTextarea';
+export { Breadcrumb } from './Breadcrumb';
 export { Button } from './Button';
 export { Checkbox } from './Checkbox';
 export { DatePicker } from './DatePicker';
