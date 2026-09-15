@@ -1,8 +1,8 @@
 import React, { SyntheticEvent, useRef, useState } from 'react';
 import classNames from 'classnames';
-import DP from 'react-datepicker';
+import DP, { type ReactDatePickerCustomHeaderProps } from 'react-datepicker';
 import { format, formatISO } from 'date-fns';
-import { CalendarDaysIcon, XmarkIcon } from '../../icons';
+import { CalendarDaysIcon, CaretLeftIcon, CaretRightIcon, XmarkIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -21,13 +21,81 @@ export interface DatePickerProps {
   onOpen?: () => void;
   onRemoveValue?: (e: SyntheticEvent) => void;
   shouldCloseOnSelect?: boolean;
+  showMonthDropdown?: boolean;
   showRemoveValue?: boolean;
   showTimeSelect?: boolean;
+  showYearDropdown?: boolean;
   style?: React.CSSProperties;
   timeCaption?: string;
   timeFormat?: string;
   timeIntervals?: number;
   value?: Date,
+}
+
+function DatePickerHeader({
+  decreaseMonth,
+  decreaseYear,
+  increaseMonth,
+  increaseYear,
+  monthDate,
+  nextMonthButtonDisabled,
+  nextYearButtonDisabled,
+  prevMonthButtonDisabled,
+  prevYearButtonDisabled,
+}: ReactDatePickerCustomHeaderProps) {
+  return (
+    <div className="fikasio-datepicker-header">
+      <div className="fikasio-datepicker-header-nav">
+        <button
+          aria-label="Previous year"
+          className="fikasio-datepicker-nav"
+          disabled={prevYearButtonDisabled}
+          onClick={decreaseYear}
+          type="button"
+        >
+          <span className="fikasio-datepicker-double-caret">
+            <CaretLeftIcon size="lg" />
+            <CaretLeftIcon size="lg" />
+          </span>
+        </button>
+        <button
+          aria-label="Previous month"
+          className="fikasio-datepicker-nav"
+          disabled={prevMonthButtonDisabled}
+          onClick={decreaseMonth}
+          type="button"
+        >
+          <CaretLeftIcon size="lg" />
+        </button>
+      </div>
+      <span className="fikasio-datepicker-header-label">
+        {format(monthDate, 'LLLL yyyy')}
+      </span>
+      <div className="fikasio-datepicker-header-nav">
+        <button
+          aria-label="Next month"
+          className="fikasio-datepicker-nav"
+          disabled={nextMonthButtonDisabled}
+          onClick={increaseMonth}
+          type="button"
+        >
+          <CaretRightIcon size="lg" />
+        </button>
+        <button
+          aria-label="Next year"
+          className="fikasio-datepicker-nav"
+          disabled={nextYearButtonDisabled}
+          onClick={increaseYear}
+          type="button"
+        >
+          <span className="fikasio-datepicker-double-caret">
+            <CaretRightIcon size="lg" />
+            <CaretRightIcon size="lg" />
+          </span>
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export function DatePicker({
@@ -43,8 +111,10 @@ export function DatePicker({
   onOpen = () => undefined,
   onRemoveValue = () => undefined,
   shouldCloseOnSelect = true,
+  showMonthDropdown = false,
   showRemoveValue = false,
   showTimeSelect = true,
+  showYearDropdown = false,
   style = {},
   timeCaption = 'Hours',
   timeFormat = 'HH:mm',
@@ -60,6 +130,7 @@ export function DatePicker({
     hasDefaultValue ? defaultValue : undefined,
   );
   const currentValue = isControlled ? value : internalValue;
+  const useDropdownNavigation = showMonthDropdown || showYearDropdown;
 
   const theme = useTheme();
 
@@ -132,6 +203,7 @@ export function DatePicker({
           />
         )}
         dateFormat={dateFormat}
+        dropdownMode="select"
         name={name}
         onCalendarClose={handleClose}
         onChange={handleChange}
@@ -140,10 +212,13 @@ export function DatePicker({
         popperClassName="fikasio-datepicker_popper"
         popperPlacement="bottom-end"
         preventOpenOnFocus
+        renderCustomHeader={useDropdownNavigation ? undefined : DatePickerHeader}
         selected={defaultValue}
         shouldCloseOnSelect={shouldCloseOnSelect}
+        showMonthDropdown={showMonthDropdown}
         showPopperArrow={false}
         showTimeSelect={showTimeSelect}
+        showYearDropdown={showYearDropdown}
         timeCaption={timeCaption}
         timeFormat={timeFormat}
         timeIntervals={timeIntervals}

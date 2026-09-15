@@ -87,6 +87,8 @@ import { Footer } from '@fikasio/react-ui-components';
 
 ### DatePicker
 
+By default the calendar header uses single carets to move by month and double carets to move by year.
+
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
@@ -103,8 +105,10 @@ import { Footer } from '@fikasio/react-ui-components';
 | onOpen                  | function        | No              | Handler called when picker opens                |
 | onRemoveValue           | function        | No              | Handler called when value is cleared            |
 | shouldCloseOnSelect     | boolean         | No              | Whether to close picker after selection         |
+| showMonthDropdown       | boolean         | No              | Show a month dropdown in the calendar header    |
 | showRemoveValue         | boolean         | No              | Show option to clear the selected value         |
 | showTimeSelect          | boolean         | No              | Enable time selection                           |
+| showYearDropdown        | boolean         | No              | Show a year dropdown instead of the year carets |
 | style                   | CSSProperties   | No              | Additional CSS styles for the DatePicker        |
 | timeCaption             | string          | No              | Label shown above time selector                 |
 | timeFormat              | string          | No              | Format for time value (e.g. 'HH:mm')            |
