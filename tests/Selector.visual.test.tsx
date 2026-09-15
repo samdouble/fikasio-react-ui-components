@@ -9,6 +9,8 @@ test.describe('Selector', () => {
     testInfo.snapshotSuffix = '';
     const component = await mount(
       <div style={{
+        boxSizing: 'border-box',
+        height: '120px',
         padding: '2rem',
         position: 'absolute',
         width: '400px',
@@ -23,6 +25,7 @@ test.describe('Selector', () => {
     testInfo.snapshotSuffix = '';
     const component = await mount(
       <div style={{
+        boxSizing: 'border-box',
         height: '250px',
         padding: '2rem',
         position: 'absolute',

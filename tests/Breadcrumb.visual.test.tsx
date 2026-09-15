@@ -13,6 +13,8 @@ test.describe('Breadcrumb', () => {
     testInfo.snapshotSuffix = '';
     const component = await mount(
       <div style={{
+        boxSizing: 'border-box',
+        height: '100px',
         padding: '2rem',
         position: 'absolute',
         width: '500px',
@@ -27,6 +29,8 @@ test.describe('Breadcrumb', () => {
     testInfo.snapshotSuffix = '';
     const component = await mount(
       <div style={{
+        boxSizing: 'border-box',
+        height: '100px',
         padding: '2rem',
         position: 'absolute',
         width: '500px',
