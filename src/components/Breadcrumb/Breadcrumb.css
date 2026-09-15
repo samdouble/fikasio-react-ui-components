@@ -1,0 +1,96 @@
+.fikasio-breadcrumb {
+  font-family: var(--fikasio-font-family);
+  font-size: 14px;
+
+  .fikasio-breadcrumb-list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fikasio-breadcrumb-item {
+    align-items: center;
+    display: inline-flex;
+  }
+
+  .fikasio-breadcrumb-separator {
+    color: var(--fikasio-gray);
+    margin: 0 0.5rem;
+  }
+
+  .fikasio-breadcrumb-link {
+    background: transparent;
+    border: none;
+    color: #420076;
+    cursor: pointer;
+    font-family: var(--fikasio-font-family);
+    font-size: 14px;
+    padding: 0;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #420076;
+      outline-offset: 2px;
+    }
+  }
+
+  .fikasio-breadcrumb-text {
+    color: var(--fikasio-gray);
+  }
+
+  .fikasio-breadcrumb-current {
+    color: var(--fikasio-dark-gray);
+    font-weight: 600;
+  }
+
+  &.fikasio-theme-dark {
+    .fikasio-breadcrumb-separator {
+      color: var(--fikasio-gray);
+    }
+
+    .fikasio-breadcrumb-link {
+      color: #7E5B9A;
+
+      &:focus-visible {
+        outline-color: #7E5B9A;
+      }
+    }
+
+    .fikasio-breadcrumb-text {
+      color: var(--fikasio-gray);
+    }
+
+    .fikasio-breadcrumb-current {
+      color: var(--fikasio-white);
+    }
+  }
+
+  &.fikasio-theme-light {
+    .fikasio-breadcrumb-separator {
+      color: var(--fikasio-gray);
+    }
+
+    .fikasio-breadcrumb-link {
+      color: #420076;
+    }
+
+    .fikasio-breadcrumb-text {
+      color: var(--fikasio-gray);
+    }
+
+    .fikasio-breadcrumb-current {
+      color: var(--fikasio-dark-gray);
+    }
+  }
+}
