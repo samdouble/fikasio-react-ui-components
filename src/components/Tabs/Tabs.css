@@ -1,0 +1,103 @@
+.fikasio-tabs {
+  font-family: var(--fikasio-font-family);
+  font-size: 14px;
+  width: 100%;
+
+  .fikasio-tabs-list {
+    border-bottom: 1px solid var(--fikasio-light-gray);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .fikasio-tabs-tab {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--fikasio-gray);
+    cursor: pointer;
+    font-family: var(--fikasio-font-family);
+    font-size: 14px;
+    margin-bottom: -1px;
+    padding: 0.6rem 1rem;
+
+    &:hover:not(:disabled):not(.fikasio-tabs-tab-selected) {
+      color: var(--fikasio-dark-gray);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #420076;
+      outline-offset: -2px;
+    }
+
+    &.fikasio-tabs-tab-selected {
+      border-bottom-color: #420076;
+      color: #420076;
+      font-weight: 600;
+    }
+
+    &:disabled,
+    &.fikasio-tabs-tab-disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  .fikasio-tabs-panel {
+    color: var(--fikasio-dark-gray);
+    padding: 1rem 0;
+  }
+
+  &.fikasio-theme-dark {
+    .fikasio-tabs-list {
+      border-bottom-color: var(--fikasio-dark-gray-lighter);
+    }
+
+    .fikasio-tabs-tab {
+      color: var(--fikasio-gray);
+
+      &:hover:not(:disabled):not(.fikasio-tabs-tab-selected) {
+        color: var(--fikasio-white);
+      }
+
+      &:focus-visible {
+        outline-color: #7E5B9A;
+      }
+
+      &.fikasio-tabs-tab-selected {
+        border-bottom-color: #7E5B9A;
+        color: var(--fikasio-white);
+      }
+    }
+
+    .fikasio-tabs-panel {
+      color: var(--fikasio-white);
+    }
+  }
+
+  &.fikasio-theme-light {
+    .fikasio-tabs-list {
+      border-bottom-color: var(--fikasio-light-gray);
+    }
+
+    .fikasio-tabs-tab {
+      color: var(--fikasio-gray);
+
+      &:hover:not(:disabled):not(.fikasio-tabs-tab-selected) {
+        color: var(--fikasio-dark-gray);
+      }
+
+      &.fikasio-tabs-tab-selected {
+        border-bottom-color: #420076;
+        color: #420076;
+      }
+    }
+
+    .fikasio-tabs-panel {
+      color: var(--fikasio-dark-gray);
+    }
+  }
+}
