@@ -28,3 +28,61 @@
 .react-datepicker-wrapper {
   position: absolute;
 }
+
+.fikasio-datepicker_popper .react-datepicker__month-select,
+.fikasio-datepicker_popper .react-datepicker__year-select {
+  font-family: var(--fikasio-font-family);
+}
+
+.fikasio-datepicker-header {
+  align-items: center;
+  display: flex;
+  gap: 2px;
+  justify-content: space-between;
+  padding: 0 4px 2px;
+}
+
+.fikasio-datepicker-header-nav {
+  align-items: center;
+  display: flex;
+}
+
+.fikasio-datepicker-header-label {
+  flex: 1;
+  font-size: 0.944rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fikasio-datepicker-nav {
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: var(--fikasio-dark-gray);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  height: 28px;
+  justify-content: center;
+  min-width: 22px;
+  padding: 0 2px;
+}
+
+.fikasio-datepicker-nav:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: var(--fikasio-black);
+}
+
+.fikasio-datepicker-nav:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.fikasio-datepicker-double-caret {
+  display: inline-flex;
+}
+
+.fikasio-datepicker-double-caret svg + svg {
+  margin-left: -0.85em;
+}
