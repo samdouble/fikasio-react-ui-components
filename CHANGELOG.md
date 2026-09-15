@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.4.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.3.1...v2.4.0) (2026-09-15)
+
+
+### Features
+
+* **Breadcrumb:** added component ([d74ddd8](https://github.com/samdouble/fikasio-react-ui-components/commit/d74ddd841c86d9c148500fe9302f5f705fa3c20b))
+* **DatePicker:** add year selector on Datepicker ([744d37d](https://github.com/samdouble/fikasio-react-ui-components/commit/744d37d1cd982fe8040f81b5cc8f8c63edd470f5))
+* **Tabs:** added component ([d3fcd43](https://github.com/samdouble/fikasio-react-ui-components/commit/d3fcd43324d999f9e340bdbda6a9625fed533712))
+
 ## [2.3.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.2.0...v2.3.1) (2026-09-05)
 
 
