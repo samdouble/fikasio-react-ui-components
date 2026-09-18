@@ -25,6 +25,12 @@ npm test
 npm run test-ct
 ```
 
+3. To regenerate README component screenshots after visual changes:
+
+```
+npm run screenshots
+```
+
 ## Installing new dependencies
 
 1. Run the following commands from the root folder of the repo:

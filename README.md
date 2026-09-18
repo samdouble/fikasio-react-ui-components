@@ -38,6 +38,8 @@ import { Footer } from '@fikasio/react-ui-components';
 
 ### AutosaveTextarea
 
+<img src="docs/screenshots/autosave-textarea.png" alt="AutosaveTextarea" width="480" />
+
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
@@ -52,6 +54,8 @@ import { Footer } from '@fikasio/react-ui-components';
 
 ### Breadcrumb
 
+<img src="docs/screenshots/breadcrumb.png" alt="Breadcrumb" width="280" />
+
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
@@ -63,6 +67,8 @@ import { Footer } from '@fikasio/react-ui-components';
 
 ### Button
 
+<img src="docs/screenshots/button.png" alt="Button" width="90" />
+
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
@@ -73,6 +79,8 @@ import { Footer } from '@fikasio/react-ui-components';
 | style                   | CSSProperties   | No             | Additional CSS styles for the button             |
 
 ### Checkbox
+
+<img src="docs/screenshots/checkbox.png" alt="Checkbox" width="280" />
 
 #### Props
 
@@ -86,6 +94,8 @@ import { Footer } from '@fikasio/react-ui-components';
 | style                   | CSSProperties   | No             | Additional CSS styles for the Checkbox          |
 
 ### DatePicker
+
+<img src="docs/screenshots/datepicker.png" alt="DatePicker" width="340" />
 
 By default the calendar header uses single carets to move by month and double carets to move by year.
 
@@ -117,6 +127,8 @@ By default the calendar header uses single carets to move by month and double ca
 
 ### Dot
 
+<img src="docs/screenshots/dot.png" alt="Dot" width="120" />
+
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
@@ -128,6 +140,8 @@ By default the calendar header uses single carets to move by month and double ca
 
 ### Error
 
+<img src="docs/screenshots/error.png" alt="Error" width="420" />
+
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
@@ -137,6 +151,8 @@ By default the calendar header uses single carets to move by month and double ca
 | style                   | CSSProperties   | No              | Additional CSS styles for the Error             |
 
 ### Footer
+
+<img src="docs/screenshots/footer.png" alt="Footer" width="800" />
 
 The Footer component provides a flexible layout with multiple sections for content placement. It can contain children elements in the center, left, right, and top positions.
 
@@ -152,6 +168,8 @@ The Footer component provides a flexible layout with multiple sections for conte
 | style                   | CSSProperties   | No              | Additional CSS styles for the Footer            |
 
 ### Icon
+
+<img src="docs/screenshots/icon.png" alt="Icon" width="640" />
 
 SVG icons rendered with `currentColor` so they inherit the surrounding text color. Use `<Icon name="cog" />`, or import named icons such as `CogIcon` and `UserIcon` directly.
 
@@ -198,6 +216,8 @@ Available names:
 
 ### Input
 
+<img src="docs/screenshots/input.png" alt="Input" width="360" />
+
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
@@ -212,6 +232,8 @@ Available names:
 | value                   | string          | No              | Controlled input value                          |
 
 ### SearchBar
+
+<img src="docs/screenshots/search-bar.png" alt="SearchBar" width="360" />
 
 #### Props
 
@@ -229,6 +251,8 @@ Available names:
 
 ### Select
 
+<img src="docs/screenshots/select.png" alt="Select" width="280" />
+
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
@@ -243,6 +267,8 @@ Available names:
 | value                   | string          | No              | Controlled select value                         |
 
 ### Selector
+
+<img src="docs/screenshots/selector.png" alt="Selector" width="280" />
 
 #### Props
 
@@ -259,6 +285,8 @@ Available names:
 
 ### Success
 
+<img src="docs/screenshots/success.png" alt="Success" width="420" />
+
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
@@ -267,6 +295,8 @@ Available names:
 | style                   | CSSProperties   | No              | Additional CSS styles for the Success           |
 
 ### Tabs
+
+<img src="docs/screenshots/tabs.png" alt="Tabs" width="480" />
 
 #### Props
 
@@ -280,6 +310,8 @@ Available names:
 | value                   | string          | No              | Controlled selected tab value                   |
 
 ### Warning
+
+<img src="docs/screenshots/warning.png" alt="Warning" width="420" />
 
 #### Props
 

@@ -141,8 +141,8 @@ describe('Icon', () => {
   it('Renders sm size', () => {
     const { container } = render(<Icon name="check" size="sm" />);
     const svg = container.querySelector('svg');
-    expect(svg?.getAttribute('width')).toBe('0.875em');
-    expect(svg?.getAttribute('height')).toBe('0.875em');
+    expect(svg?.getAttribute('width')).toBe('0.75em');
+    expect(svg?.getAttribute('height')).toBe('0.75em');
   });
 
   it('Renders md size equivalent to 1x', () => {
