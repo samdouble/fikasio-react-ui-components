@@ -193,7 +193,7 @@ Available names:
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
 | name                    | string          | Yes             | Icon to render                                  |
 | className               | string          | No              | Additional CSS class name for the icon          |
-| size                    | `'1x'` \| `'lg'` | No            | Icon size. Defaults to `'1x'`                   |
+| size                    | `'sm'` \| `'md'` \| `'1x'` \| `'lg'` | No | Icon size. `'md'` is equivalent to `'1x'`. Defaults to `'1x'` |
 | style                   | CSSProperties   | No              | Additional CSS styles for the icon              |
 
 ### Input
@@ -292,7 +292,37 @@ Available names:
 
 ### useTheme
 
-TODO
+Reads the current library theme, and optionally sets it. The default is `light`. Allowed values are `light` and `dark`.
+
+Call it near the root of your app to set the theme:
+
+```
+import { useTheme, Button } from '@fikasio/react-ui-components';
+
+function App() {
+  useTheme('dark');
+
+  return (
+    <Button>Save</Button>
+  );
+}
+```
+
+Call it with no argument to read the current theme:
+
+```
+const theme = useTheme();
+```
+
+#### Parameters
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| newTheme                | string          | No              | Theme to apply (`'light'` or `'dark'`). Invalid values are ignored and log an error |
+
+#### Returns
+
+The current theme: `'light'` or `'dark'`.
 
 ## Development
 

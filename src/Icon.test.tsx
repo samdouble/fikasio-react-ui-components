@@ -137,4 +137,18 @@ describe('Icon', () => {
     const { baseElement } = render(<Icon name="bell" />);
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('Renders sm size', () => {
+    const { container } = render(<Icon name="check" size="sm" />);
+    const svg = container.querySelector('svg');
+    expect(svg?.getAttribute('width')).toBe('0.875em');
+    expect(svg?.getAttribute('height')).toBe('0.875em');
+  });
+
+  it('Renders md size equivalent to 1x', () => {
+    const { container } = render(<Icon name="check" size="md" />);
+    const svg = container.querySelector('svg');
+    expect(svg?.getAttribute('width')).toBe('1em');
+    expect(svg?.getAttribute('height')).toBe('1em');
+  });
 });

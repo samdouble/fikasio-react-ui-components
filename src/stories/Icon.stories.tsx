@@ -42,7 +42,7 @@ const meta = {
     },
     size: {
       control: 'select',
-      options: ['1x', 'lg'],
+      options: ['sm', 'md', '1x', 'lg'],
     },
     style: { control: 'object' },
   },

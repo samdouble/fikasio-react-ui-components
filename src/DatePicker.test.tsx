@@ -11,6 +11,20 @@ describe('DatePicker', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('opens the calendar at the bottom of the picker', () => {
+    render(
+      <DatePicker
+        defaultValue={new Date('2026-08-31')}
+        isOpen
+        showTimeSelect={false}
+      />,
+    );
+
+    expect(
+      document.querySelector('.fikasio-datepicker_popper')?.getAttribute('data-placement'),
+    ).toBe('bottom-start');
+  });
+
   it('can reopen after the calendar icon is used to close it', async () => {
     const user = userEvent.setup();
     const { container } = render(

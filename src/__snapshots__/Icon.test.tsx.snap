@@ -135,7 +135,7 @@ exports[`Icon Renders caret-left correctly 1`] = `
       focusable="false"
       height="1em"
       style="display: inline-block; overflow: visible; vertical-align: -0.125em;"
-      viewBox="0 0 256 512"
+      viewBox="32 128 192 256"
       width="1em"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -156,7 +156,7 @@ exports[`Icon Renders caret-right correctly 1`] = `
       focusable="false"
       height="1em"
       style="display: inline-block; overflow: visible; vertical-align: -0.125em;"
-      viewBox="0 0 256 512"
+      viewBox="32 128 192 256"
       width="1em"
       xmlns="http://www.w3.org/2000/svg"
     >
