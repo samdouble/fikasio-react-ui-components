@@ -1,6 +1,7 @@
 .fikasio-datepicker {
   cursor: pointer;
   font-family: var(--fikasio-font-family);
+  position: relative;
 }
 
 .fikasio-datepicker_dueAt_remove {
@@ -14,7 +15,7 @@
 }
 
 .fikasio-datepicker_popper {
-  position: fixed;
+  position: absolute;
 }
 
 .react-datepicker__day--selected {
@@ -84,5 +85,5 @@
 }
 
 .fikasio-datepicker-double-caret svg + svg {
-  margin-left: -0.85em;
+  margin-left: -0.32em;
 }

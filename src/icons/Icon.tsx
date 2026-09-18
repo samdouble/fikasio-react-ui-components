@@ -1,10 +1,12 @@
 import React from 'react';
 
 export interface IconProps extends React.SVGAttributes<SVGSVGElement> {
-  size?: '1x' | 'lg';
+  size?: 'sm' | 'md' | '1x' | 'lg';
 }
 
 const sizeToEm: Record<NonNullable<IconProps['size']>, string> = {
+  sm: '0.75em',
+  md: '1em',
   '1x': '1em',
   lg: '1.33333em',
 };

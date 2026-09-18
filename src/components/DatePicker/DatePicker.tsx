@@ -54,8 +54,8 @@ function DatePickerHeader({
           type="button"
         >
           <span className="fikasio-datepicker-double-caret">
-            <CaretLeftIcon size="lg" />
-            <CaretLeftIcon size="lg" />
+            <CaretLeftIcon size="sm" />
+            <CaretLeftIcon size="sm" />
           </span>
         </button>
         <button
@@ -65,7 +65,7 @@ function DatePickerHeader({
           onClick={decreaseMonth}
           type="button"
         >
-          <CaretLeftIcon size="lg" />
+          <CaretLeftIcon size="sm" />
         </button>
       </div>
       <span className="fikasio-datepicker-header-label">
@@ -79,7 +79,7 @@ function DatePickerHeader({
           onClick={increaseMonth}
           type="button"
         >
-          <CaretRightIcon size="lg" />
+          <CaretRightIcon size="sm" />
         </button>
         <button
           aria-label="Next year"
@@ -89,8 +89,8 @@ function DatePickerHeader({
           type="button"
         >
           <span className="fikasio-datepicker-double-caret">
-            <CaretRightIcon size="lg" />
-            <CaretRightIcon size="lg" />
+            <CaretRightIcon size="sm" />
+            <CaretRightIcon size="sm" />
           </span>
         </button>
       </div>
@@ -210,7 +210,7 @@ export function DatePicker({
         onClickOutside={handleClickOutside}
         open={isOpen}
         popperClassName="fikasio-datepicker_popper"
-        popperPlacement="bottom-end"
+        popperPlacement="bottom-start"
         preventOpenOnFocus
         renderCustomHeader={useDropdownNavigation ? undefined : DatePickerHeader}
         selected={defaultValue}
