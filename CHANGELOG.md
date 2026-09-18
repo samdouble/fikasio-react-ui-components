@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.4.0...v2.4.1) (2026-09-18)
+
+
+### Bug Fixes
+
+* **DatePicker:** show calendar in DatePicker at the bottom instead of bottom-left ([8d41018](https://github.com/samdouble/fikasio-react-ui-components/commit/8d41018993cb8798742797d8595fded5151b234b))
+
 ## [2.4.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.3.1...v2.4.0) (2026-09-15)
 
 
