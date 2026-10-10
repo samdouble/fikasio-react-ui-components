@@ -1,5 +1,5 @@
 .fikasio-searchbar {
-  border: 1px solid var(--fikasio-light-gray);
+  border: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
   box-sizing: border-box;
   height: 35px;
   font-family: var(--fikasio-font-family);
@@ -20,7 +20,7 @@
     font-family: var(--fikasio-font-family);
     height: 100%;
     outline: none;
-    padding: 6.5px 4px;
+    padding: 6.5px var(--fikasio-space-xs);
     padding-left: 30px;
     width: 100%;
 
@@ -39,12 +39,12 @@
   .fikasio-searchbar-dropdown {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--fikasio-white);
-    border: 1px solid var(--fikasio-light-gray);
+    border: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
     border-top: none;
     position: absolute;
     top: 100%;
-    left: -1px;
-    right: -1px;
+    left: calc(var(--fikasio-border-width-thin) * -1);
+    right: calc(var(--fikasio-border-width-thin) * -1);
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
@@ -54,7 +54,7 @@
     color: var(--fikasio-dark-gray);
     cursor: pointer;
     font-family: var(--fikasio-font-family);
-    font-size: 14px;
+    font-size: var(--fikasio-font-size-sm);
     padding: 5px 12px;
 
     &:hover,

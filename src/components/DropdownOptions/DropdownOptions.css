@@ -20,7 +20,7 @@
     position: absolute;
     top: 100%;
     background-color: var(--fikasio-white);
-    border: 1px solid var(--fikasio-light-gray);
+    border: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;

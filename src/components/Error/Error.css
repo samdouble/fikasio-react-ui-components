@@ -1,6 +1,6 @@
 .fikasio-error {
   background-color: rgb(251, 153, 142);
-  border: 1px solid rgb(251, 126, 112);
+  border: var(--fikasio-border-width-thin) solid rgb(251, 126, 112);
   color: rgb(120, 20, 20);
   font-family: var(--fikasio-font-family);
   padding: 1rem 1.5rem;

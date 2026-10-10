@@ -1,6 +1,6 @@
 .fikasio-warning {
   background-color: rgb(235, 217, 155);
-  border: 1px solid rgb(223, 207, 148);
+  border: var(--fikasio-border-width-thin) solid rgb(223, 207, 148);
   color: rgb(122, 83, 22);
   font-family: var(--fikasio-font-family);
   padding: 1rem 1.5rem;

@@ -1,10 +1,10 @@
 .fikasio-tabs {
   font-family: var(--fikasio-font-family);
-  font-size: 14px;
+  font-size: var(--fikasio-font-size-sm);
   width: 100%;
 
   .fikasio-tabs-list {
-    border-bottom: 1px solid var(--fikasio-light-gray);
+    border-bottom: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
     display: flex;
     flex-wrap: wrap;
   }
@@ -16,8 +16,8 @@
     color: var(--fikasio-gray);
     cursor: pointer;
     font-family: var(--fikasio-font-family);
-    font-size: 14px;
-    margin-bottom: -1px;
+    font-size: var(--fikasio-font-size-sm);
+    margin-bottom: calc(var(--fikasio-border-width-thin) * -1);
     padding: 0.6rem 1rem;
 
     &:hover:not(:disabled):not(.fikasio-tabs-tab-selected) {
@@ -36,7 +36,7 @@
     &.fikasio-tabs-tab-selected {
       border-bottom-color: #420076;
       color: #420076;
-      font-weight: 600;
+      font-weight: var(--fikasio-font-weight-semibold);
     }
 
     &:disabled,
@@ -64,11 +64,11 @@
       }
 
       &:focus-visible {
-        outline-color: #7E5B9A;
+        outline-color: var(--fikasio-color-brand);
       }
 
       &.fikasio-tabs-tab-selected {
-        border-bottom-color: #7E5B9A;
+        border-bottom-color: var(--fikasio-color-brand);
         color: var(--fikasio-white);
       }
     }

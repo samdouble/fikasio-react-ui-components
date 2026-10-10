@@ -1,6 +1,6 @@
 .fikasio-breadcrumb {
   font-family: var(--fikasio-font-family);
-  font-size: 14px;
+  font-size: var(--fikasio-font-size-sm);
 
   .fikasio-breadcrumb-list {
     align-items: center;
@@ -27,7 +27,7 @@
     color: #420076;
     cursor: pointer;
     font-family: var(--fikasio-font-family);
-    font-size: 14px;
+    font-size: var(--fikasio-font-size-sm);
     padding: 0;
     text-decoration: none;
 
@@ -51,7 +51,7 @@
 
   .fikasio-breadcrumb-current {
     color: var(--fikasio-dark-gray);
-    font-weight: 600;
+    font-weight: var(--fikasio-font-weight-semibold);
   }
 
   &.fikasio-theme-dark {
@@ -60,10 +60,10 @@
     }
 
     .fikasio-breadcrumb-link {
-      color: #7E5B9A;
+      color: var(--fikasio-color-brand);
 
       &:focus-visible {
-        outline-color: #7E5B9A;
+        outline-color: var(--fikasio-color-brand);
       }
     }
 

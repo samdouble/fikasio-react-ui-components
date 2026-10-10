@@ -1,4 +1,5 @@
 import './themes.css';
+import './applyFikasioStyles';
 
 export { AutosaveTextarea } from './AutosaveTextarea';
 export { Breadcrumb } from './Breadcrumb';

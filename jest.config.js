@@ -25,7 +25,11 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   moduleNameMapper: {
     "\\.(css)$": "<rootDir>/tests/__mocks__/styleMock.js",
+    "^@fikasio/styles$": "<rootDir>/node_modules/@fikasio/styles/dist/index.js",
   },
+  transformIgnorePatterns: [
+    "node_modules/(?!@fikasio/styles/)",
+  ],
   preset: "ts-jest",
   setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
   testEnvironment: "jsdom",
@@ -39,6 +43,16 @@ module.exports = {
           module: "commonjs",
           esModuleInterop: true,
           types: ["jest", "node"],
+        },
+      },
+    ],
+    "node_modules/@fikasio/styles/.+\\.js$": [
+      "ts-jest",
+      {
+        tsconfig: {
+          allowJs: true,
+          esModuleInterop: true,
+          module: "commonjs",
         },
       },
     ],
