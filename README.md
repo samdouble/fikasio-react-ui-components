@@ -52,28 +52,6 @@ A textarea that saves after a pause or when it loses focus. URLs in the text are
 
 It also accepts standard textarea attributes, such as `id`, `name`, and `aria-label`, and a ref.
 
-### AutosaveTextField
-
-A single-line text field that saves after a pause, when it loses focus, or when it unmounts with unsaved text. Set `multiline` to render a one-row textarea.
-
-#### Props
-
-| Name                    | Type            | Required        | Description                                     |
-|-------------------------|:----------------|:----------------|:------------------------------------------------|
-| autoFocus               | boolean         | No              | Focus the field and place the caret at the start |
-| className               | string          | No              | Additional CSS class name for the field         |
-| defaultValue            | string          | No              | Initial text. A new value is adopted while the field is not focused |
-| delay                   | number          | No              | Milliseconds to wait after typing before saving. Defaults to `1000` |
-| multiline               | boolean         | No              | Render a one-row textarea instead of an input   |
-| onBlur                  | function        | No              | Handler called when the field loses focus       |
-| onChange                | function        | No              | Handler called with the current text            |
-| onFocus                 | function        | No              | Handler called when the field gains focus       |
-| onKeyDown               | function        | No              | Handler called when a key is pressed            |
-| onKeyUp                 | function        | No              | Handler called when a key is released           |
-| onSave                  | function        | No              | Handler called with the text when it should be saved |
-| placeholder             | string          | No              | Placeholder text when the field is empty        |
-| style                   | CSSProperties   | No              | Additional CSS styles for the field             |
-
 ### AutosaveTextarea
 
 <img src="docs/screenshots/autosave-textarea.png" alt="AutosaveTextarea" width="480" />
@@ -267,18 +245,25 @@ Available names:
 
 <img src="docs/screenshots/input.png" alt="Input" width="360" />
 
+A single-line text field that saves after a pause, when it loses focus, or when it unmounts with unsaved text. Set `multiline` to render a one-row textarea.
+
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
-| className               | string          | No              | Additional CSS class name for the Input         |
-| defaultValue            | string          | No              | Initial value for uncontrolled input            |
-| disabled                | boolean         | No              | Whether the input is disabled                   |
-| name                    | string          | No              | Name attribute for the input                    |
-| onChange                | function        | No              | Handler called when input value changes         |
-| placeholder             | string          | No              | Placeholder text shown when input is empty      |
-| style                   | CSSProperties   | No              | Additional CSS styles for the Input             |
-| value                   | string          | No              | Controlled input value                          |
+| autoFocus               | boolean         | No              | Focus the field and place the caret at the start |
+| className               | string          | No              | Additional CSS class name for the field         |
+| defaultValue            | string          | No              | Initial text. A new value is adopted while the field is not focused |
+| delay                   | number          | No              | Milliseconds to wait after typing before saving. Defaults to `1000` |
+| multiline               | boolean         | No              | Render a one-row textarea instead of an input   |
+| onBlur                  | function        | No              | Handler called when the field loses focus       |
+| onChange                | function        | No              | Handler called with the current text            |
+| onFocus                 | function        | No              | Handler called when the field gains focus       |
+| onKeyDown               | function        | No              | Handler called when a key is pressed            |
+| onKeyUp                 | function        | No              | Handler called when a key is released           |
+| onSave                  | function        | No              | Handler called with the text when it should be saved |
+| placeholder             | string          | No              | Placeholder text when the field is empty        |
+| style                   | CSSProperties   | No              | Additional CSS styles for the field             |
 
 ### LoadingGif
 

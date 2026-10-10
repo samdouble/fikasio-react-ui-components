@@ -2,7 +2,6 @@ import './themes.css';
 import './applyFikasioStyles';
 
 export { AutosaveLinkifiedTextarea } from './AutosaveLinkifiedTextarea';
-export { AutosaveTextField } from './AutosaveTextField';
 export { AutosaveTextarea } from './AutosaveTextarea';
 export { Breadcrumb } from './Breadcrumb';
 export { Button } from './Button';
