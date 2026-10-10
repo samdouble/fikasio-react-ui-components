@@ -4,6 +4,7 @@ export { AutosaveTextarea } from './AutosaveTextarea';
 export { Breadcrumb } from './Breadcrumb';
 export { Button } from './Button';
 export { Checkbox } from './Checkbox';
+export { ClickOutside } from './ClickOutside';
 export { DatePicker } from './DatePicker';
 export { Dot } from './Dot';
 export { DropdownOptions } from './DropdownOptions';

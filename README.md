@@ -1,3 +1,5 @@
+# @fikasio/react-ui-components
+
 [![CI](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml/badge.svg)](https://github.com/samdouble/fikasio-react-ui-components/actions/workflows/checks.yml?branch=master)
 [![Coverage Status](https://coveralls.io/repos/samdouble/fikasio-react-ui-components/badge.svg?branch=master&service=github)](https://coveralls.io/github/samdouble/fikasio-react-ui-components?branch=master)
 [![Socket Badge](https://badge.socket.dev/npm/package/@fikasio/react-ui-components/latest)](https://badge.socket.dev/npm/package/@fikasio/react-ui-components/latest)
@@ -9,8 +11,6 @@
 [![Playwright](https://custom-icon-badges.demolab.com/badge/Playwright-2EAD33?logo=playwright&logoColor=fff)](https://playwright.dev/)
 [![Storybook](https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=fff)](https://storybook.js.org/)
 [![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff)](https://www.npmjs.com/)
-
-# @fikasio/react-ui-components
 
 ## Installation
 
@@ -92,6 +92,17 @@ import { Footer } from '@fikasio/react-ui-components';
 | name                    | string          | No             | Name attribute for the checkbox input           |
 | onClick                 | function        | No             | Click handler function for the checkbox         |
 | style                   | CSSProperties   | No             | Additional CSS styles for the Checkbox          |
+
+### ClickOutside
+
+Calls `onClickOutside` when a click or touch ends outside its children. A click that follows a touch is ignored so the handler runs once.
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| children                | ReactNode       | Yes             | Content that counts as inside                   |
+| onClickOutside          | function        | Yes             | Called with the outside click or touch event    |
 
 ### DatePicker
 
