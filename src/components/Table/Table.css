@@ -1,139 +1,64 @@
-.fikasio-table-wrapper {
-  display: block;
-  overflow-x: auto;
-  width: 100%;
+.fikasio-table-responsive {
   -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
 }
 
-.fikasio-table {
-  border: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
+.fikasio-content-table {
+  --fikasio-table-bg-state: transparent;
+  --fikasio-table-border-color: #dee2e6;
+  --fikasio-table-hover-bg: rgba(var(--bs-emphasis-color-rgb, 0, 0, 0), 0.075);
   border-collapse: collapse;
+  border-color: var(--fikasio-table-border-color);
+  color: var(--bs-emphasis-color, inherit);
   font-family: var(--fikasio-font-family);
-  table-layout: fixed;
+  margin-bottom: 1rem;
+  vertical-align: top;
   width: 100%;
 
-  thead {
-    tr {
-      background-color: #eeeeee;
+  :is(thead, tbody, tfoot, tr, td, th) {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+  }
+
+  > :not(caption) > * > * {
+    background-color: var(--bs-body-bg, #fff);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--fikasio-table-bg-state, transparent);
+    color: var(--bs-emphasis-color, inherit);
+    padding: 0.5rem;
+  }
+
+  > thead {
+    vertical-align: bottom;
+  }
+
+  > tbody {
+    vertical-align: inherit;
+  }
+
+  &.fikasio-content-table-bordered {
+    > :not(caption) > * {
+      border-width: 1px 0;
+    }
+
+    > :not(caption) > * > * {
+      border-width: 0 1px;
     }
   }
 
-  tbody {
-    tr {
-      border-bottom: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
-      transition: background-color 0.15s ease-in-out;
-
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.075);
-      }
-
-      td {
-        background-clip: padding-box;
-        background-color: var(--fikasio-white) !important;
-        border: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
-        padding: 0.5rem;
-        text-align: left;
-        vertical-align: middle;
-      }
-    }
-  }
-
-  thead tr,
-  tbody tr {
-    th {
-      background-color: inherit;
-      border: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
-      padding: 0.5rem;
-      text-align: left;
-
-      &.sortable-column {
-        cursor: pointer;
-      }
-    }
-  }
-
-  .sortable-column-buttons {
-    margin-left: 15px;
-    visibility: hidden;
-  }
-
-  .sortable-column:hover .sortable-column-buttons {
-    visibility: visible;
-  }
-
-  .itemStaticColumn-right {
-    position: -webkit-sticky;
-    position: sticky;
-    right: 0;
+  &.fikasio-content-table-hover > tbody > tr:hover > * {
+    --fikasio-table-bg-state: var(--fikasio-table-hover-bg);
   }
 
   &.fikasio-theme-dark {
-    border-color: var(--fikasio-dark-gray-lighter);
-    background-color: var(--fikasio-black-lighter);
+    --fikasio-table-border-color: var(--fikasio-dark-gray-lighter);
+    --fikasio-table-hover-bg: rgba(255, 255, 255, 0.08);
+    color: var(--fikasio-white);
 
-    thead {
-      tr {
-        background-color: var(--fikasio-dark-gray);
-      }
-    }
-
-    tbody {
-      tr {
-        border-bottom-color: var(--fikasio-dark-gray-lighter);
-
-        &:hover {
-          background-color: var(--fikasio-dark-gray);
-        }
-
-        td {
-          background-color: var(--fikasio-black-lighter) !important;
-          border-color: var(--fikasio-dark-gray-lighter);
-          color: var(--fikasio-white);
-        }
-      }
-    }
-
-    thead tr,
-    tbody tr {
-      th {
-        border-color: var(--fikasio-dark-gray-lighter);
-        color: var(--fikasio-white);
-      }
-    }
-  }
-
-  &.fikasio-theme-light {
-    border-color: var(--fikasio-light-gray);
-    background-color: var(--fikasio-white);
-
-    thead {
-      tr {
-        background-color: #eeeeee;
-      }
-    }
-
-    tbody {
-      tr {
-        border-bottom-color: var(--fikasio-light-gray);
-
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.075);
-        }
-
-        td {
-          background-color: var(--fikasio-white) !important;
-          border-color: var(--fikasio-light-gray);
-          color: var(--fikasio-dark-gray);
-        }
-      }
-    }
-
-    thead tr,
-    tbody tr {
-      th {
-        border-color: var(--fikasio-light-gray);
-        color: var(--fikasio-dark-gray);
-      }
+    > :not(caption) > * > * {
+      background-color: var(--fikasio-black-lighter);
+      color: var(--fikasio-white);
     }
   }
 }
