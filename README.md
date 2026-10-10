@@ -36,6 +36,44 @@ import { Footer } from '@fikasio/react-ui-components';
 
 ## Components
 
+### AutosaveLinkifiedTextarea
+
+A textarea that saves after a pause or when it loses focus. URLs in the text are shown as links until the field is edited.
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| onBlur                  | function        | No              | Handler called when the field loses focus       |
+| onChange                | function        | Yes             | Handler called with the change event            |
+| onFocus                 | function        | No              | Handler called when the field gains focus       |
+| onSave                  | function        | No              | Handler called with the text when it should be saved |
+| value                   | string          | No              | Controlled text content                         |
+
+It also accepts standard textarea attributes, such as `id`, `name`, and `aria-label`, and a ref.
+
+### AutosaveTextField
+
+A single-line text field that saves after a pause, when it loses focus, or when it unmounts with unsaved text. Set `multiline` to render a one-row textarea.
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| autoFocus               | boolean         | No              | Focus the field and place the caret at the start |
+| className               | string          | No              | Additional CSS class name for the field         |
+| defaultValue            | string          | No              | Initial text. A new value is adopted while the field is not focused |
+| delay                   | number          | No              | Milliseconds to wait after typing before saving. Defaults to `1000` |
+| multiline               | boolean         | No              | Render a one-row textarea instead of an input   |
+| onBlur                  | function        | No              | Handler called when the field loses focus       |
+| onChange                | function        | No              | Handler called with the current text            |
+| onFocus                 | function        | No              | Handler called when the field gains focus       |
+| onKeyDown               | function        | No              | Handler called when a key is pressed            |
+| onKeyUp                 | function        | No              | Handler called when a key is released           |
+| onSave                  | function        | No              | Handler called with the text when it should be saved |
+| placeholder             | string          | No              | Placeholder text when the field is empty        |
+| style                   | CSSProperties   | No              | Additional CSS styles for the field             |
+
 ### AutosaveTextarea
 
 <img src="docs/screenshots/autosave-textarea.png" alt="AutosaveTextarea" width="480" />
@@ -242,6 +280,10 @@ Available names:
 | style                   | CSSProperties   | No              | Additional CSS styles for the Input             |
 | value                   | string          | No              | Controlled input value                          |
 
+### LoadingGif
+
+Shows a loading image. It takes no props.
+
 ### SearchBar
 
 <img src="docs/screenshots/search-bar.png" alt="SearchBar" width="360" />
@@ -250,15 +292,23 @@ Available names:
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
+| ariaLabel               | string          | No              | Accessible name for the input                   |
+| autoComplete            | string          | No              | Autocomplete attribute for the input            |
 | className               | string          | No              | Additional CSS class name for the SearchBar     |
 | defaultValue            | string          | No              | Initial value for uncontrolled input            |
+| filterOptions           | boolean         | No              | Filter string options by the input. Defaults to true |
+| getOptionKey            | function        | No              | Stable key for an option                        |
 | onChange                | function        | No              | Handler called when input value changes         |
 | onSelect                | function        | No              | Handler called when an option is selected from the menu |
-| onSubmit                | function        | No              | Handler called when the Enter key is pressed    |
+| onSubmit                | function        | No              | Handler called when Enter is pressed without a highlighted option |
 | options                 | array           | No              | Suggestion options that will appear below       |
-| placeholder             | string          | No              | Placeholder text when textarea is empty         |
+| placeholder             | string          | No              | Placeholder text when the input is empty        |
+| renderOption            | function        | No              | Custom content for an option                    |
 | style                   | CSSProperties   | No              | Additional CSS styles for the SearchBar         |
+| type                    | string          | No              | Input type, `text` or `search`. Defaults to `text` |
 | value                   | string          | No              | Controlled input value                          |
+
+String options are filtered as you type. Pass objects with `renderOption`, and set `filterOptions` to false when the list is already filtered.
 
 ### Select
 
