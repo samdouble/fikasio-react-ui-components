@@ -1,8 +1,39 @@
 .fikasio-input {
+  appearance: none;
+  background-color: var(--fikasio-white);
+  border: var(--fikasio-border-width-thin) solid var(--fikasio-color-border-strong);
+  border-radius: var(--fikasio-radius-none);
+  box-sizing: border-box;
+  color: var(--fikasio-dark-gray);
+  display: block;
   font-family: var(--fikasio-font-family);
-}
-
-.fikasio-input .form-control:focus {
-  box-shadow: none;
+  font-size: var(--fikasio-font-size-sm);
+  height: 35px;
+  line-height: 21px;
+  margin: 0;
   outline: none;
+  padding: 6px 10px;
+  resize: none;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--fikasio-gray);
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  &.fikasio-theme-dark {
+    background-color: var(--fikasio-black-lighter);
+    border-color: var(--fikasio-dark-gray-lighter);
+    color: var(--fikasio-white);
+  }
+
+  &.fikasio-theme-light {
+    background-color: var(--fikasio-white);
+    border-color: var(--fikasio-color-border-strong);
+    color: var(--fikasio-dark-gray);
+  }
 }

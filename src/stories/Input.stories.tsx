@@ -6,6 +6,9 @@ const meta = {
   component: Input,
   argTypes: {
     className: { control: 'text' },
+    delay: { control: 'number' },
+    multiline: { control: 'boolean' },
+    placeholder: { control: 'text' },
     style: { control: 'object' },
   },
 } satisfies Meta<typeof Input>;
@@ -13,6 +16,18 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const InputUnchecked: Story = {
-  args: {},
+export const InputDefault: Story = {
+  args: {
+    defaultValue: 'Task name',
+    onSave: () => undefined,
+    placeholder: 'Name',
+  },
+};
+
+export const InputMultiline: Story = {
+  args: {
+    defaultValue: 'A short note',
+    multiline: true,
+    onSave: () => undefined,
+  },
 };

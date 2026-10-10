@@ -1,78 +1,131 @@
-import React, { useState } from 'react';
-import { borderWidth, colors, radius } from '@fikasio/styles';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
+import useAutosave from '../../hooks/useAutosave';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Input.css';
 
+type InputElement = HTMLInputElement | HTMLTextAreaElement;
+
 export interface InputProps {
+  autoFocus?: boolean;
   className?: string;
   defaultValue?: string;
-  disabled?: boolean;
-  name?: string;
+  delay?: number;
+  multiline?: boolean;
+  onBlur?: (event: React.FocusEvent<InputElement>) => void;
   onChange?: (value: string) => void;
+  onFocus?: (event: React.FocusEvent<InputElement>) => void;
+  onKeyDown?: (event: React.KeyboardEvent<InputElement>) => void;
+  onKeyUp?: (event: React.KeyboardEvent<InputElement>) => void;
+  onSave?: (value: string) => void;
   placeholder?: string;
   style?: React.CSSProperties;
-  value?: string;
 }
 
 export function Input({
-  className = '',
-  defaultValue = undefined,
-  disabled = false,
-  name = undefined,
-  onChange = () => undefined,
-  placeholder = undefined,
-  style = {},
-  value = undefined,
+  autoFocus = false,
+  className,
+  defaultValue = '',
+  delay = 1000,
+  multiline = false,
+  onBlur,
+  onChange,
+  onFocus,
+  onKeyDown,
+  onKeyUp,
+  onSave,
+  placeholder,
+  style,
 }: InputProps) {
-  const isControlled = typeof value !== 'undefined';
-  const hasDefaultValue = typeof defaultValue !== 'undefined';
-  const [internalValue, setInternalValue] = useState<string>(
-    hasDefaultValue ? defaultValue : '',
-  );
-  const currentValue = isControlled ? value : internalValue;
-
   const theme = useTheme();
+  const [value, setValue] = useState(defaultValue);
+  const fieldRef = useRef<InputElement>(null);
+  const {
+    adoptValue,
+    isFocusedRef,
+    onBlur: saveOnBlur,
+    onChange: saveOnChange,
+    onFocus: saveOnFocus,
+  } = useAutosave({
+    delay,
+    onSave,
+    value,
+  });
 
-  const handleChange = (newValue: string) => {
-    if (onChange) {
-      onChange(newValue);
+  useLayoutEffect(() => {
+    if (!autoFocus) {
+      return;
     }
-    if (!isControlled) {
-      setInternalValue(newValue);
+    const field = fieldRef.current;
+    if (!field) {
+      return;
     }
+    field.focus();
+    field.setSelectionRange(0, 0);
+  }, [autoFocus]);
+
+  useEffect(() => {
+    if (isFocusedRef.current) {
+      return;
+    }
+    setValue(defaultValue);
+    adoptValue(defaultValue);
+  }, [adoptValue, defaultValue, isFocusedRef]);
+
+  const handleChange = (nextValue: string) => {
+    saveOnChange(nextValue);
+    setValue(nextValue);
+    onChange?.(nextValue);
   };
 
-  return (
-    <div
-      className={classNames({
-        'fikasio-input': true,
-        'fikasio-theme-dark': theme === 'dark',
-        'fikasio-theme-light': theme === 'light',
-        ...convertClassNameToObj(className),
-      })}
-      style={{
-        border: `${borderWidth.thin}px solid ${colors.borderStrong}`,
-        ...style,
-      }}
-    >
-      <input
-        className="form-control"
-        disabled={disabled}
-        name={name}
-        onChange={e => handleChange(e.target.value)}
-        placeholder={placeholder}
-        style={{
-          border: 'none',
-          borderRadius: radius.none,
-          height: 36,
-          paddingLeft: 10,
-          width: '98%',
-        }}
-        value={currentValue}
+  const sharedProps = {
+    className: classNames({
+      'fikasio-input': true,
+      'fikasio-theme-dark': theme === 'dark',
+      'fikasio-theme-light': theme === 'light',
+      ...convertClassNameToObj(className),
+    }),
+    onBlur: (event: React.FocusEvent<InputElement>) => {
+      saveOnBlur();
+      onBlur?.(event);
+    },
+    onChange: (event: React.ChangeEvent<InputElement>) => {
+      handleChange(event.target.value);
+    },
+    onClick: (event: React.MouseEvent<InputElement>) => {
+      if (event.shiftKey) {
+        return;
+      }
+      event.stopPropagation();
+    },
+    onFocus: (event: React.FocusEvent<InputElement>) => {
+      saveOnFocus();
+      onFocus?.(event);
+    },
+    onKeyDown,
+    onKeyUp,
+    placeholder,
+    style,
+    value,
+  };
+
+  if (multiline) {
+    return (
+      <textarea
+        {...sharedProps}
+        ref={fieldRef as React.RefObject<HTMLTextAreaElement>}
+        rows={1}
       />
-    </div>
+    );
+  }
+
+  return (
+    <input
+      {...sharedProps}
+      ref={fieldRef as React.RefObject<HTMLInputElement>}
+      type="text"
+    />
   );
 }
 
