@@ -320,6 +320,21 @@ Available names:
 | style                   | CSSProperties   | No              | Additional CSS styles for the Tabs              |
 | value                   | string          | No              | Controlled selected tab value                   |
 
+### Table
+
+Renders the rows you pass as children. Set `responsive` to allow horizontal scrolling.
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| bordered                | boolean         | No              | Draw borders around cells                       |
+| children                | ReactNode       | No              | `thead` and `tbody` content                     |
+| className               | string          | No              | Additional CSS class name for the table         |
+| hover                   | boolean         | No              | Highlight a row when the pointer is over it     |
+| responsive              | boolean         | No              | Wrap the table so it can scroll horizontally    |
+| style                   | CSSProperties   | No              | Additional CSS styles for the table             |
+
 ### Warning
 
 <img src="docs/screenshots/warning.png" alt="Warning" width="420" />
