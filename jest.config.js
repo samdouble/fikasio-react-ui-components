@@ -25,6 +25,7 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   moduleNameMapper: {
     "\\.(css)$": "<rootDir>/tests/__mocks__/styleMock.js",
+    "\\.(gif|png|jpe?g|svg)$": "<rootDir>/tests/__mocks__/fileMock.js",
     "^@fikasio/styles$": "<rootDir>/node_modules/@fikasio/styles/dist/index.js",
   },
   transformIgnorePatterns: [

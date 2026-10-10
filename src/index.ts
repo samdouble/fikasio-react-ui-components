@@ -1,6 +1,8 @@
 import './themes.css';
 import './applyFikasioStyles';
 
+export { AutosaveLinkifiedTextarea } from './AutosaveLinkifiedTextarea';
+export { AutosaveTextField } from './AutosaveTextField';
 export { AutosaveTextarea } from './AutosaveTextarea';
 export { Breadcrumb } from './Breadcrumb';
 export { Button } from './Button';
@@ -14,6 +16,7 @@ export { Footer } from './Footer';
 export { Icon } from './Icon';
 export { ArchiveIcon, BarsIcon, BellIcon, BookIcon, BullseyeIcon, CaretLeftIcon, CaretRightIcon, CalendarAltIcon, CheckIcon, CheckSquareIcon, ClockIcon, CogIcon, CopyIcon, DownloadIcon, EditIcon, ListIcon, MessageIcon, PlusIcon, PowerOffIcon, ProjectDiagramIcon, ShapesIcon, SitemapIcon, SlidersIcon, StopwatchIcon, ThIcon, TimesIcon, UserIcon } from './icons';
 export { Input } from './Input';
+export { LoadingGif } from './LoadingGif';
 export { Select } from './Select';
 export { Selector } from './Selector';
 export { SearchBar } from './SearchBar';
