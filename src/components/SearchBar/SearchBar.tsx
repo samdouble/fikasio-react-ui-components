@@ -5,31 +5,43 @@ import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './SearchBar.css';
 
-const EMPTY_OPTIONS: string[] = [];
+const EMPTY_OPTIONS: never[] = [];
 
-export interface SearchBarProps {
+export interface SearchBarProps<Option = string> {
+  ariaLabel?: string;
+  autoComplete?: string;
   className?: string;
   defaultValue?: string;
+  filterOptions?: boolean;
+  getOptionKey?: (option: Option, index: number) => string;
   onChange?: (value: string) => void;
-  onSelect?: (value: string) => void;
+  onSelect?: (option: Option) => void;
   onSubmit?: () => void;
-  options?: string[];
+  options?: Option[];
   placeholder?: string;
+  renderOption?: (option: Option) => React.ReactNode;
   style?: React.CSSProperties;
+  type?: 'search' | 'text';
   value?: string;
 }
 
-export function SearchBar({
+export function SearchBar<Option = string>({
+  ariaLabel = undefined,
+  autoComplete = undefined,
   className = '',
   defaultValue = undefined,
+  filterOptions = true,
+  getOptionKey = undefined,
   onChange = () => undefined,
   onSelect = () => undefined,
   onSubmit = () => undefined,
-  options = EMPTY_OPTIONS,
+  options = EMPTY_OPTIONS as Option[],
   placeholder = '',
+  renderOption = undefined,
   style = {},
+  type = 'text',
   value = undefined,
-}: SearchBarProps) {
+}: SearchBarProps<Option>) {
   const isControlled = typeof value !== 'undefined';
   const hasDefaultValue = typeof defaultValue !== 'undefined';
   const [internalValue, setInternalValue] = useState<string | undefined>(
@@ -45,13 +57,14 @@ export function SearchBar({
   const containerRef = useRef<HTMLDivElement>(null);
 
   const filteredOptions = useMemo(() => {
-    if (currentValue === undefined || currentValue === '') {
+    if (!filterOptions || currentValue === undefined || currentValue === '') {
       return options;
     }
-    return options.filter(option =>
-      option.toLowerCase().includes(currentValue.toLowerCase()),
-    );
-  }, [currentValue, options]);
+    const query = currentValue.toLowerCase();
+    return options.filter(option => (
+      typeof option === 'string' && option.toLowerCase().includes(query)
+    ));
+  }, [currentValue, filterOptions, options]);
 
   const [prevFilteredOptions, setPrevFilteredOptions] = useState(filteredOptions);
 
@@ -80,10 +93,10 @@ export function SearchBar({
     setIsOpen(true);
   };
 
-  const handleSelect = (selectedValue: string) => {
-    onSelect(selectedValue);
-    if (!isControlled) {
-      setInternalValue(selectedValue);
+  const handleSelect = (selectedOption: Option) => {
+    onSelect(selectedOption);
+    if (!isControlled && typeof selectedOption === 'string') {
+      setInternalValue(selectedOption);
     }
     setIsOpen(false);
     setHighlightedIndex(null);
@@ -141,6 +154,8 @@ export function SearchBar({
       if (highlightedIndex !== null && highlightedIndex < filteredOptions.length) {
         handleSelect(filteredOptions[highlightedIndex]);
       } else {
+        setIsOpen(false);
+        setHighlightedIndex(null);
         onSubmit();
       }
     } else if (e.key === 'Escape') {
@@ -174,7 +189,9 @@ export function SearchBar({
       <div className="fikasio-searchbar-input-wrapper">
         <input
           ref={inputRef}
-          type="text"
+          aria-label={ariaLabel}
+          autoComplete={autoComplete}
+          type={type}
           className="fikasio-searchbar-input"
           placeholder={placeholder}
           value={currentValue ?? ''}
@@ -191,7 +208,7 @@ export function SearchBar({
         <div ref={dropdownRef} className="fikasio-searchbar-dropdown" role="listbox">
           {filteredOptions.map((option, index) => (
             <div
-              key={option}
+              key={getOptionKey ? getOptionKey(option, index) : String(option)}
               className={classNames('fikasio-searchbar-option', {
                 'fikasio-searchbar-option-highlighted': index === highlightedIndex,
               })}
@@ -207,7 +224,7 @@ export function SearchBar({
               aria-selected={index === highlightedIndex}
               tabIndex={-1}
             >
-              {option}
+              {renderOption ? renderOption(option) : String(option)}
             </div>
           ))}
         </div>

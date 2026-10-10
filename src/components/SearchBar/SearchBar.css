@@ -51,16 +51,30 @@
   }
 
   .fikasio-searchbar-option {
+    align-items: center;
     color: var(--fikasio-dark-gray);
     cursor: pointer;
+    display: flex;
     font-family: var(--fikasio-font-family);
     font-size: var(--fikasio-font-size-sm);
+    gap: 8px;
     padding: 5px 12px;
 
     &:hover,
     &.fikasio-searchbar-option-highlighted {
       background-color: var(--fikasio-light-gray);
     }
+  }
+
+  .fikasio-searchbar-option-icon {
+    color: var(--fikasio-gray);
+    flex-shrink: 0;
+  }
+
+  .fikasio-searchbar-option-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &.fikasio-theme-dark {
