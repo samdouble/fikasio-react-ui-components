@@ -1,0 +1,19 @@
+.fikasio-linkified-textarea-preview {
+  cursor: text;
+  height: auto;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.fikasio-linkified-textarea-plain {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  display: block;
+  font: inherit;
+  outline: none;
+  padding: 0;
+  resize: vertical;
+  width: 100%;
+}
