@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { borderWidth, colors, radius } from '@fikasio/styles';
 import classNames from 'classnames';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
@@ -52,7 +53,7 @@ export function Input({
         ...convertClassNameToObj(className),
       })}
       style={{
-        border: '1px solid #cccccc',
+        border: `${borderWidth.thin}px solid ${colors.borderStrong}`,
         ...style,
       }}
     >
@@ -64,7 +65,7 @@ export function Input({
         placeholder={placeholder}
         style={{
           border: 'none',
-          borderRadius: 0,
+          borderRadius: radius.none,
           height: 36,
           paddingLeft: 10,
           width: '98%',

@@ -6,7 +6,7 @@
 }
 
 .fikasio-table {
-  border: 1px solid var(--fikasio-light-gray);
+  border: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
   border-collapse: collapse;
   font-family: var(--fikasio-font-family);
   table-layout: fixed;
@@ -20,7 +20,7 @@
 
   tbody {
     tr {
-      border-bottom: 1px solid var(--fikasio-light-gray);
+      border-bottom: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
       transition: background-color 0.15s ease-in-out;
 
       &:hover {
@@ -30,7 +30,7 @@
       td {
         background-clip: padding-box;
         background-color: var(--fikasio-white) !important;
-        border: 1px solid var(--fikasio-light-gray);
+        border: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
         padding: 0.5rem;
         text-align: left;
         vertical-align: middle;
@@ -42,7 +42,7 @@
   tbody tr {
     th {
       background-color: inherit;
-      border: 1px solid var(--fikasio-light-gray);
+      border: var(--fikasio-border-width-thin) solid var(--fikasio-light-gray);
       padding: 0.5rem;
       text-align: left;
 

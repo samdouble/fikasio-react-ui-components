@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { borderWidth, colors } from '@fikasio/styles';
 import classNames from 'classnames';
 import { CheckIcon, SquareIcon } from '../../icons';
 import useTheme from '../../hooks/useTheme';
@@ -71,7 +72,7 @@ export function Checkbox({
           <CheckIcon
             size="lg"
             style={{
-              border: '1px solid #7E5B9A',
+              border: `${borderWidth.thin}px solid ${colors.brand}`,
               color: '#420076',
               width: 20,
             }}
@@ -80,8 +81,8 @@ export function Checkbox({
           <SquareIcon
             size="lg"
             style={{
-              border: '1px solid #7E5B9A',
-              color: '#ffffff',
+              border: `${borderWidth.thin}px solid ${colors.brand}`,
+              color: colors.white,
               width: 20,
             }}
           />

@@ -29,6 +29,7 @@
     "test-screenshots": "playwright test -c playwright-docs.config.ts"
   },
   "dependencies": {
+    "@fikasio/styles": "^0.1.0",
     "classnames": "^2.3.2",
     "date-fns": "^4.4.0",
     "fast-deep-equal": "^3.1.3",
