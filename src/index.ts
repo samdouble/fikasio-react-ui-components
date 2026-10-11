@@ -9,7 +9,6 @@ export { Checkbox } from './Checkbox';
 export { ClickOutside } from './ClickOutside';
 export { DatePicker } from './DatePicker';
 export { Dot } from './Dot';
-export { DropdownOptions } from './DropdownOptions';
 export { Error } from './Error';
 export { Footer } from './Footer';
 export { Icon } from './Icon';
