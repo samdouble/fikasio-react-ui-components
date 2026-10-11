@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import AutosaveLinkifiedTextarea from '../components/AutosaveLinkifiedTextarea/AutosaveLinkifiedTextarea';
 
@@ -20,10 +20,12 @@ function AutosaveLinkifiedTextareaStory({
   ...args
 }: React.ComponentProps<typeof AutosaveLinkifiedTextarea>) {
   const [text, setText] = useState(value);
+  const [previousValue, setPreviousValue] = useState(value);
 
-  useEffect(() => {
+  if (value !== previousValue) {
+    setPreviousValue(value);
     setText(value);
-  }, [value]);
+  }
 
   return (
     <AutosaveLinkifiedTextarea
