@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.0.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.4.1...v3.0.0) (2026-10-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **DropdownOptions:** removed component
+* **AutosaveTextarea:** remove component and name it Input instead
+* **Table:** make componentmuch simpler by removing most props linked to content
+
+### Features
+
+* **AutosaveLinkifiedTextarea:** added component ([b73a7f0](https://github.com/samdouble/fikasio-react-ui-components/commit/b73a7f0228a585504971b3e2fcf67c2a23e33cee))
+* **AutosaveTextarea:** remove component and name it Input instead ([f97dc39](https://github.com/samdouble/fikasio-react-ui-components/commit/f97dc39091fc43037547aefe31c57a26f239c547))
+* **AutosaveTextField:** added component ([e4d855a](https://github.com/samdouble/fikasio-react-ui-components/commit/e4d855a688f777cee5a0c4d349999bb255043731))
+* **ClickOutside:** added component ([c0bc3c8](https://github.com/samdouble/fikasio-react-ui-components/commit/c0bc3c8f28de555543eb4c66184c0bd416537e0f))
+* **DropdownOptions:** removed component ([a0a8ef6](https://github.com/samdouble/fikasio-react-ui-components/commit/a0a8ef6764c7640e35b6a5b79bb47619a433c380))
+* **LoadingGif:** added component ([06fd5fa](https://github.com/samdouble/fikasio-react-ui-components/commit/06fd5fac74dfdb87939f7b69b70c8e648f6e29c7))
+* **SearchBar:** improved styles ([f514b42](https://github.com/samdouble/fikasio-react-ui-components/commit/f514b4209b87268ec4562744e3f26f26cf4958c5))
+* **Table:** make componentmuch simpler by removing most props linked to content ([73633ef](https://github.com/samdouble/fikasio-react-ui-components/commit/73633efe00275209e1c3e110e763c304eb34715f))
+
 ## [2.4.1](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.4.0...v2.4.1) (2026-09-18)
 
 
