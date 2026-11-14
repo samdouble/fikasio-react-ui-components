@@ -34,66 +34,13 @@ Import components from the package in your React application, for example:
 import { Footer } from '@fikasio/react-ui-components';
 ```
 
-## Upgrade notes
-
-### v3 to v4
-
-`ClickOutside` is removed. Call `useClickOutside` with a ref for the element that counts as inside.
-
-v3:
-
-```
-import { ClickOutside } from '@fikasio/react-ui-components';
-
-function Panel({ onClose }) {
-  return (
-    <ClickOutside onClickOutside={onClose}>
-      <div>Panel</div>
-    </ClickOutside>
-  );
-}
-```
-
-v4:
-
-```
-import { useRef } from 'react';
-import { useClickOutside } from '@fikasio/react-ui-components';
-
-function Panel({ onClose }) {
-  const ref = useRef(null);
-  useClickOutside(ref, onClose);
-
-  return <div ref={ref}>Panel</div>;
-}
-```
-
-Put the ref on the element that counts as inside. `onClickOutside` is called with the outside click or touch event. A click that follows a touch is ignored, so the handler runs once.
-
 ## Components
-
-### AutosaveLinkifiedTextarea
-
-A textarea that saves after a pause or when it loses focus. URLs in the text are shown as links until the field is edited.
-
-#### Props
-
-| Name                    | Type            | Required        | Description                                     |
-|-------------------------|:----------------|:----------------|:------------------------------------------------|
-| autoResize              | boolean         | No              | Grow and shrink the field to fit its content    |
-| maxRows                 | number          | No              | Most rows before the field scrolls               |
-| minRows                 | number          | No              | Fewest rows. The field grows from this height    |
-| onBlur                  | function        | No              | Handler called when the field loses focus       |
-| onChange                | function        | Yes             | Handler called with the change event            |
-| onFocus                 | function        | No              | Handler called when the field gains focus       |
-| onSave                  | function        | No              | Handler called with the text when it should be saved |
-| value                   | string          | No              | Controlled text content                         |
-
-It also accepts standard textarea attributes, such as `id`, `name`, and `aria-label`, and a ref.
 
 ### AutosaveTextarea
 
 <img src="docs/screenshots/autosave-textarea.png" alt="AutosaveTextarea" width="480" />
+
+Saves after a pause or when the field loses focus. Set `linkify` to show URLs as links until the field is edited. `onChange` is called with the text.
 
 #### Props
 
@@ -104,11 +51,15 @@ It also accepts standard textarea attributes, such as `id`, `name`, and `aria-la
 | minRows                 | number          | No              | Fewest rows. The field grows from this height    |
 | className               | string          | No              | Additional CSS class name for the textarea      |
 | defaultValue            | string          | No              | Initial text content of the textarea            |
+| linkify                 | boolean         | No              | Show URLs as links until the field is edited    |
 | name                    | string          | No              | Name attribute for the textarea input           |
+| onChange                | function        | No              | Handler called with the text                    |
 | onSave                  | function        | No              | Handler called when content should be saved     |
 | placeholder             | string          | No              | Placeholder text when textarea is empty         |
 | style                   | CSSProperties   | No              | Additional CSS styles for the textarea          |
 | value                   | string          | No              | Controlled text content value                   |
+
+With `linkify`, it also accepts standard textarea attributes, such as `id`, `placeholder`, and `aria-label`, and a ref.
 
 ### Breadcrumb
 
@@ -475,6 +426,83 @@ const theme = useTheme();
 
 The current theme: `'light'` or `'dark'`.
 
-## Development
 
-See DEVELOPMENT.md.
+## Upgrade notes
+
+### v3 to v4
+
+- `AutosaveLinkifiedTextarea` is removed. Use `AutosaveTextarea` with `linkify`. `onChange` is called with the text.
+- `ClickOutside` is removed. Call `useClickOutside` with a ref for the element that counts as inside.
+
+#### `AutosaveLinkifiedTextarea` is removed. Use `AutosaveTextarea` with `linkify`. `onChange` is called with the text.
+
+v3:
+
+```
+import { useState } from 'react';
+import { AutosaveLinkifiedTextarea } from '@fikasio/react-ui-components';
+
+function Notes({ onSave }) {
+  const [value, setValue] = useState('See https://fikas.io/docs');
+
+  return (
+    <AutosaveLinkifiedTextarea
+      onChange={event => setValue(event.target.value)}
+      onSave={onSave}
+      value={value}
+    />
+  );
+}
+```
+
+v4:
+
+```
+import { useState } from 'react';
+import { AutosaveTextarea } from '@fikasio/react-ui-components';
+
+function Notes({ onSave }) {
+  const [value, setValue] = useState('See https://fikas.io/docs');
+
+  return (
+    <AutosaveTextarea
+      linkify
+      onChange={setValue}
+      onSave={onSave}
+      value={value}
+    />
+  );
+}
+```
+
+#### `ClickOutside` is removed. Call `useClickOutside` with a ref for the element that counts as inside.
+
+v3:
+
+```
+import { ClickOutside } from '@fikasio/react-ui-components';
+
+function Panel({ onClose }) {
+  return (
+    <ClickOutside onClickOutside={onClose}>
+      <div>Panel</div>
+    </ClickOutside>
+  );
+}
+```
+
+v4:
+
+```
+import { useRef } from 'react';
+import { useClickOutside } from '@fikasio/react-ui-components';
+
+function Panel({ onClose }) {
+  const ref = useRef(null);
+  useClickOutside(ref, onClose);
+
+  return <div ref={ref}>Panel</div>;
+}
+```
+
+Put the ref on the element that counts as inside. `onClickOutside` is called with the outside click or touch event. A click that follows a touch is ignored, so the handler runs once.
