@@ -37,6 +37,7 @@ const meta = {
         'stopwatch',
         'th',
         'times',
+        'trash',
         'user',
       ],
     },
@@ -216,6 +217,12 @@ export const Th: Story = {
 export const Times: Story = {
   args: {
     name: 'times',
+  },
+};
+
+export const Trash: Story = {
+  args: {
+    name: 'trash',
   },
 };
 

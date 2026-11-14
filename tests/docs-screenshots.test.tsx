@@ -48,6 +48,7 @@ const README_ICON_NAMES = [
   'stopwatch',
   'th',
   'times',
+  'trash',
   'user',
 ] as const;
 

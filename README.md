@@ -261,6 +261,7 @@ Available names:
 - `stopwatch`
 - `th`
 - `times`
+- `trash`
 - `user`
 
 #### Props
