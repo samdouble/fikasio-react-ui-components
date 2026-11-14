@@ -16,6 +16,7 @@ import {
   Selector,
   Success,
   Tabs,
+  UserAvatar,
   Warning,
 } from '../src';
 
@@ -289,6 +290,19 @@ test.describe('README screenshots', () => {
       </div>
     );
     await expect(component).toHaveScreenshot('tabs.png');
+  });
+
+  test('UserAvatar', async ({ mount }) => {
+    const component = await mount(
+      <div style={frameStyle()}>
+        <div style={{ alignItems: 'center', display: 'flex', gap: 16 }}>
+          <UserAvatar size={32} />
+          <UserAvatar size={48} />
+          <UserAvatar size={72} />
+        </div>
+      </div>
+    );
+    await expect(component).toHaveScreenshot('user-avatar.png');
   });
 
   test('Warning', async ({ mount }) => {

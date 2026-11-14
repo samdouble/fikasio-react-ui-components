@@ -356,6 +356,23 @@ Renders the rows you pass as children. Set `responsive` to allow horizontal scro
 | responsive              | boolean         | No              | Wrap the table so it can scroll horizontally    |
 | style                   | CSSProperties   | No              | Additional CSS styles for the table             |
 
+### UserAvatar
+
+<img src="docs/screenshots/user-avatar.png" alt="UserAvatar" width="240" />
+
+A circular profile image. When `src` is missing or fails to load, a default image is shown. `previewSrc` replaces `src`, for example while a new picture is chosen and not yet saved.
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| alt                     | string          | No              | Accessible name for the image. Defaults to `User profile` |
+| className               | string          | No              | Additional CSS class name for the image         |
+| previewSrc              | string          | No              | Image shown instead of `src`                    |
+| size                    | number          | No              | Width and height in pixels. Defaults to `32`    |
+| src                     | string          | No              | Profile image URL                               |
+| style                   | CSSProperties   | No              | Additional CSS styles for the image             |
+
 ### Warning
 
 <img src="docs/screenshots/warning.png" alt="Warning" width="420" />

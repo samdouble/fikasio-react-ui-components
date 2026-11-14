@@ -19,6 +19,7 @@ export { SearchBar } from './SearchBar';
 export { Success } from './Success';
 export { Table } from './Table';
 export { Tabs } from './Tabs';
+export { UserAvatar } from './UserAvatar';
 export { Warning } from './Warning';
 export { useClickOutside } from './useClickOutside';
 export { useTheme } from './useTheme';
