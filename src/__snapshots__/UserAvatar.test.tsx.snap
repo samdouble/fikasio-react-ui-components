@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`UserAvatar Renders correctly 1`] = `
+<body>
+  <div>
+    <img
+      alt="User profile"
+      class="fikasio-user-avatar fikasio-theme-light"
+      height="32"
+      src="test-file-stub"
+      width="32"
+    />
+  </div>
+</body>
+`;
