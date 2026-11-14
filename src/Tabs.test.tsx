@@ -1,4 +1,5 @@
 import React from 'react';
+import { describe, it, expect, jest } from '@jest/globals';
 import { fireEvent, render } from '@testing-library/react';
 import { Tabs } from '.';
 

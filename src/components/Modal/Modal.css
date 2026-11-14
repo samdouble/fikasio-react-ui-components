@@ -1,0 +1,190 @@
+.fikasio-modal {
+  inset: 0;
+  position: fixed;
+  z-index: 1000;
+}
+
+.fikasio-modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.45);
+  border: 0;
+  cursor: pointer;
+  display: block;
+  inset: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.fikasio-modal-backdrop-static {
+  cursor: default;
+}
+
+.fikasio-modal-dialog {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 1.5rem;
+  pointer-events: none;
+  position: absolute;
+}
+
+.fikasio-modal-content {
+  background-color: var(--fikasio-white);
+  border: var(--fikasio-border-width-thin) solid var(--fikasio-color-border-strong);
+  box-sizing: border-box;
+  color: var(--fikasio-dark-gray);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fikasio-font-family);
+  font-size: var(--fikasio-font-size-sm);
+  max-height: calc(100vh - 3rem);
+  max-width: 32rem;
+  outline: none;
+  pointer-events: auto;
+  width: 100%;
+
+  &.fikasio-theme-dark.fikasio-modal-default {
+    background-color: var(--fikasio-black-lighter);
+    border-color: var(--fikasio-dark-gray-lighter);
+    color: var(--fikasio-white);
+  }
+}
+
+.fikasio-modal-sm .fikasio-modal-content {
+  max-width: 20rem;
+}
+
+.fikasio-modal-lg .fikasio-modal-content {
+  max-width: 50rem;
+}
+
+.fikasio-modal-xl .fikasio-modal-content {
+  max-width: 72rem;
+}
+
+.fikasio-modal-header {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem 1rem 0;
+}
+
+.fikasio-modal-default .fikasio-modal-header {
+  border-bottom: var(--fikasio-border-width-thin) solid var(--fikasio-color-border);
+  padding-bottom: 0.75rem;
+}
+
+.fikasio-modal-content.fikasio-theme-dark.fikasio-modal-default .fikasio-modal-header,
+.fikasio-modal-content.fikasio-theme-dark.fikasio-modal-default .fikasio-modal-footer {
+  border-color: var(--fikasio-dark-gray-lighter);
+}
+
+.fikasio-modal-title {
+  font-size: var(--fikasio-font-size-section);
+  font-weight: var(--fikasio-font-weight-semibold);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.fikasio-modal-close.fikasio-actionbutton {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 2rem;
+  justify-content: center;
+  margin-left: auto;
+  opacity: 0.7;
+  padding: 0;
+  width: 2rem;
+
+  &:hover {
+    background: transparent;
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+.fikasio-modal-body {
+  /* Fixed leading. `normal` follows font metrics and changes the dialog height between macOS and Linux. */
+  line-height: calc(1em + 2px);
+  overflow: auto;
+  padding: 1rem;
+}
+
+.fikasio-modal-footer {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding: 0 1rem 1rem;
+}
+
+.fikasio-modal-default .fikasio-modal-footer {
+  border-top: var(--fikasio-border-width-thin) solid var(--fikasio-color-border);
+  padding-top: 0.75rem;
+}
+
+.fikasio-modal-content:not(.fikasio-modal-default) a {
+  color: inherit;
+  font-weight: var(--fikasio-font-weight-semibold);
+}
+
+.fikasio-modal-primary {
+  background-color: #d3e7ff;
+  border-color: #a8d0ff;
+  color: #08478f;
+}
+
+.fikasio-modal-secondary {
+  background-color: #e8e8e8;
+  border-color: #d2d2d2;
+  color: #333333;
+}
+
+.fikasio-modal-success {
+  background-color: rgb(177, 233, 164);
+  border-color: rgb(138, 212, 122);
+  color: rgb(35, 87, 17);
+}
+
+.fikasio-modal-danger {
+  background-color: rgb(251, 153, 142);
+  border-color: rgb(251, 126, 112);
+  color: rgb(120, 20, 20);
+}
+
+.fikasio-modal-warning {
+  background-color: rgb(235, 217, 155);
+  border-color: rgb(223, 207, 148);
+  color: rgb(122, 83, 22);
+}
+
+.fikasio-modal-info {
+  background-color: #d2f4f4;
+  border-color: #a5e4e4;
+  color: #0d5c5c;
+}
+
+.fikasio-modal-light {
+  background-color: #f7f7f7;
+  border-color: #e0e0e0;
+  color: #333333;
+}
+
+.fikasio-modal-dark {
+  background-color: #333333;
+  border-color: #222222;
+  color: #ffffff;
+}

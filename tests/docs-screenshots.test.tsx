@@ -11,6 +11,7 @@ import {
   Footer,
   Icon,
   Input,
+  Modal,
   SearchBar,
   Select,
   Selector,
@@ -211,6 +212,20 @@ test.describe('README screenshots', () => {
       </div>
     );
     await expect(component).toHaveScreenshot('input.png');
+  });
+
+  test('Modal', async ({ mount, page }) => {
+    await page.setViewportSize({ width: 640, height: 360 });
+    await mount(
+      <Modal
+        isOpen
+        title="Check the form"
+        variant="warning"
+      >
+        A few fields still need attention before you can save.
+      </Modal>,
+    );
+    await expect(page).toHaveScreenshot('modal.png');
   });
 
   test('SearchBar', async ({ mount }) => {
