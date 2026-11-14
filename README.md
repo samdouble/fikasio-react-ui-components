@@ -45,6 +45,8 @@ A textarea that saves after a pause or when it loses focus. URLs in the text are
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
 | autoResize              | boolean         | No              | Grow and shrink the field to fit its content    |
+| maxRows                 | number          | No              | Most rows before the field scrolls               |
+| minRows                 | number          | No              | Fewest rows. The field grows from this height    |
 | onBlur                  | function        | No              | Handler called when the field loses focus       |
 | onChange                | function        | Yes             | Handler called with the change event            |
 | onFocus                 | function        | No              | Handler called when the field gains focus       |
@@ -62,6 +64,8 @@ It also accepts standard textarea attributes, such as `id`, `name`, and `aria-la
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
 | autoResize              | boolean         | No              | Grow and shrink the field to fit its content    |
+| maxRows                 | number          | No              | Most rows before the field scrolls               |
+| minRows                 | number          | No              | Fewest rows. The field grows from this height    |
 | className               | string          | No              | Additional CSS class name for the textarea      |
 | defaultValue            | string          | No              | Initial text content of the textarea            |
 | name                    | string          | No              | Name attribute for the textarea input           |
@@ -247,7 +251,7 @@ Available names:
 
 <img src="docs/screenshots/input.png" alt="Input" width="360" />
 
-A single-line text field that saves after a pause, when it loses focus, or when it unmounts with unsaved text. Set `multiline` to render a one-row textarea. Set `autoResize` with `multiline` to grow and shrink that textarea with its content.
+A single-line text field that saves after a pause, when it loses focus, or when it unmounts with unsaved text. Set `multiline` to render a one-row textarea. Set `autoResize` with `multiline` to grow and shrink that textarea with its content. `minRows` and `maxRows` keep that height between a minimum and a scrolling maximum.
 
 #### Props
 
@@ -258,6 +262,8 @@ A single-line text field that saves after a pause, when it loses focus, or when 
 | className               | string          | No              | Additional CSS class name for the field         |
 | defaultValue            | string          | No              | Initial text. A new value is adopted while the field is not focused |
 | delay                   | number          | No              | Milliseconds to wait after typing before saving. Defaults to `1000` |
+| maxRows                 | number          | No              | With `multiline`, most rows before the field scrolls |
+| minRows                 | number          | No              | With `multiline`, fewest rows. The field grows from this height |
 | multiline               | boolean         | No              | Render a one-row textarea instead of an input   |
 | onBlur                  | function        | No              | Handler called when the field loses focus       |
 | onChange                | function        | No              | Handler called with the current text            |

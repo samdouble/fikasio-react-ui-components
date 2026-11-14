@@ -14,6 +14,8 @@ export interface InputProps {
   className?: string;
   defaultValue?: string;
   delay?: number;
+  maxRows?: number;
+  minRows?: number;
   multiline?: boolean;
   onBlur?: (event: React.FocusEvent<InputElement>) => void;
   onChange?: (value: string) => void;
@@ -31,6 +33,8 @@ export function Input({
   className,
   defaultValue = '',
   delay = 1000,
+  maxRows,
+  minRows,
   multiline = false,
   onBlur,
   onChange,
@@ -44,10 +48,12 @@ export function Input({
   const theme = useTheme();
   const [value, setValue] = useState(defaultValue);
   const fieldRef = useRef<InputElement>(null);
-  const shouldAutoResize = multiline && autoResize;
+  const shouldAutoResize = multiline && (autoResize || minRows != null || maxRows != null);
   const { setRef: setAutoResizeRef, style: autoSizeStyle } = useAutoResize<InputElement>(
     shouldAutoResize,
     value,
+    minRows,
+    maxRows,
   );
   const assignRef = useCallback((node: InputElement | null) => {
     fieldRef.current = node;
@@ -131,7 +137,7 @@ export function Input({
       <textarea
         {...sharedProps}
         ref={assignRef}
-        rows={1}
+        rows={minRows ?? 1}
       />
     );
   }

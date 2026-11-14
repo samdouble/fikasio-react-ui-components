@@ -9,6 +9,8 @@ import './LinkifiedTextarea.css';
 
 export type LinkifiedTextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   autoResize?: boolean;
+  maxRows?: number;
+  minRows?: number;
   plain?: boolean;
 };
 
@@ -18,6 +20,8 @@ const LinkifiedTextarea = React.forwardRef<HTMLTextAreaElement, LinkifiedTextare
   autoResize = false,
   className = '',
   id,
+  maxRows,
+  minRows,
   onBlur,
   plain = false,
   rows,
@@ -31,10 +35,12 @@ const LinkifiedTextarea = React.forwardRef<HTMLTextAreaElement, LinkifiedTextare
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const shouldFocusRef = useRef(false);
   const theme = useTheme();
-  const showField = isEditing || !hasLink;
-  const { setRef: setAutoResizeRef, style: autoSizeStyle } = useAutoResize<HTMLTextAreaElement>(
-    autoResize && showField,
+  const shouldAutoResize = autoResize || minRows != null || maxRows != null;
+  const { setRef: setAutoResizeRef, style: autoSizeStyle } = useAutoResize<HTMLElement>(
+    shouldAutoResize,
     text,
+    minRows,
+    maxRows,
   );
 
   const setTextareaRef = useCallback((node: HTMLTextAreaElement | null) => {
@@ -80,7 +86,9 @@ const LinkifiedTextarea = React.forwardRef<HTMLTextAreaElement, LinkifiedTextare
       <div
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
-        className={classNames(fieldClassName, 'fikasio-linkified-textarea-preview')}
+        className={classNames(fieldClassName, 'fikasio-linkified-textarea-preview', {
+          'fikasio-autosize': shouldAutoResize,
+        })}
         id={id}
         onClick={event => {
           if ((event.target as HTMLElement).closest('a')) {
@@ -98,6 +106,8 @@ const LinkifiedTextarea = React.forwardRef<HTMLTextAreaElement, LinkifiedTextare
           }
         }}
         role="textbox"
+        ref={setAutoResizeRef}
+        style={shouldAutoResize ? autoSizeStyle : undefined}
         tabIndex={0}
       >
         <LinkifiedText text={text} />
@@ -111,7 +121,7 @@ const LinkifiedTextarea = React.forwardRef<HTMLTextAreaElement, LinkifiedTextare
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
       className={classNames(fieldClassName, {
-        'fikasio-autosize': autoResize,
+        'fikasio-autosize': shouldAutoResize,
       })}
       id={id}
       onBlur={event => {
@@ -119,7 +129,7 @@ const LinkifiedTextarea = React.forwardRef<HTMLTextAreaElement, LinkifiedTextare
         setIsEditing(false);
       }}
       ref={setTextareaRef}
-      rows={autoResize && rows == null ? 1 : rows}
+      rows={minRows ?? rows ?? (shouldAutoResize ? 1 : undefined)}
       style={{
         ...style,
         ...autoSizeStyle,

@@ -7,6 +7,8 @@ const meta = {
   argTypes: {
     autoResize: { control: 'boolean' },
     className: { control: 'text' },
+    maxRows: { control: 'number' },
+    minRows: { control: 'number' },
     style: { control: 'object' },
   },
 } satisfies Meta<typeof AutosaveTextarea>;

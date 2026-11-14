@@ -10,6 +10,8 @@ import './style.css';
 export interface AutosaveTextareaProps {
   autoResize?: boolean;
   className?: string;
+  maxRows?: number;
+  minRows?: number;
   defaultValue?: string;
   name?: string;
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
@@ -26,6 +28,8 @@ export interface AutosaveTextareaProps {
 export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaProps>(function AutosaveTextarea({
   autoResize = false,
   className = '',
+  maxRows,
+  minRows,
   defaultValue = undefined,
   name = undefined,
   onBlur = () => undefined,
@@ -46,9 +50,12 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
   const currentValue = isControlled ? (value ?? '') : internalValue;
 
   const theme = useTheme();
+  const shouldAutoResize = autoResize || minRows != null || maxRows != null;
   const { setRef: setAutoResizeRef, style: autoSizeStyle } = useAutoResize<HTMLElement>(
-    autoResize,
+    shouldAutoResize,
     currentValue,
+    minRows,
+    maxRows,
   );
   const assignRef = useCallback((node: HTMLElement | null) => {
     setAutoResizeRef(node);
@@ -96,7 +103,7 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
         />
         <ContentEditable
           className={classNames({
-            'fikasio-autosize': autoResize,
+            'fikasio-autosize': shouldAutoResize,
             'fikasio-textarea': true,
             'fikasio-theme-dark': theme === 'dark',
             'fikasio-theme-light': theme === 'light',
@@ -111,7 +118,7 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
           onKeyDown={e => onKeyDown?.(e as React.KeyboardEvent<HTMLTextAreaElement>)}
           onKeyUp={e => onKeyUp?.(e as React.KeyboardEvent<HTMLTextAreaElement>)}
           style={{
-            whiteSpace: autoResize ? 'pre-wrap' : 'pre',
+            whiteSpace: shouldAutoResize ? 'pre-wrap' : 'pre',
             ...style,
             ...autoSizeStyle,
           }}
@@ -120,7 +127,7 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
     ) : (
       <textarea
         className={classNames({
-          'fikasio-autosize': autoResize,
+          'fikasio-autosize': shouldAutoResize,
           'fikasio-textarea': true,
           'fikasio-theme-dark': theme === 'dark',
           'fikasio-theme-light': theme === 'light',
@@ -134,7 +141,7 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
         onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyDown && onKeyDown(e)}
         onKeyUp={(e: React.KeyboardEvent<HTMLTextAreaElement>) => onKeyUp && onKeyUp(e)}
         ref={assignRef}
-        rows={autoResize ? 1 : undefined}
+        rows={minRows ?? (shouldAutoResize ? 1 : undefined)}
         style={{
           ...style,
           ...autoSizeStyle,
