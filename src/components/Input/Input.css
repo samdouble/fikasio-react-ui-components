@@ -36,4 +36,11 @@
     border-color: var(--fikasio-color-border-strong);
     color: var(--fikasio-dark-gray);
   }
+
+  &.fikasio-autosize {
+    height: auto;
+    min-height: 35px;
+    overflow-wrap: anywhere;
+    overflow-y: hidden;
+  }
 }

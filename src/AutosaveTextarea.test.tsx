@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { describe, it, expect, jest } from '@jest/globals';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { AutosaveTextarea } from '.';
@@ -190,5 +191,44 @@ describe('AutosaveTextarea', () => {
 
     expect(onSave).toHaveBeenCalledTimes(1);
     expect(onSave).toHaveBeenCalledWith('Buy milk today');
+  });
+
+  it('grows a native textarea with its content', () => {
+    const descriptor = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollHeight');
+    Object.defineProperty(HTMLElement.prototype, 'scrollHeight', {
+      configurable: true,
+      get() {
+        const text = 'value' in this ? String((this as HTMLTextAreaElement).value) : '';
+        return text.split('\n').length * 24;
+      },
+    });
+    const computedStyle = jest.spyOn(window, 'getComputedStyle').mockReturnValue({
+      borderBottomWidth: '0px',
+      borderTopWidth: '0px',
+      boxSizing: 'content-box',
+      maxHeight: 'none',
+      paddingBottom: '0px',
+      paddingTop: '0px',
+    } as CSSStyleDeclaration);
+
+    try {
+      render(
+        <AutosaveTextarea
+          autoResize
+          defaultValue={'one\ntwo'}
+          onSave={() => undefined}
+          useContentEditableDiv={false}
+        />,
+      );
+
+      const field = screen.getByRole('textbox') as HTMLTextAreaElement;
+      expect(field).toHaveClass('fikasio-autosize');
+      expect(field.style.height).toBe('48px');
+    } finally {
+      computedStyle.mockRestore();
+      if (descriptor) {
+        Object.defineProperty(HTMLElement.prototype, 'scrollHeight', descriptor);
+      }
+    }
   });
 });

@@ -44,6 +44,7 @@ A textarea that saves after a pause or when it loses focus. URLs in the text are
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
+| autoResize              | boolean         | No              | Grow and shrink the field to fit its content    |
 | onBlur                  | function        | No              | Handler called when the field loses focus       |
 | onChange                | function        | Yes             | Handler called with the change event            |
 | onFocus                 | function        | No              | Handler called when the field gains focus       |
@@ -60,6 +61,7 @@ It also accepts standard textarea attributes, such as `id`, `name`, and `aria-la
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
+| autoResize              | boolean         | No              | Grow and shrink the field to fit its content    |
 | className               | string          | No              | Additional CSS class name for the textarea      |
 | defaultValue            | string          | No              | Initial text content of the textarea            |
 | name                    | string          | No              | Name attribute for the textarea input           |
@@ -245,13 +247,14 @@ Available names:
 
 <img src="docs/screenshots/input.png" alt="Input" width="360" />
 
-A single-line text field that saves after a pause, when it loses focus, or when it unmounts with unsaved text. Set `multiline` to render a one-row textarea.
+A single-line text field that saves after a pause, when it loses focus, or when it unmounts with unsaved text. Set `multiline` to render a one-row textarea. Set `autoResize` with `multiline` to grow and shrink that textarea with its content.
 
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
 | autoFocus               | boolean         | No              | Focus the field and place the caret at the start |
+| autoResize              | boolean         | No              | With `multiline`, grow and shrink the textarea to fit its content |
 | className               | string          | No              | Additional CSS class name for the field         |
 | defaultValue            | string          | No              | Initial text. A new value is adopted while the field is not focused |
 | delay                   | number          | No              | Milliseconds to wait after typing before saving. Defaults to `1000` |

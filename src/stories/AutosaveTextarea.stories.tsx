@@ -5,6 +5,7 @@ const meta = {
   title: 'AutosaveTextarea',
   component: AutosaveTextarea,
   argTypes: {
+    autoResize: { control: 'boolean' },
     className: { control: 'text' },
     style: { control: 'object' },
   },
@@ -18,5 +19,14 @@ export const AutosaveTextareaNoStyle: Story = {
     onSave: async (_value: string) => new Promise(resolve => {
       setTimeout(resolve, 150);
     }),
+  },
+};
+
+export const AutosaveTextareaAutosize: Story = {
+  args: {
+    autoResize: true,
+    defaultValue: 'This note grows as you type.',
+    onSave: () => undefined,
+    style: { width: 240 },
   },
 };

@@ -5,6 +5,7 @@ const meta = {
   title: 'Input',
   component: Input,
   argTypes: {
+    autoResize: { control: 'boolean' },
     className: { control: 'text' },
     delay: { control: 'number' },
     multiline: { control: 'boolean' },
@@ -29,5 +30,15 @@ export const InputMultiline: Story = {
     defaultValue: 'A short note',
     multiline: true,
     onSave: () => undefined,
+  },
+};
+
+export const InputAutosize: Story = {
+  args: {
+    autoResize: true,
+    defaultValue: 'This note grows as you type.',
+    multiline: true,
+    onSave: () => undefined,
+    style: { width: 240 },
   },
 };

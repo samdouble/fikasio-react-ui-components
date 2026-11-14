@@ -27,3 +27,11 @@
 .fikasio-textarea:hover {
   border: var(--fikasio-border-width-thin) solid #dddddd;
 }
+
+.fikasio-textarea.fikasio-autosize {
+  height: auto;
+  overflow-wrap: anywhere;
+  overflow-y: hidden;
+  resize: none;
+  white-space: pre-wrap;
+}
