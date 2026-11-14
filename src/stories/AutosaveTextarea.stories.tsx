@@ -7,6 +7,7 @@ const meta = {
   argTypes: {
     autoResize: { control: 'boolean' },
     className: { control: 'text' },
+    linkify: { control: 'boolean' },
     maxRows: { control: 'number' },
     minRows: { control: 'number' },
     style: { control: 'object' },
@@ -30,5 +31,14 @@ export const AutosaveTextareaAutosize: Story = {
     defaultValue: 'This note grows as you type.',
     onSave: () => undefined,
     style: { width: 240 },
+  },
+};
+
+export const AutosaveTextareaLinkify: Story = {
+  args: {
+    defaultValue: 'See https://fikas.io/docs',
+    linkify: true,
+    onSave: () => undefined,
+    style: { width: 320 },
   },
 };

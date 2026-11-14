@@ -5,22 +5,18 @@ import useAutosave from '../../hooks/useAutosave';
 import { useAutoResize } from '../../hooks/useAutoResize';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
+import LinkifiedTextarea from '../LinkifiedTextarea/LinkifiedTextarea';
 import './style.css';
 
-export interface AutosaveTextareaProps {
+export interface AutosaveTextareaProps
+  extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'defaultValue' | 'onChange' | 'value'> {
   autoResize?: boolean;
-  className?: string;
+  defaultValue?: string;
+  linkify?: boolean;
   maxRows?: number;
   minRows?: number;
-  defaultValue?: string;
-  name?: string;
-  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
   onChange?: (value: string) => void;
-  onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
-  onKeyDown?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
-  onKeyUp?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
   onSave?: (value: string) => void;
-  style?: React.CSSProperties;
   useContentEditableDiv?: boolean;
   value?: string;
 }
@@ -31,6 +27,7 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
   maxRows,
   minRows,
   defaultValue = undefined,
+  linkify = false,
   name = undefined,
   onBlur = () => undefined,
   onChange = () => undefined,
@@ -41,6 +38,7 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
   style = {},
   useContentEditableDiv = true,
   value = undefined,
+  ...textareaProps
 }, ref) {
   const isControlled = typeof value !== 'undefined';
   const hasDefaultValue = typeof defaultValue !== 'undefined';
@@ -50,7 +48,7 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
   const currentValue = isControlled ? (value ?? '') : internalValue;
 
   const theme = useTheme();
-  const shouldAutoResize = autoResize || minRows != null || maxRows != null;
+  const shouldAutoResize = !linkify && (autoResize || minRows != null || maxRows != null);
   const { setRef: setAutoResizeRef, style: autoSizeStyle } = useAutoResize<HTMLElement>(
     shouldAutoResize,
     currentValue,
@@ -65,6 +63,13 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
       ref.current = node;
     }
   }, [ref, setAutoResizeRef]);
+  const assignTextareaRef = useCallback((node: HTMLTextAreaElement | null) => {
+    if (typeof ref === 'function') {
+      ref(node);
+    } else if (ref) {
+      ref.current = node;
+    }
+  }, [ref]);
   const {
     onBlur: saveOnBlur,
     onChange: saveOnChange,
@@ -92,6 +97,34 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
     saveOnFocus();
     onFocus(event as React.FocusEvent<HTMLTextAreaElement>);
   };
+
+  if (linkify) {
+    return (
+      <LinkifiedTextarea
+        {...textareaProps}
+        autoResize={autoResize}
+        className={className}
+        maxRows={maxRows}
+        minRows={minRows}
+        name={name}
+        onBlur={event => {
+          saveOnBlur();
+          onBlur(event);
+        }}
+        onChange={event => handleChange(event.target.value)}
+        onFocus={event => {
+          saveOnFocus();
+          onFocus(event);
+        }}
+        onKeyDown={onKeyDown}
+        onKeyUp={onKeyUp}
+        plain
+        ref={assignTextareaRef}
+        style={style}
+        value={currentValue}
+      />
+    );
+  }
 
   return useContentEditableDiv
     ? (

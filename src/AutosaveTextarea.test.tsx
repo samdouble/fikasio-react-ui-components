@@ -233,3 +233,119 @@ describe('AutosaveTextarea', () => {
     }
   });
 });
+
+const LinkifiedHarness = ({
+  initialValue,
+  onSave,
+}: {
+  initialValue: string;
+  onSave: (value: string) => void;
+}) => {
+  const [value, setValue] = useState(initialValue);
+  return (
+    <AutosaveTextarea
+      aria-label="details"
+      linkify
+      onChange={setValue}
+      onSave={onSave}
+      value={value}
+    />
+  );
+};
+
+describe('AutosaveTextarea linkify', () => {
+  it('Saves the current value on blur', async () => {
+    const user = userEvent.setup();
+    const onSave = jest.fn();
+    render(<LinkifiedHarness initialValue="Some notes" onSave={onSave} />);
+
+    const field = screen.getByRole('textbox', { name: 'details' });
+    await user.type(field, ' today');
+    await user.tab();
+
+    expect(onSave).toHaveBeenCalledTimes(1);
+    expect(onSave).toHaveBeenCalledWith('Some notes today');
+  });
+
+  it('Saves an empty string when existing text is cleared', async () => {
+    const user = userEvent.setup();
+    const onSave = jest.fn();
+    render(<LinkifiedHarness initialValue="Some notes" onSave={onSave} />);
+
+    await user.clear(screen.getByRole('textbox', { name: 'details' }));
+    await user.tab();
+
+    expect(onSave).toHaveBeenCalledWith('');
+  });
+
+  it('Saves a paused edit before blur', () => {
+    jest.useFakeTimers();
+    const onSave = jest.fn();
+    const { unmount } = render(<LinkifiedHarness initialValue="Notes" onSave={onSave} />);
+
+    try {
+      const field = screen.getByRole('textbox', { name: 'details' });
+      fireEvent.focus(field);
+      fireEvent.change(field, { target: { value: 'Notes today' } });
+      act(() => {
+        jest.advanceTimersByTime(999);
+      });
+      expect(onSave).not.toHaveBeenCalled();
+
+      act(() => {
+        jest.advanceTimersByTime(1);
+      });
+      expect(onSave).toHaveBeenCalledTimes(1);
+      expect(onSave).toHaveBeenCalledWith('Notes today');
+    } finally {
+      unmount();
+      jest.useRealTimers();
+    }
+  });
+
+  it('Saves a cleared value when the field unmounts before the delay', () => {
+    jest.useFakeTimers();
+    const onSave = jest.fn();
+    const { unmount } = render(<LinkifiedHarness initialValue="Some notes" onSave={onSave} />);
+
+    try {
+      const field = screen.getByRole('textbox', { name: 'details' });
+      fireEvent.focus(field);
+      fireEvent.change(field, { target: { value: '' } });
+      unmount();
+      expect(onSave).toHaveBeenCalledTimes(1);
+      expect(onSave).toHaveBeenCalledWith('');
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('Renders linked text without a bordered field', () => {
+    render(<LinkifiedHarness initialValue="See https://fikas.io/docs" onSave={jest.fn()} />);
+
+    const field = screen.getByRole('textbox', { name: 'details' });
+    expect(field).not.toHaveClass('form-control');
+    expect(field).toHaveClass('fikasio-linkified-textarea-plain');
+    expect(screen.getByRole('link', { name: 'https://fikas.io/docs' })).toBeInTheDocument();
+  });
+
+  it('Saves an uncontrolled value that contains a link', async () => {
+    const user = userEvent.setup();
+    const onSave = jest.fn();
+    render(
+      <AutosaveTextarea
+        defaultValue="See https://fikas.io/docs"
+        linkify
+        onSave={onSave}
+      />,
+    );
+
+    expect(screen.getByRole('link', { name: 'https://fikas.io/docs' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('textbox'));
+    await user.type(screen.getByRole('textbox'), ' now');
+    await user.tab();
+
+    expect(onSave).toHaveBeenCalledTimes(1);
+    expect(onSave).toHaveBeenCalledWith('See https://fikas.io/docs now');
+  });
+});
