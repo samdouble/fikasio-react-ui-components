@@ -11,7 +11,7 @@ export { Dot } from './Dot';
 export { Error } from './Error';
 export { Footer } from './Footer';
 export { Icon } from './Icon';
-export { ArchiveIcon, BarsIcon, BellIcon, BookIcon, BullseyeIcon, CaretLeftIcon, CaretRightIcon, CalendarAltIcon, CheckIcon, CheckSquareIcon, ClockIcon, CogIcon, CopyIcon, DownloadIcon, EditIcon, ListIcon, MessageIcon, PlusIcon, PowerOffIcon, ProjectDiagramIcon, ShapesIcon, SitemapIcon, SlidersIcon, StopwatchIcon, ThIcon, TimesIcon, UserIcon } from './icons';
+export { ArchiveIcon, BarsIcon, BellIcon, BookIcon, BullseyeIcon, CaretLeftIcon, CaretRightIcon, CalendarAltIcon, CheckIcon, CheckSquareIcon, ClockIcon, CogIcon, CopyIcon, DownloadIcon, EditIcon, ListIcon, MessageIcon, PlusIcon, PowerOffIcon, ProjectDiagramIcon, ShapesIcon, SitemapIcon, SlidersIcon, StopwatchIcon, ThIcon, TimesIcon, TrashIcon, UserIcon } from './icons';
 export { Input } from './Input';
 export { LoadingGif } from './LoadingGif';
 export { Select } from './Select';

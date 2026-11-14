@@ -38,6 +38,11 @@ describe('Icon', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('Renders trash correctly', () => {
+    const { baseElement } = render(<Icon name="trash" />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
   it('Renders cog correctly', () => {
     const { baseElement } = render(<Icon name="cog" />);
     expect(baseElement).toMatchSnapshot();

@@ -29,6 +29,7 @@ export { SlidersIcon } from './SlidersIcon';
 export { SquareIcon } from './SquareIcon';
 export { StopwatchIcon } from './StopwatchIcon';
 export { ThIcon } from './ThIcon';
+export { TrashIcon } from './TrashIcon';
 export { XmarkIcon as TimesIcon } from './XmarkIcon';
 export { TriangleExclamationIcon } from './TriangleExclamationIcon';
 export { UserIcon } from './UserIcon';
