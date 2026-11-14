@@ -17,3 +17,10 @@
   resize: vertical;
   width: 100%;
 }
+
+.fikasio-linkified-textarea.fikasio-autosize {
+  height: auto;
+  overflow-wrap: anywhere;
+  overflow-y: hidden;
+  resize: none;
+}

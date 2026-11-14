@@ -1,6 +1,7 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import useAutosave from '../../hooks/useAutosave';
+import { useAutoResize } from '../../hooks/useAutoResize';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Input.css';
@@ -9,6 +10,7 @@ type InputElement = HTMLInputElement | HTMLTextAreaElement;
 
 export interface InputProps {
   autoFocus?: boolean;
+  autoResize?: boolean;
   className?: string;
   defaultValue?: string;
   delay?: number;
@@ -25,6 +27,7 @@ export interface InputProps {
 
 export function Input({
   autoFocus = false,
+  autoResize = false,
   className,
   defaultValue = '',
   delay = 1000,
@@ -41,6 +44,15 @@ export function Input({
   const theme = useTheme();
   const [value, setValue] = useState(defaultValue);
   const fieldRef = useRef<InputElement>(null);
+  const shouldAutoResize = multiline && autoResize;
+  const { setRef: setAutoResizeRef, style: autoSizeStyle } = useAutoResize<InputElement>(
+    shouldAutoResize,
+    value,
+  );
+  const assignRef = useCallback((node: InputElement | null) => {
+    fieldRef.current = node;
+    setAutoResizeRef(node);
+  }, [setAutoResizeRef]);
   const {
     adoptValue,
     isFocusedRef,
@@ -81,6 +93,7 @@ export function Input({
 
   const sharedProps = {
     className: classNames({
+      'fikasio-autosize': shouldAutoResize,
       'fikasio-input': true,
       'fikasio-theme-dark': theme === 'dark',
       'fikasio-theme-light': theme === 'light',
@@ -106,7 +119,10 @@ export function Input({
     onKeyDown,
     onKeyUp,
     placeholder,
-    style,
+    style: {
+      ...style,
+      ...autoSizeStyle,
+    },
     value,
   };
 
@@ -114,7 +130,7 @@ export function Input({
     return (
       <textarea
         {...sharedProps}
-        ref={fieldRef as React.RefObject<HTMLTextAreaElement>}
+        ref={assignRef}
         rows={1}
       />
     );
@@ -123,7 +139,7 @@ export function Input({
   return (
     <input
       {...sharedProps}
-      ref={fieldRef as React.RefObject<HTMLInputElement>}
+      ref={assignRef}
       type="text"
     />
   );

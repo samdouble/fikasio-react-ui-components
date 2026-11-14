@@ -6,6 +6,7 @@ const meta = {
   title: 'AutosaveLinkifiedTextarea',
   component: AutosaveLinkifiedTextarea,
   argTypes: {
+    autoResize: { control: 'boolean' },
     className: { control: 'text' },
     style: { control: 'object' },
   },

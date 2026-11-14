@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
+import { useAutoResize } from '../../hooks/useAutoResize';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import { linkify } from '../../utils/linkify';
@@ -7,16 +8,20 @@ import LinkifiedText from '../LinkifiedText/LinkifiedText';
 import './LinkifiedTextarea.css';
 
 export type LinkifiedTextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+  autoResize?: boolean;
   plain?: boolean;
 };
 
 const LinkifiedTextarea = React.forwardRef<HTMLTextAreaElement, LinkifiedTextareaProps>(({
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
+  autoResize = false,
   className = '',
   id,
   onBlur,
   plain = false,
+  rows,
+  style,
   value,
   ...rest
 }, ref) => {
@@ -26,15 +31,21 @@ const LinkifiedTextarea = React.forwardRef<HTMLTextAreaElement, LinkifiedTextare
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const shouldFocusRef = useRef(false);
   const theme = useTheme();
+  const showField = isEditing || !hasLink;
+  const { setRef: setAutoResizeRef, style: autoSizeStyle } = useAutoResize<HTMLTextAreaElement>(
+    autoResize && showField,
+    text,
+  );
 
-  const setTextareaRef = (node: HTMLTextAreaElement | null) => {
+  const setTextareaRef = useCallback((node: HTMLTextAreaElement | null) => {
     textareaRef.current = node;
+    setAutoResizeRef(node);
     if (typeof ref === 'function') {
       ref(node);
     } else if (ref) {
       ref.current = node;
     }
-  };
+  }, [ref, setAutoResizeRef]);
 
   useEffect(() => {
     if (!isEditing || !shouldFocusRef.current) {
@@ -99,13 +110,20 @@ const LinkifiedTextarea = React.forwardRef<HTMLTextAreaElement, LinkifiedTextare
       {...rest}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
-      className={fieldClassName}
+      className={classNames(fieldClassName, {
+        'fikasio-autosize': autoResize,
+      })}
       id={id}
       onBlur={event => {
         onBlur?.(event);
         setIsEditing(false);
       }}
       ref={setTextareaRef}
+      rows={autoResize && rows == null ? 1 : rows}
+      style={{
+        ...style,
+        ...autoSizeStyle,
+      }}
       value={value}
     />
   );
