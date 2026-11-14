@@ -1,15 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, type RefObject } from 'react';
 
-export interface ClickOutsideProps {
-  children: React.ReactNode;
-  onClickOutside: (event: Event) => void;
-}
-
-export function ClickOutside({
-  children,
-  onClickOutside,
-}: ClickOutsideProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+export function useClickOutside<T extends Node>(
+  ref: RefObject<T | null>,
+  onClickOutside: (event: Event) => void,
+) {
   const onClickOutsideRef = useRef(onClickOutside);
 
   useEffect(() => {
@@ -17,16 +11,17 @@ export function ClickOutside({
   }, [onClickOutside]);
 
   useEffect(() => {
-    let isTouch = false;
+    const touch = { current: false };
 
     const handle = (event: Event) => {
       if (event.type === 'touchend') {
-        isTouch = true;
+        touch.current = true;
       }
-      if (event.type === 'click' && isTouch) {
+      if (event.type === 'click' && touch.current) {
+        touch.current = false;
         return;
       }
-      const el = containerRef.current;
+      const el = ref.current;
       if (el && !el.contains(event.target as Node)) {
         onClickOutsideRef.current(event);
       }
@@ -38,13 +33,7 @@ export function ClickOutside({
       document.removeEventListener('touchend', handle, true);
       document.removeEventListener('click', handle, true);
     };
-  }, []);
-
-  return (
-    <div ref={containerRef}>
-      {children}
-    </div>
-  );
+  }, [ref]);
 }
 
-export default ClickOutside;
+export default useClickOutside;

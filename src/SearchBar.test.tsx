@@ -64,4 +64,24 @@ describe('SearchBar', () => {
 
     expect(onSubmit).toHaveBeenCalledTimes(1);
   });
+
+  it('closes the options when clicking outside', async () => {
+    const user = userEvent.setup();
+    render(
+      <div>
+        <SearchBar
+          filterOptions={false}
+          options={['Beta']}
+          value="zzz"
+        />
+        <button type="button">outside</button>
+      </div>,
+    );
+
+    await user.click(screen.getByRole('textbox'));
+    expect(screen.getByRole('option', { name: 'Beta' })).toBeTruthy();
+
+    await user.click(screen.getByRole('button', { name: 'outside' }));
+    expect(screen.queryByRole('option', { name: 'Beta' })).toBeNull();
+  });
 });

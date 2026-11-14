@@ -34,6 +34,42 @@ Import components from the package in your React application, for example:
 import { Footer } from '@fikasio/react-ui-components';
 ```
 
+## Upgrade notes
+
+### v3 to v4
+
+`ClickOutside` is removed. Call `useClickOutside` with a ref for the element that counts as inside.
+
+v3:
+
+```
+import { ClickOutside } from '@fikasio/react-ui-components';
+
+function Panel({ onClose }) {
+  return (
+    <ClickOutside onClickOutside={onClose}>
+      <div>Panel</div>
+    </ClickOutside>
+  );
+}
+```
+
+v4:
+
+```
+import { useRef } from 'react';
+import { useClickOutside } from '@fikasio/react-ui-components';
+
+function Panel({ onClose }) {
+  const ref = useRef(null);
+  useClickOutside(ref, onClose);
+
+  return <div ref={ref}>Panel</div>;
+}
+```
+
+Put the ref on the element that counts as inside. `onClickOutside` is called with the outside click or touch event. A click that follows a touch is ignored, so the handler runs once.
+
 ## Components
 
 ### AutosaveLinkifiedTextarea
@@ -114,17 +150,6 @@ It also accepts standard textarea attributes, such as `id`, `name`, and `aria-la
 | name                    | string          | No             | Name attribute for the checkbox input           |
 | onClick                 | function        | No             | Click handler function for the checkbox         |
 | style                   | CSSProperties   | No             | Additional CSS styles for the Checkbox          |
-
-### ClickOutside
-
-Calls `onClickOutside` when a click or touch ends outside its children. A click that follows a touch is ignored so the handler runs once.
-
-#### Props
-
-| Name                    | Type            | Required        | Description                                     |
-|-------------------------|:----------------|:----------------|:------------------------------------------------|
-| children                | ReactNode       | Yes             | Content that counts as inside                   |
-| onClickOutside          | function        | Yes             | Called with the outside click or touch event    |
 
 ### DatePicker
 
@@ -391,6 +416,29 @@ Renders the rows you pass as children. Set `responsive` to allow horizontal scro
 | style                   | CSSProperties   | No              | Additional CSS styles for the Warning           |
 
 ## Hooks
+
+### useClickOutside
+
+Calls `onClickOutside` when a click or touch ends outside the element in `ref`. A click that follows a touch is ignored so the handler runs once.
+
+```
+import { useRef } from 'react';
+import { useClickOutside } from '@fikasio/react-ui-components';
+
+function Panel({ onClose }) {
+  const ref = useRef(null);
+  useClickOutside(ref, onClose);
+
+  return <div ref={ref}>Panel</div>;
+}
+```
+
+#### Parameters
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| ref                     | RefObject       | Yes             | Element that counts as inside                   |
+| onClickOutside          | function        | Yes             | Called with the outside click or touch event    |
 
 ### useTheme
 

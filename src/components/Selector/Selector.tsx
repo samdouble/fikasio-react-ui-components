@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { ActionButton } from '../Button/ActionButton';
+import useClickOutside from '../../hooks/useClickOutside';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Selector.css';
@@ -41,22 +42,10 @@ export function Selector({
 
   const theme = useTheme();
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-        setHighlightedIndex(null);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+  useClickOutside(containerRef, () => {
+    setIsOpen(false);
+    setHighlightedIndex(null);
+  });
 
   useEffect(() => {
     if (highlightedIndex !== null && dropdownRef.current) {
