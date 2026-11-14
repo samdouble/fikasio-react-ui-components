@@ -8,6 +8,8 @@ const meta = {
     autoResize: { control: 'boolean' },
     className: { control: 'text' },
     delay: { control: 'number' },
+    maxRows: { control: 'number' },
+    minRows: { control: 'number' },
     multiline: { control: 'boolean' },
     placeholder: { control: 'text' },
     style: { control: 'object' },
@@ -37,6 +39,8 @@ export const InputAutosize: Story = {
   args: {
     autoResize: true,
     defaultValue: 'This note grows as you type.',
+    maxRows: 6,
+    minRows: 2,
     multiline: true,
     onSave: () => undefined,
     style: { width: 240 },

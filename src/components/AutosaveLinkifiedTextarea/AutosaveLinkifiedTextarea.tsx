@@ -5,6 +5,8 @@ import LinkifiedTextarea from '../LinkifiedTextarea/LinkifiedTextarea';
 export interface AutosaveLinkifiedTextareaProps
   extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange' | 'value'> {
   autoResize?: boolean;
+  maxRows?: number;
+  minRows?: number;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onSave?: (value: string) => void;
   value?: string;

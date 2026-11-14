@@ -15,6 +15,7 @@ const mockContentHeight = (heightFor: (text: string) => number) => {
     borderBottomWidth: '0px',
     borderTopWidth: '0px',
     boxSizing: 'content-box',
+    lineHeight: '24px',
     maxHeight: 'none',
     paddingBottom: '0px',
     paddingTop: '0px',
@@ -178,6 +179,31 @@ describe('Input', () => {
 
       fireEvent.change(field, { target: { value: 'one' } });
       expect(field.style.height).toBe('24px');
+    } finally {
+      restore();
+    }
+  });
+
+  it('stays between minRows and maxRows', () => {
+    const restore = mockContentHeight(text => text.split('\n').length * 24);
+    try {
+      render(
+        <Input
+          defaultValue="one"
+          maxRows={3}
+          minRows={2}
+          multiline
+        />,
+      );
+
+      const field = screen.getByRole('textbox') as HTMLTextAreaElement;
+      expect(field.rows).toBe(2);
+      expect(field.style.height).toBe('48px');
+      expect(field.style.overflowY).toBe('hidden');
+
+      fireEvent.change(field, { target: { value: 'one\ntwo\nthree\nfour' } });
+      expect(field.style.height).toBe('72px');
+      expect(field.style.overflowY).toBe('auto');
     } finally {
       restore();
     }
