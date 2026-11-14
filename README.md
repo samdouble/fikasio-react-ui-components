@@ -82,10 +82,12 @@ With `linkify`, it also accepts standard textarea attributes, such as `id`, `pla
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
+| ariaLabel               | string          | No             | Accessible name when the button has no visible text |
 | className               | string          | No             | Additional CSS class name for the button         |
 | disabled                | boolean         | No             | Whether the button is disabled                   |
 | onClick                 | function        | No             | Handler called when button is clicked            |
 | style                   | CSSProperties   | No             | Additional CSS styles for the button             |
+| type                    | `'button'` \| `'reset'` \| `'submit'` | No | Button type. Defaults to `submit` |
 
 ### Checkbox
 
@@ -254,6 +256,31 @@ A single-line text field that saves after a pause, when it loses focus, or when 
 ### LoadingGif
 
 Shows a loading image. It takes no props.
+
+### Modal
+
+<img src="docs/screenshots/modal.png" alt="Modal" width="640" />
+
+A dialog over the page. `variant` uses the same colors as Bootstrap's alerts (`primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, and `dark`). Success, danger, and warning match the Success, Error, and Warning components. Without a variant, the dialog is a plain panel with a header and footer.
+
+The close button, the Escape key, and a click on the backdrop each call `onClose`. Set `dismissible` to false to leave closing to the parent. Set `staticBackdrop` to ignore backdrop clicks while Escape and the close button still work.
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| children                | ReactNode       | No              | Message shown in the body                       |
+| className               | string          | No              | Additional CSS class name for the dialog        |
+| closeLabel              | string          | No              | Accessible name for the close button. Defaults to `Close` |
+| dismissible             | boolean         | No              | Show a close button and close on Escape or a backdrop click. Defaults to true |
+| footer                  | ReactNode       | No              | Actions shown along the bottom                  |
+| isOpen                  | boolean         | No              | Whether the dialog is visible                   |
+| onClose                 | function        | No              | Called when the dialog asks to close            |
+| size                    | `'sm'` \| `'lg'` \| `'xl'` | No | Width of the dialog. The default width is used when omitted |
+| staticBackdrop          | boolean         | No              | Keep the dialog open when the backdrop is clicked |
+| style                   | CSSProperties   | No              | Additional CSS styles for the dialog            |
+| title                   | ReactNode       | No              | Heading and accessible name                     |
+| variant                 | `'primary'` \| `'secondary'` \| `'success'` \| `'danger'` \| `'warning'` \| `'info'` \| `'light'` \| `'dark'` | No | Color variant. Defaults to `primary` |
 
 ### SearchBar
 
