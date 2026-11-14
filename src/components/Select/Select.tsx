@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import classNames from 'classnames';
 import { CaretDownIcon } from '../../icons';
+import useClickOutside from '../../hooks/useClickOutside';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Select.css';
@@ -40,21 +41,9 @@ export function Select({
 
   const selectedOption = options.find(option => option.value === currentValue);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+  useClickOutside(containerRef, () => {
+    setIsOpen(false);
+  });
 
   const handleToggle = () => {
     if (!disabled) {

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import { MagnifyingGlassIcon } from '../../icons';
+import useClickOutside from '../../hooks/useClickOutside';
 import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './SearchBar.css';
@@ -68,22 +69,10 @@ export function SearchBar<Option = string>({
 
   const [prevFilteredOptions, setPrevFilteredOptions] = useState(filteredOptions);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-        setHighlightedIndex(null);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+  useClickOutside(containerRef, () => {
+    setIsOpen(false);
+    setHighlightedIndex(null);
+  });
 
   const handleChange = (newValue: string) => {
     onChange(newValue);
