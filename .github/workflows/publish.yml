@@ -4,6 +4,11 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
   publish:
@@ -24,8 +29,4 @@ jobs:
       - name: Install
         run: npm ci
       - name: Publish
-        env:
-          NPM_API_TOKEN: ${{ secrets.NPM_API_TOKEN }}
-        run: |
-          npm set //registry.npmjs.org/:_authToken $NPM_API_TOKEN
-          npm publish --access=public
+        run: npm publish --access=public
