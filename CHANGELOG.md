@@ -1,5 +1,24 @@
 # Changelog
 
+## [4.0.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v3.0.0...v4.0.0) (2026-11-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove AutosaveLinkifiedTextarea
+* replace ClickOutside component with useClickOutside hook
+
+### Features
+
+* add autoResize prop to textareas ([6234c2a](https://github.com/samdouble/fikasio-react-ui-components/commit/6234c2a8a76586cc3995ff7eddda9adbbe75b5a9))
+* add minRows and maxRows props to textareas ([87b6abf](https://github.com/samdouble/fikasio-react-ui-components/commit/87b6abf5c3b6e09bf312df372cdf23502e6e3275))
+* add Modal component ([bf62e5c](https://github.com/samdouble/fikasio-react-ui-components/commit/bf62e5c3f044e5fa0df9c882a1b35bc4db321fcf))
+* add Trash icon ([cd5ae6c](https://github.com/samdouble/fikasio-react-ui-components/commit/cd5ae6c127b182b32a5f66ae40fcadf23b1059d7))
+* add UserAvatar component ([bd68ede](https://github.com/samdouble/fikasio-react-ui-components/commit/bd68edeac9a3d68406e4cdd8d7a71f39ca115fb6))
+* added OtpInput component ([dd94d36](https://github.com/samdouble/fikasio-react-ui-components/commit/dd94d36fe48c6dec5edf637a0696085272567c46))
+* remove AutosaveLinkifiedTextarea ([184e036](https://github.com/samdouble/fikasio-react-ui-components/commit/184e0363b081164d33500b3ce5523f4d8143147a))
+* replace ClickOutside component with useClickOutside hook ([60acb59](https://github.com/samdouble/fikasio-react-ui-components/commit/60acb59f60b164052c71b5c7d5a947c31a9eb858))
+
 ## [3.0.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v2.4.1...v3.0.0) (2026-10-11)
 
 
