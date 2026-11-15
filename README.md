@@ -282,6 +282,25 @@ The close button, the Escape key, and a click on the backdrop each call `onClose
 | title                   | ReactNode       | No              | Heading and accessible name                     |
 | variant                 | `'primary'` \| `'secondary'` \| `'success'` \| `'danger'` \| `'warning'` \| `'info'` \| `'light'` \| `'dark'` | No | Color variant. Defaults to `primary` |
 
+### OtpInput
+
+<img src="docs/screenshots/otp-input.png" alt="OtpInput" width="320" />
+
+Six boxes for a one-time code. Letters and digits are kept, uppercased, and spread across the boxes. Pasting a code fills from the first box. Backspace clears the current box, or the previous box when the current one is empty.
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| autoFocus               | boolean         | No              | Focus the first box                             |
+| className               | string          | No              | Additional CSS class name for the group         |
+| disabled                | boolean         | No              | Whether the boxes are disabled                  |
+| label                   | string          | No              | Accessible name prefix for each box. Defaults to `Code` |
+| name                    | string          | No              | Name attribute on the first box. Defaults to `code` |
+| onChange                | function        | Yes             | Handler called with the current code            |
+| style                   | CSSProperties   | No              | Additional CSS styles for the group             |
+| value                   | string          | Yes             | Current code                                    |
+
 ### SearchBar
 
 <img src="docs/screenshots/search-bar.png" alt="SearchBar" width="360" />

@@ -14,6 +14,7 @@ export { ArchiveIcon, BarsIcon, BellIcon, BookIcon, BullseyeIcon, CaretLeftIcon,
 export { Input } from './Input';
 export { LoadingGif } from './LoadingGif';
 export { Modal } from './Modal';
+export { OtpInput, OTP_LENGTH } from './OtpInput';
 export { Select } from './Select';
 export { Selector } from './Selector';
 export { SearchBar } from './SearchBar';

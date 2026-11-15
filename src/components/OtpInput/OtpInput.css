@@ -1,0 +1,44 @@
+.fikasio-otp-input {
+  display: flex;
+  gap: 8px;
+
+  .fikasio-otp-input-digit {
+    appearance: none;
+    background-color: var(--fikasio-white);
+    border: var(--fikasio-border-width-thin) solid var(--fikasio-color-border-strong);
+    border-radius: var(--fikasio-radius-none);
+    box-sizing: border-box;
+    color: var(--fikasio-dark-gray);
+    flex: 0 0 2.75rem;
+    font-family: var(--fikasio-font-family);
+    font-size: 1.25rem;
+    font-weight: 600;
+    height: 2.75rem;
+    letter-spacing: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 2.75rem;
+
+    &:focus {
+      border-color: var(--fikasio-blue);
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: var(--fikasio-light-gray);
+      opacity: 1;
+    }
+  }
+
+  &.fikasio-theme-dark .fikasio-otp-input-digit {
+    background-color: var(--fikasio-black-lighter);
+    border-color: var(--fikasio-dark-gray-lighter);
+    color: var(--fikasio-white);
+
+    &:disabled {
+      background-color: var(--fikasio-dark-gray);
+    }
+  }
+}

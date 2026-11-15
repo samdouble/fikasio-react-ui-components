@@ -12,6 +12,7 @@ import {
   Icon,
   Input,
   Modal,
+  OtpInput,
   SearchBar,
   Select,
   Selector,
@@ -226,6 +227,18 @@ test.describe('README screenshots', () => {
       </Modal>,
     );
     await expect(page).toHaveScreenshot('modal.png');
+  });
+
+  test('OtpInput', async ({ mount }) => {
+    const component = await mount(
+      <div style={frameStyle()}>
+        <OtpInput
+          onChange={() => undefined}
+          value="AB12CD"
+        />
+      </div>
+    );
+    await expect(component).toHaveScreenshot('otp-input.png');
   });
 
   test('SearchBar', async ({ mount }) => {
