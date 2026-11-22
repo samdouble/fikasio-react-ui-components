@@ -1,14 +1,89 @@
-.fikasio-actionbutton {
-  background-color: var(--fikasio-blue);
-  border: var(--fikasio-border-width-thin) solid var(--fikasio-blue);
+.fikasio-actionbutton,
+.fikasio-successbutton,
+.fikasio-dangerbutton,
+.fikasio-secondarybutton,
+.fikasio-linkbutton {
   border-radius: var(--fikasio-radius-none);
-  color: var(--fikasio-white);
   cursor: pointer;
   font-family: var(--fikasio-font-family);
   font-size: var(--fikasio-font-size-sm);
   padding: 0.3rem 0.7rem;
 
-  &:hover {
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+}
+
+.fikasio-actionbutton.fikasio-button-sm,
+.fikasio-successbutton.fikasio-button-sm,
+.fikasio-dangerbutton.fikasio-button-sm,
+.fikasio-secondarybutton.fikasio-button-sm,
+.fikasio-linkbutton.fikasio-button-sm {
+  padding: 0.15rem 0.45rem;
+}
+
+.fikasio-actionbutton {
+  background-color: var(--fikasio-blue);
+  border: var(--fikasio-border-width-thin) solid var(--fikasio-blue);
+  color: var(--fikasio-white);
+
+  &:hover:not(:disabled) {
     background-color: var(--fikasio-blue-darker);
+  }
+}
+
+.fikasio-successbutton {
+  background-color: var(--fikasio-green);
+  border: var(--fikasio-border-width-thin) solid var(--fikasio-green);
+  color: var(--fikasio-white);
+
+  &:hover:not(:disabled) {
+    background-color: var(--fikasio-green-darker);
+  }
+}
+
+.fikasio-dangerbutton {
+  background-color: var(--fikasio-red);
+  border: var(--fikasio-border-width-thin) solid var(--fikasio-red);
+  color: var(--fikasio-white);
+
+  &:hover:not(:disabled) {
+    background-color: var(--fikasio-red-darker);
+  }
+
+  &.fikasio-button-outline {
+    background-color: var(--fikasio-white);
+    color: var(--fikasio-red);
+
+    &:hover:not(:disabled) {
+      background-color: var(--fikasio-red);
+      border-color: var(--fikasio-red);
+      color: var(--fikasio-white);
+    }
+  }
+}
+
+.fikasio-secondarybutton {
+  background-color: var(--fikasio-white);
+  border: var(--fikasio-border-width-thin) solid var(--fikasio-gray);
+  color: var(--fikasio-gray);
+
+  &:hover:not(:disabled),
+  &.fikasio-button-active {
+    background-color: var(--fikasio-gray);
+    border-color: var(--fikasio-gray);
+    color: var(--fikasio-white);
+  }
+}
+
+.fikasio-linkbutton {
+  background-color: transparent;
+  border: var(--fikasio-border-width-thin) solid transparent;
+  color: var(--fikasio-blue);
+
+  &:hover:not(:disabled) {
+    color: var(--fikasio-blue-darker);
+    text-decoration: underline;
   }
 }

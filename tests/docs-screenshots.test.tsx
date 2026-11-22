@@ -98,9 +98,24 @@ test.describe('README screenshots', () => {
   });
 
   test('Button', async ({ mount }) => {
+    const samples = [
+      { label: 'Action', node: <Button.Action type="button">Save</Button.Action> },
+      { label: 'Success', node: <Button.Success type="button">Save</Button.Success> },
+      { label: 'Danger', node: <Button.Danger type="button">Delete</Button.Danger> },
+      { label: 'Secondary', node: <Button.Secondary type="button">Cancel</Button.Secondary> },
+      { label: 'Outline', node: <Button.Danger outline type="button">Remove</Button.Danger> },
+      { label: 'Link', node: <Button.Link type="button">Resend</Button.Link> },
+    ];
     const component = await mount(
       <div style={frameStyle()}>
-        <Button.Action>Save</Button.Action>
+        <div style={{ alignItems: 'start', display: 'flex', gap: 16 }}>
+          {samples.map(sample => (
+            <div key={sample.label} style={{ textAlign: 'center' }}>
+              {sample.node}
+              <div style={{ color: '#777777', fontSize: 12, marginTop: 8 }}>{sample.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
     );
     await expect(component).toHaveScreenshot('button.png');

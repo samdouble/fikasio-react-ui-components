@@ -76,18 +76,25 @@ With `linkify`, it also accepts standard textarea attributes, such as `id`, `pla
 
 ### Button
 
-<img src="docs/screenshots/button.png" alt="Button" width="90" />
+<img src="docs/screenshots/button.png" alt="Button" width="504" />
+
+`Button.Action` is the blue main action. `Button.Success` is the green save or create button. `Button.Danger` is red; set `outline` for a white button with a red border. `Button.Secondary` is the gray outline used for cancel and for view toggles (`active` shows the pressed state). `Button.Link` is blue text for an inline action.
+
+`Button.Action` and `Button.Success` default to `type="submit"`. The others default to `type="button"`.
 
 #### Props
 
 | Name                    | Type            | Required        | Description                                     |
 |-------------------------|:----------------|:----------------|:------------------------------------------------|
+| active                  | boolean         | No             | Pressed state for `Button.Secondary`            |
 | ariaLabel               | string          | No             | Accessible name when the button has no visible text |
 | className               | string          | No             | Additional CSS class name for the button         |
 | disabled                | boolean         | No             | Whether the button is disabled                   |
 | onClick                 | function        | No             | Handler called when button is clicked            |
+| outline                 | boolean         | No             | White background and colored border. `Button.Danger` only |
+| size                    | `'sm'` \| `'md'` | No            | `sm` uses tighter padding. Defaults to `md`     |
 | style                   | CSSProperties   | No             | Additional CSS styles for the button             |
-| type                    | `'button'` \| `'reset'` \| `'submit'` | No | Button type. Defaults to `submit` |
+| type                    | `'button'` \| `'reset'` \| `'submit'` | No | Button type                                      |
 
 ### Checkbox
 
