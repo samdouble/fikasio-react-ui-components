@@ -39,6 +39,15 @@ const config = {
       },
     },
     image(),
+    {
+      name: 'resolve-datepicker-css',
+      resolveId(source) {
+        if (source === 'react-datepicker/dist/react-datepicker.css') {
+          return path.join(rootDir, 'node_modules/react-datepicker/dist/react-datepicker.css');
+        }
+        return null;
+      },
+    },
     postcss({
       inject: true,
       plugins: [],

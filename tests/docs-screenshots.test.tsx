@@ -6,6 +6,7 @@ import {
   Checkbox,
   DatePicker,
   Dot,
+  Dropdown,
   Error,
   Footer,
   Icon,
@@ -163,6 +164,22 @@ test.describe('README screenshots', () => {
       </div>
     );
     await expect(component).toHaveScreenshot('dot.png');
+  });
+
+  test('Dropdown', async ({ mount }) => {
+    const component = await mount(
+      <div style={frameStyle({ height: 200, width: 280 })}>
+        <Dropdown show>
+          <Dropdown.Toggle>Actions</Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item>Edit</Dropdown.Item>
+            <Dropdown.Item active>Duplicate</Dropdown.Item>
+            <Dropdown.Item>Delete</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
+    );
+    await expect(component).toHaveScreenshot('dropdown.png');
   });
 
   test('Error', async ({ mount }) => {

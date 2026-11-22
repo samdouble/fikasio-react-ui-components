@@ -6,6 +6,7 @@ export { Button } from './Button';
 export { Checkbox } from './Checkbox';
 export { DatePicker } from './DatePicker';
 export { Dot } from './Dot';
+export { Dropdown } from './Dropdown';
 export { Error } from './Error';
 export { Footer } from './Footer';
 export { Icon } from './Icon';
