@@ -1,5 +1,20 @@
 # Changelog
 
+## [5.0.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v4.0.0...v5.0.0) (2026-11-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename AutosaveTextarea by Textarea
+* **modal:** remove variant prop
+
+### Features
+
+* add Dropdown component ([a0ff087](https://github.com/samdouble/fikasio-react-ui-components/commit/a0ff0875df4377d221001c0120cea16739e47625))
+* add various types of buttons ([30ae31b](https://github.com/samdouble/fikasio-react-ui-components/commit/30ae31b7563ed5a7d9a9ce376d5d5dccb02f846b))
+* **modal:** remove variant prop ([33c9bf4](https://github.com/samdouble/fikasio-react-ui-components/commit/33c9bf4fed8106dcff8427614d646509cc530a02))
+* rename AutosaveTextarea by Textarea ([7df7a53](https://github.com/samdouble/fikasio-react-ui-components/commit/7df7a53c4418a56a70fcf513f04b5fc838453c2b))
+
 ## [4.0.0](https://github.com/samdouble/fikasio-react-ui-components/compare/v3.0.0...v4.0.0) (2026-11-15)
 
 
