@@ -20,7 +20,7 @@ exports[`Modal Renders correctly 1`] = `
       <div
         aria-labelledby="_r_1_"
         aria-modal="true"
-        class="fikasio-modal-content fikasio-modal-warning fikasio-theme-light"
+        class="fikasio-modal-content fikasio-theme-light"
         role="dialog"
         tabindex="-1"
       >

@@ -1,7 +1,12 @@
 import React from 'react';
 import { describe, it, expect, jest } from '@jest/globals';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { Button, Modal } from '.';
+import { Button, Modal, useTheme } from '.';
+
+function ThemeProbe({ theme }: { theme: string }) {
+  useTheme(theme);
+  return null;
+}
 
 describe('Modal', () => {
   it('Renders nothing while closed', () => {
@@ -21,7 +26,6 @@ describe('Modal', () => {
         footer={<Button.Action type="button">Save</Button.Action>}
         isOpen
         title="Check the form"
-        variant="warning"
       >
         A few fields still need attention.
       </Modal>,
@@ -109,21 +113,20 @@ describe('Modal', () => {
     expect(onClose).not.toHaveBeenCalled();
   });
 
-  it('Uses the alert variant and size', () => {
+  it('Uses the given size and class name', () => {
     render(
       <Modal
         className="extra"
         isOpen
         size="lg"
         title="Done"
-        variant="success"
       >
         Saved
       </Modal>,
     );
 
     const dialog = screen.getByRole('dialog', { name: 'Done' });
-    expect(dialog.classList.contains('fikasio-modal-success')).toBe(true);
+    expect(dialog.classList.contains('fikasio-modal-content')).toBe(true);
     expect(dialog.classList.contains('extra')).toBe(true);
     expect(document.querySelector('.fikasio-modal-lg')).toBeTruthy();
   });
@@ -161,5 +164,25 @@ describe('Modal', () => {
 
     fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
     expect(document.activeElement).toBe(save);
+  });
+
+  it('Uses a dark panel in the dark theme', () => {
+    const { unmount } = render(<ThemeProbe theme="dark" />);
+    unmount();
+
+    try {
+      render(
+        <Modal
+          isOpen
+          title="Notice"
+        >
+          Saved
+        </Modal>,
+      );
+
+      expect(screen.getByRole('dialog').classList.contains('fikasio-theme-dark')).toBe(true);
+    } finally {
+      render(<ThemeProbe theme="light" />);
+    }
   });
 });

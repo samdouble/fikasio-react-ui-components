@@ -9,7 +9,6 @@ test.describe('Modal', () => {
       <Modal
         isOpen
         title="Check the form"
-        variant="warning"
       >
         A few fields still need attention before you can save.
       </Modal>,

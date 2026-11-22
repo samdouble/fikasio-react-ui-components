@@ -43,7 +43,7 @@
   pointer-events: auto;
   width: 100%;
 
-  &.fikasio-theme-dark.fikasio-modal-default {
+  &.fikasio-theme-dark {
     background-color: var(--fikasio-black-lighter);
     border-color: var(--fikasio-dark-gray-lighter);
     color: var(--fikasio-white);
@@ -64,19 +64,15 @@
 
 .fikasio-modal-header {
   align-items: center;
+  border-bottom: var(--fikasio-border-width-thin) solid var(--fikasio-color-border);
   display: flex;
   gap: 1rem;
   justify-content: space-between;
-  padding: 1rem 1rem 0;
+  padding: 1rem 1rem 0.75rem;
 }
 
-.fikasio-modal-default .fikasio-modal-header {
-  border-bottom: var(--fikasio-border-width-thin) solid var(--fikasio-color-border);
-  padding-bottom: 0.75rem;
-}
-
-.fikasio-modal-content.fikasio-theme-dark.fikasio-modal-default .fikasio-modal-header,
-.fikasio-modal-content.fikasio-theme-dark.fikasio-modal-default .fikasio-modal-footer {
+.fikasio-modal-content.fikasio-theme-dark .fikasio-modal-header,
+.fikasio-modal-content.fikasio-theme-dark .fikasio-modal-footer {
   border-color: var(--fikasio-dark-gray-lighter);
 }
 
@@ -124,67 +120,10 @@
 }
 
 .fikasio-modal-footer {
+  border-top: var(--fikasio-border-width-thin) solid var(--fikasio-color-border);
   display: flex;
   flex-shrink: 0;
   gap: 0.5rem;
   justify-content: flex-end;
-  padding: 0 1rem 1rem;
-}
-
-.fikasio-modal-default .fikasio-modal-footer {
-  border-top: var(--fikasio-border-width-thin) solid var(--fikasio-color-border);
-  padding-top: 0.75rem;
-}
-
-.fikasio-modal-content:not(.fikasio-modal-default) a {
-  color: inherit;
-  font-weight: var(--fikasio-font-weight-semibold);
-}
-
-.fikasio-modal-primary {
-  background-color: #d3e7ff;
-  border-color: #a8d0ff;
-  color: #08478f;
-}
-
-.fikasio-modal-secondary {
-  background-color: #e8e8e8;
-  border-color: #d2d2d2;
-  color: #333333;
-}
-
-.fikasio-modal-success {
-  background-color: rgb(177, 233, 164);
-  border-color: rgb(138, 212, 122);
-  color: rgb(35, 87, 17);
-}
-
-.fikasio-modal-danger {
-  background-color: rgb(251, 153, 142);
-  border-color: rgb(251, 126, 112);
-  color: rgb(120, 20, 20);
-}
-
-.fikasio-modal-warning {
-  background-color: rgb(235, 217, 155);
-  border-color: rgb(223, 207, 148);
-  color: rgb(122, 83, 22);
-}
-
-.fikasio-modal-info {
-  background-color: #d2f4f4;
-  border-color: #a5e4e4;
-  color: #0d5c5c;
-}
-
-.fikasio-modal-light {
-  background-color: #f7f7f7;
-  border-color: #e0e0e0;
-  color: #333333;
-}
-
-.fikasio-modal-dark {
-  background-color: #333333;
-  border-color: #222222;
-  color: #ffffff;
+  padding: 0.75rem 1rem 1rem;
 }
