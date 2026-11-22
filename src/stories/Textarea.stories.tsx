@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import AutosaveTextarea from '../components/AutosaveTextarea/AutosaveTextarea';
+import Textarea from '../components/Textarea/Textarea';
 
 const meta = {
-  title: 'AutosaveTextarea',
-  component: AutosaveTextarea,
+  title: 'Textarea',
+  component: Textarea,
   argTypes: {
     autoResize: { control: 'boolean' },
     className: { control: 'text' },
@@ -12,12 +12,12 @@ const meta = {
     minRows: { control: 'number' },
     style: { control: 'object' },
   },
-} satisfies Meta<typeof AutosaveTextarea>;
+} satisfies Meta<typeof Textarea>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const AutosaveTextareaNoStyle: Story = {
+export const TextareaNoStyle: Story = {
   args: {
     onSave: async (_value: string) => new Promise(resolve => {
       setTimeout(resolve, 150);
@@ -25,7 +25,7 @@ export const AutosaveTextareaNoStyle: Story = {
   },
 };
 
-export const AutosaveTextareaAutosize: Story = {
+export const TextareaAutosize: Story = {
   args: {
     autoResize: true,
     defaultValue: 'This note grows as you type.',
@@ -34,7 +34,7 @@ export const AutosaveTextareaAutosize: Story = {
   },
 };
 
-export const AutosaveTextareaLinkify: Story = {
+export const TextareaLinkify: Story = {
   args: {
     defaultValue: 'See https://fikas.io/docs',
     linkify: true,

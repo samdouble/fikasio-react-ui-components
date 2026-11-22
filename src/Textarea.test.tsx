@@ -3,7 +3,7 @@ import { describe, it, expect, jest } from '@jest/globals';
 import '@testing-library/jest-dom/jest-globals';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { AutosaveTextarea } from '.';
+import { Textarea } from '.';
 
 const getContentEditable = () => document.querySelector('[contenteditable="true"]') as HTMLElement;
 
@@ -21,7 +21,7 @@ const ControlledTextarea = ({
 }) => {
   const [value, setValue] = useState(initialValue);
   return (
-    <AutosaveTextarea
+    <Textarea
       onChange={setValue}
       onSave={onSave}
       value={value}
@@ -29,10 +29,10 @@ const ControlledTextarea = ({
   );
 };
 
-describe('AutosaveTextarea', () => {
+describe('Textarea', () => {
   it('Renders correctly', () => {
     const { baseElement } = render(
-      <AutosaveTextarea
+      <Textarea
         onSave={() => undefined}
       />,
     );
@@ -42,7 +42,7 @@ describe('AutosaveTextarea', () => {
   it('Saves the current value on blur', () => {
     const onSave = jest.fn();
     render(
-      <AutosaveTextarea
+      <Textarea
         defaultValue="Buy milk"
         onSave={onSave}
       />,
@@ -60,7 +60,7 @@ describe('AutosaveTextarea', () => {
   it('Saves an empty string when existing text is cleared', () => {
     const onSave = jest.fn();
     render(
-      <AutosaveTextarea
+      <Textarea
         defaultValue="Buy milk"
         onSave={onSave}
       />,
@@ -79,7 +79,7 @@ describe('AutosaveTextarea', () => {
     jest.useFakeTimers();
     const onSave = jest.fn();
     const { unmount } = render(
-      <AutosaveTextarea
+      <Textarea
         defaultValue="Buy milk"
         onSave={onSave}
       />,
@@ -100,7 +100,7 @@ describe('AutosaveTextarea', () => {
   it('Does not save when the value has not changed', () => {
     const onSave = jest.fn();
     render(
-      <AutosaveTextarea
+      <Textarea
         defaultValue="Buy milk"
         onSave={onSave}
       />,
@@ -117,7 +117,7 @@ describe('AutosaveTextarea', () => {
     jest.useFakeTimers();
     const onSave = jest.fn();
     const { unmount } = render(
-      <AutosaveTextarea
+      <Textarea
         defaultValue="Hi"
         onSave={onSave}
       />,
@@ -178,7 +178,7 @@ describe('AutosaveTextarea', () => {
     const user = userEvent.setup();
     const onSave = jest.fn();
     render(
-      <AutosaveTextarea
+      <Textarea
         defaultValue="Buy milk"
         onSave={onSave}
         useContentEditableDiv={false}
@@ -214,7 +214,7 @@ describe('AutosaveTextarea', () => {
 
     try {
       render(
-        <AutosaveTextarea
+        <Textarea
           autoResize
           defaultValue={'one\ntwo'}
           onSave={() => undefined}
@@ -243,7 +243,7 @@ const LinkifiedHarness = ({
 }) => {
   const [value, setValue] = useState(initialValue);
   return (
-    <AutosaveTextarea
+    <Textarea
       aria-label="details"
       linkify
       onChange={setValue}
@@ -253,7 +253,7 @@ const LinkifiedHarness = ({
   );
 };
 
-describe('AutosaveTextarea linkify', () => {
+describe('Textarea linkify', () => {
   it('Saves the current value on blur', async () => {
     const user = userEvent.setup();
     const onSave = jest.fn();
@@ -333,7 +333,7 @@ describe('AutosaveTextarea linkify', () => {
     const user = userEvent.setup();
     const onSave = jest.fn();
     render(
-      <AutosaveTextarea
+      <Textarea
         defaultValue="See https://fikas.io/docs"
         linkify
         onSave={onSave}

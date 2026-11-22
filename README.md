@@ -36,31 +36,6 @@ import { Footer } from '@fikasio/react-ui-components';
 
 ## Components
 
-### AutosaveTextarea
-
-<img src="docs/screenshots/autosave-textarea.png" alt="AutosaveTextarea" width="480" />
-
-Saves after a pause or when the field loses focus. Set `linkify` to show URLs as links until the field is edited. `onChange` is called with the text.
-
-#### Props
-
-| Name                    | Type            | Required        | Description                                     |
-|-------------------------|:----------------|:----------------|:------------------------------------------------|
-| autoResize              | boolean         | No              | Grow and shrink the field to fit its content    |
-| maxRows                 | number          | No              | Most rows before the field scrolls               |
-| minRows                 | number          | No              | Fewest rows. The field grows from this height    |
-| className               | string          | No              | Additional CSS class name for the textarea      |
-| defaultValue            | string          | No              | Initial text content of the textarea            |
-| linkify                 | boolean         | No              | Show URLs as links until the field is edited    |
-| name                    | string          | No              | Name attribute for the textarea input           |
-| onChange                | function        | No              | Handler called with the text                    |
-| onSave                  | function        | No              | Handler called when content should be saved     |
-| placeholder             | string          | No              | Placeholder text when textarea is empty         |
-| style                   | CSSProperties   | No              | Additional CSS styles for the textarea          |
-| value                   | string          | No              | Controlled text content value                   |
-
-With `linkify`, it also accepts standard textarea attributes, such as `id`, `placeholder`, and `aria-label`, and a ref.
-
 ### Breadcrumb
 
 <img src="docs/screenshots/breadcrumb.png" alt="Breadcrumb" width="280" />
@@ -408,6 +383,31 @@ Renders the rows you pass as children. Set `responsive` to allow horizontal scro
 | responsive              | boolean         | No              | Wrap the table so it can scroll horizontally    |
 | style                   | CSSProperties   | No              | Additional CSS styles for the table             |
 
+### Textarea
+
+<img src="docs/screenshots/textarea.png" alt="Textarea" width="480" />
+
+Saves after a pause or when the field loses focus. Set `linkify` to show URLs as links until the field is edited. `onChange` is called with the text.
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| autoResize              | boolean         | No              | Grow and shrink the field to fit its content    |
+| maxRows                 | number          | No              | Most rows before the field scrolls               |
+| minRows                 | number          | No              | Fewest rows. The field grows from this height    |
+| className               | string          | No              | Additional CSS class name for the textarea      |
+| defaultValue            | string          | No              | Initial text content of the textarea            |
+| linkify                 | boolean         | No              | Show URLs as links until the field is edited    |
+| name                    | string          | No              | Name attribute for the textarea input           |
+| onChange                | function        | No              | Handler called with the text                    |
+| onSave                  | function        | No              | Handler called when content should be saved     |
+| placeholder             | string          | No              | Placeholder text when textarea is empty         |
+| style                   | CSSProperties   | No              | Additional CSS styles for the textarea          |
+| value                   | string          | No              | Controlled text content value                   |
+
+With `linkify`, it also accepts standard textarea attributes, such as `id`, `placeholder`, and `aria-label`, and a ref.
+
 ### UserAvatar
 
 <img src="docs/screenshots/user-avatar.png" alt="UserAvatar" width="240" />
@@ -501,6 +501,7 @@ The current theme: `'light'` or `'dark'`.
 ### v4 to v5
 
 - `Modal` no longer accepts `variant`. The dialog is white, and dark in the dark theme.
+- `AutosaveTextarea` is now `Textarea`. Props are unchanged.
 
 #### `Modal` no longer accepts `variant`. The dialog is white, and dark in the dark theme.
 
@@ -537,6 +538,38 @@ function Notice({ isOpen, onClose }) {
     >
       A few fields still need attention.
     </Modal>
+  );
+}
+```
+
+#### `AutosaveTextarea` is now `Textarea`. Props are unchanged.
+
+v4:
+
+```
+import { AutosaveTextarea } from '@fikasio/react-ui-components';
+
+function Notes({ onSave }) {
+  return (
+    <AutosaveTextarea
+      defaultValue="See https://fikas.io/docs"
+      onSave={onSave}
+    />
+  );
+}
+```
+
+v5:
+
+```
+import { Textarea } from '@fikasio/react-ui-components';
+
+function Notes({ onSave }) {
+  return (
+    <Textarea
+      defaultValue="See https://fikas.io/docs"
+      onSave={onSave}
+    />
   );
 }
 ```
