@@ -7,16 +7,6 @@ import useTheme from '../../hooks/useTheme';
 import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import './Modal.css';
 
-export type ModalVariant =
-  | 'danger'
-  | 'dark'
-  | 'info'
-  | 'light'
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'warning';
-
 export type ModalSize = 'sm' | 'lg' | 'xl';
 
 export interface ModalProps {
@@ -31,7 +21,6 @@ export interface ModalProps {
   staticBackdrop?: boolean;
   style?: React.CSSProperties;
   title?: React.ReactNode;
-  variant?: ModalVariant;
 }
 
 const FOCUSABLE = [
@@ -55,7 +44,6 @@ export function Modal({
   staticBackdrop = false,
   style = {},
   title,
-  variant,
 }: ModalProps) {
   const theme = useTheme();
   const titleId = useId();
@@ -167,8 +155,6 @@ export function Modal({
           aria-modal="true"
           className={classNames({
             'fikasio-modal-content': true,
-            'fikasio-modal-default': !variant,
-            [`fikasio-modal-${variant}`]: Boolean(variant),
             'fikasio-theme-dark': theme === 'dark',
             'fikasio-theme-light': theme === 'light',
             ...convertClassNameToObj(className),

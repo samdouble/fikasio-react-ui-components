@@ -18,19 +18,6 @@ const meta = {
     staticBackdrop: { control: 'boolean' },
     style: { control: 'object' },
     title: { control: 'text' },
-    variant: {
-      control: 'select',
-      options: [
-        'primary',
-        'secondary',
-        'success',
-        'danger',
-        'warning',
-        'info',
-        'light',
-        'dark',
-      ],
-    },
   },
 } satisfies Meta<typeof Modal>;
 
@@ -46,21 +33,11 @@ export const ModalDialog: Story = {
   },
 };
 
-export const ModalWarning: Story = {
-  args: {
-    children: 'A few fields still need attention before you can save.',
-    isOpen: true,
-    title: 'Check the form',
-    variant: 'warning',
-  },
-};
-
 export const ModalWithTrigger: Story = {
   args: {
     children: 'A few fields still need attention before you can save.',
     isOpen: false,
     title: 'Check the form',
-    variant: 'warning',
   },
   render: function ModalWithTriggerStory(args) {
     const [isOpen, setIsOpen] = useState(false);

@@ -261,7 +261,7 @@ Shows a loading image. It takes no props.
 
 <img src="docs/screenshots/modal.png" alt="Modal" width="640" />
 
-A dialog over the page. `variant` uses the same colors as Bootstrap's alerts (`primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, and `dark`). Success, danger, and warning match the Success, Error, and Warning components. Without a variant, the dialog is a plain panel with a header and footer.
+A white dialog over the page, with a header and footer. In the dark theme the dialog is dark.
 
 The close button, the Escape key, and a click on the backdrop each call `onClose`. Set `dismissible` to false to leave closing to the parent. Set `staticBackdrop` to ignore backdrop clicks while Escape and the close button still work.
 
@@ -280,7 +280,6 @@ The close button, the Escape key, and a click on the backdrop each call `onClose
 | staticBackdrop          | boolean         | No              | Keep the dialog open when the backdrop is clicked |
 | style                   | CSSProperties   | No              | Additional CSS styles for the dialog            |
 | title                   | ReactNode       | No              | Heading and accessible name                     |
-| variant                 | `'primary'` \| `'secondary'` \| `'success'` \| `'danger'` \| `'warning'` \| `'info'` \| `'light'` \| `'dark'` | No | Color variant. Defaults to `primary` |
 
 ### OtpInput
 
@@ -491,6 +490,49 @@ The current theme: `'light'` or `'dark'`.
 
 
 ## Upgrade notes
+
+### v4 to v5
+
+- `Modal` no longer accepts `variant`. The dialog is white, and dark in the dark theme.
+
+#### `Modal` no longer accepts `variant`. The dialog is white, and dark in the dark theme.
+
+v4:
+
+```
+import { Modal } from '@fikasio/react-ui-components';
+
+function Notice({ isOpen, onClose }) {
+  return (
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      title="Check the form"
+      variant="warning"
+    >
+      A few fields still need attention.
+    </Modal>
+  );
+}
+```
+
+v5:
+
+```
+import { Modal } from '@fikasio/react-ui-components';
+
+function Notice({ isOpen, onClose }) {
+  return (
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      title="Check the form"
+    >
+      A few fields still need attention.
+    </Modal>
+  );
+}
+```
 
 ### v3 to v4
 
