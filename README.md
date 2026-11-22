@@ -131,6 +131,24 @@ By default the calendar header uses single carets to move by month and double ca
 | size                    | number          | No              | Size of the dot in pixels                       |
 | style                   | CSSProperties   | No              | Additional CSS styles for the dot               |
 
+### Dropdown
+
+<img src="docs/screenshots/dropdown.png" alt="Dropdown" width="280" />
+
+A menu anchored to a toggle. `Dropdown.Toggle` renders a button, or the component passed as `as`. That component receives `onClick`, `aria-expanded`, and a ref, and should call `onClick` to open and close the menu. `Dropdown.Item` is a button in the menu. The current choice uses `active`.
+
+The menu stays in the page when it is closed and shows when it has the `show` class. It opens downward and to the right, and flips when there is more room the other way. A click outside the menu, the Escape key, or an item click closes it. Set `autoClose` to `outside` when a click inside the menu, such as a search field, should leave it open. Set `show` to control it from the parent; `onToggle` reports the next open state.
+
+#### Props
+
+| Name                    | Type            | Required        | Description                                     |
+|-------------------------|:----------------|:----------------|:------------------------------------------------|
+| autoClose               | boolean \| `'inside'` \| `'outside'` | No | What closes the menu. Defaults to closing on an item click and a click outside |
+| className               | string          | No              | Additional CSS class name for the Dropdown      |
+| onToggle                | function        | No              | Called with the next open state                 |
+| show                    | boolean         | No              | Controlled open state                           |
+| style                   | CSSProperties   | No              | Additional CSS styles for the Dropdown          |
+
 ### Error
 
 <img src="docs/screenshots/error.png" alt="Error" width="420" />

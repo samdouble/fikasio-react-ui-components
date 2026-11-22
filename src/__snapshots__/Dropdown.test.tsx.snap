@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Dropdown Renders an open menu 1`] = `
+<body>
+  <div>
+    <div
+      class="dropdown fikasio-dropdown fikasio-dropdown-open fikasio-theme-light"
+    >
+      <button
+        aria-controls="_r_1_"
+        aria-expanded="true"
+        class="dropdown-toggle fikasio-dropdown-toggle fikasio-dropdown-toggle-caret"
+        type="button"
+      >
+        Actions
+      </button>
+      <div
+        class="dropdown-menu fikasio-dropdown-menu show"
+        id="_r_1_"
+        style="--fikasio-dropdown-offset: 2px; position: absolute;"
+      >
+        <button
+          class="dropdown-item fikasio-dropdown-item"
+          type="button"
+        >
+          Edit
+        </button>
+        <button
+          class="dropdown-item fikasio-dropdown-item active fikasio-dropdown-item-active"
+          type="button"
+        >
+          Duplicate
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
