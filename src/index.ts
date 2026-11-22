@@ -1,7 +1,6 @@
 import './themes.css';
 import './applyFikasioStyles';
 
-export { AutosaveTextarea } from './AutosaveTextarea';
 export { Breadcrumb } from './Breadcrumb';
 export { Button } from './Button';
 export { Checkbox } from './Checkbox';
@@ -21,6 +20,7 @@ export { SearchBar } from './SearchBar';
 export { Success } from './Success';
 export { Table } from './Table';
 export { Tabs } from './Tabs';
+export { Textarea } from './Textarea';
 export { UserAvatar } from './UserAvatar';
 export { Warning } from './Warning';
 export { useClickOutside } from './useClickOutside';

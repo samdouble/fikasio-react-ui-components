@@ -8,7 +8,7 @@ import convertClassNameToObj from '../../utils/convertClassNameToObj';
 import LinkifiedTextarea from '../LinkifiedTextarea/LinkifiedTextarea';
 import './style.css';
 
-export interface AutosaveTextareaProps
+export interface TextareaProps
   extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'defaultValue' | 'onChange' | 'value'> {
   autoResize?: boolean;
   defaultValue?: string;
@@ -21,7 +21,7 @@ export interface AutosaveTextareaProps
   value?: string;
 }
 
-export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaProps>(function AutosaveTextarea({
+export const Textarea = React.forwardRef<HTMLElement, TextareaProps>(function Textarea({
   autoResize = false,
   className = '',
   maxRows,
@@ -184,6 +184,6 @@ export const AutosaveTextarea = React.forwardRef<HTMLElement, AutosaveTextareaPr
     );
 });
 
-AutosaveTextarea.displayName = 'AutosaveTextarea';
+Textarea.displayName = 'Textarea';
 
-export default AutosaveTextarea;
+export default Textarea;

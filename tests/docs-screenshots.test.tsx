@@ -1,7 +1,6 @@
 import React from 'react';
 import { test, expect } from '@playwright/experimental-ct-react';
 import {
-  AutosaveTextarea,
   Breadcrumb,
   Button,
   Checkbox,
@@ -18,6 +17,7 @@ import {
   Selector,
   Success,
   Tabs,
+  Textarea,
   UserAvatar,
   Warning,
 } from '../src';
@@ -66,10 +66,10 @@ const frameStyle = (size?: { height?: number; width?: number }): React.CSSProper
 });
 
 test.describe('README screenshots', () => {
-  test('AutosaveTextarea', async ({ mount }) => {
+  test('Textarea', async ({ mount }) => {
     const component = await mount(
       <div style={frameStyle({ width: 480 })}>
-        <AutosaveTextarea
+        <Textarea
           defaultValue="This textarea saves automatically after you stop typing."
           onSave={() => undefined}
           style={{
@@ -79,7 +79,7 @@ test.describe('README screenshots', () => {
         />
       </div>
     );
-    await expect(component).toHaveScreenshot('autosave-textarea.png');
+    await expect(component).toHaveScreenshot('textarea.png');
   });
 
   test('Breadcrumb', async ({ mount }) => {
